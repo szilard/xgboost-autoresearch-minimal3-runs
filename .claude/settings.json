@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker run -dit --name:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker cp:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker images:*)",
+      "Bash(docker image inspect:*)",
+      "Bash(docker volume ls:*)",
+      "Bash(docker volume inspect:*)",
+      "Bash(.claude/skills/xgb-multi/run_one.sh:*)",
+      "Edit(/run-multi/**)"
+    ],
+    "deny": [
+      "Bash(docker volume rm:*)"
+    ]
+  }
+}

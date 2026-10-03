@@ -1,0 +1,12 @@
+# Python bytecode (tools/pairwise_win_prob.py imports tools/plot_holdout_auc.py)
+__pycache__/
+*.pyc
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# editor / OS
+*.swp
+*~
+.DS_Store
