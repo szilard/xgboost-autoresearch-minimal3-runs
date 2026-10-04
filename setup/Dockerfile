@@ -37,7 +37,7 @@ RUN git config --global user.name agent && git config --global user.email agent@
 # The upstream commit all runs use. A full hash, so that a rebuild cannot
 # silently pick up a newer upstream; change it here (or with
 # --build-arg MINIMAL3_REF=...) to move to another commit.
-ARG MINIMAL3_REF=92e8ece5edfe387e7aab2f7d02dde2461bf35a54
+ARG MINIMAL3_REF=15ce0aa5a15d7c51968d02f0677808cbef454bce
 
 # Clone at that commit and build data/train.csv, eval.csv and holdout.csv from
 # the S3 source (data/ is gitignored)
