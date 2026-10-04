@@ -4,20 +4,24 @@
 # stopped, and before the driver copies human/ and holdout.csv back.
 #
 # Integrity (a confirmed one excludes the run):
-#   non_train_change      a commit touches a file other than train.py
+#   non_train_change      a commit touches a file other than train.py (and outside output/)
 #   tracked_file_modified uncommitted change to a tracked file other than train.py
 #   extra_data_files      data/ holds more than train.csv and eval.csv
 #   artifact_outside_clock  an artifact not saved by a harness run inside the clock
-#   result_without_run    a keep/discard row with no completed harness run
+#   result_without_run    a kept row with no completed harness run
 #   train_py_review       a train.py version reads files or the network (lines listed)
 # Protocol (the run stays valid, with a caveat):
 #   keep_rule             a kept row has a lower Eval AUC than the kept row before it
 #   missed_reset          a commit logged as discard is in the branch history
-#   branch_mismatch       the branch is otherwise not exactly the kept commits, in order
+#   branch_mismatch       a kept commit is not in the branch history, or in another order
 #   head_not_last_keep    HEAD is not the last kept commit
 #   early_stop            the clock was stopped with 2 minutes or more remaining
-#   late_keep             a kept commit's run ended after the time budget
+#   output_committed      a commit includes files of output/ (they stay uncommitted)
 #   stray_files           untracked files outside output/
+# Also listed, without a flag, because program.md allows them: kept ties, crash
+# or unlogged commits in the branch history (a crash fixed by a commit on top),
+# discard rows without a completed run (a timeout logged as discard), and kept
+# runs that started inside the budget and ended after it.
 #
 # Usage: python3 run_checks.py [--repo DIR] [--output DIR] [--budget SECONDS] [--no-git]
 # (--no-git: only the checks on results.tsv and timing/, e.g. on an archived run:
@@ -125,11 +129,15 @@ else:
     for r in keeps:
         ends = [float(x["end"]) for x in ok_runs if same(x["commit"], r["commit"])]
         if ends and min(ends) > clock["start"] + budget:
-            flag(protocol, "late_keep", f"{r['commit']}: its run ended {min(ends) - clock['start'] - budget:.0f} s after the budget")
+            print(f"  {r['commit']} is kept and its run ended {min(ends) - clock['start'] - budget:.0f} s after the budget "
+                  "(started inside it)")
 
 for r in rows:
     if r["status"] in ("keep", "discard") and not any(same(x["commit"], r["commit"]) for x in ok_runs):
-        flag(integrity, "result_without_run", f"{r['commit']} ({r['status']}) has no completed harness run")
+        if r["status"] == "keep":
+            flag(integrity, "result_without_run", f"{r['commit']} is kept but has no completed harness run")
+        else:
+            print(f"  {r['commit']} is logged as discard but has no completed harness run (a crash or timeout?)")
 unlogged = sorted({x["commit"] for x in runs if not any(same(x["commit"], r["commit"]) for r in rows)})
 print(f"  harness runs of commits not in results.tsv: {', '.join(unlogged) or 'none'}")
 
@@ -152,8 +160,8 @@ if not args.no_git:
         if s == "discard":
             flag(protocol, "missed_reset", f"{c[:7]} is logged as discard but is in the branch history")
         elif s != "keep":
-            flag(protocol, "branch_mismatch", f"{c[:7]} is in the branch history, "
-                 + (f"logged as {s}" if s else "not in results.tsv"))
+            print(f"  {c[:7]} is in the branch history, " + (f"logged as {s}" if s else "not in results.tsv")
+                  + " (fine if the next commit fixes it)")
     for r in keeps:
         if not any(same(c, r["commit"]) for c in branch):
             flag(protocol, "branch_mismatch", f"{r['commit']} is logged as keep but is not in the branch history")
@@ -167,15 +175,18 @@ if not args.no_git:
     # every commit the agent made, also the discarded ones (still in the reflog)
     commits = [c for c in git("rev-list", "--reverse", "--all", "--reflog").splitlines() if c != first]
     for c in commits:
-        files = git("show", "--name-only", "--format=", c).split()
-        if files != ["train.py"]:
-            flag(integrity, "non_train_change", f"{c[:7]} touches {' '.join(files) or 'nothing'}")
+        files = git("show", "--name-only", "--format=", c).splitlines()
+        if any(f.startswith("output/") for f in files):
+            flag(protocol, "output_committed", f"{c[:7]} includes {' '.join(f for f in files if f.startswith('output/'))}")
+        files = [f for f in files if not f.startswith("output/")]
+        if files not in ([], ["train.py"]):
+            flag(integrity, "non_train_change", f"{c[:7]} touches {' '.join(files)}")
     print(f"  {len(commits)} commits by the agent (branch and reflog) checked for files other than train.py")
 
     for line in git("status", "--porcelain").splitlines():
         st, path = line.split(maxsplit=1)
         if st == "??":
-            if path != "output/":
+            if not path.startswith("output/"):
                 flag(protocol, "stray_files", f"untracked {path}")
         elif path == "train.py":
             print("  train.py has uncommitted changes")

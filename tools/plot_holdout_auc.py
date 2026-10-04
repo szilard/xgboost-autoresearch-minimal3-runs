@@ -56,7 +56,7 @@ SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#
 OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
 MIN_N_PATH = 5  # median / percentile paths only where at least this many runs are still going
-XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.74, 0.77); None: the runs' range
+XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.68, 0.70); None: the runs' range
 RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
 

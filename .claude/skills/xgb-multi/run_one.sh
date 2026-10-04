@@ -11,8 +11,9 @@
 #   0  run completed (clock stopped, results copied, container deleted)
 #   1  run failed after the container was started (record as excluded);
 #      whatever results exist were copied, container deleted if the copy worked
-#   2  precondition failed (image/volume/container/login/effort level);
-#      nothing usable was run - stop the whole group
+#   2  precondition failed (image/volume/container/data/human-only files
+#      within the agent's reach/setup run of train.py/login/model or effort
+#      level); nothing usable was run - stop the whole group
 #
 # Writes OUT_DIR/driver.log (timestamped log of everything sent and seen) and
 # OUT_DIR/driver-summary.json.

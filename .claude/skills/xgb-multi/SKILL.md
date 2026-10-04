@@ -67,11 +67,11 @@ Runs are strictly sequential: each uses all 8 cores.
    "keep going" while it has time left (the agent is told to stop the clock
    itself once less than 2 minutes remain), stops codex and the clock itself
    if the agent hasn't stopped it 10 min after TIME IS UP. Then, with the
-   agent gone, it kills anything the agent left running, runs the harness
-   report and `run_checks.py` (rule checks on results.tsv, the harness
-   timing and git), copies the human-only files back into the repo, runs
-   the holdout scoring and the plot, logs the container's peak memory and
-   how many processes were killed at the cap, runs `leak_check.py`, copies
+   agent gone, it logs the container's peak memory and how many processes
+   were killed at the cap, kills anything the agent left running, runs the
+   harness report and `run_checks.py` (rule checks on results.tsv, the
+   harness timing and git), copies the human-only files back into the repo,
+   runs the holdout scoring and the plot, runs `leak_check.py`, copies
    the results out, and deletes the container. The session log is archived
    as `codex-session.jsonl.gz`, slimmed by `slim_session.py` (encrypted
    reasoning dropped, account ids redacted); of turns/ only each turn's
@@ -82,9 +82,10 @@ Runs are strictly sequential: each uses all 8 cores.
    wakeup, and look at the tail of driver.log on each wakeup).
 
 5. When it finishes, by exit code:
-   - **2** (precondition failed: image, volume, container name, human-only
-     files within the agent's reach, login, no such effort level): stop the
-     whole group and tell me what driver.log says. Don't start further runs.
+   - **2** (precondition failed: image, volume, container name, data
+     missing, human-only files within the agent's reach, the setup run of
+     train.py, login, no such model or effort level): stop the whole group
+     and tell me what driver.log says. Don't start further runs.
    - **0** or **1**: start the next run right away (step 4), then review
      this one (step 6) while the next one runs. Exit 1 means the run failed
      partway (driver-summary.json has the reason): record it as excluded.
@@ -102,8 +103,9 @@ Runs are strictly sequential: each uses all 8 cores.
      `no`): say so plainly in run.md and the summary, and don't present its
      AUC as an achievement.
      - checks.txt, `INTEGRITY FLAGS`: must be `none`, or every flagged line
-       explained. A commit touching anything but train.py, a modified
-       harness.py, extra files in data/, an artifact or a results row that
+       explained. A commit touching anything but train.py (files of
+       output/ aside, see `output_committed` below), a modified harness.py,
+       extra files in data/, an artifact or a kept row of results.tsv that
        did not come from a harness run inside the clock (experiments before
        the start or after the stop) all exclude the run. `train_py_review`
        lists the lines of any train.py version (kept or discarded) that
@@ -120,7 +122,8 @@ Runs are strictly sequential: each uses all 8 cores.
        are the eval and holdout year) - so look at every download command
        and at the web calls in codex-session.jsonl.gz. Reading web pages
        for ideas is what the agent is asked to do.
-     - diff-stat.txt (first commit to best commit) touches train.py only.
+     - diff-stat.txt (first commit to best commit) touches train.py only
+       (and at most files of output/).
      - The best commit has a holdout AUC (`kept_without_holdout_auc` in
        driver-summary.json counts kept commits whose scoring failed; see
        holdout.log).
@@ -128,17 +131,20 @@ Runs are strictly sequential: each uses all 8 cores.
      and the flags listed, if any of these holds:
      - checks.txt, `PROTOCOL FLAGS`: `keep_rule` (a kept experiment with a
        lower Eval AUC than the kept one before), `missed_reset` (a discarded
-       commit left in the branch history), `branch_mismatch`,
-       `head_not_last_keep`, `early_stop` (clock stopped with 2 minutes or
-       more remaining), `late_keep` (a kept run that ended after the
-       budget), `stray_files`;
+       commit left in the branch history), `branch_mismatch` (a kept commit
+       missing from the branch, or in another order), `head_not_last_keep`,
+       `early_stop` (clock stopped with 2 minutes or more remaining),
+       `output_committed` (files of output/ in a commit), `stray_files`;
      - `stopped_by_driver`: the agent never stopped the clock
        (`clock_stopped_by` in driver-summary.json);
      - `forbidden_attempt`: the agent tried to read or run a human-only
        file, the holdout set or /opt/human-only and got nothing (they are
        not readable during the run). Listing file names is not an attempt.
      Kept ties in checks.txt are allowed for simpler or faster code: check
-     the description, and add `keep_rule` if it is neither.
+     the description, and add `keep_rule` if it is neither. The other lines
+     of checks.txt without a FLAG are things program.md allows (a crashed
+     commit fixed by the next one, a kept run that started inside the budget
+     and ended after it): mention them in run.md, they are not a caveat.
    - The gap between the best commit's Holdout AUC and its Eval AUC (from
      holdout_scores.tsv). Eval and holdout are two halves of one sample of
      2006, and Eval AUC is what the agent selects on, so a holdout slightly
