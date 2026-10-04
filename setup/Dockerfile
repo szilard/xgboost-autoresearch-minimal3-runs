@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 # Ubuntu 26.04 + codex (as the unprivileged user `ubuntu`, nothing AI as root)
-# + a copy of szilard/xgboost-autoresearch-minimal2 with fresh git history
+# + a copy of szilard/xgboost-autoresearch-minimal3 with fresh git history,
+# without the human-only files (kept root-only in /opt/human-only)
 # Build, login and run: see README.md in this folder.
 FROM ubuntu:26.04
 
@@ -26,25 +27,45 @@ RUN npm install -g --prefix /home/ubuntu/.npm-global @openai/codex && codex --ve
     && mkdir -m 700 /home/ubuntu/.codex-auth \
     && ln -s /home/ubuntu/.codex-auth/auth.json /home/ubuntu/.codex/auth.json
 
-# Python packages from minimal2's quick start (--user: the image is PEP 668)
+# Python packages from minimal3's quick start (--user: the image is PEP 668)
 RUN pip install --break-system-packages --user --no-cache-dir \
         pandas xgboost scikit-learn cloudpickle matplotlib
 
 # identity for the initial commit below and for the agent's experiment commits
 RUN git config --global user.name agent && git config --global user.email agent@localhost
 
+# The upstream commit all runs use. A full hash, so that a rebuild cannot
+# silently pick up a newer upstream; change it here (or with
+# --build-arg MINIMAL3_REF=...) to move to another commit.
+ARG MINIMAL3_REF=92e8ece5edfe387e7aab2f7d02dde2461bf35a54
+
+# Clone at that commit and build data/train.csv, eval.csv and holdout.csv from
+# the S3 source (data/ is gitignored)
+RUN git clone -q https://github.com/szilard/xgboost-autoresearch-minimal3.git \
+    && cd xgboost-autoresearch-minimal3 \
+    && git checkout -q "$MINIMAL3_REF" \
+    && python3 human/make_data.py && ls -l data/
+
+# The human-only files go where the agent cannot read them (root-only; the
+# agent runs as `ubuntu`, without sudo): the human/ scripts and the holdout
+# set. The driver copies them back after the agent has exited, for the
+# holdout scoring.
+USER root
+RUN install -d -m 700 /opt/human-only \
+    && mv /home/ubuntu/xgboost-autoresearch-minimal3/human /opt/human-only/human \
+    && mv /home/ubuntu/xgboost-autoresearch-minimal3/data/holdout.csv /opt/human-only/holdout.csv \
+    && chown -R root:root /opt/human-only
+USER ubuntu
+
 # Drop upstream history and results/ so the agent cannot see earlier runs,
-# then start a new repo (the agent's workflow needs git). The upstream commit
-# is kept in the commit message.
-RUN git clone --depth 1 https://github.com/szilard/xgboost-autoresearch-minimal2.git \
-    && cd xgboost-autoresearch-minimal2 \
+# then start a new repo (the agent's workflow needs git) without human/. The
+# upstream commit is kept in the commit message.
+RUN cd xgboost-autoresearch-minimal3 \
     && upstream=$(git rev-parse HEAD) \
     && rm -rf .git results \
     && git init -q -b main \
     && git add -A \
-    && git commit -q -m "xgboost-autoresearch-minimal2 @ $upstream"
-
-# Build data/train.csv, eval.csv and holdout.csv from the S3 source (data/ is gitignored)
-RUN cd xgboost-autoresearch-minimal2 && python3 prepare.py && ls -l data/
+    && git commit -q -m "xgboost-autoresearch-minimal3 @ $upstream" \
+    && git status --short && ls -la . data/
 
 CMD ["/bin/bash"]

@@ -3,7 +3,7 @@
 
 Reads each group's holdout_auc.tsv (written by /xgb-multi), the model from each
 run's driver-summary.json and the per-experiment scores from its
-groundtruth_all.tsv. Groups with the same model are pooled (all runs are effort
+holdout_scores.tsv. Groups with the same model are pooled (all runs are effort
 max). Runs with valid = "no" are left out; caveat runs are drawn hollow/dashed.
 
 run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
@@ -75,9 +75,9 @@ def load_group(gdir):
 
 
 def keep_path(run_dir):
-    """(n, holdout AUC) of each kept commit, n counted over all rows of groundtruth_all.tsv."""
+    """(n, holdout AUC) of each kept commit, n counted over all rows of holdout_scores.tsv."""
     path = []
-    with open(run_dir / "groundtruth_all.tsv") as f:
+    with open(run_dir / "holdout_scores.tsv") as f:
         for n, r in enumerate(csv.DictReader(f, delimiter="\t"), 1):
             if r["status"] == "keep" and r["holdout_auc"] not in ("", "N/A"):
                 path.append((n, float(r["holdout_auc"])))
@@ -194,7 +194,7 @@ def strip_plot(runs, colour):
 def step_series(run_dir):
     """Holdout AUC of the kept model at every experiment n = 1..n_last (held until the next keep)."""
     path = keep_path(run_dir)
-    with open(run_dir / "groundtruth_all.tsv") as f:
+    with open(run_dir / "holdout_scores.tsv") as f:
         n_last = sum(1 for _ in f) - 1
     values = np.full(n_last, np.nan)
     for n, auc in path:
@@ -226,7 +226,7 @@ def draw_runs(ax, runs, colour_of, lw, alpha, dots=True):
         if not path:
             continue
         n, auc = zip(*path)
-        with open(r["dir"] / "groundtruth_all.tsv") as f:
+        with open(r["dir"] / "holdout_scores.tsv") as f:
             n_last = sum(1 for _ in f) - 1
         c = colour_of(r)
         ax.step(list(n) + [n_last], list(auc) + [auc[-1]], where="post", color=c,

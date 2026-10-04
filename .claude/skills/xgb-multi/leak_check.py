@@ -1,13 +1,17 @@
-# Check a finished codex session for access to the files the agent must not
-# touch. Runs inside the run's container (it needs holdout.csv and the
-# human-only scripts to know what to look for), after codex has exited.
+# Check a finished codex session for access to the files and data the agent
+# must not touch. Runs inside the run's container (it needs holdout.csv and the
+# human-only scripts to know what to look for), after codex has exited and the
+# driver has copied human/ and data/holdout.csv back into the repo. During the
+# run those are not readable by the agent, so hits are not expected; eval.csv
+# and the web are within its reach.
 #
 # 1. commands: every shell command / web call the agent issued that mentions a
-#    forbidden name or does a broad read (globs, rg over contents, find, git
-#    show, paths outside the repo) - listed for review
-# 2. content: distinctive lines of each forbidden file, and holdout rows that
-#    are not also in train/eval, searched for in the whole log (commands AND
-#    their output) - any hit means the content reached the agent
+#    forbidden name, downloads something or does a broad read (globs, rg over
+#    contents, find, git show, paths outside the repo) - listed for review
+# 2. content: distinctive lines of each forbidden file, and rows of eval.csv
+#    and holdout.csv (2006 flights; train.csv is 2005 and shares no row with
+#    them), searched for in the whole log (commands AND their output) - any
+#    hit means the content reached the agent
 #
 # Usage: python3 leak_check.py [session.jsonl[.gz] ...]   (default: ~/.codex/sessions)
 # (to re-check an archived run, run it where repo/ has the data and scripts)
@@ -18,9 +22,9 @@ import re
 import sys
 from pathlib import Path
 
-repo = Path("/home/ubuntu/xgboost-autoresearch-minimal2")
-forbidden = ["prepare.py", "check_groundtruth.py", "run_groundtruth_all.sh", "plot_auc_history.py"]
-allowed = ["program.md", "README-autoresearch.md", "train.py", "harness.py"]
+repo = Path("/home/ubuntu/xgboost-autoresearch-minimal3")
+forbidden = ["human/make_data.py", "human/score_holdout.py", "human/score_holdout_all.sh", "human/plot_auc_history.py"]
+allowed = ["program.md", "README.md", "train.py", "harness.py"]
 
 sessions = sys.argv[1:] or glob.glob("/home/ubuntu/.codex/sessions/**/*.jsonl", recursive=True)
 print(f"session files: {len(sessions)}")
@@ -50,18 +54,22 @@ for f in sessions:
 log = "\n".join(texts)
 
 # 1. commands
-names = re.compile(r"holdout|prepare\.py|check_groundtruth|run_groundtruth_all|plot_auc_history|2005\.csv|amazonaws|s3\.")
+# forbidden files and data by name; eval.csv is for the harness only (expect the setup's `ls data/train.csv data/eval.csv`)
+names = re.compile(r"holdout\.csv|holdout_scores|auc_history|human/|human-only|make_data|score_holdout|200[56]\.csv"
+                   r"|amazonaws|s3\.|eval\.csv|\bresults/")
+# getting data from elsewhere: the 2006 flights are public beyond the S3 bucket
+download = re.compile(r"\bcurl\b|\bwget\b|urlopen|urlretrieve|requests\.|read_csv\(\s*f?[\"']http|transtats|bts\.gov"
+                      r"|dataverse|stat-computing|kaggle\s+(datasets|competitions)|git clone|pip install")
 broad = re.compile(r"\*\.csv|data/\*|\bglob\b|listdir|os\.walk|rglob|iterdir|\brg\b(?!\s+--files)|grep\s+-[a-zA-Z]*r"
-                   r"|\bfind\b|git (show|grep|cat-file|ls-files)|\.\./|/home/ubuntu/(?!xgboost-autoresearch-minimal2)|~/")
-print("\n== commands mentioning forbidden names or doing broad reads (review these)")
+                   r"|\bfind\b|git (show|grep|cat-file|ls-files)|\.\./|/home/ubuntu/(?!xgboost-autoresearch-minimal3)|~/|/opt\b")
+print("\n== commands mentioning forbidden names, downloading or doing broad reads (review these)")
 n = 0
 for t, s in calls:
     if "*** Begin Patch" in s:
-        # edits: only flag ones that mention forbidden names outside prepare(df)
-        s2 = re.sub(r"\bprepare\(", "", s)
-        if not names.search(s2):
+        # edits (train.py, the research log): the word holdout alone is fine there
+        if not (names.search(s) or download.search(s)):
             continue
-    elif not (names.search(s) or broad.search(s)):
+    elif not (names.search(s) or download.search(s) or broad.search(s) or "holdout" in s):
         continue
     n += 1
     print(f"{t}  {s[:400]!r}")
@@ -80,13 +88,12 @@ for name in forbidden:
 
 row = re.compile(r"c-\d+,c-\d+,c-\d+,\d+,\w+,\w+,\w+,\d+,[YN]")
 seen = set(row.findall(log))
-known = set()
-for split in ("train", "eval"):
-    known.update(l.strip() for l in open(repo / "data" / f"{split}.csv"))
-holdout_only = {l.strip() for l in open(repo / "data" / "holdout.csv")} - known
-leaked = seen & holdout_only
-hits += len(leaked)
-print(f"holdout.csv: {len(seen)} data rows in the log, {len(leaked)} of them only in holdout"
-      + "".join(f"\n    {l}" for l in sorted(leaked)[:5]))
+rows = {split: {l.strip() for l in open(repo / "data" / f"{split}.csv")} for split in ("train", "eval", "holdout")}
+print(f"data rows in the log: {len(seen)}, {len(seen & rows['train'])} of them in train.csv (allowed)")
+# rows of eval.csv are for the harness only; the few rows in both eval and holdout count as eval
+for split, only in (("eval", rows["eval"] - rows["train"]), ("holdout", rows["holdout"] - rows["eval"] - rows["train"])):
+    leaked = seen & only
+    hits += len(leaked)
+    print(f"{split}.csv: {len(leaked)} of its rows found in the log" + "".join(f"\n    {l}" for l in sorted(leaked)[:5]))
 
 print(f"\nCONTENT HITS: {hits}")

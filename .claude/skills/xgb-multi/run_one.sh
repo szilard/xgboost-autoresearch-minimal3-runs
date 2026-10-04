@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Drive one xgboost-autoresearch-minimal2 run with codex, end to end, in a new
-# agents2 container, copy the results to OUT_DIR, then delete the container.
+# Drive one xgboost-autoresearch-minimal3 run with codex, end to end, in a new
+# agents3 container, copy the results to OUT_DIR, then delete the container.
 # Mechanical part of the /xgb-multi skill: every run gets the same messages
 # under the same rules. Claude does the validity review and run.md afterwards.
 #
@@ -20,7 +20,9 @@
 set -uo pipefail
 
 C=$1 MODEL=$2 EFFORT=$3 OUT=$4
-R=/home/ubuntu/xgboost-autoresearch-minimal2
+R=/home/ubuntu/xgboost-autoresearch-minimal3
+HUMAN_ONLY=/opt/human-only  # root-only in the image: human/ and holdout.csv, copied back after the agent has exited
+STARTER_EVAL_AUC=0.6743     # Eval AUC of the starter train.py on the data of human/make_data.py
 HERE=$(cd "$(dirname "$0")" && pwd)
 PROMPT="Hi have a look at program.md and let's kick off a new experiment! let's do the setup first."
 
@@ -28,7 +30,7 @@ MAX_GO=5            # "go" turns while the clock is not started
 MAX_KEEP_GOING=20   # "keep going" turns while the clock has time left
 MAX_FAILED_TURNS=3  # consecutive turns that end without turn.completed
 FAILED_TURN_WAIT=300
-WRAP_UP_S=900       # time the agent gets after TIME IS UP to run harness.py stop
+WRAP_UP_S=600       # time the agent gets after TIME IS UP to run harness.py stop (a run in progress can take 6 min)
 POLL_S=60
 MEM_LIMIT=24g       # container memory cap, no swap: the agent's runs can't starve the host
 
@@ -47,11 +49,11 @@ log "run $C: model=$MODEL effort=$EFFORT out=$OUT"
 
 # ---------- preconditions (nothing started yet) ----------
 
-docker image inspect agents2 > /dev/null 2>&1 || { log "PRECONDITION: image agents2 missing"; exit 2; }
+docker image inspect agents3 > /dev/null 2>&1 || { log "PRECONDITION: image agents3 missing"; exit 2; }
 docker volume inspect codex-auth > /dev/null 2>&1 || { log "PRECONDITION: volume codex-auth missing"; exit 2; }
 if docker container inspect "$C" > /dev/null 2>&1; then log "PRECONDITION: container $C already exists"; exit 2; fi
 
-docker run -dit --name "$C" --memory=$MEM_LIMIT --memory-swap=$MEM_LIMIT -v codex-auth:/home/ubuntu/.codex-auth agents2 > /dev/null \
+docker run -dit --name "$C" --memory=$MEM_LIMIT --memory-swap=$MEM_LIMIT -v codex-auth:/home/ubuntu/.codex-auth agents3 > /dev/null \
   || { log "PRECONDITION: docker run failed"; exit 2; }
 STARTED=1
 log "container started"
@@ -66,17 +68,27 @@ precondition_fail() {
 
 # repo state as shipped: report anything unexpected, don't work around it
 dx 'ls -la ~/.codex; git status --short --branch; git log --oneline | head -3; ls' >> "$LOG" 2>&1
-dx 'test -f data/train.csv && test -f data/eval.csv && test -f data/holdout.csv' \
-  || precondition_fail "data/train.csv, eval.csv or holdout.csv missing"
-dx 'test ! -e timing && test ! -e artifacts && test ! -e results.tsv' \
-  || log "NOTE: leftover timing/, artifacts/ or results.tsv in the repo"
+dx 'test -f data/train.csv && test -f data/eval.csv' \
+  || precondition_fail "data/train.csv or data/eval.csv missing"
+# the human-only files must be out of the agent's reach: not in the repo, and
+# unreadable where the image keeps them
+docker exec -u root $C test -f $HUMAN_ONLY/holdout.csv -a -f $HUMAN_ONLY/human/score_holdout_all.sh \
+  || precondition_fail "$HUMAN_ONLY/holdout.csv or $HUMAN_ONLY/human missing"
+dx "test ! -e human && test ! -e results && test \"\$(ls data | tr '\n' ' ')\" = 'eval.csv train.csv ' && ! ls $HUMAN_ONLY 2> /dev/null" \
+  || precondition_fail "human/, results/ or data/holdout.csv is in the repo, or $HUMAN_ONLY is readable by the agent"
+dx 'test ! -e output && test ! -e artifacts' \
+  || log "NOTE: leftover output/ or artifacts/ in the repo"
 dx 'test "$(ls ~/.codex)" = auth.json' || log "NOTE: ~/.codex holds more than auth.json"
 
 log "setup check: python3 train.py"
 dx 'python3 train.py' > "$OUT/setup-train.log" 2>&1
 grep -q '^Eval AUC:' "$OUT/setup-train.log" || precondition_fail "setup train.py run failed (see setup-train.log)"
 log "setup check: $(grep '^Eval AUC:' "$OUT/setup-train.log")"
+grep -q "^Eval AUC: $STARTER_EVAL_AUC\$" "$OUT/setup-train.log" \
+  || log "NOTE: the starter's Eval AUC is not $STARTER_EVAL_AUC (other data or package versions?)"
 dx 'rm -rf artifacts __pycache__'
+BUDGET_S=$(dx "sed -n 's/^time_budget_s = \([0-9]*\).*/\1/p' harness.py")
+log "time budget: ${BUDGET_S:-unknown} s; packages: $(dx 'pip list --format=freeze 2> /dev/null' | grep -iE '^(xgboost|pandas|numpy|scikit-learn|cloudpickle)=' | tr '\n' ' ')"
 
 dx 'codex login status' 2>&1 | tee -a "$LOG" | grep -q 'ChatGPT' || precondition_fail "codex login status is not a ChatGPT login"
 CODEX_VERSION=$(dx 'codex --version' 2>&1)
@@ -210,22 +222,46 @@ log "memory: peak=${MEM_PEAK:-unknown} bytes, oom_kills=${OOM_KILLS:-unknown}"
 
 # ---------- after the run ----------
 
-if dx 'test -f timing/clock.json'; then
-  dx 'python3 harness.py report > report.txt' && log "report: $(dx 'cat report.txt' | tr '\n' ' ')"
-fi
-if dx 'test -f results.tsv && [ $(wc -l < results.tsv) -gt 1 ]'; then
-  log "run_groundtruth_all.sh"
-  dx './run_groundtruth_all.sh > ~/groundtruth.log 2>&1' || log "run_groundtruth_all.sh failed (see groundtruth.log)"
-  dx 'python3 plot_auc_history.py' >> "$LOG" 2>&1 || log "plot_auc_history.py failed"
-else
-  [ "$STATUS" = ok ] && fail "no experiments in results.tsv"
+# nothing the agent started may outlive it: from here on the human-only files come back
+LEFTOVER=$(docker exec $C ps -u ubuntu -o pid=,args= | awk '$1 != 1 && $2 != "ps"')
+if [ -n "$LEFTOVER" ]; then
+  log "NOTE: killing processes left behind by the agent: $(echo "$LEFTOVER" | cut -c1-200 | tr '\n' ';')"
+  docker exec -u root $C bash -c 'for p in $(ps -u ubuntu -o pid=); do [ $p = 1 ] || kill -9 $p 2> /dev/null; done; true'
 fi
 
-# best kept commit: highest Eval AUC among keep rows (first one on ties)
-BEST=$(dx "awk -F'\t' 'NR > 1 && \$3 == \"keep\" && (b == \"\" || \$2 > a) { a = \$2; b = \$1 } END { print b }' results.tsv 2>/dev/null")
+if dx 'test -f output/timing/clock.json'; then
+  dx 'python3 harness.py report > ~/report.txt' && log "report: $(dx 'cat ~/report.txt' | tr '\n' ' ')"
+fi
+
+# rule checks on results.tsv, the harness timing and git, on the repo as the agent left it
+docker cp "$HERE/run_checks.py" $C:/tmp/run_checks.py > /dev/null
+dx 'python3 /tmp/run_checks.py' > "$OUT/checks.txt" 2>&1 || log "run_checks.py failed (see checks.txt)"
+FLAGS_INTEGRITY=$(sed -n 's/^INTEGRITY FLAGS: //p' "$OUT/checks.txt")
+FLAGS_PROTOCOL=$(sed -n 's/^PROTOCOL FLAGS: //p' "$OUT/checks.txt")
+log "checks: integrity flags: ${FLAGS_INTEGRITY:-<checks failed>}; protocol flags: ${FLAGS_PROTOCOL:-<checks failed>}"
+
+# the agent is gone: copy the human-only files back for the holdout scoring and the leak check
+docker exec -u root $C bash -c "rm -rf $R/human && cp -r $HUMAN_ONLY/human $R/human && cp $HUMAN_ONLY/holdout.csv $R/data/holdout.csv \
+  && chown -R ubuntu:ubuntu $R/human $R/data/holdout.csv" || fail "could not copy the human-only files back"
+
+if dx 'test -f output/results.tsv && [ $(wc -l < output/results.tsv) -gt 1 ]'; then
+  log "human/score_holdout_all.sh"
+  dx './human/score_holdout_all.sh > ~/holdout.log 2>&1' || log "score_holdout_all.sh failed (see holdout.log)"
+  dx 'MPLBACKEND=Agg python3 human/plot_auc_history.py' >> "$LOG" 2>&1 || log "plot_auc_history.py failed"
+else
+  [ "$STATUS" = ok ] && fail "no experiments in output/results.tsv"
+fi
+
+# best kept commit: highest Eval AUC among keep rows; on ties the last one (a
+# kept tie is a simplification of the one before). Under the keep rule this is
+# the last kept commit, where the branch should be.
+BEST=$(dx "awk -F'\t' 'NR > 1 && \$3 == \"keep\" && (b == \"\" || \$2 + 0 >= a) { a = \$2 + 0; b = \$1 } END { print b }' output/results.tsv 2>/dev/null")
 FIRST=$(dx 'git rev-list --max-parents=0 HEAD')
 BRANCH=$(dx 'git branch --show-current')
 [ -n "$BRANCH" ] || log "NOTE: repo is on a detached HEAD at the end of the run"
+if [ -n "$BEST" ] && [ "$(dx "git rev-parse --verify -q $BEST^{commit}")" != "$(dx 'git rev-parse HEAD')" ]; then
+  log "NOTE: the best kept commit $BEST is not HEAD ($(dx 'git rev-parse --short=7 HEAD'))"
+fi
 UPSTREAM=$(dx "git log -1 --format=%s $FIRST")
 log "branch=${BRANCH:-<detached>} first=$FIRST best=${BEST:-<none>} upstream: $UPSTREAM"
 
@@ -233,12 +269,20 @@ log "branch=${BRANCH:-<detached>} first=$FIRST best=${BEST:-<none>} upstream: $U
 docker cp "$HERE/leak_check.py" $C:/tmp/leak_check.py > /dev/null
 dx 'python3 /tmp/leak_check.py' > "$OUT/leak_check.txt" 2>&1 || log "leak_check.py failed (see leak_check.txt)"
 
-# copy out
+# copy out: the run's outputs (output/ in the repo) go flat into OUT
 cp_out() { docker cp "$C:$1" "$2" > /dev/null 2>&1 || log "copy: $1 not found"; }
-for f in results.tsv research-log.md groundtruth_all.tsv auc_history.png report.txt timing; do
-  cp_out $R/$f "$OUT/"
+OUTPUT_FILES="results.tsv research-log.md run.log holdout_scores.tsv auc_history.png timing"
+for f in $OUTPUT_FILES; do
+  cp_out $R/output/$f "$OUT/"
 done
-cp_out /home/ubuntu/groundtruth.log "$OUT/"
+EXTRA=$(dx 'ls -A output 2> /dev/null' | grep -vxF "$(echo $OUTPUT_FILES | tr ' ' '\n')")
+if [ -n "$EXTRA" ]; then
+  log "NOTE: other files in output/, copied to output-extra/: $(echo $EXTRA)"
+  mkdir -p "$OUT/output-extra"
+  for f in $EXTRA; do cp_out "$R/output/$f" "$OUT/output-extra/"; done
+fi
+cp_out /home/ubuntu/report.txt "$OUT/"
+cp_out /home/ubuntu/holdout.log "$OUT/"
 # the final message and stderr of each turn; the event streams (turns/*.jsonl)
 # duplicate the session log and are not kept
 cp_out /home/ubuntu/turns "$OUT/" && rm -f "$OUT"/turns/*.jsonl
@@ -263,26 +307,38 @@ if [ -s "$OUT/.codex-session-raw.jsonl" ]; then
 fi
 
 # summary for Claude
-EVAL=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $4 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
-HOLD=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $5 }' "$OUT/groundtruth_all.tsv" 2> /dev/null)
+EVAL=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $4 }' "$OUT/holdout_scores.tsv" 2> /dev/null | tail -1)
+HOLD=$(awk -F'\t' -v c="$BEST" '$1 "" == c { print $5 }' "$OUT/holdout_scores.tsv" 2> /dev/null | tail -1)
+# kept commits without a holdout AUC (scoring crashed or timed out, or no artifact)
+UNSCORED=$(awk -F'\t' 'NR > 1 && $2 == "keep" && $5 !~ /^[0-9.]+$/' "$OUT/holdout_scores.tsv" 2> /dev/null | wc -l)
+[ "$UNSCORED" = 0 ] || log "NOTE: $UNSCORED kept commits have no holdout AUC (see holdout.log)"
 NEXP=$(awk 'NR > 1' "$OUT/results.tsv" 2> /dev/null | wc -l)
 printf '%s\n' "${MESSAGES[@]}" > "$OUT/.turns"
 C=$C STATUS=$STATUS REASON=$REASON MODEL=$MODEL EFFORT=$EFFORT CODEX_VERSION=${CODEX_VERSION:-} \
 TC=${TC:-} SID=$SID STOPPED_BY=$STOPPED_BY BRANCH=$BRANCH FIRST=$FIRST UPSTREAM=$UPSTREAM \
-NEXP=$NEXP BEST=$BEST EVAL=$EVAL HOLD=$HOLD \
+NEXP=$NEXP BEST=$BEST EVAL=$EVAL HOLD=$HOLD UNSCORED=$UNSCORED BUDGET_S=${BUDGET_S:-} \
+FLAGS_INTEGRITY=${FLAGS_INTEGRITY:-} FLAGS_PROTOCOL=${FLAGS_PROTOCOL:-} \
 MEM_MAX=${MEM_MAX:-} MEM_PEAK=${MEM_PEAK:-} OOM_KILLS=${OOM_KILLS:-} python3 - "$OUT" <<'EOF'
 import json, os, pathlib, sys
 out = pathlib.Path(sys.argv[1])
 e = os.environ
 turns = (out / ".turns").read_text().splitlines()
 (out / ".turns").unlink()
+clock = out / "timing" / "clock.json"
+clock = json.loads(clock.read_text()) if clock.exists() else {}
+elapsed = round(clock["stop"] - clock["start"]) if "stop" in clock else None
+budget = int(e["BUDGET_S"]) if e["BUDGET_S"] else None
 json.dump({
     "container": e["C"], "status": e["STATUS"], "reason": e["REASON"],
     "model": e["MODEL"], "effort": e["EFFORT"], "codex_version": e["CODEX_VERSION"],
     "turn_context": e["TC"], "session_id": e["SID"], "turns": turns,
-    "clock_stopped_by": e["STOPPED_BY"], "branch": e["BRANCH"], "first_commit": e["FIRST"],
+    "clock_stopped_by": e["STOPPED_BY"], "time_budget_s": budget, "clock_elapsed_s": elapsed,
+    "clock_remaining_s": budget - elapsed if budget and elapsed is not None else None,
+    "branch": e["BRANCH"], "first_commit": e["FIRST"],
     "upstream": e["UPSTREAM"], "results_rows": int(e["NEXP"]),
     "best_commit": e["BEST"], "best_eval_auc": e["EVAL"], "best_holdout_auc": e["HOLD"],
+    "kept_without_holdout_auc": int(e["UNSCORED"]),
+    "integrity_flags": e["FLAGS_INTEGRITY"], "protocol_flags": e["FLAGS_PROTOCOL"],
     "memory_limit_bytes": e["MEM_MAX"], "memory_peak_bytes": e["MEM_PEAK"],
     "oom_kills": e["OOM_KILLS"],
 }, open(out / "driver-summary.json", "w"), indent=2)
@@ -291,7 +347,7 @@ log "summary: $(tr -d '\n' < "$OUT/driver-summary.json")"
 
 # delete the container only if the essentials made it out
 if [ -s "$OUT/codex-session.jsonl.gz" ] && [ -s "$OUT/driver-summary.json" ] \
-   && { [ "$STATUS" != ok ] || { [ -s "$OUT/results.tsv" ] && [ -s "$OUT/groundtruth_all.tsv" ]; }; }; then
+   && { [ "$STATUS" != ok ] || { [ -s "$OUT/results.tsv" ] && [ -s "$OUT/holdout_scores.tsv" ]; }; }; then
   docker stop "$C" > /dev/null && docker rm "$C" > /dev/null && log "container deleted"
 else
   log "NOT deleting container $C: essential files missing from $OUT"
