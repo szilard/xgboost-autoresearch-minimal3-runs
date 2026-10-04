@@ -154,7 +154,7 @@ if not args.no_git:
     def status_of(c):
         return next((r["status"] for r in rows if same(c, r["commit"])), None)
 
-    # the branch must be exactly the kept commits, in the order of results.tsv
+    # the branch holds the kept commits, in the order of results.tsv, and no discarded ones
     for c in branch:
         s = status_of(c)
         if s == "discard":

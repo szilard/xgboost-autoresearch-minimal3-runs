@@ -14,7 +14,8 @@
 #    hit means the content reached the agent
 #
 # Usage: python3 leak_check.py [session.jsonl[.gz] ...]   (default: ~/.codex/sessions)
-# (to re-check an archived run, run it where repo/ has the data and scripts)
+# (to re-check an archived run, run it in an agents3 container, after copying
+#  /opt/human-only back into the repo as run_one.sh does)
 import glob
 import gzip
 import json

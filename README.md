@@ -12,13 +12,13 @@ How a run works (the task, the agent's loop and the guardrails are described in 
 - **Agent:** currently codex, on a ChatGPT subscription (OpenAI models, at a chosen reasoning effort, e.g. `max`). It gets the prompt from the `xgboost-autoresearch-minimal3` README and then works on its own for 1 hour, enforced by the harness clock; the orchestrator only sends "go" to start and "keep going" if it stops early.
 - **Holdout check:** after the run, every kept model is scored on the holdout set (`holdout_scores.tsv`, `auc_history.png`).
 - **Validity checks:** the model and effort actually used (from the agent's session log), and two kinds of rule checks.
-  - *Integrity:* only `train.py` changed, every result comes from a harness run inside the clock, `train.py` reads no data other than `train.csv`, no flight data fetched from elsewhere, and no content of the holdout set, the eval set or the human-only scripts in the agent's commands and outputs. Runs that fail one are recorded as excluded.
-  - *Protocol:* the keep rule (never keep a lower eval AUC), discarded experiments actually reset, the clock not stopped early. Runs that break one stay valid, with a caveat.
+  - *Integrity:* nothing but `train.py` changed (the agent's own logs in `output/` aside), every kept result comes from a harness run inside the clock, `train.py` reads no data other than `train.csv`, no flight data fetched from elsewhere, and no content of the holdout set, the eval set or the human-only scripts in the agent's commands and outputs. Runs that fail one are recorded as excluded.
+  - *Protocol:* the rules of the agent's loop, such as the keep rule (never keep a lower eval AUC), discarded experiments actually reset, the clock not stopped early. Runs that break one stay valid, with a caveat.
 
   The eval/holdout gap is reported for every run.
 - **Orchestration:** by Claude Code, with the project skill `/xgb-multi <group> <model> <n-runs> [effort]`: N sequential runs of the same setup (N = 1 for a single run), each driven identically by a script, results in `run-multi/<group>/<group>-<i>/`, plus a group `results_summary.md` (with mean/sd/min/median/max over the valid runs) and `holdout_auc.tsv` (one line per run, for plots such as histograms). Claude reviews each run and writes up the results.
 
-Each run's folder has the agent's `results.tsv`, `research-log.md` and final `train.py`, the holdout scores and plot, the harness timing report, the rule checks (`checks.txt`, `leak_check.txt`), the git log, the agent's session log (gzipped, with the encrypted reasoning dropped and account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
+Each run's folder has the agent's `results.tsv` and `research-log.md`, the `train.py` of the best kept commit, the holdout scores and plot, the harness timing report, the rule checks (`checks.txt`, `leak_check.txt`), the git log, the agent's session log (gzipped, with the encrypted reasoning dropped and account ids redacted) and a `run.md` with the settings, the turns sent, the validity checks and anything notable.
 
 ## Results so far
 
