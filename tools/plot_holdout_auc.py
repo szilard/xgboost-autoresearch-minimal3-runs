@@ -79,7 +79,8 @@ def keep_path(run_dir):
     path = []
     with open(run_dir / "holdout_scores.tsv") as f:
         for n, r in enumerate(csv.DictReader(f, delimiter="\t"), 1):
-            if r["status"] == "keep" and r["holdout_auc"] not in ("", "N/A"):
+            # a kept commit whose holdout scoring failed has N/A or CRASH instead of an AUC
+            if r["status"] == "keep" and r["holdout_auc"] not in ("", "N/A", "CRASH"):
                 path.append((n, float(r["holdout_auc"])))
     return path
 
