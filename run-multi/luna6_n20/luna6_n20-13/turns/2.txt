@@ -1,0 +1,5 @@
+The experiment is complete. The harness clock stopped after **58m 36s**.
+
+- **Best:** `2c75a29` on branch `oct5`, with Eval AUC **0.6816** (up from the 0.6743 baseline).
+- **Best speed result:** the Thanksgiving lookup kept the same AUC and reduced evaluation time from 41.7 s to 32.0 s.
+- **Logged:** 29 experiments, their outcomes, and the final summary in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

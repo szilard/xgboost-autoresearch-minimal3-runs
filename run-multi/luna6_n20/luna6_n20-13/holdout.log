@@ -1,0 +1,62 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 0b7cfb6 | discard | add Origin-Dest route category ===
+  SKIP: status discard
+=== [4] 294ecb7 | keep | one-hot splits for low-cardinality categoricals ===
+  holdout=0.6736
+=== [5] 64b28a0 | discard | add 0.8 row subsampling ===
+  SKIP: status discard
+=== [6] bb14388 | keep | 200 trees at 0.05 learning rate ===
+  holdout=0.6745
+=== [7] cee593d | discard | add scheduled departure hour category ===
+  SKIP: status discard
+=== [8] 6529309 | discard | add carrier-origin category ===
+  SKIP: status discard
+=== [9] 3d31b78 | keep | limit partition category candidates to 32 ===
+  holdout=0.6767
+=== [10] 027200b | discard | limit partition category candidates to 16 ===
+  SKIP: status discard
+=== [11] 9782e1d | discard | limit partition category candidates to 48 ===
+  SKIP: status discard
+=== [12] 8b6c3b3 | discard | limit partition category candidates to 64 ===
+  SKIP: status discard
+=== [13] 88d998e | discard | add weekend indicator ===
+  SKIP: status discard
+=== [14] 9ebaf7c | keep | max_depth 5 ===
+  holdout=0.6784
+=== [15] 742d352 | discard | max_depth 4 ===
+  SKIP: status discard
+=== [16] 7d6c66b | discard | min_child_weight 5 ===
+  SKIP: status discard
+=== [17] 0244b01 | discard | min_child_weight 2 (tie; no simplification) ===
+  SKIP: status discard
+=== [18] 74aefe6 | discard | add two-hour departure block ===
+  SKIP: status discard
+=== [19] a92824a | discard | add night flight indicator ===
+  SKIP: status discard
+=== [20] 15140a6 | discard | partition day-of-month categories ===
+  SKIP: status discard
+=== [21] 37b2e8d | discard | increase estimators to 300 ===
+  SKIP: status discard
+=== [22] ad1d860 | keep | colsample_bytree 0.8 ===
+  holdout=0.6800
+=== [23] c2de381 | keep | add Thanksgiving travel window ===
+  holdout=0.6797
+=== [24] 2c75a29 | keep | optimize Thanksgiving window lookup ===
+  holdout=0.6797
+=== [25] 9f9b867 | discard | add cyclical departure time features ===
+  SKIP: status discard
+=== [26] 1c9a425 | discard | increase L2 regularization ===
+  SKIP: status discard
+=== [27] 1a381b4 | discard | add Presidents Day travel window ===
+  SKIP: status discard
+=== [28] 85b113e | discard | increase feature subsampling ===
+  SKIP: status discard
+=== [29] 807704d | discard | try milder feature subsampling ===
+  SKIP: status discard
+=== [30] e14d4fe | discard | reduce boosting rounds to 150 ===
+  SKIP: status discard
+=== [31] cad6c87 | discard | prune low-gain tree splits ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

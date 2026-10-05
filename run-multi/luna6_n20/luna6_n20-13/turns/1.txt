@@ -1,0 +1,7 @@
+Setup is ready:
+
+- Created branch `oct5` from the current `HEAD`.
+- Confirmed `data/train.csv` and `data/eval.csv` exist.
+- Created `output/results.tsv` with the required header.
+
+I haven’t started the experiment clock. Confirm when you’re ready to begin.

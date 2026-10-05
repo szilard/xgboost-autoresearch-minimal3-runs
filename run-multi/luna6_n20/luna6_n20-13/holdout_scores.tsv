@@ -1,0 +1,31 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+0b7cfb6	discard	add Origin-Dest route category	0.6667	N/A
+294ecb7	keep	one-hot splits for low-cardinality categoricals	0.6760	0.6736
+64b28a0	discard	add 0.8 row subsampling	0.6753	N/A
+bb14388	keep	200 trees at 0.05 learning rate	0.6766	0.6745
+cee593d	discard	add scheduled departure hour category	0.6762	N/A
+6529309	discard	add carrier-origin category	0.6718	N/A
+3d31b78	keep	limit partition category candidates to 32	0.6790	0.6767
+027200b	discard	limit partition category candidates to 16	0.6779	N/A
+9782e1d	discard	limit partition category candidates to 48	0.6782	N/A
+8b6c3b3	discard	limit partition category candidates to 64	0.6766	N/A
+88d998e	discard	add weekend indicator	0.6789	N/A
+9ebaf7c	keep	max_depth 5	0.6805	0.6784
+742d352	discard	max_depth 4	0.6800	N/A
+7d6c66b	discard	min_child_weight 5	0.6800	N/A
+0244b01	discard	min_child_weight 2 (tie; no simplification)	0.6805	N/A
+74aefe6	discard	add two-hour departure block	0.6804	N/A
+a92824a	discard	add night flight indicator	0.6800	N/A
+15140a6	discard	partition day-of-month categories	0.6769	N/A
+37b2e8d	discard	increase estimators to 300	0.6798	N/A
+ad1d860	keep	colsample_bytree 0.8	0.6815	0.6800
+c2de381	keep	add Thanksgiving travel window	0.6816	0.6797
+2c75a29	keep	optimize Thanksgiving window lookup	0.6816	0.6797
+9f9b867	discard	add cyclical departure time features	0.6806	N/A
+1c9a425	discard	increase L2 regularization	0.6802	N/A
+1a381b4	discard	add Presidents Day travel window	0.6813	N/A
+85b113e	discard	increase feature subsampling	0.6812	N/A
+807704d	discard	try milder feature subsampling	0.6809	N/A
+e14d4fe	discard	reduce boosting rounds to 150	0.6811	N/A
+cad6c87	discard	prune low-gain tree splits	0.6816	N/A

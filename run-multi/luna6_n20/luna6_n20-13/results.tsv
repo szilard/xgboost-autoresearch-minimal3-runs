@@ -1,0 +1,31 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+0b7cfb6	0.6667	discard	add Origin-Dest route category
+294ecb7	0.6760	keep	one-hot splits for low-cardinality categoricals
+64b28a0	0.6753	discard	add 0.8 row subsampling
+bb14388	0.6766	keep	200 trees at 0.05 learning rate
+cee593d	0.6762	discard	add scheduled departure hour category
+6529309	0.6718	discard	add carrier-origin category
+3d31b78	0.6790	keep	limit partition category candidates to 32
+027200b	0.6779	discard	limit partition category candidates to 16
+9782e1d	0.6782	discard	limit partition category candidates to 48
+8b6c3b3	0.6766	discard	limit partition category candidates to 64
+88d998e	0.6789	discard	add weekend indicator
+9ebaf7c	0.6805	keep	max_depth 5
+742d352	0.6800	discard	max_depth 4
+7d6c66b	0.6800	discard	min_child_weight 5
+0244b01	0.6805	discard	min_child_weight 2 (tie; no simplification)
+74aefe6	0.6804	discard	add two-hour departure block
+a92824a	0.6800	discard	add night flight indicator
+15140a6	0.6769	discard	partition day-of-month categories
+37b2e8d	0.6798	discard	increase estimators to 300
+ad1d860	0.6815	keep	colsample_bytree 0.8
+c2de381	0.6816	keep	add Thanksgiving travel window
+2c75a29	0.6816	keep	optimize Thanksgiving window lookup
+9f9b867	0.6806	discard	add cyclical departure time features
+1c9a425	0.6802	discard	increase L2 regularization
+1a381b4	0.6813	discard	add Presidents Day travel window
+85b113e	0.6812	discard	increase feature subsampling
+807704d	0.6809	discard	try milder feature subsampling
+e14d4fe	0.6811	discard	reduce boosting rounds to 150
+cad6c87	0.6816	discard	prune low-gain tree splits
