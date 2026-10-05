@@ -1,0 +1,39 @@
+2026-10-05T09:57:46Z run luna6_n20-3: model=gpt-6-luna effort=max out=/home/ubuntu/xgb_ar3/xgboost-autoresearch-minimal3-runs/run-multi/luna6_n20/luna6_n20-3
+2026-10-05T09:57:46Z container started
+2026-10-05T09:57:46Z memory limit: 25769803776 bytes (24g requested, no swap)
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Oct  4 19:29 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Oct  4 21:03 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Oct  4 19:29 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+b15ec66 xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+README.md
+data
+harness.py
+program.md
+train.py
+2026-10-05T09:57:46Z setup check: python3 train.py
+2026-10-05T09:58:19Z setup check: Eval AUC: 0.6743
+2026-10-05T09:58:19Z time budget: 3600 s; packages: cloudpickle==3.1.2 numpy==2.5.3 pandas==3.0.6 scikit-learn==1.9.1 xgboost==3.4.1 
+Logged in using ChatGPT
+2026-10-05T09:58:20Z reasoning levels for gpt-6-luna: low medium high xhigh max
+2026-10-05T09:58:20Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-10-05T09:59:19Z session id: 01a10b80-0273-76b0-b5db-5c90e553e913
+2026-10-05T09:59:19Z turn 1 done (exit 0): The preflight looks good: `oct5` is available, both data files exist, the working tree is clean on `main`, and the experiment clock isn’t running. I’ve read `train.py` and `harness.py`; `output/` doesn’t exist yet.  `program.md` says we need to agree on the run tag before creating the branch. I’ve proposed `oct5`; once you confirm, I’ll create the branch and initialize `output/results.ts
+2026-10-05T09:59:19Z turn_context: [('gpt-6-luna', 'max', 'never', 'danger-full-access')]
+2026-10-05T09:59:20Z clock: Clock not started 
+2026-10-05T09:59:20Z turn 2 send: go
+2026-10-05T10:58:55Z turn 2 done (exit 0): Setup and the experiment run are complete on branch `oct5`. The best checkpoint is `9c46a06`, with Eval AUC **0.6820** versus the **0.6743** baseline. The final model uses an equal soft vote, with `subsample=0.8` and `colsample_bytree=0.4` on its secondary booster. The `0.3` setting scored lower, at `0.6817`.  The configuration is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py);
+2026-10-05T10:58:56Z clock: Elapsed: 0h58m37s, remaining: 0h01m23s Clock stopped 
+2026-10-05T10:58:58Z final clock: Elapsed: 0h58m37s, remaining: 0h01m23s Clock stopped 
+2026-10-05T10:58:59Z memory: peak=12520439808 bytes, oom_kills=0
+2026-10-05T10:58:59Z report: Clock:        2026-10-05 09:59:57 -> 2026-10-05 10:58:35 Total:        0h58m37s XGBoost runs: 0h18m48s  32.1%   (29 runs: 29 ok, 0 crash, 0 training timeout, 0 eval timeout)   training:   0h00m56s   1.6%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h17m52s  30.5%   (saving the artifact + row-by-row scoring of eval.csv) AI:           0h39m49s  67.9%   (everything else: token generation, tool calls, web research, API latency) 
+2026-10-05T10:59:00Z checks: integrity flags: none; protocol flags: none
+2026-10-05T10:59:00Z human/score_holdout_all.sh
+eval_auc: max=0.6820 at n=28
+holdout_auc: max=0.6803 at n=28
+2026-10-05T11:05:40Z branch=oct5 first=b15ec66f306812020bf48c0fc4fc83e50cb24ce1 best=9c46a06 upstream: xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+2026-10-05T11:05:41Z .codex-session-raw.jsonl: 3.7 MB -> codex-session.jsonl.gz: 0.40 MB (2595 lines, 2 account id(s) redacted)
+2026-10-05T11:05:41Z redacted 2 account id(s) in .codex-session-raw.jsonl
+2026-10-05T11:05:41Z summary: {  "container": "luna6_n20-3",  "status": "ok",  "reason": "",  "model": "gpt-6-luna",  "effort": "max",  "codex_version": "codex-cli 0.160.0",  "turn_context": "[('gpt-6-luna', 'max', 'never', 'danger-full-access')]",  "session_id": "01a10b80-0273-76b0-b5db-5c90e553e913",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go"  ],  "failed_turns": 0,  "retry_wait_s": 0,  "clock_stopped_by": "agent",  "time_budget_s": 3600,  "clock_elapsed_s": 3517,  "clock_remaining_s": 83,  "branch": "oct5",  "first_commit": "b15ec66f306812020bf48c0fc4fc83e50cb24ce1",  "upstream": "xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62",  "results_rows": 29,  "best_commit": "9c46a06",  "best_eval_auc": "0.6820",  "best_holdout_auc": "0.6803",  "kept_without_holdout_auc": 0,  "integrity_flags": "none",  "protocol_flags": "none",  "memory_limit_bytes": "25769803776",  "memory_peak_bytes": "12520439808",  "oom_kills": "0"}
+2026-10-05T11:05:51Z container deleted

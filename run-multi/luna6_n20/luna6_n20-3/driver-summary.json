@@ -1,0 +1,33 @@
+{
+  "container": "luna6_n20-3",
+  "status": "ok",
+  "reason": "",
+  "model": "gpt-6-luna",
+  "effort": "max",
+  "codex_version": "codex-cli 0.160.0",
+  "turn_context": "[('gpt-6-luna', 'max', 'never', 'danger-full-access')]",
+  "session_id": "01a10b80-0273-76b0-b5db-5c90e553e913",
+  "turns": [
+    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",
+    "go"
+  ],
+  "failed_turns": 0,
+  "retry_wait_s": 0,
+  "clock_stopped_by": "agent",
+  "time_budget_s": 3600,
+  "clock_elapsed_s": 3517,
+  "clock_remaining_s": 83,
+  "branch": "oct5",
+  "first_commit": "b15ec66f306812020bf48c0fc4fc83e50cb24ce1",
+  "upstream": "xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62",
+  "results_rows": 29,
+  "best_commit": "9c46a06",
+  "best_eval_auc": "0.6820",
+  "best_holdout_auc": "0.6803",
+  "kept_without_holdout_auc": 0,
+  "integrity_flags": "none",
+  "protocol_flags": "none",
+  "memory_limit_bytes": "25769803776",
+  "memory_peak_bytes": "12520439808",
+  "oom_kills": "0"
+}

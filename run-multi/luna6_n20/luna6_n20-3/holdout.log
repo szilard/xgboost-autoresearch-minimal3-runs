@@ -1,0 +1,60 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] fce6a43 | discard | add directed route category ===
+  SKIP: status discard
+=== [4] 8b2207d | keep | max_depth 4 (from 6) ===
+  holdout=0.6771
+=== [5] 3a22022 | discard | max_depth 5 ===
+  SKIP: status discard
+=== [6] 4405026 | keep | lr 0.05, 200 trees at depth 4 ===
+  holdout=0.6787
+=== [7] a063c5e | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [8] 4ad189f | discard | min_child_weight 5 ===
+  SKIP: status discard
+=== [9] 57ded51 | discard | gamma 1 (tie, no simplification) ===
+  SKIP: status discard
+=== [10] d60e858 | keep | add cyclic scheduled departure time features ===
+  holdout=0.6787
+=== [11] 36d30c8 | discard | add cyclic day-of-week features (tie, slower) ===
+  SKIP: status discard
+=== [12] 0309879 | discard | add cyclic month features (tie, slower) ===
+  SKIP: status discard
+=== [13] 6ee3549 | keep | add smoothed Origin target-rate lookup ===
+  holdout=0.6782
+=== [14] de9c622 | discard | add smoothed Dest target-rate lookup ===
+  SKIP: status discard
+=== [15] 965fc0d | discard | add smoothed Carrier target-rate lookup (tie, slower) ===
+  SKIP: status discard
+=== [16] ee81560 | discard | max_depth 3 ===
+  SKIP: status discard
+=== [17] dcfd768 | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [18] 548873a | discard | add CarrierDaypart interaction ===
+  SKIP: status discard
+=== [19] ce5366b | discard | origin-rate smoothing 200 ===
+  SKIP: status discard
+=== [20] 87914ba | discard | origin-rate smoothing 1000 ===
+  SKIP: status discard
+=== [21] 51b2f09 | keep | 3:1 soft vote of 200-tree and 100-tree depth-4 models ===
+  holdout=0.6785
+=== [22] dda8278 | discard | uniform soft-vote weights ===
+  SKIP: status discard
+=== [23] 50405ab | keep | 3:1 vote of full-data and stochastic depth-4 boosters ===
+  holdout=0.6788
+=== [24] 7ba26a8 | keep | equal-weight vote of full-data and subsampled depth-4 boosters ===
+  holdout=0.6791
+=== [25] ca2e0c1 | discard | secondary subsample 0.6 (tie, no simplification) ===
+  SKIP: status discard
+=== [26] f7e1bb7 | discard | secondary subsample 0.9 ===
+  SKIP: status discard
+=== [27] b456438 | keep | equal-weight ensemble with secondary row/column sampling at 0.8 ===
+  holdout=0.6792
+=== [28] b063047 | keep | equal-weight ensemble, secondary row sample 0.8 and column sample 0.6 ===
+  holdout=0.6796
+=== [29] 9c46a06 | keep | equal-weight ensemble, secondary row sample 0.8 and column sample 0.4 ===
+  holdout=0.6803
+=== [30] 2b4a23e | discard | equal-weight ensemble, secondary row sample 0.8 and column sample 0.3 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

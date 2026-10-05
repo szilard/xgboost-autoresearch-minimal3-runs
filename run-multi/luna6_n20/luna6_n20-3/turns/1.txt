@@ -1,0 +1,3 @@
+The preflight looks good: `oct5` is available, both data files exist, the working tree is clean on `main`, and the experiment clock isn’t running. I’ve read `train.py` and `harness.py`; `output/` doesn’t exist yet.
+
+`program.md` says we need to agree on the run tag before creating the branch. I’ve proposed `oct5`; once you confirm, I’ll create the branch and initialize `output/results.tsv`. I’ll leave the experiment clock stopped until you confirm the setup is ready to go.

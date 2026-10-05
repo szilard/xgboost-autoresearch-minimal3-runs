@@ -1,0 +1,102 @@
+commit 9c46a06b5ddddd2b4837d05600e7096489b9c7a7
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:55:03 2026 +0000
+
+    Test stronger secondary column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b063047f467dc7f2f0280e93aebf93fe26ca92be
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:52:59 2026 +0000
+
+    Test stronger secondary column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b4564387802da7c51ed869077e57d23a5155f0c3
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:51:34 2026 +0000
+
+    Add secondary feature sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7ba26a836229176aed8fabe61586d330f4f20dc8
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:46:44 2026 +0000
+
+    Balance stochastic ensemble weights
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 50405abaaa17bc417834a0834d71482aed9a642e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:45:17 2026 +0000
+
+    Add stochastic secondary booster
+
+ train.py | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 51b2f094f811c1047aa2a3e36ae76c9cfde4c7cc
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:41:28 2026 +0000
+
+    Ensemble fast and slow XGBoost
+
+ train.py | 30 +++++++++++++++++++++++-------
+ 1 file changed, 23 insertions(+), 7 deletions(-)
+
+commit 6ee3549ea115369e08378a0398985a053cdf0f03
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:25:23 2026 +0000
+
+    Add smoothed origin delay rate
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit d60e85875cd0f717e71679ad9777906d547a6805
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:14:17 2026 +0000
+
+    Add cyclic departure time features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 44050268285ab3807116182177f310f65ddad8f8
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:07:37 2026 +0000
+
+    Try lower XGBoost learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8b2207d987e489c463e2bdd08b4f395b94247b87
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 10:04:45 2026 +0000
+
+    Try shallower XGBoost trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

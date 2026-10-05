@@ -1,0 +1,30 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+fce6a43	discard	add directed route category	0.6667	N/A
+8b2207d	keep	max_depth 4 (from 6)	0.6789	0.6771
+3a22022	discard	max_depth 5	0.6777	N/A
+4405026	keep	lr 0.05, 200 trees at depth 4	0.6800	0.6787
+a063c5e	discard	subsample 0.8	0.6793	N/A
+4ad189f	discard	min_child_weight 5	0.6799	N/A
+57ded51	discard	gamma 1 (tie, no simplification)	0.6800	N/A
+d60e858	keep	add cyclic scheduled departure time features	0.6803	0.6787
+36d30c8	discard	add cyclic day-of-week features (tie, slower)	0.6803	N/A
+0309879	discard	add cyclic month features (tie, slower)	0.6803	N/A
+6ee3549	keep	add smoothed Origin target-rate lookup	0.6804	0.6782
+de9c622	discard	add smoothed Dest target-rate lookup	0.6803	N/A
+965fc0d	discard	add smoothed Carrier target-rate lookup (tie, slower)	0.6804	N/A
+ee81560	discard	max_depth 3	0.6797	N/A
+dcfd768	discard	add categorical departure hour	0.6797	N/A
+548873a	discard	add CarrierDaypart interaction	0.6801	N/A
+ce5366b	discard	origin-rate smoothing 200	0.6800	N/A
+87914ba	discard	origin-rate smoothing 1000	0.6797	N/A
+51b2f09	keep	3:1 soft vote of 200-tree and 100-tree depth-4 models	0.6806	0.6785
+dda8278	discard	uniform soft-vote weights	0.6805	N/A
+50405ab	keep	3:1 vote of full-data and stochastic depth-4 boosters	0.6808	0.6788
+7ba26a8	keep	equal-weight vote of full-data and subsampled depth-4 boosters	0.6809	0.6791
+ca2e0c1	discard	secondary subsample 0.6 (tie, no simplification)	0.6809	N/A
+f7e1bb7	discard	secondary subsample 0.9	0.6808	N/A
+b456438	keep	equal-weight ensemble with secondary row/column sampling at 0.8	0.6810	0.6792
+b063047	keep	equal-weight ensemble, secondary row sample 0.8 and column sample 0.6	0.6814	0.6796
+9c46a06	keep	equal-weight ensemble, secondary row sample 0.8 and column sample 0.4	0.6820	0.6803
+2b4a23e	discard	equal-weight ensemble, secondary row sample 0.8 and column sample 0.3	0.6817	N/A

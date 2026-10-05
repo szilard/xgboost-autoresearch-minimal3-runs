@@ -1,0 +1,3 @@
+Setup and the experiment run are complete on branch `oct5`. The best checkpoint is `9c46a06`, with Eval AUC **0.6820** versus the **0.6743** baseline. The final model uses an equal soft vote, with `subsample=0.8` and `colsample_bytree=0.4` on its secondary booster. The `0.3` setting scored lower, at `0.6817`.
+
+The configuration is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py); scores and the experiment summary are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The harness clock is stopped.
