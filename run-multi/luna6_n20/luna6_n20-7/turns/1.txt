@@ -1,0 +1,3 @@
+Setup is ready on branch `oct5`. Both data files are present, I’ve read `train.py` and `harness.py`, and `output/results.tsv` has the required header. The experiment clock is still stopped.
+
+I’m waiting for your confirmation before starting the one-hour run.

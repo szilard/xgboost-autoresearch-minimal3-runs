@@ -1,0 +1,3 @@
+The `oct5` experiment is complete. Best Eval AUC was **0.6813** at commit `e91e44a`, up from the `0.6743` baseline. The best model uses 200 trees, depth 4, learning rate 0.05, `colsample_bytree=0.8`, and a cross-fitted origin target rate alongside the native origin category.
+
+The branch is at the best kept commit. Results and the research log are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The experiment clock stopped at **58m32s**.

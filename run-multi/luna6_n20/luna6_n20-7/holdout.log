@@ -1,0 +1,52 @@
+=== [2] b15ec66 | keep | baseline: starter XGBClassifier ===
+  holdout=0.6725
+=== [3] aa49049 | discard | add directed Origin-Dest categorical route ===
+  SKIP: status discard
+=== [4] 322d976 | discard | add sine-cosine scheduled departure time ===
+  SKIP: status discard
+=== [5] 855b078 | keep | 200 trees at learning rate 0.05 ===
+  holdout=0.6753
+=== [6] 87783a8 | discard | increase to 300 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [7] 7224585 | keep | 200 trees, learning rate 0.05, depth 4 ===
+  holdout=0.6787
+=== [8] 6ec1b0e | discard | 200 trees, learning rate 0.05, depth 5 ===
+  SKIP: status discard
+=== [9] 4f79577 | discard | add row subsampling at 0.8 ===
+  SKIP: status discard
+=== [10] 845ac3d | keep | simplify categorical preparation (faster evaluation) ===
+  holdout=0.6787
+=== [11] 2b23ad5 | discard | set max_cat_to_onehot to 32 ===
+  SKIP: status discard
+=== [12] a753666 | discard | set min_child_weight to 5 ===
+  SKIP: status discard
+=== [13] b97b074 | discard | set max_cat_threshold to 32 ===
+  SKIP: status discard
+=== [14] dfd1a5d | keep | add cross-fitted carrier-origin-dest target rates ===
+  holdout=0.6784
+=== [15] f913aea | discard | add cross-fitted Origin-Dest target rate ===
+  SKIP: status discard
+=== [16] a98744e | keep | ablate carrier rate; retain origin and destination rates ===
+  holdout=0.6784
+=== [17] 218232c | keep | ablate destination rate; retain origin rate ===
+  holdout=0.6786
+=== [18] 7e23191 | discard | add Origin-by-4-hour target rate ===
+  SKIP: status discard
+=== [19] 7b1db57 | discard | add global 4-hour target rate ===
+  SKIP: status discard
+=== [20] c3321c8 | discard | remove native Origin, keep target rate ===
+  SKIP: status discard
+=== [21] aa6b99a | discard | add carrier target rate beside origin ===
+  SKIP: status discard
+=== [22] f881ece | discard | set TargetEncoder smooth to 50 ===
+  SKIP: status discard
+=== [23] 93495ab | discard | set gamma to 1.0 ===
+  SKIP: status discard
+=== [24] 24d9ef4 | discard | 200 trees, origin rate, depth 3 ===
+  SKIP: status discard
+=== [25] e91e44a | keep | add colsample_bytree 0.8 to origin-rate model ===
+  holdout=0.6795
+=== [26] 5b44a85 | discard | set colsample_bytree to 0.9 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

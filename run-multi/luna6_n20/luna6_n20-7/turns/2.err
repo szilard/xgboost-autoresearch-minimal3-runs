@@ -1,0 +1,8 @@
+2026-10-05T14:52:22.604825Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+    subsample=1.0,
+2026-10-05T15:10:50.843862Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+    if "__train_row_id" in df:
+        target_rates = train_oof_target_rates[df["__train_row_id"].to_numpy()]
+    else:
+        target_values = {col: df[col] for col in target_encode_cols}
+        target_rates = np.column_stack([

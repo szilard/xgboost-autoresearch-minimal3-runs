@@ -1,0 +1,26 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline: starter XGBClassifier	0.6743	0.6725
+aa49049	discard	add directed Origin-Dest categorical route	0.6667	N/A
+322d976	discard	add sine-cosine scheduled departure time	0.6734	N/A
+855b078	keep	200 trees at learning rate 0.05	0.6764	0.6753
+87783a8	discard	increase to 300 trees at learning rate 0.05	0.6743	N/A
+7224585	keep	200 trees, learning rate 0.05, depth 4	0.6800	0.6787
+6ec1b0e	discard	200 trees, learning rate 0.05, depth 5	0.6775	N/A
+4f79577	discard	add row subsampling at 0.8	0.6793	N/A
+845ac3d	keep	simplify categorical preparation (faster evaluation)	0.6800	0.6787
+2b23ad5	discard	set max_cat_to_onehot to 32	0.6793	N/A
+a753666	discard	set min_child_weight to 5	0.6799	N/A
+b97b074	discard	set max_cat_threshold to 32	0.6797	N/A
+dfd1a5d	keep	add cross-fitted carrier-origin-dest target rates	0.6802	0.6784
+f913aea	discard	add cross-fitted Origin-Dest target rate	0.6791	N/A
+a98744e	keep	ablate carrier rate; retain origin and destination rates	0.6802	0.6784
+218232c	keep	ablate destination rate; retain origin rate	0.6805	0.6786
+7e23191	discard	add Origin-by-4-hour target rate	0.6795	N/A
+7b1db57	discard	add global 4-hour target rate	0.6788	N/A
+c3321c8	discard	remove native Origin, keep target rate	0.6778	N/A
+aa6b99a	discard	add carrier target rate beside origin	0.6805	N/A
+f881ece	discard	set TargetEncoder smooth to 50	0.6801	N/A
+93495ab	discard	set gamma to 1.0	0.6803	N/A
+24d9ef4	discard	200 trees, origin rate, depth 3	0.6799	N/A
+e91e44a	keep	add colsample_bytree 0.8 to origin-rate model	0.6813	0.6795
+5b44a85	discard	set colsample_bytree to 0.9	0.6810	N/A

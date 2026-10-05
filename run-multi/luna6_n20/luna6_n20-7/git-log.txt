@@ -1,0 +1,75 @@
+commit e91e44ada9dab4c22c0e72f4918e05ab32a5b383
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:24:41 2026 +0000
+
+    Sample features per boosting tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 218232c22a62ee67f06b1e9f66602341559ba733
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:08:58 2026 +0000
+
+    Ablate destination target rate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a98744e853a30083c15a636f55ba9e2db12fe972
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:07:27 2026 +0000
+
+    Ablate carrier target rate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dfd1a5d60077a5eeafe83adf4b3eef1bd0a181e5
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:03:03 2026 +0000
+
+    Add cross-fitted categorical target rates
+
+ train.py | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+
+commit 845ac3d262a0949b8a52068fbabbcf7d8500e185
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:49:30 2026 +0000
+
+    Simplify categorical preparation
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 7224585e50929d2ade7b1edd86ea1c505f8bded8
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:42:10 2026 +0000
+
+    Reduce tree depth to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 855b0782fe8ec4b11d9bbeac7679ca95bbeb6b31
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:39:03 2026 +0000
+
+    Use more smaller boosting steps
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

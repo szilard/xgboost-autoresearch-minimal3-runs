@@ -1,0 +1,21 @@
+== results.tsv
+  25 rows: 8 keep, 17 discard, 0 crash
+  kept ties (allowed only for simpler or faster code; look at the description): 845ac3d (0.6800, after 7224585), a98744e (0.6802, after dfd1a5d)
+  kept Eval AUC: 0.6743 -> 0.6813, max 0.6813
+
+== clock and harness runs
+  25 harness runs: 25 ok, 0 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3512 s (+88 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct5: 8 commits, first b15ec66, HEAD e91e44a
+  24 commits by the agent (branch and reflog) checked for files other than train.py
+  25 artifacts, 63 MB
+  FLAG train_py_review: dfd1a5d: target_global_mean = target_encoder.target_mean_
+  FLAG train_py_review: dfd1a5d: df[col].map(target_rate_maps[col]).fillna(target_global_mean).to_numpy(dtype=np.float32)
+  FLAG train_py_review: f913aea: target_values[col].map(target_rate_maps[col]).fillna(target_global_mean).to_numpy(dtype=np.float32)
+  train.py of 24 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none
