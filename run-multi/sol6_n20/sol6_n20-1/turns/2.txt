@@ -1,0 +1,3 @@
+The `oct5` experiment is complete. Across 33 experiments, the best Eval AUC rose from **0.6743** to **0.6865** (+0.0122). The branch is at the best commit, `fa052d9`, and the clock is stopped.
+
+The final model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py). The experiment history is in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The holdout was not inspected or scored.

@@ -1,0 +1,70 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] f26673c | discard | add departure minute of day ===
+  SKIP: status discard
+=== [4] bee3302 | keep | ordered month and day-of-month ===
+  holdout=0.6776
+=== [5] 4861a20 | discard | 300 boosting rounds ===
+  SKIP: status discard
+=== [6] 72f1958 | keep | max depth four ===
+  holdout=0.6837
+=== [7] e33a92d | discard | 150 rounds at depth four ===
+  SKIP: status discard
+=== [8] 76e69bc | keep | max depth three ===
+  holdout=0.6844
+=== [9] 4989c74 | discard | max depth two ===
+  SKIP: status discard
+=== [10] 339b036 | keep | 150 rounds at depth three ===
+  holdout=0.6846
+=== [11] ca0de2b | discard | one-hot carrier and weekday splits ===
+  SKIP: status discard
+=== [12] 284dc56 | discard | origin-destination route category ===
+  SKIP: status discard
+=== [13] e0bc7ca | discard | min child weight five ===
+  SKIP: status discard
+=== [14] 1f74115 | discard | row subsample 0.8 ===
+  SKIP: status discard
+=== [15] 5a5b7c3 | discard | drop day of month ===
+  SKIP: status discard
+=== [16] e1fdcfc | keep | add numeric day of year ===
+  holdout=0.6842
+=== [17] 2217929 | discard | annual sine and cosine features ===
+  SKIP: status discard
+=== [18] be9bf3c | discard | add departure hour category ===
+  SKIP: status discard
+=== [19] 9d48eca | discard | max cat threshold sixteen ===
+  SKIP: status discard
+=== [20] ab3a784 | discard | 300 rounds at 0.05 learning rate ===
+  SKIP: status discard
+=== [21] 2ab779d | discard | reg lambda ten ===
+  SKIP: status discard
+=== [22] f2f66d7 | keep | weekday by three-hour time block ===
+  holdout=0.6844
+=== [23] 3f8f74d | discard | two-hour weekday time blocks ===
+  SKIP: status discard
+=== [24] 607b367 | discard | four-hour weekday time blocks ===
+  SKIP: status discard
+=== [25] e8f3876 | discard | departure time relative to origin median ===
+  SKIP: status discard
+=== [26] f7904b4 | discard | loss-guided eight-leaf trees ===
+  SKIP: status discard
+=== [27] 41cc6b7 | keep | 70-30 depth-three and depth-four ensemble ===
+  holdout=0.6849
+=== [28] 3407ccd | discard | equal-weight depth-three and depth-four ensemble ===
+  SKIP: status discard
+=== [29] 1523996 | discard | depth-four component alone ===
+  SKIP: status discard
+=== [30] 0465c6e | discard | carrier by weekday category ===
+  SKIP: status discard
+=== [31] e634807 | discard | add categorical month ===
+  SKIP: status discard
+=== [32] fd45163 | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [33] acea629 | discard | drop distance ===
+  SKIP: status discard
+=== [34] b21afd8 | discard | gamma one minimum split gain ===
+  SKIP: status discard
+=== [35] fa052d9 | keep | drop numeric month with day of year retained ===
+  holdout=0.6850
+
+=== DONE: results written to output/holdout_scores.tsv ===

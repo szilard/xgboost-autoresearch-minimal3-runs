@@ -1,0 +1,35 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+f26673c	discard	add departure minute of day	0.6743	N/A
+bee3302	keep	ordered month and day-of-month	0.6774	0.6776
+4861a20	discard	300 boosting rounds	0.6655	N/A
+72f1958	keep	max depth four	0.6838	0.6837
+e33a92d	discard	150 rounds at depth four	0.6827	N/A
+76e69bc	keep	max depth three	0.6848	0.6844
+4989c74	discard	max depth two	0.6811	N/A
+339b036	keep	150 rounds at depth three	0.6851	0.6846
+ca0de2b	discard	one-hot carrier and weekday splits	0.6823	N/A
+284dc56	discard	origin-destination route category	0.6756	N/A
+e0bc7ca	discard	min child weight five	0.6851	N/A
+1f74115	discard	row subsample 0.8	0.6851	N/A
+5a5b7c3	discard	drop day of month	0.6811	N/A
+e1fdcfc	keep	add numeric day of year	0.6857	0.6842
+2217929	discard	annual sine and cosine features	0.6838	N/A
+be9bf3c	discard	add departure hour category	0.6848	N/A
+9d48eca	discard	max cat threshold sixteen	0.6778	N/A
+ab3a784	discard	300 rounds at 0.05 learning rate	0.6854	N/A
+2ab779d	discard	reg lambda ten	0.6850	N/A
+f2f66d7	keep	weekday by three-hour time block	0.6862	0.6844
+3f8f74d	discard	two-hour weekday time blocks	0.6862	N/A
+607b367	discard	four-hour weekday time blocks	0.6857	N/A
+e8f3876	discard	departure time relative to origin median	0.6860	N/A
+f7904b4	discard	loss-guided eight-leaf trees	0.6859	N/A
+41cc6b7	keep	70-30 depth-three and depth-four ensemble	0.6864	0.6849
+3407ccd	discard	equal-weight depth-three and depth-four ensemble	0.6864	N/A
+1523996	discard	depth-four component alone	0.6852	N/A
+0465c6e	discard	carrier by weekday category	0.6844	N/A
+e634807	discard	add categorical month	0.6864	N/A
+fd45163	discard	512 histogram bins	0.6863	N/A
+acea629	discard	drop distance	0.6856	N/A
+b21afd8	discard	gamma one minimum split gain	0.6864	N/A
+fa052d9	keep	drop numeric month with day of year retained	0.6865	0.6850

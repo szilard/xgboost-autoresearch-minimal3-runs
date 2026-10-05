@@ -1,0 +1,2 @@
+run	best_commit	eval_auc	holdout_auc	gap	experiments	valid	flags
+sol6_n20-1	fa052d9	0.6865	0.6850	-0.0015	34	yes	

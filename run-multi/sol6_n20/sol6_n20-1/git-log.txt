@@ -1,0 +1,84 @@
+commit fa052d973e9995c295f06fde638e0ec5e4ebeacf
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:31:46 2026 +0000
+
+    Ablate month with day of year retained
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 41cc6b7acf0ee839c328eafb4aad870c1330f147
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:16:11 2026 +0000
+
+    Blend shallow and medium depth models
+
+ train.py | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
+
+commit f2f66d77e5f8f4092329530c5c37ac3327ef6808
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:05:50 2026 +0000
+
+    Add weekday and departure time block category
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit e1fdcfc12520c5c12471846c73ec6d9bf7ae059c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:55:20 2026 +0000
+
+    Add day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 339b0367544e77219baceb887dcdce330f6f620b
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:45:08 2026 +0000
+
+    Test 150 rounds with depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 76e69bc25642f4eb3968f7934dea96eb821d7024
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:42:26 2026 +0000
+
+    Test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 72f1958d7fd0d1dc932c4fb814f038db6ceeb814
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:39:26 2026 +0000
+
+    Regularize with depth four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bee33026e602abf9c53c7f6b99f31a0e1db04f12
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:36:26 2026 +0000
+
+    Treat calendar month and day as ordered features
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

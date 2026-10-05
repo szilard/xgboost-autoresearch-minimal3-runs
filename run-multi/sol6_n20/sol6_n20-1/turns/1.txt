@@ -1,0 +1,3 @@
+Setup is ready on the new `oct5` branch. Both required data files are present, `output/results.tsv` has its header, and the working tree is clean. The experiment clock has not started.
+
+Per `program.md`, please confirm **go** to start the one-hour run, or tell me if you want a different tag.

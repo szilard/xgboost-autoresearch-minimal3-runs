@@ -1,0 +1,35 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+f26673c	0.6743	discard	add departure minute of day
+bee3302	0.6774	keep	ordered month and day-of-month
+4861a20	0.6655	discard	300 boosting rounds
+72f1958	0.6838	keep	max depth four
+e33a92d	0.6827	discard	150 rounds at depth four
+76e69bc	0.6848	keep	max depth three
+4989c74	0.6811	discard	max depth two
+339b036	0.6851	keep	150 rounds at depth three
+ca0de2b	0.6823	discard	one-hot carrier and weekday splits
+284dc56	0.6756	discard	origin-destination route category
+e0bc7ca	0.6851	discard	min child weight five
+1f74115	0.6851	discard	row subsample 0.8
+5a5b7c3	0.6811	discard	drop day of month
+e1fdcfc	0.6857	keep	add numeric day of year
+2217929	0.6838	discard	annual sine and cosine features
+be9bf3c	0.6848	discard	add departure hour category
+9d48eca	0.6778	discard	max cat threshold sixteen
+ab3a784	0.6854	discard	300 rounds at 0.05 learning rate
+2ab779d	0.6850	discard	reg lambda ten
+f2f66d7	0.6862	keep	weekday by three-hour time block
+3f8f74d	0.6862	discard	two-hour weekday time blocks
+607b367	0.6857	discard	four-hour weekday time blocks
+e8f3876	0.6860	discard	departure time relative to origin median
+f7904b4	0.6859	discard	loss-guided eight-leaf trees
+41cc6b7	0.6864	keep	70-30 depth-three and depth-four ensemble
+3407ccd	0.6864	discard	equal-weight depth-three and depth-four ensemble
+1523996	0.6852	discard	depth-four component alone
+0465c6e	0.6844	discard	carrier by weekday category
+e634807	0.6864	discard	add categorical month
+fd45163	0.6863	discard	512 histogram bins
+acea629	0.6856	discard	drop distance
+b21afd8	0.6864	discard	gamma one minimum split gain
+fa052d9	0.6865	keep	drop numeric month with day of year retained
