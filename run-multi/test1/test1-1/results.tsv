@@ -1,0 +1,42 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+62b31ae	0.6743	discard	300 trees at 0.05 learning rate
+b656b2d	0.6747	keep	add departure hour category
+58dccee	0.6789	keep	depth 4 instead of 6
+9aba6ad	0.6797	keep	depth 3 instead of 4
+4431599	0.6754	discard	depth 2 instead of 3
+74712b4	0.6796	discard	depth 3 with 300 trees at 0.05
+3813c84	0.6741	discard	add origin destination route category
+999b1cf	0.6789	discard	one-hot splits for small categories
+1a0fa55	0.0000	crash	day of year initial parser did not handle c- prefix
+97717bc	0.6832	keep	add ordered day of year
+a4d724a	0.6841	keep	150 trees with calendar feature
+5f63ce7	0.6818	discard	add carrier by departure hour category
+d560601	0.6841	discard	min_child_weight 10
+f555a81	0.6831	discard	80 percent row subsampling
+65cfc3c	0.6828	discard	cyclical sine and cosine day of year
+c9471c1	0.6841	discard	origin geographic distance anchors
+3fe7dcb	0.6834	discard	200 trees with calendar feature
+5464efa	0.6828	discard	departure minute category
+0d861bd	0.6840	discard	five-minute schedule position category
+3ec537b	0.6818	discard	21-day smoothed historical seasonal risk
+fb356a2	0.6830	discard	512 histogram bins
+f0b5644	0.6769	discard	max_cat_threshold 16
+813b2e9	0.6829	discard	max_cat_threshold 128
+2e7843e	0.6843	keep	blend depth 3 and depth 4 models 75 to 25
+b491b55	0.6840	discard	equal depth 3 and depth 4 blend
+102f771	0.6842	discard	90 to 10 depth blend
+610eb42	0.6842	discard	column sample the depth 4 blend member
+13c66e9	0.6841	discard	remove departure hour from blend
+d5a21e6	0.6830	discard	remove distance from blend
+4b82d2b	0.6843	discard	DART dropout on depth 4 blend member
+bbe2370	0.6842	discard	leaf-limited best-first depth 4 member
+1c531a3	0.6835	discard	reg_lambda 100 on depth 3 member
+2983c97	0.6835	discard	reg_lambda 10 on depth 3 member
+db77365	0.6825	discard	seven-day calendar block category
+c0c96a0	0.6851	keep	treat day of month as ordered numeric
+d6b6410	0.6852	keep	treat month as ordered numeric
+69502d0	0.6835	discard	treat weekday as ordered numeric
+c9a3a97	0.6848	discard	remove depth 4 blend member
+8619c6e	0.6856	keep	remove day of year after numeric month and day
+629fd07	0.6853	discard	remove departure hour from ordered calendar blend

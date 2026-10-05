@@ -1,0 +1,90 @@
+=== [2] b15ec66 | keep | untouched baseline ===
+  holdout=0.6725
+=== [3] 2ea1229 | discard | 300 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [4] 7e6ae02 | keep | depth 4 instead of 6 ===
+  holdout=0.6771
+=== [5] 755ef12 | keep | 250 depth-4 trees at learning rate 0.05 ===
+  holdout=0.6783
+=== [6] 2f0fb94 | discard | categorical departure hour ===
+  SKIP: status discard
+=== [7] 7798338 | discard | categorical origin-destination route ===
+  SKIP: status discard
+=== [8] 9c488af | discard | min_child_weight 10 ===
+  SKIP: status discard
+=== [9] b927669 | discard | row subsample 0.8 ===
+  SKIP: status discard
+=== [10] 609e5f9 | keep | numeric day of year from month and day ===
+  holdout=0.6824
+=== [11] 9f83e37 | keep | remove day-of-month categorical predictor ===
+  holdout=0.6824
+=== [12] b42f7a5 | keep | remove month categorical predictor ===
+  holdout=0.6832
+=== [13] 2bea3eb | keep | depth 3 with ordered day of year ===
+  holdout=0.6838
+=== [14] 1292a1b | discard | depth 2 with ordered day of year ===
+  SKIP: status discard
+=== [15] d70483e | discard | twice-yearly cosine seasonality ===
+  SKIP: status discard
+=== [16] 693b6a3 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [17] c59f5f6 | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [18] 616ac71 | discard | 500 depth-3 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [19] f9f9af3 | discard | 150 depth-3 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [20] 95c61df | keep | average depth-3 and depth-4 XGBoost models ===
+  holdout=0.6843
+=== [21] d4cc93b | discard | Thanksgiving week indicator ===
+  SKIP: status discard
+=== [22] 9319dd3 | discard | 70/30 depth-3/depth-4 ensemble weights ===
+  SKIP: status discard
+=== [23] 27c8f05 | discard | remove Distance predictor ===
+  SKIP: status discard
+=== [24] daf8e49 | discard | max_bin 512 for both ensemble members ===
+  SKIP: status discard
+=== [25] 9cb8878 | discard | approx tree method for both ensemble members ===
+  SKIP: status discard
+=== [26] 0e97bba | discard | four-model hist and approx blend ===
+  SKIP: status discard
+=== [27] 281e90e | discard | one-hot carrier and weekday categories ===
+  SKIP: status discard
+=== [28] 38eb54e | discard | one-hot weekday categories only ===
+  SKIP: status discard
+=== [29] 9231ef1 | discard | loss-guided trees with 8 and 16 leaves ===
+  SKIP: status discard
+=== [30] 4fef15e | discard | blend depthwise and loss-guided trees ===
+  SKIP: status discard
+=== [31] ac20606 | keep | add 20 percent smooth logistic model to ensemble ===
+  holdout=0.6847
+=== [32] 2e31a0e | discard | increase smooth model blend weight to 40 percent ===
+  SKIP: status discard
+=== [33] 4a14f20 | discard | decrease smooth model blend weight to 10 percent ===
+  SKIP: status discard
+=== [34] e467788 | discard | log-odds pooling of three models ===
+  SKIP: status discard
+=== [35] 2d21da5 | discard | DART dropout in depth-4 member ===
+  SKIP: status discard
+=== [36] 1aa510b | discard | carrier-origin interaction category ===
+  SKIP: status discard
+=== [37] 1dc819f | discard | logistic regularization C 0.05 ===
+  SKIP: status discard
+=== [38] 28ed4b1 | keep | logistic regularization C 1.0 ===
+  holdout=0.6847
+=== [39] 972ac69 | discard | logistic regularization C 5.0 ===
+  SKIP: status discard
+=== [40] 55ffd91 | discard | convert HHMM to minutes since midnight ===
+  SKIP: status discard
+=== [41] 09f4016 | discard | remove Distance from logistic member ===
+  SKIP: status discard
+=== [42] 31176e0 | discard | fewer logistic time and calendar spline knots ===
+  SKIP: status discard
+=== [43] aceaf24 | discard | more logistic time and calendar spline knots ===
+  SKIP: status discard
+=== [44] 34d4c61 | discard | periodic day-of-year spline in logistic member ===
+  SKIP: status discard
+=== [45] 9a867a7 | discard | uniform departure-time spline knots ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

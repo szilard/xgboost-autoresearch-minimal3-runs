@@ -1,0 +1,3 @@
+The experiment is complete. Across 43 trials plus the baseline, the best Eval AUC was **0.6861**, up from **0.6743**.
+
+Branch `oct4` is at best commit `28ed4b1`. The final model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py); the [results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) record the trials and findings. The experiment clock is stopped.

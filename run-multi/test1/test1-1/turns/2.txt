@@ -1,0 +1,5 @@
+The `oct4` experiment is complete. The clock stopped after **58m30s**, and the branch is at the best commit, `8619c6e`.
+
+Best Eval AUC: **0.6856**, up from the 0.6743 baseline (+0.0113). The kept model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py). The holdout set was not accessed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

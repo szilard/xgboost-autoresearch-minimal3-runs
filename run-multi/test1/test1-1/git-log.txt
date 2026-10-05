@@ -1,0 +1,93 @@
+commit 8619c6e7670b016313aef48f389a7b7f4591472b
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:05:46 2026 +0000
+
+    Ablate day of year after numeric calendar encoding
+
+ train.py | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit d6b64106da7bf8e7031729ab79a962ceb94e1d75
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:01:52 2026 +0000
+
+    Treat month as ordered numeric
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit c0c96a0512caa9173398fd9729ccb2defb39e8d9
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:00:20 2026 +0000
+
+    Treat day of month as ordered numeric
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 2e7843e649fc95f969ea727ff428ab5655b1ff1b
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:44:16 2026 +0000
+
+    Blend complementary XGBoost tree depths
+
+ train.py | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
+
+commit a4d724a7f3643c72c66669958ed7736f4baa0c5b
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:22:10 2026 +0000
+
+    Test 150 trees with calendar feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 97717bca4598f3b4734e840d543db055bb342627
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:20:26 2026 +0000
+
+    Add ordered day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 9aba6ad252cbfee68d77b9f5524932e5eaf69ef3
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:14:27 2026 +0000
+
+    Test depth-three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 58dccee2e4031598653f76898fcfc43410ec9737
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:13:33 2026 +0000
+
+    Test shallower trees for year transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b656b2d81136402f79607aed9353fef3c40c05e8
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:12:32 2026 +0000
+
+    Add scheduled departure hour category
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

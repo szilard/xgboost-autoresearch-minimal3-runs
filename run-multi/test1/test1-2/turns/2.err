@@ -1,0 +1,2 @@
+2026-10-04T23:03:41.179748Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv:
+21993e0	0.6892	keep	origin-hour one-hot feature in logistic branch

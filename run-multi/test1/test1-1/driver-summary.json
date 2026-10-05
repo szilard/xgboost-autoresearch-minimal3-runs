@@ -1,0 +1,31 @@
+{
+  "container": "test1-1",
+  "status": "ok",
+  "reason": "",
+  "model": "gpt-6-sol",
+  "effort": "max",
+  "codex_version": "codex-cli 0.160.0",
+  "turn_context": "[('gpt-6-sol', 'max', 'never', 'danger-full-access')]",
+  "session_id": "01a108be-9601-78e3-a11b-1dad7f1acf10",
+  "turns": [
+    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",
+    "go"
+  ],
+  "clock_stopped_by": "agent",
+  "time_budget_s": 3600,
+  "clock_elapsed_s": 3510,
+  "clock_remaining_s": 90,
+  "branch": "oct4",
+  "first_commit": "b15ec66f306812020bf48c0fc4fc83e50cb24ce1",
+  "upstream": "xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62",
+  "results_rows": 41,
+  "best_commit": "8619c6e",
+  "best_eval_auc": "0.6856",
+  "best_holdout_auc": "0.6847",
+  "kept_without_holdout_auc": 0,
+  "integrity_flags": "none",
+  "protocol_flags": "none",
+  "memory_limit_bytes": "25769803776",
+  "memory_peak_bytes": "12510085120",
+  "oom_kills": "0"
+}

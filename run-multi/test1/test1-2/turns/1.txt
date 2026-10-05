@@ -1,0 +1,3 @@
+The setup checks passed: the working tree is clean, both required data files are present, and `output/results.tsv` has its header. The experiment clock has not started.
+
+`program.md` requires us to agree on a run tag before creating the branch. **`oct4` is available**. Confirm that tag or give me another, and I’ll create the branch and finish setup.

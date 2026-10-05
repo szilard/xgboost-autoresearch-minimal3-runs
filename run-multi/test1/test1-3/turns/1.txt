@@ -1,0 +1,3 @@
+Setup checks passed: the data files and required packages are present, and [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) has its header. The experiment clock has not started.
+
+I propose **`oct4`** for the new branch; that name is unused. Please confirm the tag, and I’ll create the branch to finish setup.

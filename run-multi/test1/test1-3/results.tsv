@@ -1,0 +1,45 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	untouched baseline
+2ea1229	0.6743	discard	300 trees at learning rate 0.05
+7e6ae02	0.6789	keep	depth 4 instead of 6
+755ef12	0.6798	keep	250 depth-4 trees at learning rate 0.05
+2f0fb94	0.6795	discard	categorical departure hour
+7798338	0.6709	discard	categorical origin-destination route
+9c488af	0.6794	discard	min_child_weight 10
+b927669	0.6797	discard	row subsample 0.8
+609e5f9	0.6832	keep	numeric day of year from month and day
+9f83e37	0.6834	keep	remove day-of-month categorical predictor
+b42f7a5	0.6846	keep	remove month categorical predictor
+2bea3eb	0.6849	keep	depth 3 with ordered day of year
+1292a1b	0.6823	discard	depth 2 with ordered day of year
+d70483e	0.6838	discard	twice-yearly cosine seasonality
+693b6a3	0.6833	discard	max_cat_threshold 32
+c59f5f6	0.6843	discard	max_cat_threshold 128
+616ac71	0.6839	discard	500 depth-3 trees at learning rate 0.05
+f9f9af3	0.6842	discard	150 depth-3 trees at learning rate 0.05
+95c61df	0.6855	keep	average depth-3 and depth-4 XGBoost models
+d4cc93b	0.6855	discard	Thanksgiving week indicator
+9319dd3	0.6855	discard	70/30 depth-3/depth-4 ensemble weights
+27c8f05	0.6847	discard	remove Distance predictor
+daf8e49	0.6851	discard	max_bin 512 for both ensemble members
+9cb8878	0.6853	discard	approx tree method for both ensemble members
+0e97bba	0.6855	discard	four-model hist and approx blend
+281e90e	0.6826	discard	one-hot carrier and weekday categories
+38eb54e	0.6838	discard	one-hot weekday categories only
+9231ef1	0.6847	discard	loss-guided trees with 8 and 16 leaves
+4fef15e	0.6854	discard	blend depthwise and loss-guided trees
+ac20606	0.6860	keep	add 20 percent smooth logistic model to ensemble
+2e31a0e	0.6855	discard	increase smooth model blend weight to 40 percent
+4a14f20	0.6859	discard	decrease smooth model blend weight to 10 percent
+e467788	0.6860	discard	log-odds pooling of three models
+2d21da5	0.6857	discard	DART dropout in depth-4 member
+1aa510b	0.6825	discard	carrier-origin interaction category
+1dc819f	0.6859	discard	logistic regularization C 0.05
+28ed4b1	0.6861	keep	logistic regularization C 1.0
+972ac69	0.6861	discard	logistic regularization C 5.0
+55ffd91	0.6861	discard	convert HHMM to minutes since midnight
+09f4016	0.6860	discard	remove Distance from logistic member
+31176e0	0.6860	discard	fewer logistic time and calendar spline knots
+aceaf24	0.6861	discard	more logistic time and calendar spline knots
+34d4c61	0.6857	discard	periodic day-of-year spline in logistic member
+9a867a7	0.6861	discard	uniform departure-time spline knots

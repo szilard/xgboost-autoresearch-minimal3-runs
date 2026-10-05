@@ -1,0 +1,4 @@
+run	best_commit	eval_auc	holdout_auc	gap	experiments	valid	flags
+test1-1	8619c6e	0.6856	0.6847	-0.0009	41	yes	
+test1-2	21993e0	0.6892	0.6874	-0.0018	37	no	3 consecutive turns did not complete (OpenAI model at capacity)
+test1-3	28ed4b1	0.6861	0.6847	-0.0014	44	yes	

@@ -1,0 +1,84 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 62b31ae | discard | 300 trees at 0.05 learning rate ===
+  SKIP: status discard
+=== [4] b656b2d | keep | add departure hour category ===
+  holdout=0.6735
+=== [5] 58dccee | keep | depth 4 instead of 6 ===
+  holdout=0.6773
+=== [6] 9aba6ad | keep | depth 3 instead of 4 ===
+  holdout=0.6784
+=== [7] 4431599 | discard | depth 2 instead of 3 ===
+  SKIP: status discard
+=== [8] 74712b4 | discard | depth 3 with 300 trees at 0.05 ===
+  SKIP: status discard
+=== [9] 3813c84 | discard | add origin destination route category ===
+  SKIP: status discard
+=== [10] 999b1cf | discard | one-hot splits for small categories ===
+  SKIP: status discard
+=== [11] 1a0fa55 | crash | day of year initial parser did not handle c- prefix ===
+  SKIP: status crash
+=== [12] 97717bc | keep | add ordered day of year ===
+  holdout=0.6823
+=== [13] a4d724a | keep | 150 trees with calendar feature ===
+  holdout=0.6831
+=== [14] 5f63ce7 | discard | add carrier by departure hour category ===
+  SKIP: status discard
+=== [15] d560601 | discard | min_child_weight 10 ===
+  SKIP: status discard
+=== [16] f555a81 | discard | 80 percent row subsampling ===
+  SKIP: status discard
+=== [17] 65cfc3c | discard | cyclical sine and cosine day of year ===
+  SKIP: status discard
+=== [18] c9471c1 | discard | origin geographic distance anchors ===
+  SKIP: status discard
+=== [19] 3fe7dcb | discard | 200 trees with calendar feature ===
+  SKIP: status discard
+=== [20] 5464efa | discard | departure minute category ===
+  SKIP: status discard
+=== [21] 0d861bd | discard | five-minute schedule position category ===
+  SKIP: status discard
+=== [22] 3ec537b | discard | 21-day smoothed historical seasonal risk ===
+  SKIP: status discard
+=== [23] fb356a2 | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [24] f0b5644 | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [25] 813b2e9 | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [26] 2e7843e | keep | blend depth 3 and depth 4 models 75 to 25 ===
+  holdout=0.6834
+=== [27] b491b55 | discard | equal depth 3 and depth 4 blend ===
+  SKIP: status discard
+=== [28] 102f771 | discard | 90 to 10 depth blend ===
+  SKIP: status discard
+=== [29] 610eb42 | discard | column sample the depth 4 blend member ===
+  SKIP: status discard
+=== [30] 13c66e9 | discard | remove departure hour from blend ===
+  SKIP: status discard
+=== [31] d5a21e6 | discard | remove distance from blend ===
+  SKIP: status discard
+=== [32] 4b82d2b | discard | DART dropout on depth 4 blend member ===
+  SKIP: status discard
+=== [33] bbe2370 | discard | leaf-limited best-first depth 4 member ===
+  SKIP: status discard
+=== [34] 1c531a3 | discard | reg_lambda 100 on depth 3 member ===
+  SKIP: status discard
+=== [35] 2983c97 | discard | reg_lambda 10 on depth 3 member ===
+  SKIP: status discard
+=== [36] db77365 | discard | seven-day calendar block category ===
+  SKIP: status discard
+=== [37] c0c96a0 | keep | treat day of month as ordered numeric ===
+  holdout=0.6838
+=== [38] d6b6410 | keep | treat month as ordered numeric ===
+  holdout=0.6845
+=== [39] 69502d0 | discard | treat weekday as ordered numeric ===
+  SKIP: status discard
+=== [40] c9a3a97 | discard | remove depth 4 blend member ===
+  SKIP: status discard
+=== [41] 8619c6e | keep | remove day of year after numeric month and day ===
+  holdout=0.6847
+=== [42] 629fd07 | discard | remove departure hour from ordered calendar blend ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

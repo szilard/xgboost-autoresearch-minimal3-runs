@@ -1,0 +1,3 @@
+Setup is complete on the new `oct4` branch. Both required data files are present, `output/results.tsv` has its header, and the experiment clock has not started. `train.py` is unchanged and ready for the baseline run.
+
+Say **go** when you’re ready for the one-hour experiment.

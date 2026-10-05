@@ -1,0 +1,76 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 9149f7e | keep | add categorical departure hour ===
+  holdout=0.6735
+=== [4] 0bb0fa7 | discard | increase to 300 boosting rounds ===
+  SKIP: status discard
+=== [5] 06ea12b | keep | reduce to 50 boosting rounds ===
+  holdout=0.6754
+=== [6] b9608c0 | keep | reduce to 25 boosting rounds ===
+  holdout=0.6762
+=== [7] f562569 | discard | reduce to 10 boosting rounds ===
+  SKIP: status discard
+=== [8] cf3f678 | keep | 100 depth-3 trees ===
+  holdout=0.6784
+=== [9] ae80b47 | discard | 200 depth-3 trees ===
+  SKIP: status discard
+=== [10] 118f064 | discard | 200 depth-2 trees ===
+  SKIP: status discard
+=== [11] b78557b | discard | 50 depth-4 trees ===
+  SKIP: status discard
+=== [12] 2f86dc7 | discard | one-hot splits for small categories ===
+  SKIP: status discard
+=== [13] d04fc95 | discard | add origin-destination route category ===
+  SKIP: status discard
+=== [14] 623c924 | keep | add numeric day of year ===
+  holdout=0.6823
+=== [15] 63c7ff8 | keep | remove day of month category ===
+  holdout=0.6828
+=== [16] 6bae803 | keep | remove month category ===
+  holdout=0.6837
+=== [17] 3e13506 | discard | remove departure hour category ===
+  SKIP: status discard
+=== [18] 894716b | discard | replace hour with half-hour category ===
+  SKIP: status discard
+=== [19] e237958 | discard | row subsample 0.8 ===
+  SKIP: status discard
+=== [20] 8699218 | discard | limit categorical split to 16 categories ===
+  SKIP: status discard
+=== [21] 0fc27c1 | keep | add annual cosine feature ===
+  holdout=0.6837
+=== [22] b6193e3 | discard | add annual sine feature ===
+  SKIP: status discard
+=== [23] ea82302 | keep | blend 75% XGBoost 25% logistic ===
+  holdout=0.6852
+=== [24] 27356fa | discard | blend 50% XGBoost 50% logistic ===
+  SKIP: status discard
+=== [25] d867ae2 | discard | blend 90% XGBoost 10% logistic ===
+  SKIP: status discard
+=== [26] 3ace5d7 | discard | periodic seasonal spline in logistic branch ===
+  SKIP: status discard
+=== [27] e4082b7 | discard | 200 rounds at learning rate 0.05; equal AUC but slower ===
+  SKIP: status discard
+=== [28] f3ded52 | discard | minimum child weight 50 ===
+  SKIP: status discard
+=== [29] 4d2dff3 | keep | route one-hot feature in logistic branch only ===
+  holdout=0.6862
+=== [30] 348dae0 | keep | carrier-origin one-hot feature in logistic branch ===
+  holdout=0.6868
+=== [31] d468113 | keep | carrier-hour one-hot feature in logistic branch ===
+  holdout=0.6870
+=== [32] 25eb20a | discard | carrier-destination one-hot feature in logistic branch ===
+  SKIP: status discard
+=== [33] d79a56c | keep | logistic regularization C 0.1 ===
+  holdout=0.6869
+=== [34] 7c0b013 | discard | logistic regularization C 0.01 ===
+  SKIP: status discard
+=== [35] 36e0681 | keep | simplify categorical conversion at equal AUC ===
+  holdout=0.6869
+=== [36] bad1485 | discard | month one-hot in logistic branch only ===
+  SKIP: status discard
+=== [37] 21993e0 | keep | origin-hour one-hot feature in logistic branch ===
+  holdout=0.6874
+=== [38] fbf17b7 | discard | XGBoost column subsample 0.8 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

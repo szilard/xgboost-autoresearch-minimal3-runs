@@ -1,0 +1,45 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	untouched baseline	0.6743	0.6725
+2ea1229	discard	300 trees at learning rate 0.05	0.6743	N/A
+7e6ae02	keep	depth 4 instead of 6	0.6789	0.6771
+755ef12	keep	250 depth-4 trees at learning rate 0.05	0.6798	0.6783
+2f0fb94	discard	categorical departure hour	0.6795	N/A
+7798338	discard	categorical origin-destination route	0.6709	N/A
+9c488af	discard	min_child_weight 10	0.6794	N/A
+b927669	discard	row subsample 0.8	0.6797	N/A
+609e5f9	keep	numeric day of year from month and day	0.6832	0.6824
+9f83e37	keep	remove day-of-month categorical predictor	0.6834	0.6824
+b42f7a5	keep	remove month categorical predictor	0.6846	0.6832
+2bea3eb	keep	depth 3 with ordered day of year	0.6849	0.6838
+1292a1b	discard	depth 2 with ordered day of year	0.6823	N/A
+d70483e	discard	twice-yearly cosine seasonality	0.6838	N/A
+693b6a3	discard	max_cat_threshold 32	0.6833	N/A
+c59f5f6	discard	max_cat_threshold 128	0.6843	N/A
+616ac71	discard	500 depth-3 trees at learning rate 0.05	0.6839	N/A
+f9f9af3	discard	150 depth-3 trees at learning rate 0.05	0.6842	N/A
+95c61df	keep	average depth-3 and depth-4 XGBoost models	0.6855	0.6843
+d4cc93b	discard	Thanksgiving week indicator	0.6855	N/A
+9319dd3	discard	70/30 depth-3/depth-4 ensemble weights	0.6855	N/A
+27c8f05	discard	remove Distance predictor	0.6847	N/A
+daf8e49	discard	max_bin 512 for both ensemble members	0.6851	N/A
+9cb8878	discard	approx tree method for both ensemble members	0.6853	N/A
+0e97bba	discard	four-model hist and approx blend	0.6855	N/A
+281e90e	discard	one-hot carrier and weekday categories	0.6826	N/A
+38eb54e	discard	one-hot weekday categories only	0.6838	N/A
+9231ef1	discard	loss-guided trees with 8 and 16 leaves	0.6847	N/A
+4fef15e	discard	blend depthwise and loss-guided trees	0.6854	N/A
+ac20606	keep	add 20 percent smooth logistic model to ensemble	0.6860	0.6847
+2e31a0e	discard	increase smooth model blend weight to 40 percent	0.6855	N/A
+4a14f20	discard	decrease smooth model blend weight to 10 percent	0.6859	N/A
+e467788	discard	log-odds pooling of three models	0.6860	N/A
+2d21da5	discard	DART dropout in depth-4 member	0.6857	N/A
+1aa510b	discard	carrier-origin interaction category	0.6825	N/A
+1dc819f	discard	logistic regularization C 0.05	0.6859	N/A
+28ed4b1	keep	logistic regularization C 1.0	0.6861	0.6847
+972ac69	discard	logistic regularization C 5.0	0.6861	N/A
+55ffd91	discard	convert HHMM to minutes since midnight	0.6861	N/A
+09f4016	discard	remove Distance from logistic member	0.6860	N/A
+31176e0	discard	fewer logistic time and calendar spline knots	0.6860	N/A
+aceaf24	discard	more logistic time and calendar spline knots	0.6861	N/A
+34d4c61	discard	periodic day-of-year spline in logistic member	0.6857	N/A
+9a867a7	discard	uniform departure-time spline knots	0.6861	N/A

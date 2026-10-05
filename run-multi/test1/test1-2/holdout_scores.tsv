@@ -1,0 +1,38 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+9149f7e	keep	add categorical departure hour	0.6747	0.6735
+0bb0fa7	discard	increase to 300 boosting rounds	0.6672	N/A
+06ea12b	keep	reduce to 50 boosting rounds	0.6764	0.6754
+b9608c0	keep	reduce to 25 boosting rounds	0.6770	0.6762
+f562569	discard	reduce to 10 boosting rounds	0.6732	N/A
+cf3f678	keep	100 depth-3 trees	0.6797	0.6784
+ae80b47	discard	200 depth-3 trees	0.6790	N/A
+118f064	discard	200 depth-2 trees	0.6771	N/A
+b78557b	discard	50 depth-4 trees	0.6778	N/A
+2f86dc7	discard	one-hot splits for small categories	0.6794	N/A
+d04fc95	discard	add origin-destination route category	0.6741	N/A
+623c924	keep	add numeric day of year	0.6832	0.6823
+63c7ff8	keep	remove day of month category	0.6842	0.6828
+6bae803	keep	remove month category	0.6850	0.6837
+3e13506	discard	remove departure hour category	0.6843	N/A
+894716b	discard	replace hour with half-hour category	0.6845	N/A
+e237958	discard	row subsample 0.8	0.6835	N/A
+8699218	discard	limit categorical split to 16 categories	0.6758	N/A
+0fc27c1	keep	add annual cosine feature	0.6852	0.6837
+b6193e3	discard	add annual sine feature	0.6837	N/A
+ea82302	keep	blend 75% XGBoost 25% logistic	0.6870	0.6852
+27356fa	discard	blend 50% XGBoost 50% logistic	0.6862	N/A
+d867ae2	discard	blend 90% XGBoost 10% logistic	0.6862	N/A
+3ace5d7	discard	periodic seasonal spline in logistic branch	0.6846	N/A
+e4082b7	discard	200 rounds at learning rate 0.05; equal AUC but slower	0.6870	N/A
+f3ded52	discard	minimum child weight 50	0.6869	N/A
+4d2dff3	keep	route one-hot feature in logistic branch only	0.6878	0.6862
+348dae0	keep	carrier-origin one-hot feature in logistic branch	0.6883	0.6868
+d468113	keep	carrier-hour one-hot feature in logistic branch	0.6889	0.6870
+25eb20a	discard	carrier-destination one-hot feature in logistic branch	0.6886	N/A
+d79a56c	keep	logistic regularization C 0.1	0.6890	0.6869
+7c0b013	discard	logistic regularization C 0.01	0.6883	N/A
+36e0681	keep	simplify categorical conversion at equal AUC	0.6890	0.6869
+bad1485	discard	month one-hot in logistic branch only	0.6865	N/A
+21993e0	keep	origin-hour one-hot feature in logistic branch	0.6892	0.6874
+fbf17b7	discard	XGBoost column subsample 0.8	0.6887	N/A

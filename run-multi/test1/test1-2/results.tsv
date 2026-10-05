@@ -1,0 +1,38 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+9149f7e	0.6747	keep	add categorical departure hour
+0bb0fa7	0.6672	discard	increase to 300 boosting rounds
+06ea12b	0.6764	keep	reduce to 50 boosting rounds
+b9608c0	0.6770	keep	reduce to 25 boosting rounds
+f562569	0.6732	discard	reduce to 10 boosting rounds
+cf3f678	0.6797	keep	100 depth-3 trees
+ae80b47	0.6790	discard	200 depth-3 trees
+118f064	0.6771	discard	200 depth-2 trees
+b78557b	0.6778	discard	50 depth-4 trees
+2f86dc7	0.6794	discard	one-hot splits for small categories
+d04fc95	0.6741	discard	add origin-destination route category
+623c924	0.6832	keep	add numeric day of year
+63c7ff8	0.6842	keep	remove day of month category
+6bae803	0.6850	keep	remove month category
+3e13506	0.6843	discard	remove departure hour category
+894716b	0.6845	discard	replace hour with half-hour category
+e237958	0.6835	discard	row subsample 0.8
+8699218	0.6758	discard	limit categorical split to 16 categories
+0fc27c1	0.6852	keep	add annual cosine feature
+b6193e3	0.6837	discard	add annual sine feature
+ea82302	0.6870	keep	blend 75% XGBoost 25% logistic
+27356fa	0.6862	discard	blend 50% XGBoost 50% logistic
+d867ae2	0.6862	discard	blend 90% XGBoost 10% logistic
+3ace5d7	0.6846	discard	periodic seasonal spline in logistic branch
+e4082b7	0.6870	discard	200 rounds at learning rate 0.05; equal AUC but slower
+f3ded52	0.6869	discard	minimum child weight 50
+4d2dff3	0.6878	keep	route one-hot feature in logistic branch only
+348dae0	0.6883	keep	carrier-origin one-hot feature in logistic branch
+d468113	0.6889	keep	carrier-hour one-hot feature in logistic branch
+25eb20a	0.6886	discard	carrier-destination one-hot feature in logistic branch
+d79a56c	0.6890	keep	logistic regularization C 0.1
+7c0b013	0.6883	discard	logistic regularization C 0.01
+36e0681	0.6890	keep	simplify categorical conversion at equal AUC
+bad1485	0.6865	discard	month one-hot in logistic branch only
+21993e0	0.6892	keep	origin-hour one-hot feature in logistic branch
+fbf17b7	0.6887	discard	XGBoost column subsample 0.8

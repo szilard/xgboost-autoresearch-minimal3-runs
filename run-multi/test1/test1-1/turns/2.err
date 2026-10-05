@@ -1,0 +1,2 @@
+2026-10-04T21:23:36.892203Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md:
+Current theory: stable, ordered calendar patterns plus moderate model complexity transfer better from 2005 to 2006 than sparse route memorization. Next I will investigate time-by-carrier or time-by-airport effects, and regularization of categorical splits.

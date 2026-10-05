@@ -1,0 +1,147 @@
+commit 21993e0895cfe2b345e89701964e38471c3dc563
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:02:34 2026 +0000
+
+    Add origin hour interaction to logistic model
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 36e0681057e34ff2bb17cea3b0fbf60660f393fe
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:00:00 2026 +0000
+
+    Simplify fixed categorical conversion
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit d79a56c6a259fa2a84f75024a77f4ddf60ad7a94
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:57:26 2026 +0000
+
+    Test stronger logistic regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d468113e4754d92467fe51365ab434c76f445b62
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:54:28 2026 +0000
+
+    Add carrier hour interaction to logistic model
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 348dae0423c39a800af43c849403cd85aa0add38
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:53:10 2026 +0000
+
+    Add carrier origin interaction to logistic model
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 4d2dff37e080a93803ae672b0912e8754f7600d0
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:51:56 2026 +0000
+
+    Add route to logistic branch only
+
+ train.py | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit ea8230285361c144692fa06094e4200409fdae83
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:43:31 2026 +0000
+
+    Blend XGBoost with additive logistic model
+
+ train.py | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+commit 0fc27c12d193eeec220ef0b3855c8ee1c27b8516
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:40:41 2026 +0000
+
+    Add cyclic winter feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 6bae8039c78d313a821db38c123ec7ccca335f3d
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:35:06 2026 +0000
+
+    Ablate month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 63c7ff8f47b58404d05abf3889d43a0c790fb8c9
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:34:09 2026 +0000
+
+    Ablate day of month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 623c9240349074d295264db3dc6e23f4bd917988
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:33:07 2026 +0000
+
+    Add day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit cf3f67836fbcf8c89be2b7fdb7e5c19f60b8f51f
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:25:41 2026 +0000
+
+    Test shallow trees with 100 rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b9608c07bd23229d66984a8d9abc6115fa85f63b
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:23:41 2026 +0000
+
+    Test 25 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 06ea12bc358f70ac9af11549ca1ba765f6dc4369
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:22:39 2026 +0000
+
+    Test 50 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9149f7e9bc87a58de9a10e5f12c868d5a4a610bb
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 22:20:30 2026 +0000
+
+    Add categorical scheduled departure hour
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

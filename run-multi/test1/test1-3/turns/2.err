@@ -1,0 +1,2 @@
+2026-10-05T00:29:54.010754Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md:
+The remaining time is best spent on a few targeted tests of smooth-model shape, keeping the strict AUC rule.

@@ -1,0 +1,42 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+62b31ae	discard	300 trees at 0.05 learning rate	0.6743	N/A
+b656b2d	keep	add departure hour category	0.6747	0.6735
+58dccee	keep	depth 4 instead of 6	0.6789	0.6773
+9aba6ad	keep	depth 3 instead of 4	0.6797	0.6784
+4431599	discard	depth 2 instead of 3	0.6754	N/A
+74712b4	discard	depth 3 with 300 trees at 0.05	0.6796	N/A
+3813c84	discard	add origin destination route category	0.6741	N/A
+999b1cf	discard	one-hot splits for small categories	0.6789	N/A
+1a0fa55	crash	day of year initial parser did not handle c- prefix	0.0000	N/A
+97717bc	keep	add ordered day of year	0.6832	0.6823
+a4d724a	keep	150 trees with calendar feature	0.6841	0.6831
+5f63ce7	discard	add carrier by departure hour category	0.6818	N/A
+d560601	discard	min_child_weight 10	0.6841	N/A
+f555a81	discard	80 percent row subsampling	0.6831	N/A
+65cfc3c	discard	cyclical sine and cosine day of year	0.6828	N/A
+c9471c1	discard	origin geographic distance anchors	0.6841	N/A
+3fe7dcb	discard	200 trees with calendar feature	0.6834	N/A
+5464efa	discard	departure minute category	0.6828	N/A
+0d861bd	discard	five-minute schedule position category	0.6840	N/A
+3ec537b	discard	21-day smoothed historical seasonal risk	0.6818	N/A
+fb356a2	discard	512 histogram bins	0.6830	N/A
+f0b5644	discard	max_cat_threshold 16	0.6769	N/A
+813b2e9	discard	max_cat_threshold 128	0.6829	N/A
+2e7843e	keep	blend depth 3 and depth 4 models 75 to 25	0.6843	0.6834
+b491b55	discard	equal depth 3 and depth 4 blend	0.6840	N/A
+102f771	discard	90 to 10 depth blend	0.6842	N/A
+610eb42	discard	column sample the depth 4 blend member	0.6842	N/A
+13c66e9	discard	remove departure hour from blend	0.6841	N/A
+d5a21e6	discard	remove distance from blend	0.6830	N/A
+4b82d2b	discard	DART dropout on depth 4 blend member	0.6843	N/A
+bbe2370	discard	leaf-limited best-first depth 4 member	0.6842	N/A
+1c531a3	discard	reg_lambda 100 on depth 3 member	0.6835	N/A
+2983c97	discard	reg_lambda 10 on depth 3 member	0.6835	N/A
+db77365	discard	seven-day calendar block category	0.6825	N/A
+c0c96a0	keep	treat day of month as ordered numeric	0.6851	0.6838
+d6b6410	keep	treat month as ordered numeric	0.6852	0.6845
+69502d0	discard	treat weekday as ordered numeric	0.6835	N/A
+c9a3a97	discard	remove depth 4 blend member	0.6848	N/A
+8619c6e	keep	remove day of year after numeric month and day	0.6856	0.6847
+629fd07	discard	remove departure hour from ordered calendar blend	0.6853	N/A

@@ -1,0 +1,93 @@
+commit 28ed4b12350851a746f030871db75440ddd70f75
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 00:22:41 2026 +0000
+
+    Weaken smooth-model regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac206069c3af055ec68de8310c455c3cc87e2d2e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 00:12:03 2026 +0000
+
+    Blend regularized smooth model with XGBoost
+
+ train.py | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+commit 95c61df7ef61c92db258a81c7c4e6c6ef58ccf57
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:55:59 2026 +0000
+
+    Average depth-three and depth-four XGBoost models
+
+ train.py | 27 +++++++++++++++++++--------
+ 1 file changed, 19 insertions(+), 8 deletions(-)
+
+commit 2bea3ebe2df726fb8d02537ba281b6e862ddf17d
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:47:34 2026 +0000
+
+    Try depth-three trees with day of year
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b42f7a5d55ffad3f785024e2f334b0c8f6015ef0
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:46:11 2026 +0000
+
+    Ablate month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f83e3799d1dbefee3dc8a790e24db5375932f5a
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:45:00 2026 +0000
+
+    Ablate day-of-month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 609e5f9a72549171672406557373c3b0584aff45
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:43:55 2026 +0000
+
+    Add numeric day of year
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 755ef12f367f5680f7f882014b9d8526924afa61
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:37:27 2026 +0000
+
+    Try gradual boosting at depth four
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7e6ae026ec37ca93b3e5035930248e02be6e89f8
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 23:36:25 2026 +0000
+
+    Test shallower XGBoost trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
