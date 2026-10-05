@@ -1,0 +1,174 @@
+commit eb1987a3e549135df314fd43556755baa7cf3430
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:34:26 2026 +0000
+
+    Train categorical alternate 160 rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit afb8fe11a09f1a8a384f2e52e7a4af8b1350748e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:32:32 2026 +0000
+
+    Train deeper blend member longer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 697672a35614993025ee2eb4d380b05c3bd4816c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:30:33 2026 +0000
+
+    Use month one-hot alternate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 801fcdf5927add6ff847d1a456b223aec9f3c191
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:26:31 2026 +0000
+
+    Blend categorical split alternative
+
+ train.py | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit 45561c3bbb1b2ccb01133ee9664d0917f3bf8066
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:22:01 2026 +0000
+
+    Blend depth three and four models
+
+ train.py | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+commit c28639f22f2a8caadc29aa24ccf9e4bf4f6fbb67
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:14:57 2026 +0000
+
+    Use ordered month phase
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e21a1c8546824eef6f58a4220a595f2f5fe26cb0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:13:57 2026 +0000
+
+    Merge late month schedule bins
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b431ab406a2d697c0ee7bf472aebc2c38323a679
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:12:56 2026 +0000
+
+    Add broad week of month feature
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e7311df68f12e36039a0fe99d1bedbdbc89d4134
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:07:01 2026 +0000
+
+    Train 130 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0734220c97c0b674c549d3068c79af8d28696b8a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:59:56 2026 +0000
+
+    Use true minutes for relative schedule
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit ceaa47bc2a99afc4f075fc91b982e8841943099e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:58:00 2026 +0000
+
+    Keep only carrier origin time reference
+
+ train.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 6371e736684e7f1125ead6226c8caffbf97ed15d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:56:56 2026 +0000
+
+    Add relative carrier origin departure time
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 9258a81fc36467efa0042cf761b904d906e5254d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:55:58 2026 +0000
+
+    Add relative departure time at origin
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8b3e575f7d8acce075c6dfd6c142b22754fadf95
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:54:00 2026 +0000
+
+    Ablate departure hour category
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit cee3500f4de92622b25f782c2d7654d08cbe6a8d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:51:17 2026 +0000
+
+    Remove day of month feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 91b5adb460beb93f63948e86668ff93b375c3483
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:42:23 2026 +0000
+
+    Use depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 44ba2d4317516f3f2b52dec906f6cd1dada7f1df
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:41:30 2026 +0000
+
+    Use depth four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d5019ce7320d1e5e38266789fc675e0b25bb4bf1
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:39:41 2026 +0000
+
+    Add scheduled departure hour category
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

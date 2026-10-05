@@ -1,0 +1,3 @@
+I read `program.md`, `train.py`, and `harness.py`. The repo is clean, both data files and required Python packages are present, and `output/results.tsv` has its header. The experiment clock has not started.
+
+`oct5` is available as a fresh branch tag. **Please confirm `oct5` or give me another tag** so I can create the branch and finish setup.

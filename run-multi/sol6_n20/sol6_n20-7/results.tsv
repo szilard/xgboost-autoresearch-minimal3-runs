@@ -1,0 +1,59 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+97788e8	0.6743	discard	force categorical partition splits
+d5019ce	0.6747	keep	add categorical departure hour
+a802918	0.6672	discard	300 trees at baseline learning rate
+44ba2d4	0.6789	keep	depth four trees
+91b5adb	0.6797	keep	depth three trees
+964e6db	0.6790	discard	200 depth three trees
+4eaf32b	0.6754	discard	depth two trees
+13b3292	0.6797	discard	add ordinal month alongside categorical month
+e8c189f	0.6750	discard	add carrier-origin category
+162e224	0.6797	discard	minimum child weight 10
+34e71c0	0.6784	discard	row subsampling 0.8
+a6693bf	0.6786	discard	150 rounds at learning rate 0.05
+14a58cc	0.6794	discard	one-hot splits for categories below 32 levels
+cee3500	0.6800	keep	remove day of month
+a0f7fdb	0.6800	discard	add numeric departure minute
+7c720a7	0.6731	discard	remove destination feature
+8b3e575	0.6800	keep	remove departure hour category with equal AUC and faster evaluation
+6b3a150	0.6793	discard	remove distance feature
+9258a81	0.6801	keep	time relative to train origin median schedule
+6371e73	0.6805	keep	add time relative to carrier-origin median
+ceaa47b	0.6810	keep	carrier-origin time reference alone
+7f36d71	0.6810	discard	add route median schedule reference
+0734220	0.6812	keep	use true minutes in carrier-origin relative time
+9255df3	0.6806	discard	add time since first carrier-origin departure
+ce58669	0.6799	discard	L2 leaf regularization 10
+0ac7b5d	0.6812	discard	minimum split gain gamma 1
+5c10c2c	0.6723	discard	limit categorical split threshold to 16
+cb34db2	0.6793	discard	raise categorical split threshold to 128
+2203865	0.6800	discard	70 depth-three boosting rounds
+e7311df	0.6820	keep	130 depth-three boosting rounds
+5673a9c	0.6819	discard	160 rounds with refined features
+238271a	0.6820	discard	add four-season category alongside month
+eb58029	0.6818	discard	replace month with season
+749606d	0.6805	discard	loss-guided eight-leaf trees
+153b6eb	0.6808	discard	512 histogram bins
+b431ab4	0.6834	keep	add week-of-month category
+e21a1c8	0.6857	keep	merge days 29-31 with days 22-28
+c28639f	0.6857	keep	use numeric four-bin month phase with equal AUC and faster scoring
+e949c23	0.6848	discard	three broad month phases
+b371d72	0.6816	discard	add month-by-phase categorical interaction
+2a03813	0.6853	discard	add numeric day of month alongside four bins
+a1a653f	0.6850	discard	per-node feature subsampling 0.8
+bdc3195	0.6855	discard	add distance relative to carrier-origin median
+45561c3	0.6860	keep	soft-vote depth three and four at two-to-one weights
+a1565cc	0.6859	discard	equal-weight depth-three and depth-four ensemble
+6a41ac7	0.6860	discard	three-to-one shallow/deep ensemble
+0d5e74b	0.6860	discard	flag fixed-date holiday windows
+801fcdf	0.6862	keep	three-model ensemble with categorical split diversity
+bad7520	0.6859	discard	remove depth-four ensemble member
+89304e4	0.6862	discard	three-model weights two-one-one
+0b1f3ef	0.6859	discard	alternate model one-hot threshold 8
+697672a	0.6864	keep	alternate model one-hot threshold 20
+4f89854	0.6864	discard	three-model weights two-one-one with threshold 20
+afb8fe1	0.6865	keep	130-round depth-four ensemble member
+d244f2f	0.6865	discard	160-round depth-four ensemble member
+eb1987a	0.6866	keep	160-round categorical alternate model
+9fe0f27	0.6866	discard	190-round categorical alternate model

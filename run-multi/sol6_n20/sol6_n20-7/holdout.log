@@ -1,0 +1,118 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 97788e8 | discard | force categorical partition splits ===
+  SKIP: status discard
+=== [4] d5019ce | keep | add categorical departure hour ===
+  holdout=0.6735
+=== [5] a802918 | discard | 300 trees at baseline learning rate ===
+  SKIP: status discard
+=== [6] 44ba2d4 | keep | depth four trees ===
+  holdout=0.6773
+=== [7] 91b5adb | keep | depth three trees ===
+  holdout=0.6784
+=== [8] 964e6db | discard | 200 depth three trees ===
+  SKIP: status discard
+=== [9] 4eaf32b | discard | depth two trees ===
+  SKIP: status discard
+=== [10] 13b3292 | discard | add ordinal month alongside categorical month ===
+  SKIP: status discard
+=== [11] e8c189f | discard | add carrier-origin category ===
+  SKIP: status discard
+=== [12] 162e224 | discard | minimum child weight 10 ===
+  SKIP: status discard
+=== [13] 34e71c0 | discard | row subsampling 0.8 ===
+  SKIP: status discard
+=== [14] a6693bf | discard | 150 rounds at learning rate 0.05 ===
+  SKIP: status discard
+=== [15] 14a58cc | discard | one-hot splits for categories below 32 levels ===
+  SKIP: status discard
+=== [16] cee3500 | keep | remove day of month ===
+  holdout=0.6785
+=== [17] a0f7fdb | discard | add numeric departure minute ===
+  SKIP: status discard
+=== [18] 7c720a7 | discard | remove destination feature ===
+  SKIP: status discard
+=== [19] 8b3e575 | keep | remove departure hour category with equal AUC and faster evaluation ===
+  holdout=0.6785
+=== [20] 6b3a150 | discard | remove distance feature ===
+  SKIP: status discard
+=== [21] 9258a81 | keep | time relative to train origin median schedule ===
+  holdout=0.6790
+=== [22] 6371e73 | keep | add time relative to carrier-origin median ===
+  holdout=0.6785
+=== [23] ceaa47b | keep | carrier-origin time reference alone ===
+  holdout=0.6787
+=== [24] 7f36d71 | discard | add route median schedule reference ===
+  SKIP: status discard
+=== [25] 0734220 | keep | use true minutes in carrier-origin relative time ===
+  holdout=0.6786
+=== [26] 9255df3 | discard | add time since first carrier-origin departure ===
+  SKIP: status discard
+=== [27] ce58669 | discard | L2 leaf regularization 10 ===
+  SKIP: status discard
+=== [28] 0ac7b5d | discard | minimum split gain gamma 1 ===
+  SKIP: status discard
+=== [29] 5c10c2c | discard | limit categorical split threshold to 16 ===
+  SKIP: status discard
+=== [30] cb34db2 | discard | raise categorical split threshold to 128 ===
+  SKIP: status discard
+=== [31] 2203865 | discard | 70 depth-three boosting rounds ===
+  SKIP: status discard
+=== [32] e7311df | keep | 130 depth-three boosting rounds ===
+  holdout=0.6789
+=== [33] 5673a9c | discard | 160 rounds with refined features ===
+  SKIP: status discard
+=== [34] 238271a | discard | add four-season category alongside month ===
+  SKIP: status discard
+=== [35] eb58029 | discard | replace month with season ===
+  SKIP: status discard
+=== [36] 749606d | discard | loss-guided eight-leaf trees ===
+  SKIP: status discard
+=== [37] 153b6eb | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [38] b431ab4 | keep | add week-of-month category ===
+  holdout=0.6798
+=== [39] e21a1c8 | keep | merge days 29-31 with days 22-28 ===
+  holdout=0.6823
+=== [40] c28639f | keep | use numeric four-bin month phase with equal AUC and faster scoring ===
+  holdout=0.6825
+=== [41] e949c23 | discard | three broad month phases ===
+  SKIP: status discard
+=== [42] b371d72 | discard | add month-by-phase categorical interaction ===
+  SKIP: status discard
+=== [43] 2a03813 | discard | add numeric day of month alongside four bins ===
+  SKIP: status discard
+=== [44] a1a653f | discard | per-node feature subsampling 0.8 ===
+  SKIP: status discard
+=== [45] bdc3195 | discard | add distance relative to carrier-origin median ===
+  SKIP: status discard
+=== [46] 45561c3 | keep | soft-vote depth three and four at two-to-one weights ===
+  holdout=0.6830
+=== [47] a1565cc | discard | equal-weight depth-three and depth-four ensemble ===
+  SKIP: status discard
+=== [48] 6a41ac7 | discard | three-to-one shallow/deep ensemble ===
+  SKIP: status discard
+=== [49] 0d5e74b | discard | flag fixed-date holiday windows ===
+  SKIP: status discard
+=== [50] 801fcdf | keep | three-model ensemble with categorical split diversity ===
+  holdout=0.6835
+=== [51] bad7520 | discard | remove depth-four ensemble member ===
+  SKIP: status discard
+=== [52] 89304e4 | discard | three-model weights two-one-one ===
+  SKIP: status discard
+=== [53] 0b1f3ef | discard | alternate model one-hot threshold 8 ===
+  SKIP: status discard
+=== [54] 697672a | keep | alternate model one-hot threshold 20 ===
+  holdout=0.6835
+=== [55] 4f89854 | discard | three-model weights two-one-one with threshold 20 ===
+  SKIP: status discard
+=== [56] afb8fe1 | keep | 130-round depth-four ensemble member ===
+  holdout=0.6837
+=== [57] d244f2f | discard | 160-round depth-four ensemble member ===
+  SKIP: status discard
+=== [58] eb1987a | keep | 160-round categorical alternate model ===
+  holdout=0.6837
+=== [59] 9fe0f27 | discard | 190-round categorical alternate model ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
