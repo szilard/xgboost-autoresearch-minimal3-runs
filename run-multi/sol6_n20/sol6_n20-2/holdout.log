@@ -1,0 +1,70 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 7cbcf53 | keep | 300 depth-4 trees, lr .05, min_child_weight 5 ===
+  holdout=0.6783
+=== [4] d19cef7 | keep | add ordinal day of year ===
+  holdout=0.6819
+=== [5] 4a69ee1 | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [6] 8be9a98 | discard | add categorical origin-destination route ===
+  SKIP: status discard
+=== [7] 7522d7e | discard | 600 trees versus 300 ===
+  SKIP: status discard
+=== [8] 9b34686 | discard | drop categorical day of month ===
+  SKIP: status discard
+=== [9] 80b31a4 | discard | row subsample .8 ===
+  SKIP: status discard
+=== [10] 9ea449b | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [11] fc72ea6 | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [12] edc5de6 | keep | 200 trees versus 300 ===
+  holdout=0.6823
+=== [13] d3998ca | discard | max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [14] 4e23f67 | discard | depth 3 versus 4 ===
+  SKIP: status discard
+=== [15] 1f4f704 | discard | depth 5 versus 4 ===
+  SKIP: status discard
+=== [16] 88c11bc | discard | min_child_weight 10 tied without simplification ===
+  SKIP: status discard
+=== [17] d664ae0 | discard | holiday travel windows tied with slower preparation ===
+  SKIP: status discard
+=== [18] ff6434b | discard | reg_lambda 10 ===
+  SKIP: status discard
+=== [19] b157ab7 | discard | default min_child_weight 1 ===
+  SKIP: status discard
+=== [20] c2853dd | discard | 150 trees versus 200 ===
+  SKIP: status discard
+=== [21] a1ec0f8 | discard | max_bin 512 ===
+  SKIP: status discard
+=== [22] cb906fc | keep | equal average of depth-4 and depth-3 models ===
+  holdout=0.6829
+=== [23] 60c6e99 | discard | 75 percent depth-4 blend ===
+  SKIP: status discard
+=== [24] ebbf483 | discard | 25 percent depth-4 blend ===
+  SKIP: status discard
+=== [25] 774b066 | discard | add annual sine and cosine ===
+  SKIP: status discard
+=== [26] ec24960 | keep | three-model blend with sampled depth-4 model ===
+  holdout=0.6831
+=== [27] ad29f42 | discard | add sampled depth-3 ensemble member ===
+  SKIP: status discard
+=== [28] ff97b80 | discard | add carrier-origin category ===
+  SKIP: status discard
+=== [29] 52baa38 | discard | gamma 1 tied without simplification ===
+  SKIP: status discard
+=== [30] 88637c6 | discard | approx tree method in sampled member ===
+  SKIP: status discard
+=== [31] a4e732a | discard | DART third ensemble model ===
+  SKIP: status discard
+=== [32] bc6f8e6 | keep | reg_alpha 1 in all ensemble members ===
+  holdout=0.6833
+=== [33] e4ed85d | keep | reg_alpha 3 in all ensemble members ===
+  holdout=0.6837
+=== [34] b602c3f | keep | reg_alpha 6 in all ensemble members ===
+  holdout=0.6836
+=== [35] cd7df53 | discard | reg_alpha 10 versus 6 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

@@ -1,0 +1,35 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+7cbcf53	keep	300 depth-4 trees, lr .05, min_child_weight 5	0.6793	0.6783
+d19cef7	keep	add ordinal day of year	0.6829	0.6819
+4a69ee1	discard	add categorical departure hour	0.6813	N/A
+8be9a98	discard	add categorical origin-destination route	0.6733	N/A
+7522d7e	discard	600 trees versus 300	0.6782	N/A
+9b34686	discard	drop categorical day of month	0.6828	N/A
+80b31a4	discard	row subsample .8	0.6828	N/A
+9ea449b	discard	max_cat_threshold 16	0.6793	N/A
+fc72ea6	discard	max_cat_threshold 128	0.6804	N/A
+edc5de6	keep	200 trees versus 300	0.6835	0.6823
+d3998ca	discard	max_cat_to_onehot 32	0.6820	N/A
+4e23f67	discard	depth 3 versus 4	0.6831	N/A
+1f4f704	discard	depth 5 versus 4	0.6812	N/A
+88c11bc	discard	min_child_weight 10 tied without simplification	0.6835	N/A
+d664ae0	discard	holiday travel windows tied with slower preparation	0.6835	N/A
+ff6434b	discard	reg_lambda 10	0.6822	N/A
+b157ab7	discard	default min_child_weight 1	0.6833	N/A
+c2853dd	discard	150 trees versus 200	0.6827	N/A
+a1ec0f8	discard	max_bin 512	0.6833	N/A
+cb906fc	keep	equal average of depth-4 and depth-3 models	0.6840	0.6829
+60c6e99	discard	75 percent depth-4 blend	0.6839	N/A
+ebbf483	discard	25 percent depth-4 blend	0.6838	N/A
+774b066	discard	add annual sine and cosine	0.6833	N/A
+ec24960	keep	three-model blend with sampled depth-4 model	0.6841	0.6831
+ad29f42	discard	add sampled depth-3 ensemble member	0.6839	N/A
+ff97b80	discard	add carrier-origin category	0.6780	N/A
+52baa38	discard	gamma 1 tied without simplification	0.6841	N/A
+88637c6	discard	approx tree method in sampled member	0.6839	N/A
+a4e732a	discard	DART third ensemble model	0.6836	N/A
+bc6f8e6	keep	reg_alpha 1 in all ensemble members	0.6843	0.6833
+e4ed85d	keep	reg_alpha 3 in all ensemble members	0.6852	0.6837
+b602c3f	keep	reg_alpha 6 in all ensemble members	0.6858	0.6836
+cd7df53	discard	reg_alpha 10 versus 6	0.6853	N/A

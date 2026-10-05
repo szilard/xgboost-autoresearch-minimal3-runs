@@ -1,0 +1,84 @@
+commit b602c3f4e7bf57db8d351278ae374df13e1d856b
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:39:55 2026 +0000
+
+    Test stronger L1 penalty at six
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit e4ed85dd96c6fafbbe205111dd09b0c36d062617
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:38:24 2026 +0000
+
+    Test stronger L1 regularization
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit bc6f8e60f127532301250e20d9fd683497c244e0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:36:34 2026 +0000
+
+    Try L1 leaf regularization
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit ec24960aae40321197d9ac064ee910b1a7475604
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:24:49 2026 +0000
+
+    Add sampled model to ensemble
+
+ train.py | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+commit cb906fc6f0cd758422c0d15dc5414a2d306bac77
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:17:55 2026 +0000
+
+    Average depth-three and depth-four models
+
+ train.py | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+
+commit edc5de62204822898296277860b44a1742423309
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:00:00 2026 +0000
+
+    Test fewer boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d19cef76648b7b6434bcc63ea983fb2e9125ddde
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:47:14 2026 +0000
+
+    Add ordinal day of year
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 7cbcf539da3c8f403823b47acd9f777591ab73da
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:44:44 2026 +0000
+
+    Tune shallower longer boosting
+
+ train.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

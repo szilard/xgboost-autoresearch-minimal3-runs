@@ -44,7 +44,7 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0. turns/
   - the 70/30 depth-3/depth-4 average: +0.0002
   - dropping numeric month: +0.0001
 - Timing (report.txt): total 1h00m59s; XGBoost runs 0h19m15s (31.6%); AI 0h41m44s (68.4%)
-- Clock stopped by the agent after 3659 s, 59 s **past** the 3600 s budget (`clock_remaining_s` -59): the driver's "TIME IS UP" came at 15:33:07 and the agent stopped the clock at 15:33:35, inside the 10-minute grace. Its last run (`fa052d9`, the best commit) started 41 s before the budget ran out and ended 5 s before it; the 59 s were spent logging the result, committing the research log entry and writing the final summary. No harness run after the budget.
+- Clock stopped by the agent after 3659 s, 59 s **past** the 3600 s budget (`clock_remaining_s` -59): the driver's "TIME IS UP" came at 15:33:07 and the agent stopped the clock at 15:33:35, inside the 10-minute grace. The agent's last status check (15:30:30) showed 2m06s remaining, so by program.md's loop it could start one more experiment: `fa052d9` (the best commit) started 41 s before the budget ran out and ended 5 s before it; the 59 s were spent logging the result, committing the research log entry and writing the final summary. No harness run after the budget.
 
 ## Integrity checks: pass
 
