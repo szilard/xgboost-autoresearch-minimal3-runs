@@ -12,19 +12,16 @@ run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
   90% interval (t) and the 10th/90th percentiles (nearest run) when the row has
   >= 5 runs.
 
-Three views of the holdout AUC path of each run, i.e. the holdout AUC of the
+Two views of the holdout AUC path of each run, i.e. the holdout AUC of the
 kept model after each experiment (x: experiment number n as in the runs'
 auc_history.png, the baseline is n = 1; y: holdout AUC of each kept commit, held
-until the next keep). The median and percentiles at experiment n are over all
-of a model's runs, a run that has ended counting with its final value; they
-stop when fewer than MIN_N_PATH runs are still going.
+until the next keep). The median at experiment n is over all of a model's runs,
+a run that has ended counting with its final value; it stops when fewer than
+MIN_N_PATH runs are still going.
 
 run-multi/SUMMARY/holdout_auc_path_panels.png - small multiples, one panel per
   model on shared axes: its runs as thin lines, their median path in bold, the
   other models' runs faint grey behind.
-
-run-multi/SUMMARY/holdout_auc_path_bands.png - one panel: per model the median
-  path and a shaded 10th-90th percentile band, no individual runs.
 
 run-multi/SUMMARY/holdout_auc_path_median.png - one panel: all runs as thin
   faded lines, the median path per model in bold.
@@ -44,7 +41,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
-from matplotlib.patches import Patch
 from scipy import stats
 
 # categorical slots in fixed order (reference palette, light mode)
@@ -55,7 +51,7 @@ MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
-MIN_N_PATH = 5  # median / percentile paths only where at least this many runs are still going
+MIN_N_PATH = 5  # median paths only where at least this many runs are still going
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.68, 0.70); None: the runs' range
 RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
@@ -269,28 +265,6 @@ def path_panels(runs, colour):
     save(fig, "holdout_auc_path_panels.png")
 
 
-def path_bands(runs, colour):
-    models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
-    fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
-    fig.subplots_adjust(bottom=0.2, right=0.97)
-    for m in models:
-        n, q = path_quantiles(runs, m, [0.1, 0.5, 0.9])
-        ax.fill_between(n, q[0.1], q[0.9], step="post", color=colour[m], alpha=0.18, lw=0, zorder=2)
-        ax.step(n, q[0.5], where="post", color=colour[m], lw=2.2, zorder=4)
-    ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
-    ax.set_ylabel("holdout AUC", color=INK2)
-    ax.grid(color=GRID, lw=0.8)
-    ax.set_xlim(left=0)
-    style(ax, "Holdout AUC path: median and 10th-90th percentile of the runs")
-    legend = [Line2D([], [], color=colour[m], lw=2.2, label=m) for m in models] + [
-        Patch(facecolor=INK2, alpha=0.18, label="10th-90th percentile"),
-        Line2D([], [], color=INK2, lw=2.2, label="median of the runs"),
-    ]
-    fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
-               ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
-    save(fig, "holdout_auc_path_bands.png")
-
-
 def path_median(runs, colour):
     models = sorted(colour, key=lambda m: -st.mean(r["holdout"] for r in runs if r["model"] == m))
     fig, ax = plt.subplots(figsize=(9, 5.2), facecolor=SURFACE)
@@ -322,7 +296,6 @@ def main():
     colour = model_colours({r["model"] for r in runs})
     strip_plot(runs, colour)
     path_panels(runs, colour)
-    path_bands(runs, colour)
     path_median(runs, colour)
 
 

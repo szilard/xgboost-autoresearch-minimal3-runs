@@ -14,7 +14,7 @@ arguments:
 
 - `tools/summary_table.py` - checks the group files and prints the results
   table per model. It changes nothing.
-- `tools/plot_holdout_auc.py` - the beeswarm plot and the three path plots.
+- `tools/plot_holdout_auc.py` - the beeswarm plot and the two path plots.
 - `tools/pairwise_win_prob.py` - the head-to-head table and its plot.
 
 Your job is to run them, act on what they report, look at the plots and
