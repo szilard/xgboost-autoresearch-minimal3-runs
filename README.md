@@ -23,13 +23,14 @@ Each run's folder has the agent's `results.tsv` and `research-log.md`, the `trai
 ## Results so far
 
 <!-- xgb-summary: start (the block up to the end marker is rewritten by /xgb-summary) -->
-2 valid runs per model, all with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and minimal3 at `5fb023a`. Holdout AUC of each run's best model (by eval AUC), over the valid runs, including those with a caveat; the starter `train.py` scores 0.6725:
+All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and minimal3 at `5fb023a`. Holdout AUC of each run's best model (by eval AUC), over the valid runs, including those with a caveat; the starter `train.py` scores 0.6725:
 
 | model | groups | valid runs | excluded | holdout AUC mean | sd | min | median | max |
 |---|---|---|---|---|---|---|---|---|
 | gpt-6-sol | [test1](run-multi/test1/results_summary.md) | 2 | 1 | 0.6847 | 0.0000 | 0.6847 | 0.6847 | 0.6847 |
+| gpt-6-luna | [luna6_n20](run-multi/luna6_n20/results_summary.md) | 3 | 0 | 0.6805 | 0.0017 | 0.6789 | 0.6803 | 0.6822 |
 
-No run carries a caveat. One run was excluded: test1-2, after three turns in a row ended with OpenAI's "Selected model is at capacity" error. No group is in progress, and all valid runs have the same settings.
+No run carries a caveat. One run was excluded: test1-2, after three turns in a row ended with OpenAI's "Selected model is at capacity" error. Group luna6_n20 is in progress, with 3 runs reviewed so far. luna6_n20-1 is valid with a `train_py_review` flag, a false match explained in its `run.md`. All valid runs have the same settings.
 
 ![Holdout AUC per run](run-multi/SUMMARY/holdout_auc_beeswarm.png)
 <!-- xgb-summary: end -->
