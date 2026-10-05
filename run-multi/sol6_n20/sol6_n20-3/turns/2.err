@@ -1,0 +1,2 @@
+2026-10-05T16:56:19.596506Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md:
+The features are computed from each row independently.

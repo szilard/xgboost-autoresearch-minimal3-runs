@@ -1,0 +1,3 @@
+Setup checks passed: I read `train.py` and `harness.py`, verified both required data files and dependencies, and created [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with its header.
+
+`oct5` is available. `program.md` calls for agreeing on the run tag before creating the branch. Is `oct5` good, or would you prefer another tag? The experiment clock has not started.

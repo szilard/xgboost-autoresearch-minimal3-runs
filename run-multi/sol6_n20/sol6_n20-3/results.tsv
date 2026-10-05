@@ -1,0 +1,36 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+7044598	0.6752	keep	add scheduled departure hour and minute
+bb2923f	0.6789	keep	300 trees depth 4 learning rate 0.05
+8c62bc0	0.6771	discard	600 trees at depth 4 and learning rate 0.05
+5da1b99	0.6784	discard	min_child_weight 5
+dab5518	0.6822	keep	add day of year
+524abcf	0.6763	discard	add carrier origin categorical interaction
+a2c056e	0.6843	keep	depth 3 with day of year
+3698841	0.6831	discard	500 depth 3 trees
+037f72d	0.6832	discard	200 depth 3 trees
+4794e86	0.6828	discard	row subsample 0.8
+f026620	0.6814	discard	max_cat_threshold 32
+1cea131	0.6840	discard	max_bin 512
+ccc7608	0.6797	discard	depth 2 at 300 trees
+9a1a180	0.6840	discard	equal blend of depth 3 and depth 4 models
+80f1455	0.6822	discard	categorical week of year
+5229b83	0.6840	discard	major holiday travel periods
+458d209	0.6842	discard	departure time relative to route median
+59226f3	0.6843	keep	remove unused departure minute feature
+d027353	0.6833	discard	loss-guided eight-leaf trees
+7bf4696	0.6823	discard	month weekday categorical interaction
+ac767c4	0.6835	discard	500 trees learning rate 0.03
+214b504	0.6828	discard	DART dropout rate 0.05 skip 0.5
+af5310c	0.6843	discard	gamma 0.5 tied without simplification
+d037c84	0.6819	discard	max_cat_to_onehot 32
+9f1d5a9	0.6832	discard	cyclical day-of-year sine and cosine
+ba85f5a	0.6842	discard	remove categorical day of month
+bf7afb4	0.6856	keep	ordinal day of month replaces categorical
+796a46d	0.6843	discard	combine ordinal and categorical day of month
+923cb67	0.6841	discard	depth 4 with ordinal day of month
+fd71c68	0.6855	discard	400 depth 3 trees with ordinal day
+7b40435	0.6849	discard	reg_lambda 5
+9a9421f	0.6843	discard	max_cat_threshold 128
+72d7e0a	0.6857	keep	remove scheduled departure hour
+938c50c	0.6848	discard	remove distance

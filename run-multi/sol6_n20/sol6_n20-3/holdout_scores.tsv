@@ -1,0 +1,36 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+7044598	keep	add scheduled departure hour and minute	0.6752	0.6731
+bb2923f	keep	300 trees depth 4 learning rate 0.05	0.6789	0.6777
+8c62bc0	discard	600 trees at depth 4 and learning rate 0.05	0.6771	N/A
+5da1b99	discard	min_child_weight 5	0.6784	N/A
+dab5518	keep	add day of year	0.6822	0.6817
+524abcf	discard	add carrier origin categorical interaction	0.6763	N/A
+a2c056e	keep	depth 3 with day of year	0.6843	0.6833
+3698841	discard	500 depth 3 trees	0.6831	N/A
+037f72d	discard	200 depth 3 trees	0.6832	N/A
+4794e86	discard	row subsample 0.8	0.6828	N/A
+f026620	discard	max_cat_threshold 32	0.6814	N/A
+1cea131	discard	max_bin 512	0.6840	N/A
+ccc7608	discard	depth 2 at 300 trees	0.6797	N/A
+9a1a180	discard	equal blend of depth 3 and depth 4 models	0.6840	N/A
+80f1455	discard	categorical week of year	0.6822	N/A
+5229b83	discard	major holiday travel periods	0.6840	N/A
+458d209	discard	departure time relative to route median	0.6842	N/A
+59226f3	keep	remove unused departure minute feature	0.6843	0.6833
+d027353	discard	loss-guided eight-leaf trees	0.6833	N/A
+7bf4696	discard	month weekday categorical interaction	0.6823	N/A
+ac767c4	discard	500 trees learning rate 0.03	0.6835	N/A
+214b504	discard	DART dropout rate 0.05 skip 0.5	0.6828	N/A
+af5310c	discard	gamma 0.5 tied without simplification	0.6843	N/A
+d037c84	discard	max_cat_to_onehot 32	0.6819	N/A
+9f1d5a9	discard	cyclical day-of-year sine and cosine	0.6832	N/A
+ba85f5a	discard	remove categorical day of month	0.6842	N/A
+bf7afb4	keep	ordinal day of month replaces categorical	0.6856	0.6840
+796a46d	discard	combine ordinal and categorical day of month	0.6843	N/A
+923cb67	discard	depth 4 with ordinal day of month	0.6841	N/A
+fd71c68	discard	400 depth 3 trees with ordinal day	0.6855	N/A
+7b40435	discard	reg_lambda 5	0.6849	N/A
+9a9421f	discard	max_cat_threshold 128	0.6843	N/A
+72d7e0a	keep	remove scheduled departure hour	0.6857	0.6841
+938c50c	discard	remove distance	0.6848	N/A

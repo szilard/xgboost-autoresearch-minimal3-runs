@@ -1,0 +1,75 @@
+commit 72d7e0acda6165c1c61ec230d656610e12f9d18d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:49:09 2026 +0000
+
+    Ablate scheduled departure hour
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit bf7afb446c0934da301ffd4f1e5ccc9616e6fa15
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:40:13 2026 +0000
+
+    Use ordinal day of month
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 59226f3788ff59705808a88e4887aa414dbb9299
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:25:38 2026 +0000
+
+    Remove unused departure minute feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit a2c056e98c8823c658174c438bfa695be38d13bb
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:05:44 2026 +0000
+
+    Test depth three with calendar features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dab551821e28534f4e17fbc4fac4fc0f44487b38
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:01:40 2026 +0000
+
+    Add calendar day of year feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit bb2923f33446e72102a480d97d5a63894900f4d4
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:56:54 2026 +0000
+
+    Try shallower longer boosting
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 704459853991c432fa81fc600326ad2f079f1bfd
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:54:57 2026 +0000
+
+    Add scheduled departure hour and minute features
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

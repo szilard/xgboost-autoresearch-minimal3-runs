@@ -1,0 +1,72 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 7044598 | keep | add scheduled departure hour and minute ===
+  holdout=0.6731
+=== [4] bb2923f | keep | 300 trees depth 4 learning rate 0.05 ===
+  holdout=0.6777
+=== [5] 8c62bc0 | discard | 600 trees at depth 4 and learning rate 0.05 ===
+  SKIP: status discard
+=== [6] 5da1b99 | discard | min_child_weight 5 ===
+  SKIP: status discard
+=== [7] dab5518 | keep | add day of year ===
+  holdout=0.6817
+=== [8] 524abcf | discard | add carrier origin categorical interaction ===
+  SKIP: status discard
+=== [9] a2c056e | keep | depth 3 with day of year ===
+  holdout=0.6833
+=== [10] 3698841 | discard | 500 depth 3 trees ===
+  SKIP: status discard
+=== [11] 037f72d | discard | 200 depth 3 trees ===
+  SKIP: status discard
+=== [12] 4794e86 | discard | row subsample 0.8 ===
+  SKIP: status discard
+=== [13] f026620 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [14] 1cea131 | discard | max_bin 512 ===
+  SKIP: status discard
+=== [15] ccc7608 | discard | depth 2 at 300 trees ===
+  SKIP: status discard
+=== [16] 9a1a180 | discard | equal blend of depth 3 and depth 4 models ===
+  SKIP: status discard
+=== [17] 80f1455 | discard | categorical week of year ===
+  SKIP: status discard
+=== [18] 5229b83 | discard | major holiday travel periods ===
+  SKIP: status discard
+=== [19] 458d209 | discard | departure time relative to route median ===
+  SKIP: status discard
+=== [20] 59226f3 | keep | remove unused departure minute feature ===
+  holdout=0.6833
+=== [21] d027353 | discard | loss-guided eight-leaf trees ===
+  SKIP: status discard
+=== [22] 7bf4696 | discard | month weekday categorical interaction ===
+  SKIP: status discard
+=== [23] ac767c4 | discard | 500 trees learning rate 0.03 ===
+  SKIP: status discard
+=== [24] 214b504 | discard | DART dropout rate 0.05 skip 0.5 ===
+  SKIP: status discard
+=== [25] af5310c | discard | gamma 0.5 tied without simplification ===
+  SKIP: status discard
+=== [26] d037c84 | discard | max_cat_to_onehot 32 ===
+  SKIP: status discard
+=== [27] 9f1d5a9 | discard | cyclical day-of-year sine and cosine ===
+  SKIP: status discard
+=== [28] ba85f5a | discard | remove categorical day of month ===
+  SKIP: status discard
+=== [29] bf7afb4 | keep | ordinal day of month replaces categorical ===
+  holdout=0.6840
+=== [30] 796a46d | discard | combine ordinal and categorical day of month ===
+  SKIP: status discard
+=== [31] 923cb67 | discard | depth 4 with ordinal day of month ===
+  SKIP: status discard
+=== [32] fd71c68 | discard | 400 depth 3 trees with ordinal day ===
+  SKIP: status discard
+=== [33] 7b40435 | discard | reg_lambda 5 ===
+  SKIP: status discard
+=== [34] 9a9421f | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [35] 72d7e0a | keep | remove scheduled departure hour ===
+  holdout=0.6841
+=== [36] 938c50c | discard | remove distance ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

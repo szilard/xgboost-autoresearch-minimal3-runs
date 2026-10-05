@@ -1,0 +1,6 @@
+Training time: 1.0s
+Training done, evaluating...
+Artifact: artifacts/938c50c8df6293dbb3cd87a70aacad9c6daf4bb3.pkl (1.0 MB)
+Eval time: 32.5s
+Eval AUC: 0.6848
+Run time: 34.6s (training 1.9s, eval 32.7s, ok)
