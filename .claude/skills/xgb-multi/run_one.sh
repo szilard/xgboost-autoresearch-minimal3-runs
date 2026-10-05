@@ -37,7 +37,8 @@ FAILED_TURN_WAIT=300
 MAX_CAPACITY_TURNS=10
 CAPACITY_WAIT=30
 WRAP_UP_S=600       # time the agent gets after TIME IS UP to run harness.py stop (a run in progress can take 6 min)
-POLL_S=60
+POLL_S=60           # clock check while a turn runs
+TURN_POLL_S=2       # check that the turn's codex is still running: a turn that ends is followed up at once
 MEM_LIMIT=24g       # container memory cap, no swap: the agent's runs can't starve the host
 
 mkdir -p "$OUT"
@@ -48,7 +49,7 @@ dx() { docker exec -w $R $C bash -c "$1"; }
 clock() { dx 'python3 harness.py status' 2>&1; }
 
 STATUS=ok REASON="" SID="" NT=0 STOPPED_BY="" STARTED=0
-FAIL_KIND="" FAILED_TURNS=0 RETRY_WAIT_S=0
+FAIL_KIND="" FAILED_TURNS=0 RETRY_WAIT_S=0 TURN_END=0
 MESSAGES=()
 fail() { STATUS=failed; REASON=$*; log "FAILED: $*"; }
 
@@ -120,7 +121,7 @@ log "reasoning levels for $MODEL: $LEVELS"
 # Returns 0 if the turn completed, 1 otherwise.
 turn() {
   NT=$((NT + 1))
-  local n=$NT msg=$1 sub timeup_at="" pid rc
+  local n=$NT msg=$1 sub timeup_at="" pid rc next_clock
   MESSAGES+=("$msg")
   if [ -z "$SID" ]; then sub="exec"; else sub="exec resume $SID"; fi
   log "turn $n send: $msg"
@@ -129,8 +130,11 @@ turn() {
     -m $MODEL -c model_reasoning_effort=\"$EFFORT\" \
     -o ~/turns/$n.txt \"\$1\" < /dev/null > ~/turns/$n.jsonl 2> ~/turns/$n.err" _ "$msg" &
   pid=$!
+  next_clock=$(( $(date +%s) + POLL_S ))
   while kill -0 $pid 2> /dev/null; do
-    sleep $POLL_S
+    sleep $TURN_POLL_S
+    [ $(date +%s) -ge $next_clock ] || continue
+    next_clock=$(( $(date +%s) + POLL_S ))
     local st; st=$(clock)
     if [[ "$st" == *"TIME IS UP"* ]]; then
       [ -n "$timeup_at" ] || { timeup_at=$(date +%s); log "clock: TIME IS UP, agent has $((WRAP_UP_S / 60)) min to stop"; }
@@ -143,6 +147,7 @@ turn() {
     fi
   done
   wait $pid; rc=$?
+  TURN_END=$(date +%s)
 
   if [ -z "$SID" ]; then
     SID=$(dx 'head -1 ~/turns/1.jsonl' | python3 -c 'import json,sys; print(json.loads(sys.stdin.readline())["thread_id"])' 2> /dev/null)
@@ -200,8 +205,8 @@ drive() {
         log "waiting $w s before retrying"
       fi
       sleep $w
-      # the harness clock keeps running: count the waits that came out of the agent's hour
-      [[ "$st" == *remaining* && "$st" != *"TIME IS UP"* ]] && RETRY_WAIT_S=$((RETRY_WAIT_S + w))
+      # the harness clock keeps running: count what came out of the agent's hour, from the end of the failed turn
+      [[ "$st" == *remaining* && "$st" != *"TIME IS UP"* ]] && RETRY_WAIT_S=$((RETRY_WAIT_S + $(date +%s) - TURN_END))
       st=$(clock)
     fi
     log "clock: $(echo "$st" | tr '\n' ' ')"

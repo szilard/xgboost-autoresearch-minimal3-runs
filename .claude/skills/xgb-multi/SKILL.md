@@ -224,8 +224,9 @@ Don't commit or push anything - I review and commit the results myself.
   turn usually works right away), DRIVER retries after 30 s, and fails the
   run (excluded) at the 10th such turn in a row. After any other failure
   (e.g. a usage limit) it retries after 5 min, and fails the run at the 3rd
-  in a row. The harness clock keeps running during the waits: what they
-  took out of the agent's hour is `retry_wait_s` in driver-summary.json.
+  in a row. The harness clock keeps running meanwhile: what the failed
+  turns took out of the agent's hour, each from its end to its retry, is
+  `retry_wait_s` in driver-summary.json.
   If two runs in a row fail like that, stop the group and tell me rather
   than burning through the remaining runs.
 - Runs of xgboost-autoresearch-minimal2 (the earlier orchestrator repo) used
