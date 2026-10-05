@@ -1,0 +1,52 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] fe953cd | keep | add scheduled-hour category and cyclic minute-of-day features ===
+  holdout=0.6734
+=== [4] 359b335 | keep | ablate cyclic pair; retain scheduled-hour category ===
+  holdout=0.6735
+=== [5] 8ef11e3 | discard | drop raw scheduled time; keep hour category ===
+  SKIP: status discard
+=== [6] c58a53c | discard | add native ordered Origin-Dest route category ===
+  SKIP: status discard
+=== [7] f117ce7 | keep | lower max_depth from 6 to 4 ===
+  holdout=0.6773
+=== [8] e1d8c8d | discard | set min_child_weight to 5 at depth 4 ===
+  SKIP: status discard
+=== [9] 05bcaac | discard | set subsample to 0.8 at depth 4 ===
+  SKIP: status discard
+=== [10] 3bf7f9b | keep | use 200 trees at learning rate 0.05 ===
+  holdout=0.6783
+=== [11] 840aec5 | discard | limit max categorical split candidates to 32 ===
+  SKIP: status discard
+=== [12] 91cd246 | crash | month sine/cosine used string arithmetic; fix by casting Month ===
+  SKIP: status crash
+=== [13] 8ca8510 | crash | Month values use c- prefix; direct integer cast failed ===
+  SKIP: status crash
+=== [14] ddb2b9d | discard | add month sine/cosine features ===
+  SKIP: status discard
+=== [15] cda7ceb | discard | add carrier-by-hour category ===
+  SKIP: status discard
+=== [16] e8d1fb6 | discard | coarsen carrier-hour cross to busy versus other period ===
+  SKIP: status discard
+=== [17] 718a665 | discard | reduce max_depth from 4 to 3 ===
+  SKIP: status discard
+=== [18] 9f723ca | discard | raise max_depth from 4 to 5 ===
+  SKIP: status discard
+=== [19] beae9c5 | discard | add five-fold smoothed OOF route target rate (alpha 50) ===
+  SKIP: status discard
+=== [20] 08b4942 | discard | reduce route target-rate smoothing from 50 to 20 ===
+  SKIP: status discard
+=== [21] 11f9f8f | keep | add five-fold smoothed carrier, origin, and destination delay rates ===
+  holdout=0.6790
+=== [22] 6dd6c96 | keep | remove destination target rate; retain carrier and origin rates ===
+  holdout=0.6791
+=== [23] 8bfaefd | keep | remove carrier target rate; retain origin rate ===
+  holdout=0.6789
+=== [24] 9c73270 | discard | remove the remaining origin target rate ===
+  SKIP: status discard
+=== [25] 2190c6d | discard | reduce origin target-rate smoothing from 100 to 50 ===
+  SKIP: status discard
+=== [26] 9ee21dd | discard | increase origin target-rate smoothing from 100 to 200 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

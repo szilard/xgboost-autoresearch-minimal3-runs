@@ -1,0 +1,75 @@
+commit 8bfaefd692ff83302b011005abeb3975b0c457ee
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:05:26 2026 +0000
+
+    Ablate carrier target rate
+
+ train.py | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit 6dd6c96484481d3060d242aba56453dbb2e72350
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:03:36 2026 +0000
+
+    Ablate destination target rate
+
+ train.py | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit 11f9f8f5cae49a1eaddfb378c7c5a524f5e69717
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:01:40 2026 +0000
+
+    Add cross-fitted carrier and airport rates
+
+ train.py | 51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 3bf7f9b2f659d1a26e7d010d822dffe99c322220
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 12:29:57 2026 +0000
+
+    Reduce learning rate and add boosting rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f117ce7881b726f25caf7284353f688c8cc8c49f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 12:25:34 2026 +0000
+
+    Reduce XGBoost tree depth
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 359b33548966c92267f421ad152b792c29045af4
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 12:19:35 2026 +0000
+
+    Ablate cyclic departure time features
+
+ train.py | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit fe953cdec04617f107cfc2d8a317e6216678594a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 12:18:03 2026 +0000
+
+    Add scheduled departure time features
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

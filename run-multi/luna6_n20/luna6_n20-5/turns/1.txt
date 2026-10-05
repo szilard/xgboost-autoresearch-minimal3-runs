@@ -1,0 +1,3 @@
+Setup is ready on branch `oct5`. I read [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py) and [harness.py](/home/ubuntu/xgboost-autoresearch-minimal3/harness.py); both data files are present. [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) contains only the required header, and [output/research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) is initialized.
+
+The experiment clock hasn’t started and the baseline hasn’t run. Confirm when you’re ready for me to start the clock and launch it.

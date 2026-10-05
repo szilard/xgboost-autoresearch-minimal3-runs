@@ -1,0 +1,26 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+fe953cd	keep	add scheduled-hour category and cyclic minute-of-day features	0.6745	0.6734
+359b335	keep	ablate cyclic pair; retain scheduled-hour category	0.6747	0.6735
+8ef11e3	discard	drop raw scheduled time; keep hour category	0.6741	N/A
+c58a53c	discard	add native ordered Origin-Dest route category	0.6660	N/A
+f117ce7	keep	lower max_depth from 6 to 4	0.6789	0.6773
+e1d8c8d	discard	set min_child_weight to 5 at depth 4	0.6789	N/A
+05bcaac	discard	set subsample to 0.8 at depth 4	0.6781	N/A
+3bf7f9b	keep	use 200 trees at learning rate 0.05	0.6797	0.6783
+840aec5	discard	limit max categorical split candidates to 32	0.6797	N/A
+91cd246	crash	month sine/cosine used string arithmetic; fix by casting Month	0.0000	N/A
+8ca8510	crash	Month values use c- prefix; direct integer cast failed	0.0000	N/A
+ddb2b9d	discard	add month sine/cosine features	0.6797	N/A
+cda7ceb	discard	add carrier-by-hour category	0.6792	N/A
+e8d1fb6	discard	coarsen carrier-hour cross to busy versus other period	0.6795	N/A
+718a665	discard	reduce max_depth from 4 to 3	0.6794	N/A
+9f723ca	discard	raise max_depth from 4 to 5	0.6778	N/A
+beae9c5	discard	add five-fold smoothed OOF route target rate (alpha 50)	0.6796	N/A
+08b4942	discard	reduce route target-rate smoothing from 50 to 20	0.6789	N/A
+11f9f8f	keep	add five-fold smoothed carrier, origin, and destination delay rates	0.6799	0.6790
+6dd6c96	keep	remove destination target rate; retain carrier and origin rates	0.6799	0.6791
+8bfaefd	keep	remove carrier target rate; retain origin rate	0.6803	0.6789
+9c73270	discard	remove the remaining origin target rate	0.6797	N/A
+2190c6d	discard	reduce origin target-rate smoothing from 100 to 50	0.6795	N/A
+9ee21dd	discard	increase origin target-rate smoothing from 100 to 200	0.6797	N/A

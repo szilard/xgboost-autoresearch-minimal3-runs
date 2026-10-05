@@ -1,0 +1,5 @@
+The experiment is set up and finished on branch `oct5`. The harness clock stopped after **58m31s**.
+
+Best kept result: **Eval AUC 0.6803** at commit `8bfaefd`, up from the baseline’s 0.6743. The best model keeps the cross-fitted origin delay rate at smoothing 100; removing it or changing smoothing to 50 or 200 scored lower. The cross-fitting and smoothing choices follow the documented target-encoding approach of shrinking category averages toward the global mean and encoding training rows from other folds ([scikit-learn TargetEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.TargetEncoder.html), [cross-fitting guide](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_target_encoder_cross_val.html)).
+
+The working tree is clean at the best commit. I recorded the run results and final synthesis in [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [output/research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). No holdout data was used.
