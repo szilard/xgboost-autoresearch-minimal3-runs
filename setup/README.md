@@ -47,7 +47,7 @@ docker run --rm -v codex-auth:/v agents3 ls -la /v
 The project skill `.claude/skills/xgb-multi/SKILL.md` runs the experiment N
 times in a row, e.g. to see how much the result varies between runs
 (N = 1 is a single run). Start `claude` in this repo (inside tmux: a run
-takes ~1.5 hours) and type:
+takes ~1.25 hours) and type:
 
 ```
 /xgb-multi <run-group> <model> <n-runs> [effort]

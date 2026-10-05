@@ -42,14 +42,14 @@ Run everything below without waiting on me, except where it says stop.
 2. Check free disk space (`df -h /`). A run needs a few GB while its
    container exists (about 1 GB of it model artifacts); tell me if there's
    less than ~15 GB free, and stop.
-3. Tell me the plan in one line (group, model, effort, N_RUNS, ~1.5 h per
+3. Tell me the plan in one line (group, model, effort, N_RUNS, ~1.25 h per
    run, sequential) and carry on.
 
 ## Each run, one after another
 
 Runs are strictly sequential: each uses all 8 cores.
 
-4. Launch DRIVER in the background (it takes ~1.5 h):
+4. Launch DRIVER in the background (it takes ~1.25 h):
 
        .claude/skills/xgb-multi/run_one.sh RUN_GROUP-i MODEL REASONING_EFFORT run-multi/RUN_GROUP/RUN_GROUP-i
 
@@ -114,7 +114,11 @@ Runs are strictly sequential: each uses all 8 cores.
        not.
      - leak_check.txt: CONTENT HITS must be 0 (lines of the human-only
        scripts, rows of holdout.csv, rows of eval.csv), and look at each
-       listed command yourself. The agent may read `data/train.csv` only.
+       listed command yourself. A hit on a line of a human-only script can
+       be a false positive, when the line is generic code that the agent met
+       elsewhere (e.g. in a documentation page it opened): find where the
+       line appears in the session log before you call it one, and say so
+       in run.md. The agent may read `data/train.csv` only.
        `eval.csv` is for the harness: checking that it exists is fine,
        reading it is not. Forbidden as well: flight data from anywhere else
        - the source data `2005.csv` and `2006.csv` on S3, or the same
