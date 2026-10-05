@@ -1,0 +1,70 @@
+=== [2] b15ec66 | keep | baseline, unchanged starter model ===
+  holdout=0.6725
+=== [3] b4ce117 | discard | replace HHMM with minute-of-day and cyclic time features ===
+  SKIP: status discard
+=== [4] c6adea4 | keep | add 0.8 row and feature subsampling ===
+  holdout=0.6766
+=== [5] 48ebd5e | discard | keep row sampling and ablate column sampling ===
+  SKIP: status discard
+=== [6] 0ea9a71 | keep | use colsample_bytree=0.8 without row subsampling ===
+  holdout=0.6773
+=== [7] 26c7506 | discard | lower colsample_bytree from 0.8 to 0.6 ===
+  SKIP: status discard
+=== [8] e8c80dd | discard | reduce max_depth from 6 to 4 ===
+  SKIP: status discard
+=== [9] af0864d | discard | raise min_child_weight from 1 to 5 ===
+  SKIP: status discard
+=== [10] f46bafb | discard | raise min_child_weight from 1 to 2 ===
+  SKIP: status discard
+=== [11] ae69a7d | discard | 300 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [12] 74c743d | discard | raise max_cat_to_onehot to 32 ===
+  SKIP: status discard
+=== [13] 807b155 | discard | add ordered Origin-Dest categorical feature ===
+  SKIP: status discard
+=== [14] ba0eb2d | discard | add smoothed carrier origin destination delay rates ===
+  SKIP: status discard
+=== [15] 74ca58a | discard | add carrier by two-hour departure block ===
+  SKIP: status discard
+=== [16] 03bc882 | discard | add departure hour as categorical feature ===
+  SKIP: status discard
+=== [17] c2eb06b | discard | add numeric day of year ===
+  SKIP: status discard
+=== [18] bc1ecf7 | discard | set gamma to 1 ===
+  SKIP: status discard
+=== [19] b003ed5 | discard | set gamma to 0.1 ===
+  SKIP: status discard
+=== [20] c3b1dee | discard | set max_depth to 5 ===
+  SKIP: status discard
+=== [21] 95e698c | discard | set max_depth to 7 ===
+  SKIP: status discard
+=== [22] 1493332 | discard | set max_cat_threshold to 32 ===
+  SKIP: status discard
+=== [23] 51f67b5 | discard | DART booster with rate_drop 0.1 ===
+  SKIP: status discard
+=== [24] 427a9de | discard | use lossguide with 64 leaves ===
+  SKIP: status discard
+=== [25] b5a1173 | discard | parallel-tree random forest: 100 trees, subsample/bynode 0.8 ===
+  SKIP: status discard
+=== [26] df56ff3 | discard | scale_pos_weight=4 ===
+  SKIP: status discard
+=== [27] 6a4444c | discard | scale_pos_weight=2 ===
+  SKIP: status discard
+=== [28] 6823a44 | discard | max_bin=512 ===
+  SKIP: status discard
+=== [29] 747da31 | discard | max_bin=128 ===
+  SKIP: status discard
+=== [30] dec0f5e | discard | colsample_bylevel=0.8 ===
+  SKIP: status discard
+=== [31] 552054b | discard | gradient-based subsample 0.8 ===
+  SKIP: status discard
+=== [32] d4cdfb6 | discard | colsample_bynode=0.9 with bytree 0.8 ===
+  SKIP: status discard
+=== [33] 129964d | discard | max_cat_to_onehot=1 (tie, slower) ===
+  SKIP: status discard
+=== [34] c4f3c05 | discard | n_estimators=150 ===
+  SKIP: status discard
+=== [35] ad5e9a9 | discard | colsample_bytree=0.9 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

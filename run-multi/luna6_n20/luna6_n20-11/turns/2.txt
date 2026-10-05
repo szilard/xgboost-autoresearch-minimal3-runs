@@ -1,0 +1,5 @@
+Experiment finished after 58m40s. Branch `oct5` is clean and restored to the best checkpoint, `0ea9a71`.
+
+The best score was **0.6805 AUC**, up **0.0062** from the 0.6743 baseline. The winning change was `colsample_bytree=0.8`; the other 32 non-baseline trials did not improve it. The standalone forest scored 0.6681, and partitioning all categorical features tied the best but ran slower.
+
+The [results table](</home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv>), [research log](</home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md>), and final [train.py](</home/ubuntu/xgboost-autoresearch-minimal3/train.py) are available in the workspace. Research followed the official XGBoost guidance on [column sampling](https://xgboost.readthedocs.io/en/stable/parameter.html), [random forests](https://xgboost.readthedocs.io/en/stable/tutorials/rf.html), and [categorical splits](https://xgboost.readthedocs.io/en/stable/tutorials/categorical.html).

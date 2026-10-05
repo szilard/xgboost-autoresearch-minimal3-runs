@@ -1,0 +1,3 @@
+Setup is ready on the fresh `oct5` branch. `data/train.csv` and `data/eval.csv` are present, and `output/results.tsv` has the required header. I’ve left `train.py` unchanged and have not started the experiment clock.
+
+Confirm when you’re ready, and I’ll start the clock and run the baseline.

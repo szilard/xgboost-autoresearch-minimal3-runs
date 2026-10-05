@@ -1,0 +1,30 @@
+commit 0ea9a71674fd140a558b6b0e85b5bc3fb37c9c08
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:05:21 2026 +0000
+
+    Ablate row subsampling
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit c6adea4205b2114c0dd5868fa066f6c8a3566108
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:02:46 2026 +0000
+
+    Add row and feature subsampling
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

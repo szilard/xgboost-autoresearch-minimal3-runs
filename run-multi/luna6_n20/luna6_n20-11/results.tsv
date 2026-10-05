@@ -1,0 +1,35 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline, unchanged starter model
+b4ce117	0.6734	discard	replace HHMM with minute-of-day and cyclic time features
+c6adea4	0.6777	keep	add 0.8 row and feature subsampling
+48ebd5e	0.6759	discard	keep row sampling and ablate column sampling
+0ea9a71	0.6805	keep	use colsample_bytree=0.8 without row subsampling
+26c7506	0.6805	discard	lower colsample_bytree from 0.8 to 0.6
+e8c80dd	0.6799	discard	reduce max_depth from 6 to 4
+af0864d	0.6782	discard	raise min_child_weight from 1 to 5
+f46bafb	0.6783	discard	raise min_child_weight from 1 to 2
+ae69a7d	0.6780	discard	300 trees at learning rate 0.05
+74c743d	0.6789	discard	raise max_cat_to_onehot to 32
+807b155	0.6708	discard	add ordered Origin-Dest categorical feature
+ba0eb2d	0.6766	discard	add smoothed carrier origin destination delay rates
+74ca58a	0.6758	discard	add carrier by two-hour departure block
+03bc882	0.6769	discard	add departure hour as categorical feature
+c2eb06b	0.6783	discard	add numeric day of year
+bc1ecf7	0.6790	discard	set gamma to 1
+b003ed5	0.6800	discard	set gamma to 0.1
+c3b1dee	0.6793	discard	set max_depth to 5
+95e698c	0.6759	discard	set max_depth to 7
+1493332	0.6784	discard	set max_cat_threshold to 32
+51f67b5	0.6782	discard	DART booster with rate_drop 0.1
+427a9de	0.6793	discard	use lossguide with 64 leaves
+b5a1173	0.6681	discard	parallel-tree random forest: 100 trees, subsample/bynode 0.8
+df56ff3	0.6776	discard	scale_pos_weight=4
+6a4444c	0.6776	discard	scale_pos_weight=2
+6823a44	0.6786	discard	max_bin=512
+747da31	0.6776	discard	max_bin=128
+dec0f5e	0.6774	discard	colsample_bylevel=0.8
+552054b	0.6789	discard	gradient-based subsample 0.8
+d4cdfb6	0.6790	discard	colsample_bynode=0.9 with bytree 0.8
+129964d	0.6805	discard	max_cat_to_onehot=1 (tie, slower)
+c4f3c05	0.6783	discard	n_estimators=150
+ad5e9a9	0.6766	discard	colsample_bytree=0.9

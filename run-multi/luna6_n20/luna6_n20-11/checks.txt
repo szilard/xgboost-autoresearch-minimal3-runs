@@ -1,0 +1,20 @@
+== results.tsv
+  34 rows: 3 keep, 31 discard, 0 crash
+  kept ties (allowed only for simpler or faster code; look at the description): none
+  kept Eval AUC: 0.6743 -> 0.6805, max 0.6805
+
+== clock and harness runs
+  34 harness runs: 34 ok, 0 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3520 s (+80 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct5: 3 commits, first b15ec66, HEAD 0ea9a71
+  33 commits by the agent (branch and reflog) checked for files other than train.py
+  34 artifacts, 97 MB
+  FLAG train_py_review: ba0eb2d: global_delay_rate = target_binary.mean()
+  FLAG train_py_review: ba0eb2d: return (stats["sum"] + global_delay_rate * prior_weight) / (stats["count"] + prior_weight)
+  train.py of 33 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none

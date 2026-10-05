@@ -1,0 +1,35 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline, unchanged starter model	0.6743	0.6725
+b4ce117	discard	replace HHMM with minute-of-day and cyclic time features	0.6734	N/A
+c6adea4	keep	add 0.8 row and feature subsampling	0.6777	0.6766
+48ebd5e	discard	keep row sampling and ablate column sampling	0.6759	N/A
+0ea9a71	keep	use colsample_bytree=0.8 without row subsampling	0.6805	0.6773
+26c7506	discard	lower colsample_bytree from 0.8 to 0.6	0.6805	N/A
+e8c80dd	discard	reduce max_depth from 6 to 4	0.6799	N/A
+af0864d	discard	raise min_child_weight from 1 to 5	0.6782	N/A
+f46bafb	discard	raise min_child_weight from 1 to 2	0.6783	N/A
+ae69a7d	discard	300 trees at learning rate 0.05	0.6780	N/A
+74c743d	discard	raise max_cat_to_onehot to 32	0.6789	N/A
+807b155	discard	add ordered Origin-Dest categorical feature	0.6708	N/A
+ba0eb2d	discard	add smoothed carrier origin destination delay rates	0.6766	N/A
+74ca58a	discard	add carrier by two-hour departure block	0.6758	N/A
+03bc882	discard	add departure hour as categorical feature	0.6769	N/A
+c2eb06b	discard	add numeric day of year	0.6783	N/A
+bc1ecf7	discard	set gamma to 1	0.6790	N/A
+b003ed5	discard	set gamma to 0.1	0.6800	N/A
+c3b1dee	discard	set max_depth to 5	0.6793	N/A
+95e698c	discard	set max_depth to 7	0.6759	N/A
+1493332	discard	set max_cat_threshold to 32	0.6784	N/A
+51f67b5	discard	DART booster with rate_drop 0.1	0.6782	N/A
+427a9de	discard	use lossguide with 64 leaves	0.6793	N/A
+b5a1173	discard	parallel-tree random forest: 100 trees, subsample/bynode 0.8	0.6681	N/A
+df56ff3	discard	scale_pos_weight=4	0.6776	N/A
+6a4444c	discard	scale_pos_weight=2	0.6776	N/A
+6823a44	discard	max_bin=512	0.6786	N/A
+747da31	discard	max_bin=128	0.6776	N/A
+dec0f5e	discard	colsample_bylevel=0.8	0.6774	N/A
+552054b	discard	gradient-based subsample 0.8	0.6789	N/A
+d4cdfb6	discard	colsample_bynode=0.9 with bytree 0.8	0.6790	N/A
+129964d	discard	max_cat_to_onehot=1 (tie, slower)	0.6805	N/A
+c4f3c05	discard	n_estimators=150	0.6783	N/A
+ad5e9a9	discard	colsample_bytree=0.9	0.6766	N/A
