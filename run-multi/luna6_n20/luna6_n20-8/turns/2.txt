@@ -1,0 +1,8 @@
+Setup and experiment run are complete. The `oct5` branch is back at best commit `7a1cbf0`.
+
+- **Best Eval AUC:** 0.6809, up 0.0066 from the 0.6743 baseline.
+- **Best configuration:** depth 3, 200 trees, learning rate 0.05, `min_child_weight=10`, and `colsample_bytree=0.8`.
+- Completed 27 non-baseline experiments. The later trials did not beat the best; their results and hypotheses are logged.
+- The experiment clock is stopped.
+
+See [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv), [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md), and the restored [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py).

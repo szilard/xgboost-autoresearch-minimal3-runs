@@ -1,0 +1,66 @@
+commit 7a1cbf0dfd01f01cc54b241b94ff18f7906d7792
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:11:39 2026 +0000
+
+    Raise minimum child weight to ten
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c71790fac36caa580aa1f9c9d36776ca9bfc5087
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:05:06 2026 +0000
+
+    Try per-tree feature sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 744ceefaba2ad0338fd237b30208fdb6d37f9ec0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 16:00:58 2026 +0000
+
+    Raise minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b0680c428d23374cd15e001481ef3ee6abc97c24
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:50:36 2026 +0000
+
+    Try smaller boosting steps
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 07f77a181d51b00ea67774cb390c4111539558cf
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:39:04 2026 +0000
+
+    Test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7cd821f1b2a6796390854081855dd27be3af1830
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 15:37:40 2026 +0000
+
+    Try shallower trees for transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

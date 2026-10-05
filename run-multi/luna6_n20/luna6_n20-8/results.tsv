@@ -1,0 +1,29 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline starter categorical XGBoost
+7cd821f	0.6789	keep	reduce max_depth from 6 to 4
+07f77a1	0.6798	keep	reduce max_depth from 4 to 3
+b6a334f	0.6734	discard	add directed Origin_Dest categorical feature
+381d78b	0.5819	discard	add smoothed carrier origin and destination target rates
+346ee83	0.6751	discard	reduce max_depth from 3 to 2
+b0680c4	0.6807	keep	use 200 trees at learning_rate 0.05
+d4fd919	0.6787	discard	add subsample=0.8
+0c810e2	0.6803	discard	double rounds and halve learning_rate again
+c9b31b4	0.6776	discard	set max_cat_threshold=32
+a087aa0	0.6798	discard	add sine and cosine departure-time features
+744ceef	0.6807	keep	set min_child_weight=5; equal AUC and faster run
+4396a82	0.6807	discard	set gamma=0.1
+c71790f	0.6809	keep	set colsample_bytree=0.8
+b1d6748	0.6800	discard	set colsample_bytree=0.9
+9235693	0.6791	discard	add categorical scheduled departure hour
+107c880	0.6786	discard	set max_cat_to_onehot=21
+7a1cbf0	0.6809	keep	set min_child_weight=10; equal AUC and faster run
+5486160	0.6805	discard	set min_child_weight=20
+0d83c44	0.6809	discard	set reg_lambda=2
+cfa6046	0.6802	discard	set max_bin=128
+33d9cc5	0.6805	discard	average three column-sampled seeds
+d26b538	0.6538	discard	train 200 parallel shallow trees as XGBoost forest
+c4cd1ea	0.6800	discard	set reg_alpha=0.1
+13b22a4	0.6796	discard	set subsample=0.95
+7dda356	0.6802	discard	try lossguide tree growth with eight leaves
+0e0474f	0.6800	discard	set max_cat_threshold=128
+6014594	0.6803	discard	add numeric day of year feature
