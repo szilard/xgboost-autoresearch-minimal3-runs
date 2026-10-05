@@ -1,0 +1,3 @@
+The setup checks passed: the working tree is clean, both required data files exist, dependencies import, and the experiment clock has not started.
+
+`program.md` asks us to agree on a run tag before creating the branch. I propose **`oct5`**, which is available. Confirm that tag (or give me another), and I’ll create the branch and header-only `output/results.tsv`, then stop for your go-ahead before starting the clock.

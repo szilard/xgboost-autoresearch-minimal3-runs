@@ -1,0 +1,138 @@
+commit 44473d17a24680db6572e3a3bf6b29b1f08a209b
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:14:04 2026 +0000
+
+    Ablate holiday period feature
+
+ train.py | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit 1a5836d978d5824509a5327c13345baea30bd1e9
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:11:09 2026 +0000
+
+    Use smaller boosting steps
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a9586eeb485ee39cd8ecd53130076783ce1e417f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:05:30 2026 +0000
+
+    Test depth ten with leaf cap
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2797a98d2676125add6d0229668a11bd347e99bd
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:04:15 2026 +0000
+
+    Allow deeper loss-guided branches
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f9ff89cd4e2019c43856cb9f4fd76d305ecc184
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:01:42 2026 +0000
+
+    Test 60 loss-guided rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f3dd9e390974c28439683605b36a6bbad06ebe8
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 21:00:22 2026 +0000
+
+    Add rounds to loss-guided model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e09605c0f7a6942c24f4bf2b769a30a1e0e182be
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:57:29 2026 +0000
+
+    Add scheduled holiday periods
+
+ train.py | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 2fdc62b6b19457968c9eb1c42096f606a2960ae1
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:53:20 2026 +0000
+
+    Grow trees by loss reduction
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e9521f14c22d10e0ca7e2d34be2def61229c4669
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:42:01 2026 +0000
+
+    Remove raw HHMM feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ed6e6d665a47493fa57e6543c9d2ea831372898f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:39:39 2026 +0000
+
+    Subsample training rows per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 146bc7e04acd7c05ef292c100a58ea0ae4591d3a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:34:12 2026 +0000
+
+    Add ordinal day of year
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit a607d99b621fe1fa55d79b0f353491a2e0a154e1
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:30:09 2026 +0000
+
+    Probe 25 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7df6ee8ea11197e1e54044d6664e21f40e6ab772
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:29:10 2026 +0000
+
+    Reduce boosting rounds to 50
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9a2b5ef41acb17c420a815c51dbaa5be049c121f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:26:04 2026 +0000
+
+    Decode scheduled departure time
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

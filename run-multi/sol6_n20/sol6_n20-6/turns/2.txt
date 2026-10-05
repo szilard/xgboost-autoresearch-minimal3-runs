@@ -1,0 +1,3 @@
+The `oct5` run is complete. The clock stopped after **59m02s**, and the branch is at its best commit, `44473d1`.
+
+Across 42 experiments, Eval AUC rose from **0.6743** to **0.6818** (+0.0075). The winning [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py) uses decoded schedule time, day of year, and loss-guided trees. The full record is in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The holdout remains unexamined for your post-run check.

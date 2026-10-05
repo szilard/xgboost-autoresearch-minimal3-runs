@@ -1,0 +1,44 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+9a2b5ef	0.6751	keep	add departure minute of day and hour
+b6727d3	0.6751	discard	force categorical partitions
+5833849	0.6674	discard	increase boosting rounds to 300
+7df6ee8	0.6766	keep	reduce boosting rounds to 50
+a607d99	0.6770	keep	reduce boosting rounds to 25
+99b4b41	0.6747	discard	reduce tree depth to four
+770f0dc	0.6710	discard	add route category
+146bc7e	0.6784	keep	add ordinal day of year
+bcdcd08	0.6784	discard	add cyclic year sine and cosine
+d3465e5	0.6784	discard	add weekend indicator
+039dc20	0.6779	discard	min child weight 10
+ed6e6d6	0.6786	keep	subsample 80 percent of rows per tree
+57623fb	0.6770	discard	feature subsampling 80 percent per tree
+e9521f1	0.6786	keep	remove redundant raw HHMM model feature
+b4afa74	0.6783	discard	remove departure hour feature
+4967577	0.6728	discard	add carrier origin interaction
+3f22e3d	0.6720	discard	max categorical threshold 16
+1630432	0.6781	discard	max categorical threshold 128
+f74ef1a	0.6786	discard	add graph distances to three hubs
+e874389	0.6780	discard	add departure time relative to route median
+2fdc62b	0.6790	keep	loss-guided growth with 31 leaves
+b91f59a	0.6771	discard	loss-guided growth with 15 leaves
+cb80a30	0.6772	discard	loss-guided growth with 47 leaves
+e09605c	0.6791	keep	add holiday period category
+c8d4ea1	0.6791	discard	split Christmas and New Year categories
+2f3dd9e	0.6798	keep	40 rounds of loss-guided trees
+2f9ff89	0.6801	keep	60 rounds of loss-guided trees
+33a4ccd	0.6800	discard	90 rounds of loss-guided trees
+2797a98	0.6803	keep	allow depth eight with 31 leaves
+a9586ee	0.6808	keep	allow depth ten with 31 leaves
+73d108c	0.6799	discard	allow depth twelve with 31 leaves
+9c85fb9	0.6808	discard	minimum split gain five
+7461a4f	0.6805	discard	L2 leaf regularization five
+1a5836d	0.6812	keep	120 rounds at learning rate 0.05
+77588ba	0.6810	discard	240 rounds at learning rate 0.025
+44473d1	0.6818	keep	remove holiday category feature
+70418af	0.6812	discard	remove departure hour in longer model
+849b17a	0.6814	discard	remove distance feature
+301a055	0.6811	discard	512 histogram bins
+29c381a	0.6805	discard	128 histogram bins
+864eec2	0.6818	discard	add minute within departure hour
+a157264	0.6817	discard	subsample 90 percent of rows

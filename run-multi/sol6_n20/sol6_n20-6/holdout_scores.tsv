@@ -1,0 +1,44 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+9a2b5ef	keep	add departure minute of day and hour	0.6751	0.6728
+b6727d3	discard	force categorical partitions	0.6751	N/A
+5833849	discard	increase boosting rounds to 300	0.6674	N/A
+7df6ee8	keep	reduce boosting rounds to 50	0.6766	0.6748
+a607d99	keep	reduce boosting rounds to 25	0.6770	0.6755
+99b4b41	discard	reduce tree depth to four	0.6747	N/A
+770f0dc	discard	add route category	0.6710	N/A
+146bc7e	keep	add ordinal day of year	0.6784	0.6774
+bcdcd08	discard	add cyclic year sine and cosine	0.6784	N/A
+d3465e5	discard	add weekend indicator	0.6784	N/A
+039dc20	discard	min child weight 10	0.6779	N/A
+ed6e6d6	keep	subsample 80 percent of rows per tree	0.6786	0.6783
+57623fb	discard	feature subsampling 80 percent per tree	0.6770	N/A
+e9521f1	keep	remove redundant raw HHMM model feature	0.6786	0.6783
+b4afa74	discard	remove departure hour feature	0.6783	N/A
+4967577	discard	add carrier origin interaction	0.6728	N/A
+3f22e3d	discard	max categorical threshold 16	0.6720	N/A
+1630432	discard	max categorical threshold 128	0.6781	N/A
+f74ef1a	discard	add graph distances to three hubs	0.6786	N/A
+e874389	discard	add departure time relative to route median	0.6780	N/A
+2fdc62b	keep	loss-guided growth with 31 leaves	0.6790	0.6777
+b91f59a	discard	loss-guided growth with 15 leaves	0.6771	N/A
+cb80a30	discard	loss-guided growth with 47 leaves	0.6772	N/A
+e09605c	keep	add holiday period category	0.6791	0.6777
+c8d4ea1	discard	split Christmas and New Year categories	0.6791	N/A
+2f3dd9e	keep	40 rounds of loss-guided trees	0.6798	0.6785
+2f9ff89	keep	60 rounds of loss-guided trees	0.6801	0.6800
+33a4ccd	discard	90 rounds of loss-guided trees	0.6800	N/A
+2797a98	keep	allow depth eight with 31 leaves	0.6803	0.6785
+a9586ee	keep	allow depth ten with 31 leaves	0.6808	0.6785
+73d108c	discard	allow depth twelve with 31 leaves	0.6799	N/A
+9c85fb9	discard	minimum split gain five	0.6808	N/A
+7461a4f	discard	L2 leaf regularization five	0.6805	N/A
+1a5836d	keep	120 rounds at learning rate 0.05	0.6812	0.6806
+77588ba	discard	240 rounds at learning rate 0.025	0.6810	N/A
+44473d1	keep	remove holiday category feature	0.6818	0.6803
+70418af	discard	remove departure hour in longer model	0.6812	N/A
+849b17a	discard	remove distance feature	0.6814	N/A
+301a055	discard	512 histogram bins	0.6811	N/A
+29c381a	discard	128 histogram bins	0.6805	N/A
+864eec2	discard	add minute within departure hour	0.6818	N/A
+a157264	discard	subsample 90 percent of rows	0.6817	N/A
