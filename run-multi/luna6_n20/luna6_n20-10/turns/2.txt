@@ -1,0 +1,5 @@
+Setup and experiment are complete. Branch `oct5` is back on the best checkpoint, `b0110e3`; its Eval AUC is **0.6828**, up from the **0.6743** baseline.
+
+The final `min_child_weight=10` and `gamma=0.1` trials tied the best score, so I discarded both. The clock stopped at 59m15s.
+
+See [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py), [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv), and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

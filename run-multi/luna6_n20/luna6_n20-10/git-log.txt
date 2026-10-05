@@ -1,0 +1,102 @@
+commit b0110e3badfb53b080f2f6be32c9d078f5408fd0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:41:16 2026 +0000
+
+    Lower numeric histogram resolution
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d38fcd9791fe79721cf884be8588644fd44f64b0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:36:53 2026 +0000
+
+    Increase categorical partition threshold
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3fe2097b9c29ea6d785dac8d6a5b4fe3b6a01ed0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:18:21 2026 +0000
+
+    Try loss-guided growth with sixteen leaves
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit bd5723a628c4a2b811f75ff715710869ea57e573
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:14:53 2026 +0000
+
+    Use cyclic month features without month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ea78ce0e896c43e653ec9af408ace14b504c68ea
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:11:46 2026 +0000
+
+    Add cyclic month features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 335f025eb7dd69aa44ba95698417a8b2f3d0d096
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:05:51 2026 +0000
+
+    Increase per-tree feature sampling regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2fcdaf8f15b75864f8099a5a009e1357f16a3079
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 18:00:11 2026 +0000
+
+    Raise minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 061b357b4af5d26995e917e8dbc462c92a6927c7
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:58:33 2026 +0000
+
+    Use slower boosting with more estimators
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b42aea2e97e541404d0e62aa3728c27123cf9254
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:57:06 2026 +0000
+
+    Reduce tree depth to improve generalization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2ab6a58d8740f718836860666e53307ca9228649
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 17:55:52 2026 +0000
+
+    Regularize trees with subsampling
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

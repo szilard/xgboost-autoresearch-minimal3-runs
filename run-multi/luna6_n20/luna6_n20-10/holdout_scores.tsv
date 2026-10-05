@@ -1,0 +1,33 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+042b6f1	discard	add directed Origin-Dest categorical feature	0.6667	N/A
+2ab6a58	keep	0.8 row and column subsampling	0.6777	0.6766
+b42aea2	keep	reduce max_depth to 4 with sampling	0.6790	0.6781
+061b357	keep	halve learning rate and double estimators	0.6799	0.6784
+2fcdaf8	keep	raise min_child_weight to 5	0.6802	0.6783
+c5c5cef	discard	set max_cat_to_onehot to 8	0.6790	N/A
+38b27b0	discard	add scheduled departure hour category	0.6796	N/A
+335f025	keep	lower colsample_bytree to 0.6	0.6808	0.6791
+393a45b	discard	lower colsample_bytree to 0.4	0.6790	N/A
+bc936d9	discard	lower subsample to 0.6	0.6787	N/A
+ea78ce0	keep	add cyclic sine/cosine month features	0.6811	0.6795
+99f984b	discard	add cyclic weekday features	0.6807	N/A
+bd5723a	keep	remove month category, retain cyclic features	0.6820	0.6809
+c7d56cb	discard	replace weekday category with cyclic features	0.6814	N/A
+3fe2097	keep	loss-guided growth with max_leaves 16	0.6826	0.6817
+27fff39	discard	raise loss-guided leaf cap to 24	0.6813	N/A
+03724b1	discard	set loss-guided leaf cap to 12	0.6819	N/A
+bca3d61	discard	set gamma to 1.0	0.6826	N/A
+055f214	discard	set reg_lambda to 5	0.6824	N/A
+c7335d8	discard	set reg_lambda to 0.5	0.6814	N/A
+5752cae	discard	add smoothed leave-one-out origin delay rate	0.6008	N/A
+dd42c99	discard	add smoothed leave-one-out carrier delay rate	0.6110	N/A
+a8f4a38	discard	add cyclic departure time features	0.6819	N/A
+d38fcd9	keep	set max_cat_threshold to 128	0.6827	0.6812
+a075c0d	discard	set max_cat_threshold to 256	0.6821	N/A
+22d129c	discard	set max_bin to 512	0.6825	N/A
+b0110e3	keep	set max_bin to 128	0.6828	0.6820
+8e3bdf6	discard	set max_bin to 64	0.6823	N/A
+209b19f	discard	set min_child_weight to 3	0.6828	N/A
+9b20f9f	discard	set min_child_weight to 10	0.6828	N/A
+a52f3e3	discard	set gamma to 0.1	0.6828	N/A

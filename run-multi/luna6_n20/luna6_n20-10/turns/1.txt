@@ -1,0 +1,3 @@
+The setup checks are complete: the repo is clean on `main`, both data files are present, and there’s no existing `output/` to preserve. I’ve read `train.py` and `harness.py`.
+
+I’m waiting for your tag choice (`oct5` or another tag) before creating the branch and results log. The experiment clock has not started.

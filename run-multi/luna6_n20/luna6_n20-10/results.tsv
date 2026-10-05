@@ -1,0 +1,33 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+042b6f1	0.6667	discard	add directed Origin-Dest categorical feature
+2ab6a58	0.6777	keep	0.8 row and column subsampling
+b42aea2	0.6790	keep	reduce max_depth to 4 with sampling
+061b357	0.6799	keep	halve learning rate and double estimators
+2fcdaf8	0.6802	keep	raise min_child_weight to 5
+c5c5cef	0.6790	discard	set max_cat_to_onehot to 8
+38b27b0	0.6796	discard	add scheduled departure hour category
+335f025	0.6808	keep	lower colsample_bytree to 0.6
+393a45b	0.6790	discard	lower colsample_bytree to 0.4
+bc936d9	0.6787	discard	lower subsample to 0.6
+ea78ce0	0.6811	keep	add cyclic sine/cosine month features
+99f984b	0.6807	discard	add cyclic weekday features
+bd5723a	0.6820	keep	remove month category, retain cyclic features
+c7d56cb	0.6814	discard	replace weekday category with cyclic features
+3fe2097	0.6826	keep	loss-guided growth with max_leaves 16
+27fff39	0.6813	discard	raise loss-guided leaf cap to 24
+03724b1	0.6819	discard	set loss-guided leaf cap to 12
+bca3d61	0.6826	discard	set gamma to 1.0
+055f214	0.6824	discard	set reg_lambda to 5
+c7335d8	0.6814	discard	set reg_lambda to 0.5
+5752cae	0.6008	discard	add smoothed leave-one-out origin delay rate
+dd42c99	0.6110	discard	add smoothed leave-one-out carrier delay rate
+a8f4a38	0.6819	discard	add cyclic departure time features
+d38fcd9	0.6827	keep	set max_cat_threshold to 128
+a075c0d	0.6821	discard	set max_cat_threshold to 256
+22d129c	0.6825	discard	set max_bin to 512
+b0110e3	0.6828	keep	set max_bin to 128
+8e3bdf6	0.6823	discard	set max_bin to 64
+209b19f	0.6828	discard	set min_child_weight to 3
+9b20f9f	0.6828	discard	set min_child_weight to 10
+a52f3e3	0.6828	discard	set gamma to 0.1

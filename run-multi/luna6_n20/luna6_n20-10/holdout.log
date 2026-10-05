@@ -1,0 +1,66 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 042b6f1 | discard | add directed Origin-Dest categorical feature ===
+  SKIP: status discard
+=== [4] 2ab6a58 | keep | 0.8 row and column subsampling ===
+  holdout=0.6766
+=== [5] b42aea2 | keep | reduce max_depth to 4 with sampling ===
+  holdout=0.6781
+=== [6] 061b357 | keep | halve learning rate and double estimators ===
+  holdout=0.6784
+=== [7] 2fcdaf8 | keep | raise min_child_weight to 5 ===
+  holdout=0.6783
+=== [8] c5c5cef | discard | set max_cat_to_onehot to 8 ===
+  SKIP: status discard
+=== [9] 38b27b0 | discard | add scheduled departure hour category ===
+  SKIP: status discard
+=== [10] 335f025 | keep | lower colsample_bytree to 0.6 ===
+  holdout=0.6791
+=== [11] 393a45b | discard | lower colsample_bytree to 0.4 ===
+  SKIP: status discard
+=== [12] bc936d9 | discard | lower subsample to 0.6 ===
+  SKIP: status discard
+=== [13] ea78ce0 | keep | add cyclic sine/cosine month features ===
+  holdout=0.6795
+=== [14] 99f984b | discard | add cyclic weekday features ===
+  SKIP: status discard
+=== [15] bd5723a | keep | remove month category, retain cyclic features ===
+  holdout=0.6809
+=== [16] c7d56cb | discard | replace weekday category with cyclic features ===
+  SKIP: status discard
+=== [17] 3fe2097 | keep | loss-guided growth with max_leaves 16 ===
+  holdout=0.6817
+=== [18] 27fff39 | discard | raise loss-guided leaf cap to 24 ===
+  SKIP: status discard
+=== [19] 03724b1 | discard | set loss-guided leaf cap to 12 ===
+  SKIP: status discard
+=== [20] bca3d61 | discard | set gamma to 1.0 ===
+  SKIP: status discard
+=== [21] 055f214 | discard | set reg_lambda to 5 ===
+  SKIP: status discard
+=== [22] c7335d8 | discard | set reg_lambda to 0.5 ===
+  SKIP: status discard
+=== [23] 5752cae | discard | add smoothed leave-one-out origin delay rate ===
+  SKIP: status discard
+=== [24] dd42c99 | discard | add smoothed leave-one-out carrier delay rate ===
+  SKIP: status discard
+=== [25] a8f4a38 | discard | add cyclic departure time features ===
+  SKIP: status discard
+=== [26] d38fcd9 | keep | set max_cat_threshold to 128 ===
+  holdout=0.6812
+=== [27] a075c0d | discard | set max_cat_threshold to 256 ===
+  SKIP: status discard
+=== [28] 22d129c | discard | set max_bin to 512 ===
+  SKIP: status discard
+=== [29] b0110e3 | keep | set max_bin to 128 ===
+  holdout=0.6820
+=== [30] 8e3bdf6 | discard | set max_bin to 64 ===
+  SKIP: status discard
+=== [31] 209b19f | discard | set min_child_weight to 3 ===
+  SKIP: status discard
+=== [32] 9b20f9f | discard | set min_child_weight to 10 ===
+  SKIP: status discard
+=== [33] a52f3e3 | discard | set gamma to 0.1 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
