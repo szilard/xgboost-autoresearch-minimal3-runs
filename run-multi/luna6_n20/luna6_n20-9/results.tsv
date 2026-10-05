@@ -1,0 +1,25 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+f685e45	0.6747	keep	add scheduled departure hour category
+68e9e29	0.6660	discard	add directional route category
+be1b246	0.6756	keep	add cross-fit smoothed carrier/origin/destination delay rates
+abf9720	0.6753	discard	increase target-rate smoothing to alpha 300
+2d42846	0.6771	keep	set subsample and colsample_bytree to 0.8
+7ff549e	0.6759	discard	remove colsample_bytree; keep subsample at 0.8
+643da81	0.6804	keep	reduce max_depth to 4
+adb69f9	0.6779	discard	reduce max_depth to 3
+8f52a9e	0.6790	discard	set max_depth to 5
+17c36c9	0.6810	keep	use 200 trees at learning_rate 0.05
+f784cec	0.6791	discard	add UniqueCarrier by departure hour category
+86b0e19	0.6804	discard	add cross-fit smoothed route delay rate
+aeb53e2	0.6798	discard	set max_cat_threshold to 32
+9fd5bca	0.6810	discard	increase min_child_weight to 5
+180276f	0.6810	discard	set gamma to 1.0
+465336c	0.6808	discard	use 400 trees at learning_rate 0.025
+d2b3ebc	0.6805	discard	remove derived DepHour category
+9f1f40d	0.6806	discard	replace DepHour with five time-of-day bands
+708de79	0.6804	discard	reduce target-rate smoothing to 50
+c0309ed	0.6831	keep	add day-of-year calendar feature
+9c59de7	0.6842	keep	remove Month while retaining DayOfYear
+794421a	0.6859	keep	remove DayofMonth while retaining DayOfYear
+42af8ba	0.6843	discard	add cyclic day-of-year sine and cosine features

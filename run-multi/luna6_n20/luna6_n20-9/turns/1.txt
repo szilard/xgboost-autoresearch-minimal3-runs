@@ -1,0 +1,1 @@
+Setup checks are complete. The worktree is clean on `main`, `oct5` is available, the starter files are in place, and both data files exist. I’ve asked which run tag to use and will create the branch and initialize `output/results.tsv` after you choose. I have not started the experiment clock.

@@ -1,0 +1,6 @@
+2026-10-05T16:44:38.682475Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md:
+This is the comparison point for subsequent experiments.
+2026-10-05T17:35:45.601875Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md:
+- **Hypothesis:** `DayOfYear` carries both month and day ordering, so `Month` may be redundant. Remove only `Month` while keeping `DayofMonth`, `DayOfWeek`, `DayOfYear`, and all model settings; if AUC is equal or higher, keep the simpler representation.
+2026-10-05T17:36:27.910202Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+cat_cols = ["Month", "DayofMonth", "DayOfWeek", "UniqueCarrier", "Origin", "Dest"]

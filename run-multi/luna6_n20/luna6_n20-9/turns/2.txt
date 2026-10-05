@@ -1,0 +1,5 @@
+Experiment setup and run are complete on branch `oct5`. The session clock stopped after 58m35s.
+
+The best result is **0.6859 AUC** at commit `794421a`, up from the **0.6743** baseline. The final cyclic day-of-year experiment scored 0.6843, so I discarded it and restored the best commit. The working tree is clean.
+
+Results and notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).
