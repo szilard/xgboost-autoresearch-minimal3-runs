@@ -1,0 +1,21 @@
+== results.tsv
+  36 rows: 13 keep, 23 discard, 0 crash
+  kept ties (allowed only for simpler or faster code; look at the description): e572989 (0.6819, after c979db5)
+  kept Eval AUC: 0.6743 -> 0.6844, max 0.6844
+
+== clock and harness runs
+  36 harness runs: 36 ok, 0 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3531 s (+69 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct5: 13 commits, first b15ec66, HEAD de6a11d
+  35 commits by the agent (branch and reflog) checked for files other than train.py
+  36 artifacts, 403 MB
+  FLAG train_py_review: 202c8f4: global_target_rate = float(target_values.mean())
+  FLAG train_py_review: 202c8f4: (full_sum + target_rate_smoothing * global_target_rate)
+  FLAG train_py_review: 202c8f4: values[pos] = target_rate_maps[name].get(key, global_target_rate)
+  train.py of 35 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none

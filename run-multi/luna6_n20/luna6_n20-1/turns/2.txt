@@ -1,0 +1,5 @@
+Experiment setup and run are complete. The harness clock stopped at 58m51s.
+
+- Best kept commit: `de6a11d` on branch `oct5`, Eval AUC **0.6844**—up **0.0101** from the 0.6743 baseline.
+- The final `max_bin=768` run scored 0.6842, so I discarded it and restored the best commit.
+- Results and the final synthesis are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

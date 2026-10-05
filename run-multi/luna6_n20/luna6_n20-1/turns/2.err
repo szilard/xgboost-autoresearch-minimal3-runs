@@ -1,0 +1,7 @@
+2026-10-05T08:38:10.880799Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+t0 = time.time()
+rate_features = {"CarrierTargetRate", "OriginTargetRate", "DestTargetRate"}
+feature_weights = np.array(
+    [2.0 if col in rate_features else 1.0 for col in X_train.columns], dtype=np.float32
+)
+model.fit(X_train, y_train, feature_weights=feature_weights)

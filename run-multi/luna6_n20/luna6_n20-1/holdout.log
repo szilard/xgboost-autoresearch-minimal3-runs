@@ -1,0 +1,74 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] da890cb | discard | add origin-destination route category ===
+  SKIP: status discard
+=== [4] 4054e62 | keep | 500 trees at learning rate 0.03 ===
+  holdout=0.6735
+=== [5] 101c7f2 | keep | 500 trees at 0.03 with subsample 0.8 ===
+  holdout=0.6759
+=== [6] 50e07f8 | discard | 500 trees at 0.03 with subsample 0.6 ===
+  SKIP: status discard
+=== [7] d17910a | keep | 500 trees at 0.03 with row and feature subsampling 0.8 ===
+  holdout=0.6775
+=== [8] c979db5 | keep | 500 trees at 0.03 with subsample 0.8 and colsample 0.6 ===
+  holdout=0.6801
+=== [9] e572989 | keep | 500 trees at 0.03 with subsample 0.8 and colsample 0.4 ===
+  holdout=0.6800
+=== [10] 7d9d6e8 | discard | 500 trees at 0.03, subsample 0.8, colsample 0.4, depth 4 ===
+  SKIP: status discard
+=== [11] df3f9c7 | discard | 500 trees at 0.03, subsample 0.8, colsample 0.4, depth 5 ===
+  SKIP: status discard
+=== [12] 2899779 | discard | 500 trees at 0.03, subsample 0.8, colsample 0.4, depth 7 ===
+  SKIP: status discard
+=== [13] 53a092d | keep | add scheduled departure hour ===
+  holdout=0.6811
+=== [14] 529bbfb | keep | add scheduled departure hour and minute ===
+  holdout=0.6808
+=== [15] 6414e05 | discard | add 21:00-04:59 late-night indicator ===
+  SKIP: status discard
+=== [16] baa8d09 | discard | min_child_weight 5 ===
+  SKIP: status discard
+=== [17] a62c268 | discard | min_child_weight 2 ===
+  SKIP: status discard
+=== [18] 202c8f4 | discard | cross-fitted carrier, airport, and route delay rates ===
+  SKIP: status discard
+=== [19] 8e8a37b | keep | cross-fitted carrier, origin, and destination delay rates ===
+  holdout=0.6814
+=== [20] 24b5ce2 | keep | cross-fitted carrier, origin, and destination rates smoothed at 100 ===
+  holdout=0.6820
+=== [21] a71b6fc | discard | cross-fitted carrier, origin, and destination rates smoothed at 200 ===
+  SKIP: status discard
+=== [22] 9ee3514 | discard | cross-fitted carrier, origin, and destination rates smoothed at 150 ===
+  SKIP: status discard
+=== [23] f7e137b | discard | add carrier-hour, origin-hour, and destination-hour cross-fitted rates ===
+  SKIP: status discard
+=== [24] a5c14b3 | discard | add cross-fitted carrier-hour rate only ===
+  SKIP: status discard
+=== [25] 3b4eebd | discard | add sine and cosine month features ===
+  SKIP: status discard
+=== [26] 2f4d967 | discard | drop raw CRSDepTime, retain hour and minute ===
+  SKIP: status discard
+=== [27] a79f10e | discard | 500 trees at 0.03 with colsample 0.5 ===
+  SKIP: status discard
+=== [28] c7bb7fb | keep | 800 trees at 0.02 with best features and sampling ===
+  holdout=0.6818
+=== [29] 6af53a5 | discard | 1000 trees at 0.015 with best features and sampling ===
+  SKIP: status discard
+=== [30] 5dc797b | discard | 800 trees at 0.02 with gamma 0.1 ===
+  SKIP: status discard
+=== [31] 65ce984 | discard | 800 trees at 0.02 with reg_lambda 2 ===
+  SKIP: status discard
+=== [32] c8be3c4 | keep | 800 trees at 0.02 with mild L1 regularization ===
+  holdout=0.6821
+=== [33] 50026ad | discard | double rate-feature sampling weights ===
+  SKIP: status discard
+=== [34] 9103bc3 | discard | weight delay-rate feature selection by 1.5 ===
+  SKIP: status discard
+=== [35] de6a11d | keep | 800 trees at 0.02 with max_bin 512 ===
+  holdout=0.6822
+=== [36] 3acfc18 | discard | 800 trees at 0.02 with max_bin 1024 ===
+  SKIP: status discard
+=== [37] b7100e2 | discard | 800 trees at 0.02 with max_bin 768 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

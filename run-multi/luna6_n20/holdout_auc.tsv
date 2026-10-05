@@ -1,0 +1,2 @@
+run	best_commit	eval_auc	holdout_auc	gap	experiments	valid	flags
+luna6_n20-1	de6a11d	0.6844	0.6822	-0.0022	36	yes	

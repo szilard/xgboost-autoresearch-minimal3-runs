@@ -1,0 +1,120 @@
+commit de6a11de807e06790703b0dada2c1caea0d7caf0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:40:03 2026 +0000
+
+    Increase histogram split resolution
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c8be3c4b9111eb0c88785a38e1b3f251dccb2d23
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:34:23 2026 +0000
+
+    Test mild L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c7bb7fb09a53fa07c50575b45db69d9b5ae469d5
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:28:51 2026 +0000
+
+    Use a finer boosting schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 24b5ce2d9568a3857e9367809f7261f4fe32a66d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:15:19 2026 +0000
+
+    Increase target rate smoothing
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8e8a37b63db66917793daccbdcbd247d08472964
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:14:08 2026 +0000
+
+    Ablate route delay rate feature
+
+ train.py | 56 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 529bbfbfbec05347f3c5e310daeff21edf3f897b
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:03:17 2026 +0000
+
+    Add scheduled departure minute feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 53a092d81c7c4c27a312efae484923852b26d27c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 08:02:08 2026 +0000
+
+    Add scheduled departure hour feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e5729891e5ff6cfd75bf4f6eb18092e83976af5e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 07:56:27 2026 +0000
+
+    Reduce per-tree feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c979db5dd2429d2f96664baf6d060a8e0dbda67c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 07:55:28 2026 +0000
+
+    Lower feature subsampling fraction
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d17910a4665be3011c8faa28773aa014c8a2558a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 07:54:32 2026 +0000
+
+    Subsample features per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 101c7f2303bc9fef36adaa23ebf91089eb626798
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 07:52:25 2026 +0000
+
+    Subsample rows during boosting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4054e62ae05a081f0d114579ff989835c3234df1
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 07:51:16 2026 +0000
+
+    Use slower boosting with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

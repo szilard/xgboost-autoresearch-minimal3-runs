@@ -1,0 +1,37 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+da890cb	0.6667	discard	add origin-destination route category
+4054e62	0.6745	keep	500 trees at learning rate 0.03
+101c7f2	0.6766	keep	500 trees at 0.03 with subsample 0.8
+50e07f8	0.6764	discard	500 trees at 0.03 with subsample 0.6
+d17910a	0.6795	keep	500 trees at 0.03 with row and feature subsampling 0.8
+c979db5	0.6819	keep	500 trees at 0.03 with subsample 0.8 and colsample 0.6
+e572989	0.6819	keep	500 trees at 0.03 with subsample 0.8 and colsample 0.4
+7d9d6e8	0.6806	discard	500 trees at 0.03, subsample 0.8, colsample 0.4, depth 4
+df3f9c7	0.6818	discard	500 trees at 0.03, subsample 0.8, colsample 0.4, depth 5
+2899779	0.6808	discard	500 trees at 0.03, subsample 0.8, colsample 0.4, depth 7
+53a092d	0.6826	keep	add scheduled departure hour
+529bbfb	0.6828	keep	add scheduled departure hour and minute
+6414e05	0.6824	discard	add 21:00-04:59 late-night indicator
+baa8d09	0.6823	discard	min_child_weight 5
+a62c268	0.6824	discard	min_child_weight 2
+202c8f4	0.6824	discard	cross-fitted carrier, airport, and route delay rates
+8e8a37b	0.6836	keep	cross-fitted carrier, origin, and destination delay rates
+24b5ce2	0.6838	keep	cross-fitted carrier, origin, and destination rates smoothed at 100
+a71b6fc	0.6837	discard	cross-fitted carrier, origin, and destination rates smoothed at 200
+9ee3514	0.6835	discard	cross-fitted carrier, origin, and destination rates smoothed at 150
+f7e137b	0.6829	discard	add carrier-hour, origin-hour, and destination-hour cross-fitted rates
+a5c14b3	0.6827	discard	add cross-fitted carrier-hour rate only
+3b4eebd	0.6832	discard	add sine and cosine month features
+2f4d967	0.6824	discard	drop raw CRSDepTime, retain hour and minute
+a79f10e	0.6820	discard	500 trees at 0.03 with colsample 0.5
+c7bb7fb	0.6840	keep	800 trees at 0.02 with best features and sampling
+6af53a5	0.6835	discard	1000 trees at 0.015 with best features and sampling
+5dc797b	0.6839	discard	800 trees at 0.02 with gamma 0.1
+65ce984	0.6839	discard	800 trees at 0.02 with reg_lambda 2
+c8be3c4	0.6841	keep	800 trees at 0.02 with mild L1 regularization
+50026ad	0.6839	discard	double rate-feature sampling weights
+9103bc3	0.6839	discard	weight delay-rate feature selection by 1.5
+de6a11d	0.6844	keep	800 trees at 0.02 with max_bin 512
+3acfc18	0.6839	discard	800 trees at 0.02 with max_bin 1024
+b7100e2	0.6842	discard	800 trees at 0.02 with max_bin 768
