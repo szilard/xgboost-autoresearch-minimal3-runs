@@ -1,0 +1,30 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+ee29d1e	0.6678	discard	300 boosting rounds
+eb5671d	0.6789	keep	depth 4 with 100 trees
+0565c2b	0.6777	discard	200 trees at depth 4
+7f335e4	0.6798	keep	depth 3 with 100 trees
+51dbdd4	0.6751	discard	depth 2 with 100 trees
+a88c85c	0.6797	discard	add categorical departure hour
+59c7f08	0.0000	crash	day-of-year parse failed on prefixed dates
+7403a9e	0.6830	keep	add numeric day of year
+428ad21	0.6830	discard	min_child_weight 10 equal AUC
+03a47f7	0.6810	discard	subsample 0.8
+2ea9f9a	0.6745	discard	carrier by month category
+9827e1c	0.6823	discard	nearest major holiday distance
+f62717a	0.6822	discard	max_bin 512
+cd3b7fb	0.6812	discard	max_bin 128
+743aa52	0.6822	discard	departure time relative to origin median
+91cef22	0.6789	discard	50 depth-3 boosting rounds
+07f5782	0.6831	keep	200 trees eta 0.05
+f562ebb	0.6738	discard	max_cat_threshold 16
+0d6ddf9	0.6821	discard	max_cat_threshold 128
+9b00a77	0.6826	discard	one-hot month and weekday splits
+def8660	0.6822	discard	lossguide with eight leaves
+351a341	0.6810	discard	DART modest tree dropout
+2fc3906	0.6814	discard	add week-of-year category
+1332cd2	0.6823	discard	300 trees eta 0.03
+bb327b7	0.6828	discard	reg_lambda 5
+19e1772	0.6822	discard	remove distance feature
+73bdc39	0.6813	discard	monotone departure time
+50d1635	0.6829	discard	150 trees eta 0.07

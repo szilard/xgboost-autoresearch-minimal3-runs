@@ -1,0 +1,60 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] ee29d1e | discard | 300 boosting rounds ===
+  SKIP: status discard
+=== [4] eb5671d | keep | depth 4 with 100 trees ===
+  holdout=0.6771
+=== [5] 0565c2b | discard | 200 trees at depth 4 ===
+  SKIP: status discard
+=== [6] 7f335e4 | keep | depth 3 with 100 trees ===
+  holdout=0.6786
+=== [7] 51dbdd4 | discard | depth 2 with 100 trees ===
+  SKIP: status discard
+=== [8] a88c85c | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [9] 59c7f08 | crash | day-of-year parse failed on prefixed dates ===
+  SKIP: status crash
+=== [10] 7403a9e | keep | add numeric day of year ===
+  holdout=0.6815
+=== [11] 428ad21 | discard | min_child_weight 10 equal AUC ===
+  SKIP: status discard
+=== [12] 03a47f7 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [13] 2ea9f9a | discard | carrier by month category ===
+  SKIP: status discard
+=== [14] 9827e1c | discard | nearest major holiday distance ===
+  SKIP: status discard
+=== [15] f62717a | discard | max_bin 512 ===
+  SKIP: status discard
+=== [16] cd3b7fb | discard | max_bin 128 ===
+  SKIP: status discard
+=== [17] 743aa52 | discard | departure time relative to origin median ===
+  SKIP: status discard
+=== [18] 91cef22 | discard | 50 depth-3 boosting rounds ===
+  SKIP: status discard
+=== [19] 07f5782 | keep | 200 trees eta 0.05 ===
+  holdout=0.6821
+=== [20] f562ebb | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [21] 0d6ddf9 | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [22] 9b00a77 | discard | one-hot month and weekday splits ===
+  SKIP: status discard
+=== [23] def8660 | discard | lossguide with eight leaves ===
+  SKIP: status discard
+=== [24] 351a341 | discard | DART modest tree dropout ===
+  SKIP: status discard
+=== [25] 2fc3906 | discard | add week-of-year category ===
+  SKIP: status discard
+=== [26] 1332cd2 | discard | 300 trees eta 0.03 ===
+  SKIP: status discard
+=== [27] bb327b7 | discard | reg_lambda 5 ===
+  SKIP: status discard
+=== [28] 19e1772 | discard | remove distance feature ===
+  SKIP: status discard
+=== [29] 73bdc39 | discard | monotone departure time ===
+  SKIP: status discard
+=== [30] 50d1635 | discard | 150 trees eta 0.07 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

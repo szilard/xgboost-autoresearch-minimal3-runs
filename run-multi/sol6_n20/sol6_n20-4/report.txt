@@ -1,0 +1,6 @@
+Clock:        2026-10-05 18:01:07 -> 2026-10-05 19:00:02
+Total:        0h58m55s
+XGBoost runs: 0h17m06s  29.0%   (29 runs: 28 ok, 1 crash, 0 training timeout, 0 eval timeout)
+  training:   0h00m51s   1.4%   (train.py up to evaluation: startup, data, features, fit)
+  evaluation: 0h16m16s  27.6%   (saving the artifact + row-by-row scoring of eval.csv)
+AI:           0h41m49s  71.0%   (everything else: token generation, tool calls, web research, API latency)
