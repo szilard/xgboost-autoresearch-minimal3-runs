@@ -27,10 +27,10 @@ All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and 
 
 | model | groups | valid runs | excluded | holdout AUC mean | sd | min | median | max |
 |---|---|---|---|---|---|---|---|---|
-| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 4 | 0 | 0.6837 | 0.0012 | 0.6821 | 0.6839 | 0.6850 |
+| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 5 | 0 | 0.6835 | 0.0012 | 0.6821 | 0.6836 | 0.6850 |
 | gpt-6-luna | [luna6_n20](run-multi/luna6_n20/results_summary.md) | 11 (2 with caveat) | 0 | 0.6802 | 0.0019 | 0.6773 | 0.6797 | 0.6844 |
 
-Two runs carry a caveat, both `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6 and luna6_n20-8. No run was excluded. Both groups are in progress: luna6_n20 with 11 and sol6_n20 with 4 of their 20 runs reviewed so far. luna6_n20-1, luna6_n20-7 and luna6_n20-11 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
+Two runs carry a caveat, both `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6 and luna6_n20-8. No run was excluded. Both groups are in progress: luna6_n20 with 11 and sol6_n20 with 5 of their 20 runs reviewed so far. luna6_n20-1, luna6_n20-7 and luna6_n20-11 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
 
 ![Holdout AUC per run](run-multi/SUMMARY/holdout_auc_beeswarm.png)
 <!-- xgb-summary: end -->
