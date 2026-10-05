@@ -76,6 +76,7 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0, no cap
 ## Other notes
 
 - The delay rate is cross-fitted with a marker column: `train.py` adds `__train_row_id` to the training frame, and `prepare` gives rows with that column their out-of-fold rate from `TargetEncoder.fit_transform` and any other row (eval, holdout) the rate fitted on all of train. `prepare` reads no file, and the holdout scoring uses the saved artifact the same way the eval scoring does.
+- The simplified categorical preparation (`845ac3d`, kept in the best commit) relies on deprecated pandas behaviour. For a value that is not among the train levels, `pd.Categorical(values, categories=...)` still returns NaN, as the starter's masking did, but pandas 3.0.6 warns ("will raise in a future version"). It does so for every evaluation row with an airport unseen in train: run.log of the last experiment holds about 2,400 such warnings (712 KB). The AUCs are unaffected, and the holdout scoring ran with the same packages. With a later pandas the artifacts of this run would fail to score.
 - The highest AI share of the group so far (79.2%), with 25 experiments.
 - No context compaction in the session log.
 - turns/2.err: two failed `apply_patch` calls (14:52:22, 15:10:50). The context lines of edits to train.py didn't match; harmless, and the agent redid them.
