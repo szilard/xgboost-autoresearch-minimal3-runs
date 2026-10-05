@@ -22,7 +22,9 @@ Each run's folder has the agent's `results.tsv` and `research-log.md`, the `trai
 
 ## Results so far
 
+<!-- xgb-summary: start (the block up to the end marker is rewritten by /xgb-summary) -->
 None yet. The plan is 20 runs per model. For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout.
+<!-- xgb-summary: end -->
 
 Plots over all groups go to `run-multi/SUMMARY/`:
 
@@ -30,7 +32,7 @@ Plots over all groups go to `run-multi/SUMMARY/`:
 - `holdout_auc_pairwise.png`: head to head - the probability that one run of a model beats one run of another, with a 90% bootstrap interval;
 - `holdout_auc_path_panels.png`, `holdout_auc_path_bands.png`, `holdout_auc_path_median.png`: the holdout AUC of the kept model after each experiment - per run in one panel per model, as a median with a 10th-90th percentile band per model, and all runs faded with the medians in bold.
 
-They are made by `tools/plot_holdout_auc.py` (beeswarm and paths) and `tools/pairwise_win_prob.py` (head to head; it also prints the table), which read every group's `holdout_auc.tsv` and pool groups of the same model.
+They are made by `tools/plot_holdout_auc.py` (beeswarm and paths) and `tools/pairwise_win_prob.py` (head to head; it also prints the table), which read every group's `holdout_auc.tsv` and pool groups of the same model. The project skill `/xgb-summary` runs them, checks the group files and the plots, and rewrites the table above (`tools/summary_table.py`).
 
 ## Machine and setup
 

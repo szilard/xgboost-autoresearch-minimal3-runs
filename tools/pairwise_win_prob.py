@@ -18,7 +18,7 @@ run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models, the
   better one by mean holdout AUC labelled on the right, the other on the left:
   a dot at P(the right-hand model wins), so it leans toward the usual winner,
   its 90% bootstrap interval and a reference line at 0.5 (coin flip).
-  Not written with --no-caveat.
+  Not written with --no-caveat or with fewer than two models.
 
 Usage:
     tools/pairwise_win_prob.py [--no-caveat]
@@ -140,7 +140,9 @@ def main():
         p = win + tie / 2
         rows.append((m1, m2, p, lo, hi))
         print(f"{m1:14s} {m2:14s} {win:12.3f} {lose:12.3f} {tie:8.3f} {p:10.3f}   {lo:.3f}-{hi:.3f}")
-    if not no_caveat:
+    if not rows:
+        print("fewer than two models: no pairs, no plot")
+    elif not no_caveat:
         plot(sorted(rows, key=lambda r: -r[2]), runs)  # highest win probability on top
 
 

@@ -89,6 +89,25 @@ another:
 run needs, so it can run unattended (also in auto mode), and denies
 `docker volume rm` to protect the login.
 
+### Summary over all groups: `/xgb-summary`
+
+The project skill `.claude/skills/xgb-summary/SKILL.md` brings the summary
+up to date, e.g. after a group has finished. Type `/xgb-summary` (no
+arguments) in `claude` in this repo. It
+
+- runs `tools/summary_table.py`, which checks the group files (each
+  `holdout_auc.tsv` against the runs' `driver-summary.json`, the same codex
+  version, effort and upstream commit everywhere, test groups left in
+  `run-multi/`) and prints the results table per model
+- runs `tools/plot_holdout_auc.py` and `tools/pairwise_win_prob.py`, which
+  write the plots to `run-multi/SUMMARY/`, and looks at each plot
+- rewrites the results block of the main README (table, caveats and
+  exclusions, the beeswarm plot)
+- commits nothing
+
+The three scripts can also be run by hand, from the repo root and without
+arguments; they need matplotlib, numpy and scipy on the host.
+
 ### The container
 
 This is what the driver starts:

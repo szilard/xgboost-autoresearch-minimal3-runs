@@ -10,6 +10,9 @@
       "Bash(docker volume ls:*)",
       "Bash(docker volume inspect:*)",
       "Bash(.claude/skills/xgb-multi/run_one.sh:*)",
+      "Bash(tools/summary_table.py:*)",
+      "Bash(tools/plot_holdout_auc.py:*)",
+      "Bash(tools/pairwise_win_prob.py:*)",
       "Edit(/run-multi/**)"
     ],
     "deny": [
