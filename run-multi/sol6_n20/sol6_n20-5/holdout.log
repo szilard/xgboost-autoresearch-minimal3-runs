@@ -1,0 +1,96 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 08123e6 | keep | add departure minute and hour ===
+  holdout=0.6728
+=== [4] f4f534e | discard | increase boosting rounds to 300 ===
+  SKIP: status discard
+=== [5] 47820d7 | keep | decrease boosting rounds to 50 ===
+  holdout=0.6748
+=== [6] c7c14ce | keep | decrease boosting rounds to 25 ===
+  holdout=0.6755
+=== [7] 0607825 | discard | decrease boosting rounds to 10 ===
+  SKIP: status discard
+=== [8] 20af723 | discard | decrease maximum tree depth to 4 ===
+  SKIP: status discard
+=== [9] 76a2e83 | discard | add categorical origin destination route ===
+  SKIP: status discard
+=== [10] 1b8984e | keep | raise minimum child weight to 10 ===
+  holdout=0.6759
+=== [11] fe0a7cc | discard | raise minimum child weight to 30 ===
+  SKIP: status discard
+=== [12] 26cba57 | keep | remove unused departure minute feature ===
+  holdout=0.6759
+=== [13] 239f9ef | keep | add numeric day of year ===
+  holdout=0.6772
+=== [14] 687c4c8 | keep | add annual sine and cosine features ===
+  holdout=0.6777
+=== [15] c6d32d6 | keep | 50 trees with 0.05 learning rate ===
+  holdout=0.6786
+=== [16] 39b2cb3 | keep | 100 trees with 0.025 learning rate ===
+  holdout=0.6786
+=== [17] a5632a0 | discard | 200 trees with 0.0125 learning rate ===
+  SKIP: status discard
+=== [18] f5990d1 | keep | subsample 80 percent of rows per tree ===
+  holdout=0.6789
+=== [19] 0e27020 | discard | subsample 60 percent of rows per tree ===
+  SKIP: status discard
+=== [20] 576cc30 | discard | increase L2 leaf regularization to 10 ===
+  SKIP: status discard
+=== [21] e565772 | discard | limit categorical partition size to 16 ===
+  SKIP: status discard
+=== [22] a2789b9 | discard | expand categorical partition size to 128 ===
+  SKIP: status discard
+=== [23] 805a9b7 | discard | add weekend indicator ===
+  SKIP: status discard
+=== [24] 5db62db | keep | add major holiday proximity ===
+  holdout=0.6799
+=== [25] a001aae | discard | add Memorial Day and Labor Day proximity ===
+  SKIP: status discard
+=== [26] cfebc01 | keep | reduce numeric histogram bins to 64 ===
+  holdout=0.6798
+=== [27] 163d022 | keep | reduce numeric histogram bins to 32 ===
+  holdout=0.6796
+=== [28] 7ddafb8 | discard | reduce numeric histogram bins to 16 ===
+  SKIP: status discard
+=== [29] fe037f8 | discard | one-hot split for weekdays ===
+  SKIP: status discard
+=== [30] ede41b2 | keep | average three XGBoost sampling seeds ===
+  holdout=0.6799
+=== [31] 172a2b3 | keep | average five XGBoost sampling seeds ===
+  holdout=0.6801
+=== [32] 65183de | discard | average nine XGBoost sampling seeds ===
+  SKIP: status discard
+=== [33] 8780dcc | keep | feature sample 80 percent per split ===
+  holdout=0.6803
+=== [34] 9bcf600 | keep | feature sample 60 percent per split ===
+  holdout=0.6808
+=== [35] 8368ac7 | keep | feature sample 40 percent per split ===
+  holdout=0.6812
+=== [36] 0a436f3 | discard | feature sample 25 percent per split ===
+  SKIP: status discard
+=== [37] 05c8287 | discard | increase tree depth to 8 ===
+  SKIP: status discard
+=== [38] 2f2aa36 | discard | decrease tree depth to 5 ===
+  SKIP: status discard
+=== [39] 06c2f5a | discard | decrease minimum child weight to 5 ===
+  SKIP: status discard
+=== [40] b5bb09b | discard | require gamma 1 split gain ===
+  SKIP: status discard
+=== [41] f71840e | discard | loss-guided tree growth with 32 leaves ===
+  SKIP: status discard
+=== [42] b2f618a | keep | increase ensemble boosting rounds to 150 ===
+  holdout=0.6822
+=== [43] 3a28936 | keep | increase ensemble boosting rounds to 225 ===
+  holdout=0.6828
+=== [44] af6939d | discard | increase ensemble boosting rounds to 350 ===
+  SKIP: status discard
+=== [45] 8202360 | keep | test 275 ensemble boosting rounds ===
+  holdout=0.6826
+=== [46] 5487cd9 | discard | raise feature sampling per split to 50 percent ===
+  SKIP: status discard
+=== [47] b7a18e1 | discard | raise row subsampling to 90 percent ===
+  SKIP: status discard
+=== [48] 519f8f1 | discard | remove distance feature ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

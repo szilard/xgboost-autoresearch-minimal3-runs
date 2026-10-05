@@ -1,0 +1,48 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+08123e6	keep	add departure minute and hour	0.6751	0.6728
+f4f534e	discard	increase boosting rounds to 300	0.6674	N/A
+47820d7	keep	decrease boosting rounds to 50	0.6766	0.6748
+c7c14ce	keep	decrease boosting rounds to 25	0.6770	0.6755
+0607825	discard	decrease boosting rounds to 10	0.6741	N/A
+20af723	discard	decrease maximum tree depth to 4	0.6747	N/A
+76a2e83	discard	add categorical origin destination route	0.6710	N/A
+1b8984e	keep	raise minimum child weight to 10	0.6775	0.6759
+fe0a7cc	discard	raise minimum child weight to 30	0.6773	N/A
+26cba57	keep	remove unused departure minute feature	0.6775	0.6759
+239f9ef	keep	add numeric day of year	0.6779	0.6772
+687c4c8	keep	add annual sine and cosine features	0.6782	0.6777
+c6d32d6	keep	50 trees with 0.05 learning rate	0.6794	0.6786
+39b2cb3	keep	100 trees with 0.025 learning rate	0.6796	0.6786
+a5632a0	discard	200 trees with 0.0125 learning rate	0.6796	N/A
+f5990d1	keep	subsample 80 percent of rows per tree	0.6797	0.6789
+0e27020	discard	subsample 60 percent of rows per tree	0.6793	N/A
+576cc30	discard	increase L2 leaf regularization to 10	0.6793	N/A
+e565772	discard	limit categorical partition size to 16	0.6743	N/A
+a2789b9	discard	expand categorical partition size to 128	0.6793	N/A
+805a9b7	discard	add weekend indicator	0.6797	N/A
+5db62db	keep	add major holiday proximity	0.6801	0.6799
+a001aae	discard	add Memorial Day and Labor Day proximity	0.6795	N/A
+cfebc01	keep	reduce numeric histogram bins to 64	0.6804	0.6798
+163d022	keep	reduce numeric histogram bins to 32	0.6805	0.6796
+7ddafb8	discard	reduce numeric histogram bins to 16	0.6795	N/A
+fe037f8	discard	one-hot split for weekdays	0.6780	N/A
+ede41b2	keep	average three XGBoost sampling seeds	0.6809	0.6799
+172a2b3	keep	average five XGBoost sampling seeds	0.6810	0.6801
+65183de	discard	average nine XGBoost sampling seeds	0.6810	N/A
+8780dcc	keep	feature sample 80 percent per split	0.6812	0.6803
+9bcf600	keep	feature sample 60 percent per split	0.6816	0.6808
+8368ac7	keep	feature sample 40 percent per split	0.6821	0.6812
+0a436f3	discard	feature sample 25 percent per split	0.6819	N/A
+05c8287	discard	increase tree depth to 8	0.6821	N/A
+2f2aa36	discard	decrease tree depth to 5	0.6811	N/A
+06c2f5a	discard	decrease minimum child weight to 5	0.6817	N/A
+b5bb09b	discard	require gamma 1 split gain	0.6818	N/A
+f71840e	discard	loss-guided tree growth with 32 leaves	0.6816	N/A
+b2f618a	keep	increase ensemble boosting rounds to 150	0.6831	0.6822
+3a28936	keep	increase ensemble boosting rounds to 225	0.6838	0.6828
+af6939d	discard	increase ensemble boosting rounds to 350	0.6838	N/A
+8202360	keep	test 275 ensemble boosting rounds	0.6839	0.6826
+5487cd9	discard	raise feature sampling per split to 50 percent	0.6832	N/A
+b7a18e1	discard	raise row subsampling to 90 percent	0.6839	N/A
+519f8f1	discard	remove distance feature	0.6838	N/A

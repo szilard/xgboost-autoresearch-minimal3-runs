@@ -1,0 +1,201 @@
+commit 8202360c3570d37c5b273cc009de647f238fec96
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:59:20 2026 +0000
+
+    Test 275 sampled ensemble rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a2893640a410b6b5c45dca459ee424e8127cd95
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:56:43 2026 +0000
+
+    Extend sampled ensemble to 225 rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b2f618adf3a0e58c3e898ecd29ab88573e2aae22
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:55:09 2026 +0000
+
+    Test longer sampled ensemble boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8368ac7ad50d6f8b76f28c703a0b61f60435c192
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:45:13 2026 +0000
+
+    Test forty percent features per split
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9bcf600b6572c324789e3f9df861d80275baf9fd
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:44:06 2026 +0000
+
+    Test stronger split feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8780dcc3d35c7996f0f28a464019c72b7b3ec991
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:43:01 2026 +0000
+
+    Diversify ensemble with feature sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 172a2b3542dc05142d426034ca66f7a3f0f7caec
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:40:15 2026 +0000
+
+    Average five sampled XGBoost models
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ede41b2e119be3504c8a279672950c66a824cd1d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:39:03 2026 +0000
+
+    Average three sampled XGBoost models
+
+ train.py | 27 +++++++++++++++++----------
+ 1 file changed, 17 insertions(+), 10 deletions(-)
+
+commit 163d0226a48cc5d46f9a42a92986e0698e280225
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:35:10 2026 +0000
+
+    Test thirty two numeric histogram bins
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cfebc018066aa82b98b2749069029559f84d2134
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:34:07 2026 +0000
+
+    Test coarser numeric histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5db62dba7f865361f781019aaeda854f2175be90
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:31:37 2026 +0000
+
+    Add major holiday proximity feature
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit f5990d1005f6731564128e1ebedaf28711877a2f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:24:04 2026 +0000
+
+    Subsample training rows per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 39b2cb39ba7054e6614fafe421a5d5a910bb9a2f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:21:41 2026 +0000
+
+    Test finer learning rate schedule
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c6d32d6d9d2e2d1b7cc0ce73ed2c5b53ea53a884
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:20:40 2026 +0000
+
+    Use more trees with lower learning rate
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 687c4c82d86cc635641a437ffff5298ddf62347e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:19:27 2026 +0000
+
+    Add cyclic annual calendar features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 239f9ef9d0093f0ab6bcef78ddf19bffd169b238
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:18:09 2026 +0000
+
+    Add continuous day of year feature
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 26cba5769a2af51c3fd3001e23e0e19124847228
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:17:06 2026 +0000
+
+    Remove unused departure minute feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 1b8984ed6d8446b7a93aa7e69680140f49ccf9f5
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:15:02 2026 +0000
+
+    Raise minimum child weight to ten
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c7c14ce7486d516b2a32a3edabe59bf861ff7b42
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:10:44 2026 +0000
+
+    Test 25 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 47820d7d465fa052c5c1c6027059e5f4ceaad289
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:09:52 2026 +0000
+
+    Test 50 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08123e6ae06ab77805a0dad5c4fa7f2df41e112c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 19:07:42 2026 +0000
+
+    Add scheduled departure clock features
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
