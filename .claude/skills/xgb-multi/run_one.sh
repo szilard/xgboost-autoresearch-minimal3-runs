@@ -31,6 +31,11 @@ MAX_GO=5            # "go" turns while the clock is not started
 MAX_KEEP_GOING=20   # "keep going" turns while the clock has time left
 MAX_FAILED_TURNS=3  # consecutive turns that end without turn.completed
 FAILED_TURN_WAIT=300
+# the same for turns that end with OpenAI's "Selected model is at capacity": an
+# error of a single request, the next turn usually works right away. Both
+# counts start again at a completed turn.
+MAX_CAPACITY_TURNS=10
+CAPACITY_WAIT=30
 WRAP_UP_S=600       # time the agent gets after TIME IS UP to run harness.py stop (a run in progress can take 6 min)
 POLL_S=60
 MEM_LIMIT=24g       # container memory cap, no swap: the agent's runs can't starve the host
@@ -43,6 +48,7 @@ dx() { docker exec -w $R $C bash -c "$1"; }
 clock() { dx 'python3 harness.py status' 2>&1; }
 
 STATUS=ok REASON="" SID="" NT=0 STOPPED_BY="" STARTED=0
+FAIL_KIND="" FAILED_TURNS=0 RETRY_WAIT_S=0
 MESSAGES=()
 fail() { STATUS=failed; REASON=$*; log "FAILED: $*"; }
 
@@ -150,6 +156,9 @@ turn() {
     return 0
   fi
   log "turn $n did not complete (exit $rc): $(dx "tail -c 600 ~/turns/$n.err ~/turns/$n.jsonl" | tr '\n' ' ')"
+  # why it failed, from the turn's last error event
+  FAILED_TURNS=$((FAILED_TURNS + 1)) FAIL_KIND=other
+  dx "grep -E '^\{\"type\":\"(error|turn\.failed)\"' ~/turns/$n.jsonl | tail -1 | grep -q 'at capacity'" && FAIL_KIND=capacity
   return 1
 }
 
@@ -172,18 +181,27 @@ EOF"
 }
 
 drive() {
-  local go=0 keep=0 failed=0 ok st
+  local go=0 keep=0 failed=0 failed_cap=0 ok st w
   turn "$PROMPT"; ok=$?
   [ "$STATUS" = ok ] || return
   if ! TC=$(check_turn_context); then fail "turn_context mismatch: $TC"; return; fi
   log "turn_context: $TC"
   while true; do
     st=$(clock)
-    if [ $ok = 0 ]; then failed=0
+    if [ $ok = 0 ]; then failed=0 failed_cap=0
     elif [[ "$st" != *"Clock stopped"* ]]; then
-      failed=$((failed + 1))
-      [ $failed -lt $MAX_FAILED_TURNS ] || { fail "$failed consecutive turns did not complete"; return; }
-      log "waiting $FAILED_TURN_WAIT s before retrying"; sleep $FAILED_TURN_WAIT
+      if [ "$FAIL_KIND" = capacity ]; then
+        failed_cap=$((failed_cap + 1)) w=$CAPACITY_WAIT
+        [ $failed_cap -lt $MAX_CAPACITY_TURNS ] || { fail "$failed_cap consecutive turns ended with model at capacity"; return; }
+        log "model at capacity ($failed_cap in a row): waiting $w s before retrying"
+      else
+        failed=$((failed + 1)) w=$FAILED_TURN_WAIT
+        [ $failed -lt $MAX_FAILED_TURNS ] || { fail "$failed consecutive turns did not complete"; return; }
+        log "waiting $w s before retrying"
+      fi
+      sleep $w
+      # the harness clock keeps running: count the waits that came out of the agent's hour
+      [[ "$st" == *remaining* && "$st" != *"TIME IS UP"* ]] && RETRY_WAIT_S=$((RETRY_WAIT_S + w))
       st=$(clock)
     fi
     log "clock: $(echo "$st" | tr '\n' ' ')"
@@ -319,7 +337,8 @@ C=$C STATUS=$STATUS REASON=$REASON MODEL=$MODEL EFFORT=$EFFORT CODEX_VERSION=${C
 TC=${TC:-} SID=$SID STOPPED_BY=$STOPPED_BY BRANCH=$BRANCH FIRST=$FIRST UPSTREAM=$UPSTREAM \
 NEXP=$NEXP BEST=$BEST EVAL=$EVAL HOLD=$HOLD UNSCORED=$UNSCORED BUDGET_S=${BUDGET_S:-} \
 FLAGS_INTEGRITY=${FLAGS_INTEGRITY:-} FLAGS_PROTOCOL=${FLAGS_PROTOCOL:-} \
-MEM_MAX=${MEM_MAX:-} MEM_PEAK=${MEM_PEAK:-} OOM_KILLS=${OOM_KILLS:-} python3 - "$OUT" <<'EOF'
+MEM_MAX=${MEM_MAX:-} MEM_PEAK=${MEM_PEAK:-} OOM_KILLS=${OOM_KILLS:-} \
+FAILED_TURNS=$FAILED_TURNS RETRY_WAIT_S=$RETRY_WAIT_S python3 - "$OUT" <<'EOF'
 import json, os, pathlib, sys
 out = pathlib.Path(sys.argv[1])
 e = os.environ
@@ -333,6 +352,7 @@ json.dump({
     "container": e["C"], "status": e["STATUS"], "reason": e["REASON"],
     "model": e["MODEL"], "effort": e["EFFORT"], "codex_version": e["CODEX_VERSION"],
     "turn_context": e["TC"], "session_id": e["SID"], "turns": turns,
+    "failed_turns": int(e["FAILED_TURNS"]), "retry_wait_s": int(e["RETRY_WAIT_S"]),
     "clock_stopped_by": e["STOPPED_BY"], "time_budget_s": budget, "clock_elapsed_s": elapsed,
     "clock_remaining_s": budget - elapsed if budget and elapsed is not None else None,
     "branch": e["BRANCH"], "first_commit": e["FIRST"],

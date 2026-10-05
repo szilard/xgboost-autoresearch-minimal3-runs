@@ -92,7 +92,9 @@ Runs are strictly sequential: each uses all 8 cores.
 
 6. Review run i from RUN_DIR (the container is gone, so this is all there
    is):
-   - driver-summary.json and driver.log: turns sent, who stopped the clock,
+   - driver-summary.json and driver.log: turns sent, failed turns and the
+     time their retry waits took out of the hour (`failed_turns`,
+     `retry_wait_s`), who stopped the clock,
      failures, NOTE lines about an unexpected repo state (e.g. detached
      HEAD, a leftover output/ folder, a starter Eval AUC other than 0.6743,
      processes left behind by the agent, a best commit that is not HEAD) -
@@ -141,6 +143,9 @@ Runs are strictly sequential: each uses all 8 cores.
        `output_committed` (files of output/ in a commit), `stray_files`;
      - `stopped_by_driver`: the agent never stopped the clock
        (`clock_stopped_by` in driver-summary.json);
+     - `turn_retries`: DRIVER's waits after failed turns took more than 2
+       minutes out of the agent's hour (`retry_wait_s` in
+       driver-summary.json above 120);
      - `forbidden_attempt`: the agent tried to read or run a human-only
        file, the holdout set or /opt/human-only and got nothing (they are
        not readable during the run). Listing file names is not an attempt.
@@ -161,7 +166,8 @@ Runs are strictly sequential: each uses all 8 cores.
      groups suggest other values.)
    - Write RUN_DIR/run.md: codex version, model, effort and turn_context as
      confirmed, the upstream minimal3 commit (in the message of the repo's
-     first commit), run tag, date, turns and what was sent in each, number
+     first commit), run tag, date, turns and what was sent in each, failed
+     turns and the time lost to their retry waits, number
      of experiments, best Eval AUC and its commit, its Holdout AUC, the
      integrity and protocol checks with their flags, how the clock was
      stopped and how much of the budget was used (`clock_elapsed_s`,
@@ -198,8 +204,8 @@ have none), so the plotting step decides what to filter.
 
 7. When all N_RUNS runs are done, give me a short summary: the statistics,
    how many runs were excluded or carry a caveat and why, and anything that
-   went wrong or differed between runs (extra "go"s, runs stopped by the
-   driver).
+   went wrong or differed between runs (extra "go"s, failed turns, runs
+   stopped by the driver).
 
 Don't commit or push anything - I review and commit the results myself.
 
@@ -213,9 +219,14 @@ Don't commit or push anything - I review and commit the results myself.
   DRIVER is broken, stop and tell me.
 - If codex simply cannot do something DRIVER expects, say so plainly - don't
   substitute a weaker mode without telling me.
-- If codex hits a usage limit, DRIVER retries a failed turn after 5 min, up
-  to 3 times in a row, then fails the run (excluded). If two runs in a row
-  fail like that, stop the group and tell me rather than burning through
-  the remaining runs.
+- A turn can end without completing. If its last error is OpenAI's
+  "Selected model is at capacity" (an error of a single request: the next
+  turn usually works right away), DRIVER retries after 30 s, and fails the
+  run (excluded) at the 10th such turn in a row. After any other failure
+  (e.g. a usage limit) it retries after 5 min, and fails the run at the 3rd
+  in a row. The harness clock keeps running during the waits: what they
+  took out of the agent's hour is `retry_wait_s` in driver-summary.json.
+  If two runs in a row fail like that, stop the group and tell me rather
+  than burning through the remaining runs.
 - Runs of xgboost-autoresearch-minimal2 (the earlier orchestrator repo) used
   other data and rules: never pool or compare them with these.
