@@ -1,0 +1,38 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+fbcea73	0.6734	discard	add minute-of-day and cyclic departure/month features
+eb629b2	0.6789	keep	reduce max_depth from 6 to 4
+a25238b	0.6793	keep	set min_child_weight to 5
+bcf3b81	0.6800	keep	set min_child_weight to 10
+db5d363	0.6783	discard	set min_child_weight to 20
+7c6289a	0.6779	discard	set subsample to 0.8
+3c0623a	0.6798	discard	set colsample_bytree to 0.8
+490fd48	0.6713	discard	add directed route as native category
+553efd3	0.6781	discard	add cross-fitted carrier and airport target rates
+95b85d5	0.6789	discard	add scheduled departure hour category
+e49877e	0.6784	discard	set max_cat_threshold to 32
+13f15b3	0.6800	discard	set gamma to 1.0
+2e39a08	0.6795	discard	set gamma to 10.0
+9baf5f8	0.6799	discard	set reg_lambda to 5
+b2aef8c	0.6802	keep	use 300 trees at learning_rate 0.03
+a584316	0.6797	discard	use 500 trees at learning_rate 0.02
+835ed1d	0.6798	discard	use 200 trees at learning_rate 0.05
+1ed6e81	0.6799	discard	set max_cat_to_onehot to 16
+fb31ba4	0.6786	discard	set max_cat_to_onehot to 8
+a4f6b63	0.6785	discard	set max_depth to 5
+4a9d997	0.6789	discard	use lossguide growth with a sixteen leaf cap
+0b50c10	0.6805	keep	set reg_alpha to 1.0
+e1420fc	0.6812	keep	set reg_alpha to 5.0
+ba8598f	0.6816	keep	set reg_alpha to 10.0
+7c01b57	0.6802	discard	set reg_alpha to 20.0
+c81160e	0.6813	discard	set reg_alpha to 15.0
+74ef2e4	0.6813	discard	set min_child_weight to 5 with reg_alpha 10
+58343d1	0.6821	keep	add carrier-origin category
+4c6342f	0.6813	discard	add carrier-destination alongside carrier-origin
+c8eef16	0.6807	discard	replace carrier-origin with carrier-destination
+eb4c5ab	0.6818	discard	set max_cat_threshold to 128
+f278f1c	0.6807	discard	set max_depth to 3 with carrier-origin feature
+6656238	0.6818	discard	set reg_alpha to 15 with carrier-origin feature
+6774b19	0.6818	discard	use 400 trees at learning_rate 0.025 with carrier-origin
+d72b8ff	0.6824	keep	set max_cat_threshold to 32 with carrier-origin
+3197b95	0.6813	discard	set reg_alpha to 5 with max_cat_threshold 32

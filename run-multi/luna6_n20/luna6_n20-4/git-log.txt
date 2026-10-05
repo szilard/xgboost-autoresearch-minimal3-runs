@@ -1,0 +1,93 @@
+commit d72b8ff8b1564336ae8f8b487d437484453cf835
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 12:03:16 2026 +0000
+
+    Constrain carrier category partitions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 58343d1a6846153266bf9206129caa0492f93e3c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:51:35 2026 +0000
+
+    Add carrier origin category
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit ba8598f005bc18f9b583bd3cd6cfca236530de32
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:45:33 2026 +0000
+
+    Increase L1 regularization to ten
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e1420fcb21c07f6b9393d7a102814aaa92ca88a4
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:44:27 2026 +0000
+
+    Increase L1 regularization to five
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0b50c107ca29cf43c5be50e72586817182a34939
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:43:22 2026 +0000
+
+    Try L1 leaf weight regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b2aef8ca8dbe026a8b92df0a666cf2aad51623af
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:33:13 2026 +0000
+
+    Lower learning rate and add boosting rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bcf3b81abcdf227adf9decae8f07c9d80bd415b0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:14:37 2026 +0000
+
+    Raise minimum child weight to ten
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a25238bd9186096047ae2cff8b839d7abeccc1a2
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:13:36 2026 +0000
+
+    Raise minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit eb629b24a5d8c65eb125ae641833681db820dcef
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 11:12:20 2026 +0000
+
+    Tune tree depth to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,8 @@
+Setup is ready:
+
+- Created fresh branch `oct5` directly from the current `main` HEAD.
+- Read `train.py` and `harness.py`; `train.py` is unchanged.
+- Confirmed `data/train.csv` and `data/eval.csv` exist.
+- Initialized `output/results.tsv` with the required header and created `output/research-log.md`.
+
+The baseline hasn’t run and the experiment clock is still stopped. Confirm when you want me to start it.

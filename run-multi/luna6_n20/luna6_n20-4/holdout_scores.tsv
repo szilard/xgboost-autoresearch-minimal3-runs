@@ -1,0 +1,38 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+fbcea73	discard	add minute-of-day and cyclic departure/month features	0.6734	N/A
+eb629b2	keep	reduce max_depth from 6 to 4	0.6789	0.6771
+a25238b	keep	set min_child_weight to 5	0.6793	0.6776
+bcf3b81	keep	set min_child_weight to 10	0.6800	0.6782
+db5d363	discard	set min_child_weight to 20	0.6783	N/A
+7c6289a	discard	set subsample to 0.8	0.6779	N/A
+3c0623a	discard	set colsample_bytree to 0.8	0.6798	N/A
+490fd48	discard	add directed route as native category	0.6713	N/A
+553efd3	discard	add cross-fitted carrier and airport target rates	0.6781	N/A
+95b85d5	discard	add scheduled departure hour category	0.6789	N/A
+e49877e	discard	set max_cat_threshold to 32	0.6784	N/A
+13f15b3	discard	set gamma to 1.0	0.6800	N/A
+2e39a08	discard	set gamma to 10.0	0.6795	N/A
+9baf5f8	discard	set reg_lambda to 5	0.6799	N/A
+b2aef8c	keep	use 300 trees at learning_rate 0.03	0.6802	0.6784
+a584316	discard	use 500 trees at learning_rate 0.02	0.6797	N/A
+835ed1d	discard	use 200 trees at learning_rate 0.05	0.6798	N/A
+1ed6e81	discard	set max_cat_to_onehot to 16	0.6799	N/A
+fb31ba4	discard	set max_cat_to_onehot to 8	0.6786	N/A
+a4f6b63	discard	set max_depth to 5	0.6785	N/A
+4a9d997	discard	use lossguide growth with a sixteen leaf cap	0.6789	N/A
+0b50c10	keep	set reg_alpha to 1.0	0.6805	0.6791
+e1420fc	keep	set reg_alpha to 5.0	0.6812	0.6787
+ba8598f	keep	set reg_alpha to 10.0	0.6816	0.6791
+7c01b57	discard	set reg_alpha to 20.0	0.6802	N/A
+c81160e	discard	set reg_alpha to 15.0	0.6813	N/A
+74ef2e4	discard	set min_child_weight to 5 with reg_alpha 10	0.6813	N/A
+58343d1	keep	add carrier-origin category	0.6821	0.6800
+4c6342f	discard	add carrier-destination alongside carrier-origin	0.6813	N/A
+c8eef16	discard	replace carrier-origin with carrier-destination	0.6807	N/A
+eb4c5ab	discard	set max_cat_threshold to 128	0.6818	N/A
+f278f1c	discard	set max_depth to 3 with carrier-origin feature	0.6807	N/A
+6656238	discard	set reg_alpha to 15 with carrier-origin feature	0.6818	N/A
+6774b19	discard	use 400 trees at learning_rate 0.025 with carrier-origin	0.6818	N/A
+d72b8ff	keep	set max_cat_threshold to 32 with carrier-origin	0.6824	0.6797
+3197b95	discard	set reg_alpha to 5 with max_cat_threshold 32	0.6813	N/A
