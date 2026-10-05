@@ -1,0 +1,72 @@
+=== [2] b15ec66 | keep | baseline: starter XGBoost model with native categorical features ===
+  holdout=0.6725
+=== [3] 08eea33 | discard | add cyclic schedule encodings for departure time, month, and weekday ===
+  SKIP: status discard
+=== [4] beaf385 | discard | add directed origin-destination route category ===
+  SKIP: status discard
+=== [5] 550a8c4 | keep | reduce max_depth from 6 to 4 ===
+  holdout=0.6771
+=== [6] 875ca90 | keep | reduce max_depth from 4 to 3 ===
+  holdout=0.6786
+=== [7] e71c999 | discard | reduce max_depth from 3 to 2 ===
+  SKIP: status discard
+=== [8] cea9349 | keep | use learning_rate 0.05 with 200 trees at depth 3 ===
+  holdout=0.6791
+=== [9] 9157b7a | discard | double rounds and halve learning_rate again ===
+  SKIP: status discard
+=== [10] 5549852 | discard | add subsample=0.8 ===
+  SKIP: status discard
+=== [11] ae06c37 | keep | add colsample_bytree=0.8 ===
+  holdout=0.6795
+=== [12] c88a394 | discard | set colsample_bytree=0.6 ===
+  SKIP: status discard
+=== [13] 1f7f6b3 | discard | set max_cat_to_onehot=32 ===
+  SKIP: status discard
+=== [14] f2729a8 | discard | set min_child_weight=5 ===
+  SKIP: status discard
+=== [15] c26e70d | discard | set max_cat_threshold=32 ===
+  SKIP: status discard
+=== [16] d60664c | discard | set gamma=1.0 ===
+  SKIP: status discard
+=== [17] ffb055a | discard | set max_bin=512 ===
+  SKIP: status discard
+=== [18] ce3c6e2 | discard | add carrier-origin categorical interaction ===
+  SKIP: status discard
+=== [19] ade92c8 | keep | increase n_estimators from 200 to 300 at learning_rate 0.05 ===
+  holdout=0.6800
+=== [20] def36e1 | discard | increase n_estimators from 300 to 400 at learning_rate 0.05 ===
+  SKIP: status discard
+=== [21] c202ff6 | discard | use max_depth=4 at 300 trees and learning_rate=0.05 ===
+  SKIP: status discard
+=== [22] ffe9932 | discard | remove colsample_bytree at 300 trees ===
+  SKIP: status discard
+=== [23] fa068b9 | discard | add scheduled departure hour category ===
+  SKIP: status discard
+=== [24] be6acbe | discard | add busy departure period flag for 18:00-02:00 ===
+  SKIP: status discard
+=== [25] d6596ba | discard | add six four-hour departure blocks ===
+  SKIP: status discard
+=== [26] e70f1ff | discard | set reg_lambda=5 ===
+  SKIP: status discard
+=== [27] 5fd2503 | discard | set reg_alpha=0.1 ===
+  SKIP: status discard
+=== [28] 8c2f4e4 | discard | set reg_alpha=0.01 ===
+  SKIP: status discard
+=== [29] 93e6edf | discard | reduce n_estimators from 300 to 250 ===
+  SKIP: status discard
+=== [30] 0b00294 | discard | increase n_estimators from 300 to 350 at learning_rate 0.05 ===
+  SKIP: status discard
+=== [31] 57fd84f | discard | use learning_rate=0.04 with 375 trees ===
+  SKIP: status discard
+=== [32] 4073827 | discard | use DART booster with rate_drop=0.1 ===
+  SKIP: status discard
+=== [33] 6533f5c | discard | use tree_method=approx ===
+  SKIP: status discard
+=== [34] dd0353f | discard | set max_bin=128 ===
+  SKIP: status discard
+=== [35] fb3a864 | discard | set max_bin=192 ===
+  SKIP: status discard
+=== [36] 2dcdeec | discard | set colsample_bytree=0.9 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

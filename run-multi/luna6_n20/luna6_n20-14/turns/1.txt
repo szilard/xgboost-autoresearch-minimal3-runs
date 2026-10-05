@@ -1,0 +1,3 @@
+Setup is ready on branch `oct5`. `data/train.csv` and `data/eval.csv` are present, and `output/results.tsv` has the required header. The research log is initialized; the clock is still stopped.
+
+Confirm, and I’ll start the one-hour clock with the baseline run.

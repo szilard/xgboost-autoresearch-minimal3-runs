@@ -1,0 +1,36 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline: starter XGBoost model with native categorical features
+08eea33	0.6734	discard	add cyclic schedule encodings for departure time, month, and weekday
+beaf385	0.6667	discard	add directed origin-destination route category
+550a8c4	0.6789	keep	reduce max_depth from 6 to 4
+875ca90	0.6798	keep	reduce max_depth from 4 to 3
+e71c999	0.6751	discard	reduce max_depth from 3 to 2
+cea9349	0.6807	keep	use learning_rate 0.05 with 200 trees at depth 3
+9157b7a	0.6803	discard	double rounds and halve learning_rate again
+5549852	0.6787	discard	add subsample=0.8
+ae06c37	0.6809	keep	add colsample_bytree=0.8
+c88a394	0.6799	discard	set colsample_bytree=0.6
+1f7f6b3	0.6794	discard	set max_cat_to_onehot=32
+f2729a8	0.6809	discard	set min_child_weight=5
+c26e70d	0.6777	discard	set max_cat_threshold=32
+d60664c	0.6809	discard	set gamma=1.0
+ffb055a	0.6805	discard	set max_bin=512
+ce3c6e2	0.6760	discard	add carrier-origin categorical interaction
+ade92c8	0.6819	keep	increase n_estimators from 200 to 300 at learning_rate 0.05
+def36e1	0.6815	discard	increase n_estimators from 300 to 400 at learning_rate 0.05
+c202ff6	0.6816	discard	use max_depth=4 at 300 trees and learning_rate=0.05
+ffe9932	0.6812	discard	remove colsample_bytree at 300 trees
+fa068b9	0.6799	discard	add scheduled departure hour category
+be6acbe	0.6807	discard	add busy departure period flag for 18:00-02:00
+d6596ba	0.6812	discard	add six four-hour departure blocks
+e70f1ff	0.6806	discard	set reg_lambda=5
+5fd2503	0.6809	discard	set reg_alpha=0.1
+8c2f4e4	0.6815	discard	set reg_alpha=0.01
+93e6edf	0.6814	discard	reduce n_estimators from 300 to 250
+0b00294	0.6815	discard	increase n_estimators from 300 to 350 at learning_rate 0.05
+57fd84f	0.6808	discard	use learning_rate=0.04 with 375 trees
+4073827	0.6715	discard	use DART booster with rate_drop=0.1
+6533f5c	0.6818	discard	use tree_method=approx
+dd0353f	0.6810	discard	set max_bin=128
+fb3a864	0.6816	discard	set max_bin=192
+2dcdeec	0.6806	discard	set colsample_bytree=0.9

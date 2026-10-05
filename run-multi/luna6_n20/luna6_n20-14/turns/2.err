@@ -1,0 +1,3 @@
+2026-10-05T22:52:05.494196Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+target   = "dep_delayed_15min"
+dep_hour_levels = list(range(24))

@@ -1,0 +1,36 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline: starter XGBoost model with native categorical features	0.6743	0.6725
+08eea33	discard	add cyclic schedule encodings for departure time, month, and weekday	0.6734	N/A
+beaf385	discard	add directed origin-destination route category	0.6667	N/A
+550a8c4	keep	reduce max_depth from 6 to 4	0.6789	0.6771
+875ca90	keep	reduce max_depth from 4 to 3	0.6798	0.6786
+e71c999	discard	reduce max_depth from 3 to 2	0.6751	N/A
+cea9349	keep	use learning_rate 0.05 with 200 trees at depth 3	0.6807	0.6791
+9157b7a	discard	double rounds and halve learning_rate again	0.6803	N/A
+5549852	discard	add subsample=0.8	0.6787	N/A
+ae06c37	keep	add colsample_bytree=0.8	0.6809	0.6795
+c88a394	discard	set colsample_bytree=0.6	0.6799	N/A
+1f7f6b3	discard	set max_cat_to_onehot=32	0.6794	N/A
+f2729a8	discard	set min_child_weight=5	0.6809	N/A
+c26e70d	discard	set max_cat_threshold=32	0.6777	N/A
+d60664c	discard	set gamma=1.0	0.6809	N/A
+ffb055a	discard	set max_bin=512	0.6805	N/A
+ce3c6e2	discard	add carrier-origin categorical interaction	0.6760	N/A
+ade92c8	keep	increase n_estimators from 200 to 300 at learning_rate 0.05	0.6819	0.6800
+def36e1	discard	increase n_estimators from 300 to 400 at learning_rate 0.05	0.6815	N/A
+c202ff6	discard	use max_depth=4 at 300 trees and learning_rate=0.05	0.6816	N/A
+ffe9932	discard	remove colsample_bytree at 300 trees	0.6812	N/A
+fa068b9	discard	add scheduled departure hour category	0.6799	N/A
+be6acbe	discard	add busy departure period flag for 18:00-02:00	0.6807	N/A
+d6596ba	discard	add six four-hour departure blocks	0.6812	N/A
+e70f1ff	discard	set reg_lambda=5	0.6806	N/A
+5fd2503	discard	set reg_alpha=0.1	0.6809	N/A
+8c2f4e4	discard	set reg_alpha=0.01	0.6815	N/A
+93e6edf	discard	reduce n_estimators from 300 to 250	0.6814	N/A
+0b00294	discard	increase n_estimators from 300 to 350 at learning_rate 0.05	0.6815	N/A
+57fd84f	discard	use learning_rate=0.04 with 375 trees	0.6808	N/A
+4073827	discard	use DART booster with rate_drop=0.1	0.6715	N/A
+6533f5c	discard	use tree_method=approx	0.6818	N/A
+dd0353f	discard	set max_bin=128	0.6810	N/A
+fb3a864	discard	set max_bin=192	0.6816	N/A
+2dcdeec	discard	set colsample_bytree=0.9	0.6806	N/A

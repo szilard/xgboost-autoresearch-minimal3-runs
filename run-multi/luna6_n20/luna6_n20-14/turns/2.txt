@@ -1,0 +1,5 @@
+The experiment is complete. The best checkpoint is **`ade92c8`** on branch `oct5`, with Eval AUC **0.6819**. The final `colsample_bytree=0.9` trial scored 0.6806 and was discarded; `train.py` is restored to the best configuration.
+
+Completed 34 nonbaseline attempts. Updated [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The experiment clock stopped at 59m42s.
+
+The training labels were balanced, so the XGBoost guide’s class-weighting heuristic would have left the weight at 1.0. [XGBoost tuning guide](https://xgboost.readthedocs.io/en/stable/tutorials/param_tuning.html)

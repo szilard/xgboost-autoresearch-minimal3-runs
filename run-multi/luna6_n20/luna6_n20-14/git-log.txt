@@ -1,0 +1,57 @@
+commit ade92c856c55b47c325b4c44d1e92fd904ff0aaf
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:44:13 2026 +0000
+
+    Try 300 trees at learning rate 0.05
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ae06c378e73213ba105ed6ed8eec44ececbbb726
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:29:44 2026 +0000
+
+    Add column subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cea9349865642e6d4c3f72ba42afa34784a263cc
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:26:15 2026 +0000
+
+    Use smaller steps with more trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 875ca90952cbe82fef4c15f1ed13c107396622ff
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:23:27 2026 +0000
+
+    Try depth-three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 550a8c4dd8254f480a1007563cf9bd8af6210986
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:22:15 2026 +0000
+
+    Try shallower baseline trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
