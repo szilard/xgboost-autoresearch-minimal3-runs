@@ -1,0 +1,54 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 62fa772 | keep | add elapsed departure minutes and categorical hour ===
+  holdout=0.6735
+=== [4] cb89f5f | discard | remove DepHour while retaining elapsed minutes ===
+  SKIP: status discard
+=== [5] b34386c | keep | one-hot splits for low-cardinality categories ===
+  holdout=0.6742
+=== [6] 65ce55a | keep | one-hot splits for airport categories ===
+  holdout=0.6762
+=== [7] b46a05b | discard | add high-cardinality carrier-route category ===
+  SKIP: status discard
+=== [8] f46e457 | discard | increase min_child_weight to 5 ===
+  SKIP: status discard
+=== [9] a770227 | discard | set min_child_weight to 2 ===
+  SKIP: status discard
+=== [10] a360420 | discard | add carrier-month interaction category ===
+  SKIP: status discard
+=== [11] 195f5a2 | discard | set subsample to 0.8 ===
+  SKIP: status discard
+=== [12] b8c1d75 | discard | add cyclic departure-time coordinates ===
+  SKIP: status discard
+=== [13] 2edbcc6 | discard | use 200 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [14] e87c3fe | keep | increase to 200 trees at learning rate 0.1 ===
+  holdout=0.6786
+=== [15] 1daea67 | keep | increase to 300 trees at learning rate 0.1 ===
+  holdout=0.6795
+=== [16] aea1b55 | keep | increase to 400 trees at learning rate 0.1 ===
+  holdout=0.6798
+=== [17] 704fcbd | discard | increase to 500 trees at learning rate 0.1 ===
+  SKIP: status discard
+=== [18] 621716c | discard | increase max_depth to 7 at 400 rounds ===
+  SKIP: status discard
+=== [19] ce40419 | discard | reduce max_depth to 5 at 400 rounds ===
+  SKIP: status discard
+=== [20] 92b2507 | keep | increase max_bin to 512 ===
+  holdout=0.6797
+=== [21] 4d5d233 | discard | increase max_bin to 1024 ===
+  SKIP: status discard
+=== [22] c129fc3 | discard | use 800 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [23] 8365ed8 | discard | add cross-fitted smoothed origin/destination rates ===
+  SKIP: status discard
+=== [24] 9c18804 | keep | set colsample_bytree to 0.9 ===
+  holdout=0.6799
+=== [25] d8092e4 | discard | set colsample_bytree to 0.8 ===
+  SKIP: status discard
+=== [26] 19cf2f2 | discard | use 256 bins with 0.9 column sampling ===
+  SKIP: status discard
+=== [27] b22e89a | keep | increase to 450 trees with 0.9 column sampling ===
+  holdout=0.6799
+
+=== DONE: results written to output/holdout_scores.tsv ===

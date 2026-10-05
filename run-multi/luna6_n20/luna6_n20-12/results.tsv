@@ -1,0 +1,27 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+62fa772	0.6747	keep	add elapsed departure minutes and categorical hour
+cb89f5f	0.6743	discard	remove DepHour while retaining elapsed minutes
+b34386c	0.6754	keep	one-hot splits for low-cardinality categories
+65ce55a	0.6777	keep	one-hot splits for airport categories
+b46a05b	0.6629	discard	add high-cardinality carrier-route category
+f46e457	0.6766	discard	increase min_child_weight to 5
+a770227	0.6774	discard	set min_child_weight to 2
+a360420	0.6758	discard	add carrier-month interaction category
+195f5a2	0.6769	discard	set subsample to 0.8
+b8c1d75	0.6772	discard	add cyclic departure-time coordinates
+2edbcc6	0.6775	discard	use 200 trees at learning rate 0.05
+e87c3fe	0.6808	keep	increase to 200 trees at learning rate 0.1
+1daea67	0.6814	keep	increase to 300 trees at learning rate 0.1
+aea1b55	0.6815	keep	increase to 400 trees at learning rate 0.1
+704fcbd	0.6812	discard	increase to 500 trees at learning rate 0.1
+621716c	0.6796	discard	increase max_depth to 7 at 400 rounds
+ce40419	0.6810	discard	reduce max_depth to 5 at 400 rounds
+92b2507	0.6816	keep	increase max_bin to 512
+4d5d233	0.6809	discard	increase max_bin to 1024
+c129fc3	0.6813	discard	use 800 trees at learning rate 0.05
+8365ed8	0.6800	discard	add cross-fitted smoothed origin/destination rates
+9c18804	0.6818	keep	set colsample_bytree to 0.9
+d8092e4	0.6813	discard	set colsample_bytree to 0.8
+19cf2f2	0.6810	discard	use 256 bins with 0.9 column sampling
+b22e89a	0.6819	keep	increase to 450 trees with 0.9 column sampling

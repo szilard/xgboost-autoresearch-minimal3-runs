@@ -1,0 +1,8 @@
+2026-10-05T20:13:18.356817Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+cat_levels = {col: sorted(train[col].unique()) for col in cat_cols}
+
+def prepare(df):
+    X = df[num_cols + cat_cols].copy()
+    hhmm = df["CRSDepTime"].to_numpy()
+    X["DepTimeMinutes"] = (hhmm // 100) * 60 + hhmm % 100
+    for col in cat_cols:

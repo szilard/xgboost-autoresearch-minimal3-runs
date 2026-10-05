@@ -1,0 +1,93 @@
+commit b22e89ab93cad3761abdba3031637faebde06a8c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:57:58 2026 +0000
+
+    Try 450 rounds with column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9c18804c10cb27a615776bc321a7c05aa43437cb
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:53:58 2026 +0000
+
+    Try 90 percent column sampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 92b2507c2770744753783402d0f6527ccc6565fd
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:41:56 2026 +0000
+
+    Try 512 histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit aea1b5563fc47c989d8c9d882a0b4b31b30b49f9
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:34:15 2026 +0000
+
+    Try 400 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1daea6757388ea6dbf097bc8b5c9bf87f8c4e696
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:32:29 2026 +0000
+
+    Try 300 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e87c3fea7be891674b60ef505ec6f02dd2760c8e
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:30:33 2026 +0000
+
+    Try 200 boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 65ce55aa6ab115af9ad6edc3782fa35ab434def1
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:10:01 2026 +0000
+
+    Try one-hot splits for airport categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b34386c796438a30f6731bd134a6179d07e62653
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:08:07 2026 +0000
+
+    Try one-hot splits for compact categories
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 62fa772e4ffb0369a4de478f0e71d4c671927233
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 20:04:07 2026 +0000
+
+    Add clock-based departure time features
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

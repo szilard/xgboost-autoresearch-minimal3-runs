@@ -1,0 +1,9 @@
+Setup checks are complete:
+
+- `train.py` and `harness.py` reviewed; the starter is unchanged.
+- `data/train.csv` and `data/eval.csv` exist.
+- The working tree is clean on `main`.
+- `oct5` is available as a fresh branch tag.
+- `output/results.tsv` and `output/research-log.md` are initialized.
+
+I haven’t created the branch or started the clock yet. Please confirm `oct5` or reply with another run tag, and I’ll finish setup.

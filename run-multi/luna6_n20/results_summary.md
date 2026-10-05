@@ -15,7 +15,8 @@ Group `luna6_n20`: model `gpt-6-luna`, effort `max`, N_RUNS 20, codex-cli 0.160.
 | luna6_n20-9 | gpt-6-luna | max | 24 | 0.6859 (`794421a`) | 0.6844 | -0.0015 | 0h58m35s | 69.6% | yes | |
 | luna6_n20-10 | gpt-6-luna | max | 32 | 0.6828 (`b0110e3`) | 0.6820 | -0.0008 | 0h59m15s | 68.9% | yes | |
 | luna6_n20-11 | gpt-6-luna | max | 34 | 0.6805 (`0ea9a71`) | 0.6773 | -0.0032 | 0h58m40s | 67.8% | yes | |
+| luna6_n20-12 | gpt-6-luna | max | 26 | 0.6819 (`b22e89a`) | 0.6799 | -0.0020 | 0h58m47s | 72.7% | yes | |
 
-In progress: 11 of 20 runs done. The statistics follow once all runs are done.
+In progress: 12 of 20 runs done. The statistics follow once all runs are done.
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).
