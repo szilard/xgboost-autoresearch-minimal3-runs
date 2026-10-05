@@ -1,0 +1,48 @@
+commit 9cb236be28590947b80719a919d10fa42bb202ed
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 09:17:47 2026 +0000
+
+    increase boosting rounds to 300
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 33a2d0aa24a55fe79e9326e26f40ca18ea37cb0c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 09:16:19 2026 +0000
+
+    increase depth under slower boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 152f3e3e78c1baf6a994ed834b309a082e86d68c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 09:14:40 2026 +0000
+
+    halve learning rate and double trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 33ed01eaa99c4fb154a0a7d60407e554d366a323
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 09:03:07 2026 +0000
+
+    regularize baseline tree model
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

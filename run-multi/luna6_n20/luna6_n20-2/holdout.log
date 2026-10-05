@@ -1,0 +1,52 @@
+=== [2] b15ec66 | keep | baseline, unchanged starter ===
+  holdout=0.6725
+=== [3] 659c008 | discard | add train-fitted Origin-Dest categorical Route ===
+  SKIP: status discard
+=== [4] 33ed01e | keep | depth 4, min_child_weight 5, row/column sampling 0.8 ===
+  holdout=0.6784
+=== [5] 3c11a5e | discard | depth 5 with winning regularization settings ===
+  SKIP: status discard
+=== [6] 939b3d1 | discard | min_child_weight 1 with winning depth and sampling ===
+  SKIP: status discard
+=== [7] 2fbecb8 | discard | add 24-hour sine/cosine scheduled departure features ===
+  SKIP: status discard
+=== [8] 39efb99 | discard | max_cat_threshold 32 with winning model settings ===
+  SKIP: status discard
+=== [9] 152f3e3 | keep | learning rate 0.05 with 200 trees and winning regularization ===
+  holdout=0.6783
+=== [10] 33a2d0a | keep | depth 5 under learning rate 0.05 and 200 trees ===
+  holdout=0.6789
+=== [11] 9cb236b | keep | depth 5, learning rate 0.05, 300 trees ===
+  holdout=0.6789
+=== [12] 3b6d61f | discard | depth 5, learning rate 0.05, 400 trees ===
+  SKIP: status discard
+=== [13] 457bd43 | discard | add five-level scheduled PartOfDay category ===
+  SKIP: status discard
+=== [14] ef4e495 | discard | DART booster with rate_drop 0.1 and skip_drop 0.5 ===
+  SKIP: status discard
+=== [15] 1ad665c | discard | depth 5, learning rate 0.03, 500 trees ===
+  SKIP: status discard
+=== [16] d551d21 | discard | gamma=1; ties current best at four decimals, no meaningful runtime gain ===
+  SKIP: status discard
+=== [17] 99bc9ba | discard | reg_lambda=5 leaf L2 regularization ===
+  SKIP: status discard
+=== [18] b95e450 | discard | reg_alpha=0.1 leaf L1 regularization ===
+  SKIP: status discard
+=== [19] 32020dd | discard | add train-fitted UniqueCarrier-Month categorical interaction ===
+  SKIP: status discard
+=== [20] a7936f9 | discard | add binary IsWeekend feature ===
+  SKIP: status discard
+=== [21] 7e1298f | discard | add native categorical CRSDepHour feature ===
+  SKIP: status discard
+=== [22] cc1fb90 | discard | set colsample_bytree to 1.0 ===
+  SKIP: status discard
+=== [23] 0f090fb | discard | loss-guided tree growth with at most 32 leaves ===
+  SKIP: status discard
+=== [24] 787c199 | discard | set max_cat_to_onehot to 300 for airport categories ===
+  SKIP: status discard
+=== [25] 1da0eaf | discard | set min_child_weight to 10 ===
+  SKIP: status discard
+=== [26] ca52826 | discard | set subsample to 0.9 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

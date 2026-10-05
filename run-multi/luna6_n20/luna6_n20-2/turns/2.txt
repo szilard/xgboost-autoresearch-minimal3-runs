@@ -1,0 +1,9 @@
+## Experiment complete
+
+Setup and all 24 non-baseline experiments are recorded. The branch is `oct5`, and HEAD is restored to the best commit, `9cb236b`.
+
+The best Eval AUC remains **0.6813**, up from the **0.6743** baseline. The winning settings are 300 trees, depth 5, learning rate 0.05, `min_child_weight=5`, and 0.8 row and column sampling in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py:31).
+
+The experiments and findings are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). Training labels were balanced at 100,000 positive and 100,000 negative, so class reweighting had no useful ratio to apply; XGBoost’s typical negative-to-positive weighting ratio is 1 for this sample. [XGBoost parameter reference](https://xgboost.readthedocs.io/en/latest/parameter.html)
+
+The experiment clock stopped at **59m07s**.

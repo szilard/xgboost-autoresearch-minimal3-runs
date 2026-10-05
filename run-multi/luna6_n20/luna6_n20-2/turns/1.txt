@@ -1,0 +1,3 @@
+Setup is ready on branch `oct5`. `data/train.csv` and `data/eval.csv` are present, and [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) has the required header. The experiment clock has not started.
+
+Confirm when you’re ready to begin; then I’ll start the clock and run the baseline as the first experiment.

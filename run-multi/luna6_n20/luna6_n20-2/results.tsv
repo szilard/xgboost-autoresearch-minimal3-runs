@@ -1,0 +1,26 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline, unchanged starter
+659c008	0.6667	discard	add train-fitted Origin-Dest categorical Route
+33ed01e	0.6794	keep	depth 4, min_child_weight 5, row/column sampling 0.8
+3c11a5e	0.6790	discard	depth 5 with winning regularization settings
+939b3d1	0.6790	discard	min_child_weight 1 with winning depth and sampling
+2fbecb8	0.6792	discard	add 24-hour sine/cosine scheduled departure features
+39efb99	0.6790	discard	max_cat_threshold 32 with winning model settings
+152f3e3	0.6802	keep	learning rate 0.05 with 200 trees and winning regularization
+33a2d0a	0.6811	keep	depth 5 under learning rate 0.05 and 200 trees
+9cb236b	0.6813	keep	depth 5, learning rate 0.05, 300 trees
+3b6d61f	0.6811	discard	depth 5, learning rate 0.05, 400 trees
+457bd43	0.6800	discard	add five-level scheduled PartOfDay category
+ef4e495	0.6803	discard	DART booster with rate_drop 0.1 and skip_drop 0.5
+1ad665c	0.6804	discard	depth 5, learning rate 0.03, 500 trees
+d551d21	0.6813	discard	gamma=1; ties current best at four decimals, no meaningful runtime gain
+99bc9ba	0.6804	discard	reg_lambda=5 leaf L2 regularization
+b95e450	0.6797	discard	reg_alpha=0.1 leaf L1 regularization
+32020dd	0.6726	discard	add train-fitted UniqueCarrier-Month categorical interaction
+a7936f9	0.6797	discard	add binary IsWeekend feature
+7e1298f	0.6795	discard	add native categorical CRSDepHour feature
+cc1fb90	0.6784	discard	set colsample_bytree to 1.0
+0f090fb	0.6801	discard	loss-guided tree growth with at most 32 leaves
+787c199	0.6789	discard	set max_cat_to_onehot to 300 for airport categories
+1da0eaf	0.6803	discard	set min_child_weight to 10
+ca52826	0.6806	discard	set subsample to 0.9
