@@ -1,0 +1,3 @@
+Setup is ready on branch `oct5-2026`. I reviewed `train.py` and `harness.py`, confirmed both data files are present, and initialized [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with its header.
+
+The harness clock is still stopped. Confirm when you’re ready, and I’ll start it.

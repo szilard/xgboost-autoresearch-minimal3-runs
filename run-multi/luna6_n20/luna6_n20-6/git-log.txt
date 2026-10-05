@@ -1,0 +1,84 @@
+commit bd192f4e4764a51dbb09358b1de706bacfc5d0a3
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:17:53 2026 +0000
+
+    Add a small split penalty
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9a6deb9ae883a5902d7a060be666952301ddd727
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:10:00 2026 +0000
+
+    Ablate origin delay-rate encoding
+
+ train.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit f5ccb93d2d42662a7c96ce0a55c0868fbeeffb8c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:02:10 2026 +0000
+
+    Ablate route delay-rate encoding
+
+ train.py | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit 6328667e333918cc12ee148a1dafd46befad8fcb
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:42:45 2026 +0000
+
+    Try one-hot splits for low-cardinality features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5e7ab12a721b0d404119625daeaf099b19f30879
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:35:19 2026 +0000
+
+    Add weekday hour interaction category
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit de63d0326e1aedb86a7c3995e21349f3897c7b7d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:29:04 2026 +0000
+
+    Test max depth three
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit be3457c1a52fe185720e6602cbd6173a70d8e633
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:27:46 2026 +0000
+
+    Reduce tree depth to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f1b98ec689becc9a451a728077723464c111230c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 13:26:14 2026 +0000
+
+    Add scheduled departure hour category
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,5 @@
+2026-10-05T14:09:41.918499Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /home/ubuntu/xgboost-autoresearch-minimal3/train.py:
+te_target = (train[target] == "Y").astype("float64").to_numpy()
+te_train_keys = {
+    "Origin": train["Origin"].astype(str),
+    "Dest": train["Dest"].astype(str),

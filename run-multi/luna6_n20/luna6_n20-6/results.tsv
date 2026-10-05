@@ -1,0 +1,31 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+b999494	0.6667	discard	add directed Origin-Dest categorical feature
+f1b98ec	0.6747	keep	add scheduled departure hour categorical feature
+be3457c	0.6789	keep	reduce max_depth from 6 to 4 with DepHour feature
+de63d03	0.6797	keep	reduce max_depth from 4 to 3 with DepHour feature
+9777155	0.6754	discard	reduce max_depth from 3 to 2 with DepHour feature
+5b54485	0.6794	discard	use 200 trees at learning rate 0.05
+856794e	0.6797	discard	raise min_child_weight from 1 to 5
+5e7ab12	0.6806	keep	add DayOfWeek-by-DepHour categorical interaction
+529f584	0.6793	discard	set subsample to 0.8
+20206de	0.6789	discard	add Month-by-DepHour categorical interaction
+1227138	0.6791	discard	raise max_depth to 4 with DOWHour feature
+6328667	0.6818	keep	set max_cat_to_onehot to 25
+ad68453	0.6813	discard	raise max_cat_to_onehot to 32
+147ff08	0.6818	discard	set max_cat_to_onehot to 21
+93447ad	0.6809	discard	raise max_cat_threshold to 256
+cce3072	0.6812	discard	add sine and cosine scheduled time features
+003812e	0.6751	discard	add carrier by month categorical interaction
+f63ba3c	0.6805	discard	add cross-fitted smoothed delay rates
+f5ccb93	0.6821	keep	cross-fitted rates for carrier, origin, destination, and DOWHour; omit route
+8b8eccb	0.6809	discard	remove DOWHourDelayRate
+2a0b9f5	0.6808	discard	reduce target-rate smoothing to 20
+1935321	0.6815	discard	increase target-rate smoothing to 100
+b07f0e9	0.6804	discard	remove CarrierDelayRate
+9a6deb9	0.6821	keep	remove OriginDelayRate; retain carrier, destination, and DOWHour rates
+8f9695a	0.6816	discard	remove DestDelayRate
+5b275b2	0.6798	discard	reduce max_depth to 2 with delay-rate features
+60e9f4a	0.6793	discard	raise max_depth to 4 with delay-rate features
+259b276	0.6816	discard	set colsample_bytree to 0.8
+bd192f4	0.6821	keep	set gamma to 0.1; tied best AUC with faster observed eval

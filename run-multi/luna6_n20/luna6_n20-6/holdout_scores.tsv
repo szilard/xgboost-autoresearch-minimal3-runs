@@ -1,0 +1,31 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+b999494	discard	add directed Origin-Dest categorical feature	0.6667	N/A
+f1b98ec	keep	add scheduled departure hour categorical feature	0.6747	0.6735
+be3457c	keep	reduce max_depth from 6 to 4 with DepHour feature	0.6789	0.6773
+de63d03	keep	reduce max_depth from 4 to 3 with DepHour feature	0.6797	0.6784
+9777155	discard	reduce max_depth from 3 to 2 with DepHour feature	0.6754	N/A
+5b54485	discard	use 200 trees at learning rate 0.05	0.6794	N/A
+856794e	discard	raise min_child_weight from 1 to 5	0.6797	N/A
+5e7ab12	keep	add DayOfWeek-by-DepHour categorical interaction	0.6806	0.6791
+529f584	discard	set subsample to 0.8	0.6793	N/A
+20206de	discard	add Month-by-DepHour categorical interaction	0.6789	N/A
+1227138	discard	raise max_depth to 4 with DOWHour feature	0.6791	N/A
+6328667	keep	set max_cat_to_onehot to 25	0.6818	0.6798
+ad68453	discard	raise max_cat_to_onehot to 32	0.6813	N/A
+147ff08	discard	set max_cat_to_onehot to 21	0.6818	N/A
+93447ad	discard	raise max_cat_threshold to 256	0.6809	N/A
+cce3072	discard	add sine and cosine scheduled time features	0.6812	N/A
+003812e	discard	add carrier by month categorical interaction	0.6751	N/A
+f63ba3c	discard	add cross-fitted smoothed delay rates	0.6805	N/A
+f5ccb93	keep	cross-fitted rates for carrier, origin, destination, and DOWHour; omit route	0.6821	0.6800
+8b8eccb	discard	remove DOWHourDelayRate	0.6809	N/A
+2a0b9f5	discard	reduce target-rate smoothing to 20	0.6808	N/A
+1935321	discard	increase target-rate smoothing to 100	0.6815	N/A
+b07f0e9	discard	remove CarrierDelayRate	0.6804	N/A
+9a6deb9	keep	remove OriginDelayRate; retain carrier, destination, and DOWHour rates	0.6821	0.6800
+8f9695a	discard	remove DestDelayRate	0.6816	N/A
+5b275b2	discard	reduce max_depth to 2 with delay-rate features	0.6798	N/A
+60e9f4a	discard	raise max_depth to 4 with delay-rate features	0.6793	N/A
+259b276	discard	set colsample_bytree to 0.8	0.6816	N/A
+bd192f4	keep	set gamma to 0.1; tied best AUC with faster observed eval	0.6821	0.6800

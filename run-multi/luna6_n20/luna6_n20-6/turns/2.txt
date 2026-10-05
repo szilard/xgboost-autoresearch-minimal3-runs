@@ -1,0 +1,5 @@
+The run is complete on branch `oct5-2026`. The clock stopped after **58m 54s**, and the branch is at the best kept commit.
+
+Best Eval AUC was **0.6821** at [`bd192f4`](/home/ubuntu/xgboost-autoresearch-minimal3/train.py), up from the **0.6743** baseline. The final model uses depth 3, low-cardinality one-hot splits, weekday-hour features, cross-fitted delay rates for carrier, destination, and weekday-hour, and `gamma=0.1`. That last change tied the score and had a 0.6-second shorter observed evaluation than the previous best.
+
+All 29 experiments are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv), with hypotheses and the final synthesis in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). Research drew on the [XGBoost tuning guide](https://xgboost.readthedocs.io/en/stable/tutorials/param_tuning.html) and [scikit-learn’s cross-fitting guidance](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_target_encoder_cross_val.html).

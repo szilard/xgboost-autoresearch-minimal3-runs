@@ -1,0 +1,62 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] b999494 | discard | add directed Origin-Dest categorical feature ===
+  SKIP: status discard
+=== [4] f1b98ec | keep | add scheduled departure hour categorical feature ===
+  holdout=0.6735
+=== [5] be3457c | keep | reduce max_depth from 6 to 4 with DepHour feature ===
+  holdout=0.6773
+=== [6] de63d03 | keep | reduce max_depth from 4 to 3 with DepHour feature ===
+  holdout=0.6784
+=== [7] 9777155 | discard | reduce max_depth from 3 to 2 with DepHour feature ===
+  SKIP: status discard
+=== [8] 5b54485 | discard | use 200 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [9] 856794e | discard | raise min_child_weight from 1 to 5 ===
+  SKIP: status discard
+=== [10] 5e7ab12 | keep | add DayOfWeek-by-DepHour categorical interaction ===
+  holdout=0.6791
+=== [11] 529f584 | discard | set subsample to 0.8 ===
+  SKIP: status discard
+=== [12] 20206de | discard | add Month-by-DepHour categorical interaction ===
+  SKIP: status discard
+=== [13] 1227138 | discard | raise max_depth to 4 with DOWHour feature ===
+  SKIP: status discard
+=== [14] 6328667 | keep | set max_cat_to_onehot to 25 ===
+  holdout=0.6798
+=== [15] ad68453 | discard | raise max_cat_to_onehot to 32 ===
+  SKIP: status discard
+=== [16] 147ff08 | discard | set max_cat_to_onehot to 21 ===
+  SKIP: status discard
+=== [17] 93447ad | discard | raise max_cat_threshold to 256 ===
+  SKIP: status discard
+=== [18] cce3072 | discard | add sine and cosine scheduled time features ===
+  SKIP: status discard
+=== [19] 003812e | discard | add carrier by month categorical interaction ===
+  SKIP: status discard
+=== [20] f63ba3c | discard | add cross-fitted smoothed delay rates ===
+  SKIP: status discard
+=== [21] f5ccb93 | keep | cross-fitted rates for carrier, origin, destination, and DOWHour; omit route ===
+  holdout=0.6800
+=== [22] 8b8eccb | discard | remove DOWHourDelayRate ===
+  SKIP: status discard
+=== [23] 2a0b9f5 | discard | reduce target-rate smoothing to 20 ===
+  SKIP: status discard
+=== [24] 1935321 | discard | increase target-rate smoothing to 100 ===
+  SKIP: status discard
+=== [25] b07f0e9 | discard | remove CarrierDelayRate ===
+  SKIP: status discard
+=== [26] 9a6deb9 | keep | remove OriginDelayRate; retain carrier, destination, and DOWHour rates ===
+  holdout=0.6800
+=== [27] 8f9695a | discard | remove DestDelayRate ===
+  SKIP: status discard
+=== [28] 5b275b2 | discard | reduce max_depth to 2 with delay-rate features ===
+  SKIP: status discard
+=== [29] 60e9f4a | discard | raise max_depth to 4 with delay-rate features ===
+  SKIP: status discard
+=== [30] 259b276 | discard | set colsample_bytree to 0.8 ===
+  SKIP: status discard
+=== [31] bd192f4 | keep | set gamma to 0.1; tied best AUC with faster observed eval ===
+  holdout=0.6800
+
+=== DONE: results written to output/holdout_scores.tsv ===
