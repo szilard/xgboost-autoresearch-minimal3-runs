@@ -1,0 +1,60 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+0c25f03	discard	500 trees at eta 0.05	0.6707	N/A
+38bc84b	keep	remove redundant categorical membership checks	0.6743	0.6725
+9a554ae	keep	600 trees eta .05 depth 4 child 50 lambda 10 subsample .8	0.6787	0.6772
+6db680f	keep	drop DayofMonth to reduce unstable date interactions	0.6792	0.6776
+d0d5ebc	keep	cache categorical dtypes and explicit codes; equivalent row features	0.6792	0.6776
+ebf37a5	discard	use one-hot splits for every categorical feature	0.6789	N/A
+d47b8e6	keep	isolate Month as additive seasonality	0.6804	0.6792
+a154928	discard	add departure hour and minute-within-hour	0.6804	N/A
+da30290	discard	1600 depth-2 trees; limit interaction order	0.6788	N/A
+e546c33	keep	limit categorical split search to max_cat_threshold 16	0.6821	0.6800
+15706bd	keep	four parallel trees per boosting iteration	0.6823	0.6804
+6924641	keep	train-fitted route and carrier-origin schedule residuals	0.6824	0.6809
+e4ba7f5	keep	airport MDS coordinates from train-only route distances	0.6825	0.6808
+933e0ed	discard	depth 6 under constrained averaged boosting	0.6825	N/A
+f2762dd	discard	halve boosting rounds to 300	0.6819	N/A
+1b41f21	discard	gamma 5 minimum split gain	0.6824	N/A
+97c8784	keep	additive Thanksgiving Christmas and summer holiday windows	0.6843	0.6830
+13c0e9f	discard	honest target-rate tables on 25 percent; booster on remaining 75 percent	0.6819	N/A
+d15950d	discard	native CarrierOrigin categorical interaction	0.6805	N/A
+5fde1d2	keep	ablate inferred geography after adding holiday windows	0.6843	0.6831
+4392e73	discard	pairwise rank objective with mean sampling and global query	0.6802	N/A
+c07a08f	keep	colsample_bytree .8 for parallel-tree diversity	0.6845	0.6832
+2d0f285	discard	reduce max_cat_threshold from 16 to 8	0.6807	N/A
+1ef5335	discard	constrain weekday effects to additive trees	0.6825	N/A
+60186de	keep	increase reg_lambda from 10 to 100	0.6866	0.6849
+f716fda	discard	equal-weight average of seeds 42 1729 and 2026	0.6866	N/A
+71d08cd	keep	increase reg_lambda from 100 to 500	0.6869	0.6850
+b4f8033	discard	max_cat_threshold 64 with lambda 500	0.6849	N/A
+ca9067d	keep	ablate both train-fitted schedule residual features	0.6869	0.6848
+e1fafa9	discard	increase reg_lambda from 500 to 2000	0.6857	N/A
+8e16e5c	discard	10 percent uniform label smoothing via logistic gradients	0.6867	N/A
+f68ed05	discard	max_bin 64 to smooth numerical thresholds	0.6867	N/A
+be1d272	discard	holiday and departure-time interaction groups	0.6864	N/A
+37b199a	discard	DART 300 rounds eta .1 dropout .05 skip .5	0.6858	N/A
+6e2bd16	keep	ordered numerical Month with isolated seasonality	0.6885	0.6864
+d938453	discard	circular sine-cosine month representation	0.6875	N/A
+42ef031	discard	remove summer holiday window	0.6881	N/A
+f99b6ee	keep	lossguide growth with 16 leaves and unrestricted depth	0.6886	0.6869
+a46748e	discard	1200 rounds with strongly regularized loss-guided trees	0.6867	N/A
+2a49482	keep	remove explicit minimum child weight; use default 1	0.6886	0.6869
+1b08f86	keep	training recency weights with 12-month half-life	0.6889	0.6872
+cca2109	discard	recency weighting with six-month half-life	0.6886	N/A
+9a1151e	keep	add isolated two-week seasonal position alongside Month	0.6922	0.6900
+ce43b01	discard	weekly isolated seasonal position instead of fortnightly	0.6915	N/A
+eabfb3d	discard	equal-weight ensemble of two fortnight boundary alignments	0.6917	N/A
+d4c5b7c	discard	increase loss-guided leaf budget from 16 to 32	0.6914	N/A
+774c754	keep	add operational minutes since 05:00 modulo one day	0.6924	0.6900
+b799422	keep	drop raw clock time and retain operational time	0.6924	0.6901
+07c6cd9	keep	lambda 250 with fortnightly seasonality and operational time	0.6925	0.6901
+18a2874	discard	use one tree per boosting round instead of four	0.6922	N/A
+fb8f076	discard	piecewise monotonic daily timing with 20:00 peak	0.6919	N/A
+54340b1	keep	reg_alpha 10 alongside lambda 250	0.6933	0.6906
+39761f2	discard	increase reg_alpha from 10 to 30	0.6919	N/A
+8fb67ca	discard	subsample .5 with proportionally scaled L1 and L2 penalties	0.6932	N/A
+ad0af52	discard	three-week seasonal bins instead of fortnightly	0.6923	N/A
+7073db1	keep	equal-weight ensemble of .8 and .5 row sampling	0.6935	0.6906
+ecf99f4	discard	max_cat_threshold 32 in the complementary-sampling ensemble	0.6929	N/A
+7cdfba0	keep	simplify preparation and define interaction groups once; exact equivalence	0.6935	0.6906

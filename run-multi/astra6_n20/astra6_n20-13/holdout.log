@@ -1,0 +1,120 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 0c25f03 | discard | 500 trees at eta 0.05 ===
+  SKIP: status discard
+=== [4] 38bc84b | keep | remove redundant categorical membership checks ===
+  holdout=0.6725
+=== [5] 9a554ae | keep | 600 trees eta .05 depth 4 child 50 lambda 10 subsample .8 ===
+  holdout=0.6772
+=== [6] 6db680f | keep | drop DayofMonth to reduce unstable date interactions ===
+  holdout=0.6776
+=== [7] d0d5ebc | keep | cache categorical dtypes and explicit codes; equivalent row features ===
+  holdout=0.6776
+=== [8] ebf37a5 | discard | use one-hot splits for every categorical feature ===
+  SKIP: status discard
+=== [9] d47b8e6 | keep | isolate Month as additive seasonality ===
+  holdout=0.6792
+=== [10] a154928 | discard | add departure hour and minute-within-hour ===
+  SKIP: status discard
+=== [11] da30290 | discard | 1600 depth-2 trees; limit interaction order ===
+  SKIP: status discard
+=== [12] e546c33 | keep | limit categorical split search to max_cat_threshold 16 ===
+  holdout=0.6800
+=== [13] 15706bd | keep | four parallel trees per boosting iteration ===
+  holdout=0.6804
+=== [14] 6924641 | keep | train-fitted route and carrier-origin schedule residuals ===
+  holdout=0.6809
+=== [15] e4ba7f5 | keep | airport MDS coordinates from train-only route distances ===
+  holdout=0.6808
+=== [16] 933e0ed | discard | depth 6 under constrained averaged boosting ===
+  SKIP: status discard
+=== [17] f2762dd | discard | halve boosting rounds to 300 ===
+  SKIP: status discard
+=== [18] 1b41f21 | discard | gamma 5 minimum split gain ===
+  SKIP: status discard
+=== [19] 97c8784 | keep | additive Thanksgiving Christmas and summer holiday windows ===
+  holdout=0.6830
+=== [20] 13c0e9f | discard | honest target-rate tables on 25 percent; booster on remaining 75 percent ===
+  SKIP: status discard
+=== [21] d15950d | discard | native CarrierOrigin categorical interaction ===
+  SKIP: status discard
+=== [22] 5fde1d2 | keep | ablate inferred geography after adding holiday windows ===
+  holdout=0.6831
+=== [23] 4392e73 | discard | pairwise rank objective with mean sampling and global query ===
+  SKIP: status discard
+=== [24] c07a08f | keep | colsample_bytree .8 for parallel-tree diversity ===
+  holdout=0.6832
+=== [25] 2d0f285 | discard | reduce max_cat_threshold from 16 to 8 ===
+  SKIP: status discard
+=== [26] 1ef5335 | discard | constrain weekday effects to additive trees ===
+  SKIP: status discard
+=== [27] 60186de | keep | increase reg_lambda from 10 to 100 ===
+  holdout=0.6849
+=== [28] f716fda | discard | equal-weight average of seeds 42 1729 and 2026 ===
+  SKIP: status discard
+=== [29] 71d08cd | keep | increase reg_lambda from 100 to 500 ===
+  holdout=0.6850
+=== [30] b4f8033 | discard | max_cat_threshold 64 with lambda 500 ===
+  SKIP: status discard
+=== [31] ca9067d | keep | ablate both train-fitted schedule residual features ===
+  holdout=0.6848
+=== [32] e1fafa9 | discard | increase reg_lambda from 500 to 2000 ===
+  SKIP: status discard
+=== [33] 8e16e5c | discard | 10 percent uniform label smoothing via logistic gradients ===
+  SKIP: status discard
+=== [34] f68ed05 | discard | max_bin 64 to smooth numerical thresholds ===
+  SKIP: status discard
+=== [35] be1d272 | discard | holiday and departure-time interaction groups ===
+  SKIP: status discard
+=== [36] 37b199a | discard | DART 300 rounds eta .1 dropout .05 skip .5 ===
+  SKIP: status discard
+=== [37] 6e2bd16 | keep | ordered numerical Month with isolated seasonality ===
+  holdout=0.6864
+=== [38] d938453 | discard | circular sine-cosine month representation ===
+  SKIP: status discard
+=== [39] 42ef031 | discard | remove summer holiday window ===
+  SKIP: status discard
+=== [40] f99b6ee | keep | lossguide growth with 16 leaves and unrestricted depth ===
+  holdout=0.6869
+=== [41] a46748e | discard | 1200 rounds with strongly regularized loss-guided trees ===
+  SKIP: status discard
+=== [42] 2a49482 | keep | remove explicit minimum child weight; use default 1 ===
+  holdout=0.6869
+=== [43] 1b08f86 | keep | training recency weights with 12-month half-life ===
+  holdout=0.6872
+=== [44] cca2109 | discard | recency weighting with six-month half-life ===
+  SKIP: status discard
+=== [45] 9a1151e | keep | add isolated two-week seasonal position alongside Month ===
+  holdout=0.6900
+=== [46] ce43b01 | discard | weekly isolated seasonal position instead of fortnightly ===
+  SKIP: status discard
+=== [47] eabfb3d | discard | equal-weight ensemble of two fortnight boundary alignments ===
+  SKIP: status discard
+=== [48] d4c5b7c | discard | increase loss-guided leaf budget from 16 to 32 ===
+  SKIP: status discard
+=== [49] 774c754 | keep | add operational minutes since 05:00 modulo one day ===
+  holdout=0.6900
+=== [50] b799422 | keep | drop raw clock time and retain operational time ===
+  holdout=0.6901
+=== [51] 07c6cd9 | keep | lambda 250 with fortnightly seasonality and operational time ===
+  holdout=0.6901
+=== [52] 18a2874 | discard | use one tree per boosting round instead of four ===
+  SKIP: status discard
+=== [53] fb8f076 | discard | piecewise monotonic daily timing with 20:00 peak ===
+  SKIP: status discard
+=== [54] 54340b1 | keep | reg_alpha 10 alongside lambda 250 ===
+  holdout=0.6906
+=== [55] 39761f2 | discard | increase reg_alpha from 10 to 30 ===
+  SKIP: status discard
+=== [56] 8fb67ca | discard | subsample .5 with proportionally scaled L1 and L2 penalties ===
+  SKIP: status discard
+=== [57] ad0af52 | discard | three-week seasonal bins instead of fortnightly ===
+  SKIP: status discard
+=== [58] 7073db1 | keep | equal-weight ensemble of .8 and .5 row sampling ===
+  holdout=0.6906
+=== [59] ecf99f4 | discard | max_cat_threshold 32 in the complementary-sampling ensemble ===
+  SKIP: status discard
+=== [60] 7cdfba0 | keep | simplify preparation and define interaction groups once; exact equivalence ===
+  holdout=0.6906
+
+=== DONE: results written to output/holdout_scores.tsv ===

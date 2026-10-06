@@ -1,0 +1,60 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+0c25f03	0.6707	discard	500 trees at eta 0.05
+38bc84b	0.6743	keep	remove redundant categorical membership checks
+9a554ae	0.6787	keep	600 trees eta .05 depth 4 child 50 lambda 10 subsample .8
+6db680f	0.6792	keep	drop DayofMonth to reduce unstable date interactions
+d0d5ebc	0.6792	keep	cache categorical dtypes and explicit codes; equivalent row features
+ebf37a5	0.6789	discard	use one-hot splits for every categorical feature
+d47b8e6	0.6804	keep	isolate Month as additive seasonality
+a154928	0.6804	discard	add departure hour and minute-within-hour
+da30290	0.6788	discard	1600 depth-2 trees; limit interaction order
+e546c33	0.6821	keep	limit categorical split search to max_cat_threshold 16
+15706bd	0.6823	keep	four parallel trees per boosting iteration
+6924641	0.6824	keep	train-fitted route and carrier-origin schedule residuals
+e4ba7f5	0.6825	keep	airport MDS coordinates from train-only route distances
+933e0ed	0.6825	discard	depth 6 under constrained averaged boosting
+f2762dd	0.6819	discard	halve boosting rounds to 300
+1b41f21	0.6824	discard	gamma 5 minimum split gain
+97c8784	0.6843	keep	additive Thanksgiving Christmas and summer holiday windows
+13c0e9f	0.6819	discard	honest target-rate tables on 25 percent; booster on remaining 75 percent
+d15950d	0.6805	discard	native CarrierOrigin categorical interaction
+5fde1d2	0.6843	keep	ablate inferred geography after adding holiday windows
+4392e73	0.6802	discard	pairwise rank objective with mean sampling and global query
+c07a08f	0.6845	keep	colsample_bytree .8 for parallel-tree diversity
+2d0f285	0.6807	discard	reduce max_cat_threshold from 16 to 8
+1ef5335	0.6825	discard	constrain weekday effects to additive trees
+60186de	0.6866	keep	increase reg_lambda from 10 to 100
+f716fda	0.6866	discard	equal-weight average of seeds 42 1729 and 2026
+71d08cd	0.6869	keep	increase reg_lambda from 100 to 500
+b4f8033	0.6849	discard	max_cat_threshold 64 with lambda 500
+ca9067d	0.6869	keep	ablate both train-fitted schedule residual features
+e1fafa9	0.6857	discard	increase reg_lambda from 500 to 2000
+8e16e5c	0.6867	discard	10 percent uniform label smoothing via logistic gradients
+f68ed05	0.6867	discard	max_bin 64 to smooth numerical thresholds
+be1d272	0.6864	discard	holiday and departure-time interaction groups
+37b199a	0.6858	discard	DART 300 rounds eta .1 dropout .05 skip .5
+6e2bd16	0.6885	keep	ordered numerical Month with isolated seasonality
+d938453	0.6875	discard	circular sine-cosine month representation
+42ef031	0.6881	discard	remove summer holiday window
+f99b6ee	0.6886	keep	lossguide growth with 16 leaves and unrestricted depth
+a46748e	0.6867	discard	1200 rounds with strongly regularized loss-guided trees
+2a49482	0.6886	keep	remove explicit minimum child weight; use default 1
+1b08f86	0.6889	keep	training recency weights with 12-month half-life
+cca2109	0.6886	discard	recency weighting with six-month half-life
+9a1151e	0.6922	keep	add isolated two-week seasonal position alongside Month
+ce43b01	0.6915	discard	weekly isolated seasonal position instead of fortnightly
+eabfb3d	0.6917	discard	equal-weight ensemble of two fortnight boundary alignments
+d4c5b7c	0.6914	discard	increase loss-guided leaf budget from 16 to 32
+774c754	0.6924	keep	add operational minutes since 05:00 modulo one day
+b799422	0.6924	keep	drop raw clock time and retain operational time
+07c6cd9	0.6925	keep	lambda 250 with fortnightly seasonality and operational time
+18a2874	0.6922	discard	use one tree per boosting round instead of four
+fb8f076	0.6919	discard	piecewise monotonic daily timing with 20:00 peak
+54340b1	0.6933	keep	reg_alpha 10 alongside lambda 250
+39761f2	0.6919	discard	increase reg_alpha from 10 to 30
+8fb67ca	0.6932	discard	subsample .5 with proportionally scaled L1 and L2 penalties
+ad0af52	0.6923	discard	three-week seasonal bins instead of fortnightly
+7073db1	0.6935	keep	equal-weight ensemble of .8 and .5 row sampling
+ecf99f4	0.6929	discard	max_cat_threshold 32 in the complementary-sampling ensemble
+7cdfba0	0.6935	keep	simplify preparation and define interaction groups once; exact equivalence
