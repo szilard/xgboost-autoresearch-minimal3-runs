@@ -2,7 +2,7 @@
 
 **Valid with a caveat** (`keep_rule`). Best Eval AUC **0.6849** (`dfccd9c`), Holdout AUC **0.6831**, gap **-0.0018**.
 
-The highest Eval AUC of the group, and the second-highest Holdout AUC after luna6_n20-9.
+The third-highest Eval AUC (after luna6_n20-9 and -20) and the third-highest Holdout AUC (after luna6_n20-9 and -20, both 0.6844) of the group.
 
 ## Setup
 

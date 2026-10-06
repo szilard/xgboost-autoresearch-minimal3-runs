@@ -29,7 +29,7 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0, no cap
 
 - 32 rows in results.tsv (baseline + 31 experiments): 11 keep, 21 discard, 0 crash; 32 harness runs, all ok
 - Kept Eval AUC: 0.6743 → 0.6777 → 0.6790 → 0.6799 → 0.6802 → 0.6808 → 0.6811 → 0.6820 → 0.6826 → 0.6827 → 0.6828, strictly increasing (no kept ties). Four results equal to the last keep were discarded, as the keep rule requires: gamma 1.0 at 0.6826; `min_child_weight` 3 and 10 and gamma 0.1, all at 0.6828.
-- Best: `b0110e3` "set max_bin to 128", Eval 0.6828, Holdout 0.6820 (gap -0.0008, the smallest of the group; starter: 0.6743 / 0.6725, gap -0.0018)
+- Best: `b0110e3` "set max_bin to 128", Eval 0.6828, Holdout 0.6820 (gap -0.0008, the second smallest of the group after luna6_n20-20; starter: 0.6743 / 0.6725, gap -0.0018)
 - Holdout AUC of the kept commits: 0.6725, 0.6766, 0.6781, 0.6784, 0.6783, 0.6791, 0.6795, 0.6809, 0.6817, 0.6812, 0.6820
 - Best model: one XGBoost model with loss-guided growth (16 leaves, no depth limit), 200 trees at learning rate 0.05, `min_child_weight` 5, `subsample` 0.8, `colsample_bytree` 0.6, `max_cat_threshold` 128, `max_bin` 128, on the starter's columns with `Month` replaced by its sine and cosine
 - Gains, adding up to +0.0085:

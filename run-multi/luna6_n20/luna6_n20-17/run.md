@@ -41,7 +41,7 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0, no cap
   - sine / cosine of the day of year: +0.0031
   - without `Month` and `DayofMonth`: +0.0012
   - depth 3: +0.0009
-- Like luna6_n20-9, the second-best run, it gained most from a smooth day-of-year feature in place of the month and day categories.
+- Like luna6_n20-9 (Holdout 0.6844, the best of the group with luna6_n20-20), it gained most from a smooth day-of-year feature in place of the month and day categories.
 - Timing (report.txt): total 0h58m49s; XGBoost runs 0h21m17s (36.2%); AI 0h37m32s (63.8%)
 - Clock stopped by the agent after 3529 s, 71 s of the 3600 s budget left (not an early stop: under 2 minutes remained). The last run (`5c7c7bd`) ended 105 s before the budget ran out. Final summary written in the research log.
 
