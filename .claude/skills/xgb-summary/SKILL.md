@@ -5,8 +5,9 @@ disable-model-invocation: true
 ---
 
 No arguments. Everything comes from the group files that /xgb-multi wrote:
-each `run-multi/<group>/holdout_auc.tsv` and the runs' `driver-summary.json`
-and `holdout_scores.tsv`. Groups of the same model are pooled, runs with
+each `run-multi/<group>/holdout_auc.tsv` and the runs' `driver-summary.json`,
+`holdout_scores.tsv` and harness timing (`timing/clock.json`,
+`timing/runs.tsv`). Groups of the same model are pooled, runs with
 `valid` = `no` are left out, runs with a caveat are included.
 
 The mechanical part is done by three scripts, run from the repo root without
@@ -69,9 +70,9 @@ yourself: every number in the README comes from the scripts' output.
      number of runs per model if it is the same for all models (otherwise
      leave it to the table), the codex version, the effort, the container
      memory cap in GB and the upstream minimal3 commit (first 7 characters).
-     Then: "Holdout AUC of each run's best model (by eval AUC), over the
-     valid runs, including those with a caveat; the starter `train.py`
-     scores 0.6725:"
+     Then: "Holdout AUC of each run's best model (by eval AUC; on a tie the
+     last kept commit), over the valid runs, including those with a caveat;
+     the starter `train.py` scores 0.6725:"
    - The markdown table exactly as printed.
    - One short paragraph of notes, from the NOTE lines: which caveats there
      are and how many runs carry each; how many runs were excluded and why,

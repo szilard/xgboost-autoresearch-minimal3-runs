@@ -23,23 +23,23 @@ Each run's folder has the agent's `results.tsv` and `research-log.md`, the `trai
 ## Results so far
 
 <!-- xgb-summary: start (the block up to the end marker is rewritten by /xgb-summary) -->
-All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and minimal3 at `5fb023a`. Holdout AUC of each run's best model (by eval AUC), over the valid runs, including those with a caveat; the starter `train.py` scores 0.6725:
+All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and minimal3 at `5fb023a`. Holdout AUC of each run's best model (by eval AUC; on a tie the last kept commit), over the valid runs, including those with a caveat; the starter `train.py` scores 0.6725:
 
 | model | groups | valid runs | excluded | holdout AUC mean | sd | min | median | max |
 |---|---|---|---|---|---|---|---|---|
-| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 13 | 0 | 0.6842 | 0.0019 | 0.6803 | 0.6841 | 0.6871 |
+| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 14 | 0 | 0.6842 | 0.0018 | 0.6803 | 0.6844 | 0.6871 |
 | gpt-6-luna | [luna6_n20](run-multi/luna6_n20/results_summary.md) | 20 (4 with caveat) | 0 | 0.6806 | 0.0019 | 0.6773 | 0.6800 | 0.6844 |
 
-Four runs carry a caveat, all `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15 and -18. No run was excluded. luna6_n20 is complete (20 runs); sol6_n20 is in progress, with 13 of its 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
+Four runs carry a caveat, all `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15 and -18. No run was excluded. luna6_n20 is complete (20 runs); sol6_n20 is in progress, with 14 of its 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
 
 ![Holdout AUC per run](run-multi/SUMMARY/holdout_auc_beeswarm.png)
 <!-- xgb-summary: end -->
 
 Plots over all groups go to `run-multi/SUMMARY/`:
 
-- `holdout_auc_beeswarm.png`: one dot per run (hollow: with caveat), the mean with its 90% interval and the 10th/90th percentiles per model;
+- `holdout_auc_beeswarm.png`: one dot per run (hollow: with caveat), the mean with its 90% confidence interval and the 10th/90th percentiles per model;
 - `holdout_auc_pairwise.png`: head to head - the probability that one run of a model beats one run of another, with a 90% bootstrap interval;
-- `holdout_auc_path_panels.png`, `holdout_auc_path_median.png`: the holdout AUC of the kept model after each experiment - per run in one panel per model, and all runs faded with the medians in bold.
+- `holdout_auc_path_panels.png`, `holdout_auc_path_median.png`: the holdout AUC of the kept model over the time of the run (minutes since its clock started) - per run in one panel per model, and all runs faded with the medians in bold.
 
 They are made by `tools/plot_holdout_auc.py` (beeswarm and paths) and `tools/pairwise_win_prob.py` (head to head; it also prints the table), which read every group's `holdout_auc.tsv` and pool groups of the same model. The project skill `/xgb-summary` runs them, checks the group files and the plots, and rewrites the table above (`tools/summary_table.py`).
 

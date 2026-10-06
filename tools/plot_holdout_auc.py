@@ -2,22 +2,24 @@
 """Plot the holdout AUC of all run groups in run-multi/, coloured by model.
 
 Reads each group's holdout_auc.tsv (written by /xgb-multi), the model from each
-run's driver-summary.json and the per-experiment scores from its
-holdout_scores.tsv. Groups with the same model are pooled (all runs are effort
-max). Runs with valid = "no" are left out; caveat runs are drawn hollow/dashed.
+run's driver-summary.json, the per-experiment scores from its
+holdout_scores.tsv and the harness timing from its timing/ folder. Groups with
+the same model are pooled (all runs are effort max). Runs with valid = "no" are
+left out; caveat runs are drawn hollow/dashed.
 
 run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
   (modelled on Fig. 1 of arXiv:2609.33812): a filled dot per valid run and a
   hollow dot per caveat run, a grey bar over the full range, the mean with its
-  90% interval (t) and the 10th/90th percentiles (nearest run) when the row has
-  >= 5 runs.
+  90% confidence interval (t) and the 10th/90th percentiles (nearest run) when
+  the row has >= 5 runs.
 
 Two views of the holdout AUC path of each run, i.e. the holdout AUC of the
-kept model after each experiment (x: experiment number n as in the runs'
-auc_history.png, the baseline is n = 1; y: holdout AUC of each kept commit, held
-until the next keep). The median at experiment n is over all of a model's runs,
-a run that has ended counting with its final value; it stops when fewer than
-MIN_N_PATH runs are still going.
+kept model over the time of the run (x: minutes since the run's clock started;
+y: holdout AUC of each kept commit, from the end of its harness run until the
+next keep). The median at time t is over all of a model's runs, from when every
+run has its baseline; a run that has ended counts with its final value, so the
+median ends at the median of the runs' last kept models. Models with fewer than
+MIN_N_PATH runs get no median.
 
 run-multi/SUMMARY/holdout_auc_path_panels.png - small multiples, one panel per
   model on shared axes: its runs as thin lines, their median path in bold, the
@@ -51,7 +53,7 @@ MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
-MIN_N_PATH = 5  # median paths only where at least this many runs are still going
+MIN_N_PATH = 5  # median paths only for models with at least this many runs
 XLIM = None  # fixed holdout AUC range of the strip plot, e.g. (0.68, 0.70); None: the runs' range
 RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
@@ -71,14 +73,26 @@ def load_group(gdir):
 
 
 def keep_path(run_dir):
-    """(n, holdout AUC) of each kept commit, n counted over all rows of holdout_scores.tsv."""
+    """((minutes, holdout AUC) of each kept commit, the minutes at which the run ended).
+
+    Minutes are counted from the start of the run's clock; a kept commit counts from
+    the end of its harness run.
+    """
+    clock = json.loads((run_dir / "timing" / "clock.json").read_text())
+    end = {}  # of the first completed harness run of each commit
+    with open(run_dir / "timing" / "runs.tsv") as f:
+        for r in csv.DictReader(f, delimiter="\t"):
+            if r["status"] == "ok":
+                end.setdefault(r["commit"], (float(r["end"]) - clock["start"]) / 60)
     path = []
     with open(run_dir / "holdout_scores.tsv") as f:
-        for n, r in enumerate(csv.DictReader(f, delimiter="\t"), 1):
+        for r in csv.DictReader(f, delimiter="\t"):
             # a kept commit whose holdout scoring failed has N/A or CRASH instead of an AUC
             if r["status"] == "keep" and r["holdout_auc"] not in ("", "N/A", "CRASH"):
-                path.append((n, float(r["holdout_auc"])))
-    return path
+                if r["commit"] not in end:
+                    sys.exit(f"{run_dir.name}: the kept commit {r['commit']} has no completed run in timing/runs.tsv")
+                path.append((end[r["commit"]], float(r["holdout_auc"])))
+    return path, (clock["stop"] - clock["start"]) / 60
 
 
 def model_colours(models):
@@ -168,7 +182,8 @@ def strip_plot(runs, colour):
             ax.errorbar(mean, y + 0.22, xerr=half, fmt="none", ecolor=INK, elinewidth=1.6, capsize=3, zorder=4)
             # "nearest": each percentile is an actual run (with n = 10, the 2nd and 9th)
             p10, p90 = np.percentile(x, [10, 90], method="nearest")
-            ax.scatter([p10, p90], [y, y], marker="|", s=260, color=INK, linewidths=1.6, zorder=2)
+            # above the dots: each mark is on a run, and a dot stacked below would hide half of it
+            ax.scatter([p10, p90], [y, y], marker="|", s=260, color=INK, linewidths=1.6, zorder=4)
         ax.scatter(mean, y + 0.22, s=34, color=INK, zorder=5)
 
     ax.set_yticks(range(len(rows)))
@@ -180,7 +195,7 @@ def strip_plot(runs, colour):
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
         Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
                label="run with caveat"),
-        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 90% interval (n >= {MIN_N_STATS})"),
+        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 90% CI of the mean (n >= {MIN_N_STATS})"),
         Line2D([], [], marker="|", ls="", color=INK2, markersize=9, markeredgewidth=1.6, label="10th and 90th percentile"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
@@ -188,53 +203,36 @@ def strip_plot(runs, colour):
     save(fig, "holdout_auc_beeswarm.png")
 
 
-def step_series(run_dir):
-    """Holdout AUC of the kept model at every experiment n = 1..n_last (held until the next keep)."""
-    path = keep_path(run_dir)
-    with open(run_dir / "holdout_scores.tsv") as f:
-        n_last = sum(1 for _ in f) - 1
-    values = np.full(n_last, np.nan)
-    for n, auc in path:
-        values[n - 1:] = auc
-    return values
+def median_path(runs, model):
+    """(minutes, median holdout AUC of the kept models) over all the model's runs, as steps.
 
-
-def path_quantiles(runs, model, qs):
-    """(n, {q: values}) of the per-n quantiles over all the model's runs.
-
-    A run that has ended keeps its final value (the model it ended with), so a run
-    finishing early doesn't make the quantiles jump; the paths stop where fewer than
-    MIN_N_PATH runs are still going.
+    It starts when every run has its baseline. A run that has ended keeps its final
+    value (the model it ended with), so the path ends at the median of the runs' last
+    kept models.
     """
-    series = [step_series(r["dir"]) for r in runs if r["model"] == model]
-    n_max = max(len(v) for v in series)
-    grid = np.empty((len(series), n_max))
-    for i, v in enumerate(series):
-        grid[i, :len(v)] = v
-        grid[i, len(v):] = v[-1]
-    going = np.array([sum(len(v) > j for v in series) for j in range(n_max)])
-    keep = going >= MIN_N_PATH
-    return np.arange(1, n_max + 1)[keep], {q: np.quantile(grid[:, keep], q, axis=0) for q in qs}
+    paths, ends = zip(*(keep_path(r["dir"]) for r in runs if r["model"] == model))
+    paths = [p for p in paths if p]
+    start = max(p[0][0] for p in paths)
+    times = sorted({t for p in paths for t, _ in p if t >= start})
+    median = [np.median([[auc for t, auc in p if t <= ti][-1] for p in paths]) for ti in times]
+    return times + [max(ends)], median + [median[-1]]
 
 
-def draw_runs(ax, runs, colour_of, lw, alpha, dots=True):
+def draw_runs(ax, runs, colour_of, lw, alpha):
     for r in runs:
-        path = keep_path(r["dir"])
+        path, end = keep_path(r["dir"])
         if not path:
             continue
-        n, auc = zip(*path)
-        with open(r["dir"] / "holdout_scores.tsv") as f:
-            n_last = sum(1 for _ in f) - 1
-        c = colour_of(r)
-        ax.step(list(n) + [n_last], list(auc) + [auc[-1]], where="post", color=c,
+        t, auc = zip(*path)
+        ax.step(list(t) + [end], list(auc) + [auc[-1]], where="post", color=colour_of(r),
                 lw=lw, alpha=alpha, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
-        if dots:
-            ax.scatter(n_last, auc[-1], s=12, zorder=3, color=c, alpha=min(1, alpha + 0.2))
 
 
 def draw_median(ax, runs, m, colour, lw=2.4):
-    n, q = path_quantiles(runs, m, [0.5])
-    ax.step(n, q[0.5], where="post", color=colour, lw=lw, zorder=4, solid_capstyle="round")
+    if sum(r["model"] == m for r in runs) < MIN_N_PATH:
+        return
+    t, median = median_path(runs, m)
+    ax.step(t, median, where="post", color=colour, lw=lw, zorder=4, solid_capstyle="round")
 
 
 def path_panels(runs, colour):
@@ -244,14 +242,14 @@ def path_panels(runs, colour):
     axes = np.atleast_1d(axes)
     fig.subplots_adjust(bottom=0.24, top=0.82, left=0.07, right=0.98, wspace=0.08)
     for ax, m in zip(axes, models):
-        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: OTHER_RUNS, lw=0.6, alpha=0.8, dots=False)
+        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: OTHER_RUNS, lw=0.6, alpha=0.8)
         draw_runs(ax, [r for r in runs if r["model"] == m], lambda r: colour[m], lw=0.9, alpha=0.8)
         draw_median(ax, runs, m, colour[m])
         ax.grid(color=GRID, lw=0.8)
         ax.set_xlim(left=0)
         style(ax, "")
         ax.set_title(m, color=INK, fontsize=10, loc="left", pad=6)
-        ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
+        ax.set_xlabel("minutes since the clock started", color=INK2)
     axes[0].set_ylabel("holdout AUC", color=INK2)
     fig.suptitle("Holdout AUC path per run, one panel per model", x=0.07, ha="left", color=INK, fontsize=11)
     legend = [
@@ -272,7 +270,7 @@ def path_median(runs, colour):
     draw_runs(ax, runs, lambda r: colour[r["model"]], lw=0.75, alpha=0.4)
     for m in models:
         draw_median(ax, runs, m, colour[m], lw=2.6)
-    ax.set_xlabel("experiment n (baseline = 1)", color=INK2)
+    ax.set_xlabel("minutes since the clock started", color=INK2)
     ax.set_ylabel("holdout AUC", color=INK2)
     ax.grid(color=GRID, lw=0.8)
     ax.set_xlim(left=0)
