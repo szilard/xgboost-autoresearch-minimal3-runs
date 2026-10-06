@@ -1,0 +1,102 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] f197aff | keep | Remove day-of-month feature to reduce year-specific fitting ===
+  holdout=0.6762
+=== [4] 8652e1e | keep | Simplify categorical preparation and reuse fixed dtypes ===
+  holdout=0.6762
+=== [5] e0181ea | keep | Try shallow regularized boosting with 600 smaller steps ===
+  holdout=0.6788
+=== [6] ce6f3d8 | discard | Test one-category splits instead of learned category groups ===
+  SKIP: status discard
+=== [7] 379eb15 | keep | Test removing month-specific seasonal effects ===
+  holdout=0.6803
+=== [8] e0d3c3d | discard | Add route and carrier-airport categorical interactions ===
+  SKIP: status discard
+=== [9] 8bbbd58 | keep | Add hour minute and cyclic departure-time features ===
+  holdout=0.6807
+=== [10] 8d140b9 | discard | Increase interaction depth with calendar-free schedule features ===
+  SKIP: status discard
+=== [11] 4513c45 | keep | Limit native category partition search to reduce overfitting ===
+  holdout=0.6801
+=== [12] 4771db7 | discard | Add training-fitted schedule medians and relative departure times ===
+  SKIP: status discard
+=== [13] 64d0ad6 | discard | Average randomized trees within each boosting step ===
+  SKIP: status discard
+=== [14] 08b7941 | keep | Remove weak minute-of-hour feature ===
+  holdout=0.6802
+=== [15] 6931767 | discard | Halve boosting rounds to test residual overfitting ===
+  SKIP: status discard
+=== [16] ff54a19 | discard | Test honest smoothed route and carrier-airport delay encodings ===
+  SKIP: status discard
+=== [17] b1358ad | keep | Add airport geography inferred from training route distances ===
+  holdout=0.6819
+=== [18] 4fa1bdc | keep | Test geographic features in place of raw airport categories ===
+  holdout=0.6838
+=== [19] ad7617e | discard | Use individual carrier and weekday splits with geographic airports ===
+  SKIP: status discard
+=== [20] 0a10e19 | discard | Test deeper interactions on smooth airport geography ===
+  SKIP: status discard
+=== [21] 86f3aff | keep | Weight recent training flights with a six-month half-life ===
+  holdout=0.6843
+=== [22] 50d1c9f | discard | Add distance-derived coordinates and flight-direction features ===
+  SKIP: status discard
+=== [23] b580f14 | discard | Extend shallow geographic boosting to 1200 rounds ===
+  SKIP: status discard
+=== [24] b5536f5 | discard | Coarsen numeric histogram bins for schedule and geography ===
+  SKIP: status discard
+=== [25] c96e6e9 | discard | Train pairwise delay rankings within months ===
+  SKIP: status discard
+=== [26] 8d8851d | keep | Balance training labels within months to reduce seasonal confounding ===
+  holdout=0.6843
+=== [27] e887a07 | discard | Reduce day-specific label shifts while preserving weekday effects ===
+  SKIP: status discard
+=== [28] 68dca8f | discard | Average five independently seeded geographic XGBoost models ===
+  SKIP: status discard
+=== [29] f1696a1 | keep | Add pooled proximity to recurring major holidays ===
+  holdout=0.6849
+=== [30] c2a3740 | discard | Extend geographic landmarks toward northwest and southeast ===
+  SKIP: status discard
+=== [31] 195ff17 | discard | Test three-month recency weighting with balanced months ===
+  SKIP: status discard
+=== [32] bef1ceb | keep | Require larger leaves and stronger shrinkage for regional effects ===
+  holdout=0.6853
+=== [33] d0cd78f | discard | Test dropout boosting for more stable tree contributions ===
+  SKIP: status discard
+=== [34] b032eb6 | discard | Regularize logistic boosting with mild label smoothing ===
+  SKIP: status discard
+=== [35] 5f6d3bb | discard | Separate shared calendar effects from operational interactions ===
+  SKIP: status discard
+=== [36] eb69008 | keep | Test smooth seasonality with geography and month balancing ===
+  holdout=0.6860
+=== [37] fa4ece7 | discard | Fit consistent airport geometry from observed route mileages ===
+  SKIP: status discard
+=== [38] a780ad1 | keep | Allocate a fixed leaf budget with loss-guided growth ===
+  holdout=0.6866
+=== [39] 43b5a4f | keep | Diversify trees with feature subsampling ===
+  holdout=0.6874
+=== [40] d1471cb | keep | Increase adaptive leaf capacity under strong regularization ===
+  holdout=0.6877
+=== [41] 09f5601 | discard | Use all training rows while retaining feature sampling ===
+  SKIP: status discard
+=== [42] 782b2b3 | discard | Compare squared-error probability fitting with logistic loss ===
+  SKIP: status discard
+=== [43] a2015c3 | keep | Blend logistic and squared-error XGBoost fits ===
+  holdout=0.6880
+=== [44] 134f5a8 | keep | Add typical airport route mileage and relative flight distance ===
+  holdout=0.6880
+=== [45] 67d85fe | discard | Add route-direction and approximate destination-time features ===
+  SKIP: status discard
+=== [46] 5dad745 | keep | Use Hessian-weighted split candidates for logistic fitting ===
+  holdout=0.6879
+=== [47] bb78a8b | discard | Add typical airport route-distance diversity ===
+  SKIP: status discard
+=== [48] 8fe9d77 | keep | Remove redundant raw and hourly departure-time features ===
+  holdout=0.6881
+=== [49] 3da3274 | discard | Test single logistic estimator after split and feature improvements ===
+  SKIP: status discard
+=== [50] c47dcbd | keep | Reuse fitted categorical codes to speed row preparation ===
+  holdout=0.6881
+=== [51] 43097e4 | keep | Require stronger gain for approximate logistic tree splits ===
+  holdout=0.6886
+
+=== DONE: results written to output/holdout_scores.tsv ===

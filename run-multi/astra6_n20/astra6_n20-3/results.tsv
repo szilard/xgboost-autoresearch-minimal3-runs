@@ -1,0 +1,51 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+f197aff	0.6759	keep	Remove day-of-month feature to reduce year-specific fitting
+8652e1e	0.6759	keep	Simplify categorical preparation and reuse fixed dtypes
+e0181ea	0.6793	keep	Try shallow regularized boosting with 600 smaller steps
+ce6f3d8	0.6785	discard	Test one-category splits instead of learned category groups
+379eb15	0.6822	keep	Test removing month-specific seasonal effects
+e0d3c3d	0.6710	discard	Add route and carrier-airport categorical interactions
+8bbbd58	0.6826	keep	Add hour minute and cyclic departure-time features
+8d140b9	0.6774	discard	Increase interaction depth with calendar-free schedule features
+4513c45	0.6831	keep	Limit native category partition search to reduce overfitting
+4771db7	0.6828	discard	Add training-fitted schedule medians and relative departure times
+64d0ad6	0.6827	discard	Average randomized trees within each boosting step
+08b7941	0.6833	keep	Remove weak minute-of-hour feature
+6931767	0.6812	discard	Halve boosting rounds to test residual overfitting
+ff54a19	0.6819	discard	Test honest smoothed route and carrier-airport delay encodings
+b1358ad	0.6848	keep	Add airport geography inferred from training route distances
+4fa1bdc	0.6874	keep	Test geographic features in place of raw airport categories
+ad7617e	0.6866	discard	Use individual carrier and weekday splits with geographic airports
+0a10e19	0.6866	discard	Test deeper interactions on smooth airport geography
+86f3aff	0.6880	keep	Weight recent training flights with a six-month half-life
+50d1c9f	0.6875	discard	Add distance-derived coordinates and flight-direction features
+b580f14	0.6877	discard	Extend shallow geographic boosting to 1200 rounds
+b5536f5	0.6878	discard	Coarsen numeric histogram bins for schedule and geography
+c96e6e9	0.6858	discard	Train pairwise delay rankings within months
+8d8851d	0.6882	keep	Balance training labels within months to reduce seasonal confounding
+e887a07	0.6879	discard	Reduce day-specific label shifts while preserving weekday effects
+68dca8f	0.6880	discard	Average five independently seeded geographic XGBoost models
+f1696a1	0.6888	keep	Add pooled proximity to recurring major holidays
+c2a3740	0.6886	discard	Extend geographic landmarks toward northwest and southeast
+195ff17	0.6885	discard	Test three-month recency weighting with balanced months
+bef1ceb	0.6889	keep	Require larger leaves and stronger shrinkage for regional effects
+d0cd78f	0.6883	discard	Test dropout boosting for more stable tree contributions
+b032eb6	0.6884	discard	Regularize logistic boosting with mild label smoothing
+5f6d3bb	0.6864	discard	Separate shared calendar effects from operational interactions
+eb69008	0.6898	keep	Test smooth seasonality with geography and month balancing
+fa4ece7	0.6895	discard	Fit consistent airport geometry from observed route mileages
+a780ad1	0.6901	keep	Allocate a fixed leaf budget with loss-guided growth
+43b5a4f	0.6904	keep	Diversify trees with feature subsampling
+d1471cb	0.6905	keep	Increase adaptive leaf capacity under strong regularization
+09f5601	0.6900	discard	Use all training rows while retaining feature sampling
+782b2b3	0.6905	discard	Compare squared-error probability fitting with logistic loss
+a2015c3	0.6907	keep	Blend logistic and squared-error XGBoost fits
+134f5a8	0.6913	keep	Add typical airport route mileage and relative flight distance
+67d85fe	0.6913	discard	Add route-direction and approximate destination-time features
+5dad745	0.6915	keep	Use Hessian-weighted split candidates for logistic fitting
+bb78a8b	0.6913	discard	Add typical airport route-distance diversity
+8fe9d77	0.6915	keep	Remove redundant raw and hourly departure-time features
+3da3274	0.6910	discard	Test single logistic estimator after split and feature improvements
+c47dcbd	0.6915	keep	Reuse fitted categorical codes to speed row preparation
+43097e4	0.6918	keep	Require stronger gain for approximate logistic tree splits

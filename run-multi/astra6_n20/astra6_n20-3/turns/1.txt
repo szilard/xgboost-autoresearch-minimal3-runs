@@ -1,0 +1,8 @@
+Setup is complete on branch `oct6`, created from the current HEAD (`b15ec66`).
+
+- Read `program.md`, `train.py`, and `harness.py`.
+- Verified both data files and required dependencies.
+- Initialized [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with the required header.
+- Baseline code is unchanged; no experiments have run.
+
+The clock has not started. [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md) requires confirmation before the one-hour run—say **go** when ready.

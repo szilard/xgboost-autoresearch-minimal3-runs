@@ -1,0 +1,219 @@
+commit 43097e4b63c0d0b17090aa92ba825521795cf299
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:03:50 2026 +0000
+
+    Require stronger gain for approximate logistic tree splits
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c47dcbd5a86d81103d2beae6bf4b769ac9e7b852
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:02:43 2026 +0000
+
+    Reuse fitted categorical codes to speed row preparation
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 8fe9d777685565565ed2bf106e23e3edad742933
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:59:56 2026 +0000
+
+    Remove redundant raw and hourly departure-time features
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 5dad745a06e5353b475e1d69e834184fb86e3539
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:57:34 2026 +0000
+
+    Use Hessian-weighted split candidates for logistic fitting
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 134f5a81eb9d2b0b68b315401762ae00d20766ca
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:52:05 2026 +0000
+
+    Add typical airport route mileage and relative flight distance
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit a2015c368d103599df887bf3975490f1cf834480
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:51:07 2026 +0000
+
+    Blend logistic and squared-error XGBoost fits
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit d1471cb5c284bbf3d50225216ee2e492a3c6d5de
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:47:33 2026 +0000
+
+    Increase adaptive leaf capacity under strong regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 43b5a4fb86824c14cccc218b806429d3492e5d1a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:46:10 2026 +0000
+
+    Diversify trees with feature subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a780ad1319f9f86f19d74701b7336d05b2942ce2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:44:56 2026 +0000
+
+    Allocate a fixed leaf budget with loss-guided growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit eb6900879b9df9990eee0f622fc1b6d065879af1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:41:39 2026 +0000
+
+    Test smooth seasonality with geography and month balancing
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit bef1ceb99613dc271dbaf3c438e6db8dd7f36d01
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:36:28 2026 +0000
+
+    Require larger leaves and stronger shrinkage for regional effects
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f1696a1ed7061c88039adb8aeca82d9784ec0d20
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:33:45 2026 +0000
+
+    Add pooled proximity to recurring major holidays
+
+ train.py | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 8d8851d58b84a872c71cd1922766721071c0d845
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:29:35 2026 +0000
+
+    Balance training labels within months to reduce seasonal confounding
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 86f3affcaed1bd6c7f3fe9a49ff2d1752ca9dc7f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:23:29 2026 +0000
+
+    Weight recent training flights with a six-month half-life
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 4fa1bdcbdb2fda8a29f59ab33cb3be15d50da7f6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:21:03 2026 +0000
+
+    Test geographic features in place of raw airport categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b1358ad2a0681da5e37832393d22edc1fefb91b8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:19:59 2026 +0000
+
+    Add airport geography inferred from training route distances
+
+ train.py | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+commit 08b794154946251948248768c90fe56b18d258c3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:16:46 2026 +0000
+
+    Remove weak minute-of-hour feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 4513c45e3200af4e03d19b1dfca4709624bd78a7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:13:58 2026 +0000
+
+    Limit native category partition search to reduce overfitting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8bbbd58f6e0022ebbaeb4e8a8ea1612d0eab4178
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:12:42 2026 +0000
+
+    Add hour minute and cyclic departure-time features
+
+ train.py | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 379eb1560c7250c42eaf2c5a199ffdbcee169dc9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:10:30 2026 +0000
+
+    Test removing month-specific seasonal effects
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e0181ea71c23cd3926c173d19bff0507a6fbdd24
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:09:23 2026 +0000
+
+    Try shallow regularized boosting with 600 smaller steps
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 8652e1eccbb006a1bca3818bd4573cde755f1c4e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:08:40 2026 +0000
+
+    Simplify categorical preparation and reuse fixed dtypes
+
+ train.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit f197aff3bd7c91c784e690961e0ce1b3d3320529
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:07:19 2026 +0000
+
+    Remove day-of-month feature to reduce year-specific fitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

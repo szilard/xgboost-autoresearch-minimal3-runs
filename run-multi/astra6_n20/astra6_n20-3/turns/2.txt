@@ -1,0 +1,8 @@
+Completed **49 experiments** on `oct6`.
+
+- Eval AUC: **0.6743 → 0.6918** (+0.0175).
+- Best commit: `43097e4`.
+- Saved model verified; no crashes.
+- Clock stopped at 59m38s.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

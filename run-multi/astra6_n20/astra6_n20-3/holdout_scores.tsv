@@ -1,0 +1,51 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+f197aff	keep	Remove day-of-month feature to reduce year-specific fitting	0.6759	0.6762
+8652e1e	keep	Simplify categorical preparation and reuse fixed dtypes	0.6759	0.6762
+e0181ea	keep	Try shallow regularized boosting with 600 smaller steps	0.6793	0.6788
+ce6f3d8	discard	Test one-category splits instead of learned category groups	0.6785	N/A
+379eb15	keep	Test removing month-specific seasonal effects	0.6822	0.6803
+e0d3c3d	discard	Add route and carrier-airport categorical interactions	0.6710	N/A
+8bbbd58	keep	Add hour minute and cyclic departure-time features	0.6826	0.6807
+8d140b9	discard	Increase interaction depth with calendar-free schedule features	0.6774	N/A
+4513c45	keep	Limit native category partition search to reduce overfitting	0.6831	0.6801
+4771db7	discard	Add training-fitted schedule medians and relative departure times	0.6828	N/A
+64d0ad6	discard	Average randomized trees within each boosting step	0.6827	N/A
+08b7941	keep	Remove weak minute-of-hour feature	0.6833	0.6802
+6931767	discard	Halve boosting rounds to test residual overfitting	0.6812	N/A
+ff54a19	discard	Test honest smoothed route and carrier-airport delay encodings	0.6819	N/A
+b1358ad	keep	Add airport geography inferred from training route distances	0.6848	0.6819
+4fa1bdc	keep	Test geographic features in place of raw airport categories	0.6874	0.6838
+ad7617e	discard	Use individual carrier and weekday splits with geographic airports	0.6866	N/A
+0a10e19	discard	Test deeper interactions on smooth airport geography	0.6866	N/A
+86f3aff	keep	Weight recent training flights with a six-month half-life	0.6880	0.6843
+50d1c9f	discard	Add distance-derived coordinates and flight-direction features	0.6875	N/A
+b580f14	discard	Extend shallow geographic boosting to 1200 rounds	0.6877	N/A
+b5536f5	discard	Coarsen numeric histogram bins for schedule and geography	0.6878	N/A
+c96e6e9	discard	Train pairwise delay rankings within months	0.6858	N/A
+8d8851d	keep	Balance training labels within months to reduce seasonal confounding	0.6882	0.6843
+e887a07	discard	Reduce day-specific label shifts while preserving weekday effects	0.6879	N/A
+68dca8f	discard	Average five independently seeded geographic XGBoost models	0.6880	N/A
+f1696a1	keep	Add pooled proximity to recurring major holidays	0.6888	0.6849
+c2a3740	discard	Extend geographic landmarks toward northwest and southeast	0.6886	N/A
+195ff17	discard	Test three-month recency weighting with balanced months	0.6885	N/A
+bef1ceb	keep	Require larger leaves and stronger shrinkage for regional effects	0.6889	0.6853
+d0cd78f	discard	Test dropout boosting for more stable tree contributions	0.6883	N/A
+b032eb6	discard	Regularize logistic boosting with mild label smoothing	0.6884	N/A
+5f6d3bb	discard	Separate shared calendar effects from operational interactions	0.6864	N/A
+eb69008	keep	Test smooth seasonality with geography and month balancing	0.6898	0.6860
+fa4ece7	discard	Fit consistent airport geometry from observed route mileages	0.6895	N/A
+a780ad1	keep	Allocate a fixed leaf budget with loss-guided growth	0.6901	0.6866
+43b5a4f	keep	Diversify trees with feature subsampling	0.6904	0.6874
+d1471cb	keep	Increase adaptive leaf capacity under strong regularization	0.6905	0.6877
+09f5601	discard	Use all training rows while retaining feature sampling	0.6900	N/A
+782b2b3	discard	Compare squared-error probability fitting with logistic loss	0.6905	N/A
+a2015c3	keep	Blend logistic and squared-error XGBoost fits	0.6907	0.6880
+134f5a8	keep	Add typical airport route mileage and relative flight distance	0.6913	0.6880
+67d85fe	discard	Add route-direction and approximate destination-time features	0.6913	N/A
+5dad745	keep	Use Hessian-weighted split candidates for logistic fitting	0.6915	0.6879
+bb78a8b	discard	Add typical airport route-distance diversity	0.6913	N/A
+8fe9d77	keep	Remove redundant raw and hourly departure-time features	0.6915	0.6881
+3da3274	discard	Test single logistic estimator after split and feature improvements	0.6910	N/A
+c47dcbd	keep	Reuse fitted categorical codes to speed row preparation	0.6915	0.6881
+43097e4	keep	Require stronger gain for approximate logistic tree splits	0.6918	0.6886
