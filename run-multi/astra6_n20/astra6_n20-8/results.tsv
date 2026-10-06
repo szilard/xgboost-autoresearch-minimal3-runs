@@ -1,0 +1,51 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+01bd06e	0.6788	keep	depth4 500 trees eta0.05 child20 lambda10 subsample0.8
+c9795e4	0.6788	keep	simplify categorical preparation with fixed dtypes
+c1cd931	0.6794	keep	remove day-of-month categorical feature
+faa7fad	0.6714	discard	add carrier-origin and carrier-destination categories
+dfa894a	0.6786	discard	depth2 1000 trees with same regularization
+218d66b	0.6803	keep	replace unordered Month with numeric month
+6b9edc7	0.6813	keep	add departure hour minute and sine-cosine components
+b60d0fc	0.6795	discard	one-category-versus-rest splits for all categorical predictors
+f74154b	0.6805	discard	increase child weight to100 lambda50 gamma2
+b875ec8	0.6774	discard	replace airports with excluded-partition smoothed airport and route rates
+bcc8fcc	0.6810	discard	separate calendar effects with disjoint interaction constraints
+6c536e7	0.6810	discard	add origin and route median departure times and offsets
+3f7660e	0.6817	keep	boosted forest with3 trees per round row0.7 node-columns0.8
+88253ef	0.6816	discard	add three-dimensional airport geometry inferred from training distances
+fbce28e	0.6834	keep	add signed offsets to six major travel holidays
+91310ec	0.6846	keep	shorten boosted forest from500 to200 rounds
+00b5521	0.6846	keep	halve boosted forest from200 to100 rounds
+86abd8b	0.6847	keep	increase forest tree depth from4 to5 at100 rounds
+21bb201	0.6851	keep	reduce numerical histogram resolution to64 bins
+31106f7	0.6829	discard	pairwise ranking with global group and mean pair sampling
+5142fc1	0.6851	keep	explicit categorical index codes preserve features and speed preparation
+2df6f46	0.6848	discard	average three independently seeded forests with identical parameters
+cdc76bd	0.6850	discard	remove low-gain departure minute feature
+8b53424	0.6844	discard	add annual week and sine-cosine seasonal features
+e5e4a2b	0.6851	keep	cap categorical partition split candidates at16
+e3db4ad	0.0000	crash	dropout0.1 skip0.5 with200 forest boosting rounds
+35c5bb4	0.6838	discard	dropout0.1 skip0.5 with100 forest boosting rounds
+ddd32cf	0.6851	discard	revisit airport geometry with short boosting and holiday features
+431a3de	0.6849	discard	add approximate flight-ending clock and periodic components
+f0df75b	0.6838	discard	remove within-round averaging and use one tree per round
+4eb06f9	0.6849	discard	increase within-round forest from3 to9 trees
+4fdc056	0.6852	keep	apply normalized24-month half-life recency training weights
+205250f	0.6855	keep	weighted logistic objective with0.05/0.95 smoothed targets
+b4f6243	0.6857	keep	loss-guided growth with24 leaves and no fixed depth cap
+205293e	0.6854	discard	increase target smoothing to0.15/0.85
+37c5779	0.6843	discard	100 stump warmup rounds followed by100 loss-guided rounds
+d8749b7	0.6857	discard	require gamma2 split gain with loss-guided growth
+e767316	0.6857	discard	Reduce row subsampling from 0.7 to 0.5
+abbe46c	0.6861	keep	Clip holiday offsets to plus or minus 7 days
+aed6770	0.6852	discard	Use gradient-based row sampling at subsample 0.7
+d0a17a4	0.6860	discard	Halve learning rate and double rounds at fixed nominal shrinkage
+4dabe76	0.6842	discard	Reduce loss-guided tree leaf budget from 24 to 12
+a996279	0.6874	keep	Add L1 leaf regularization with reg_alpha 5
+0617ebf	0.6861	discard	Increase L1 penalty from 5 to 20
+954290c	0.6877	keep	Strengthen recency weighting to a 12-month half-life
+eccad8d	0.6879	keep	Remove raw HHMM departure feature while retaining decomposed time
+68c0995	0.6875	discard	Double boosting rounds to 200 with L1 regularization
+41a43e9	0.6873	discard	Remove the summer holiday offset feature family
+f2491c8	0.6877	discard	Remove per-node random column sampling

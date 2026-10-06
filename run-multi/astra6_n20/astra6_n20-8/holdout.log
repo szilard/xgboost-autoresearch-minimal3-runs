@@ -1,0 +1,102 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 01bd06e | keep | depth4 500 trees eta0.05 child20 lambda10 subsample0.8 ===
+  holdout=0.6772
+=== [4] c9795e4 | keep | simplify categorical preparation with fixed dtypes ===
+  holdout=0.6772
+=== [5] c1cd931 | keep | remove day-of-month categorical feature ===
+  holdout=0.6786
+=== [6] faa7fad | discard | add carrier-origin and carrier-destination categories ===
+  SKIP: status discard
+=== [7] dfa894a | discard | depth2 1000 trees with same regularization ===
+  SKIP: status discard
+=== [8] 218d66b | keep | replace unordered Month with numeric month ===
+  holdout=0.6799
+=== [9] 6b9edc7 | keep | add departure hour minute and sine-cosine components ===
+  holdout=0.6807
+=== [10] b60d0fc | discard | one-category-versus-rest splits for all categorical predictors ===
+  SKIP: status discard
+=== [11] f74154b | discard | increase child weight to100 lambda50 gamma2 ===
+  SKIP: status discard
+=== [12] b875ec8 | discard | replace airports with excluded-partition smoothed airport and route rates ===
+  SKIP: status discard
+=== [13] bcc8fcc | discard | separate calendar effects with disjoint interaction constraints ===
+  SKIP: status discard
+=== [14] 6c536e7 | discard | add origin and route median departure times and offsets ===
+  SKIP: status discard
+=== [15] 3f7660e | keep | boosted forest with3 trees per round row0.7 node-columns0.8 ===
+  holdout=0.6808
+=== [16] 88253ef | discard | add three-dimensional airport geometry inferred from training distances ===
+  SKIP: status discard
+=== [17] fbce28e | keep | add signed offsets to six major travel holidays ===
+  holdout=0.6822
+=== [18] 91310ec | keep | shorten boosted forest from500 to200 rounds ===
+  holdout=0.6834
+=== [19] 00b5521 | keep | halve boosted forest from200 to100 rounds ===
+  holdout=0.6834
+=== [20] 86abd8b | keep | increase forest tree depth from4 to5 at100 rounds ===
+  holdout=0.6834
+=== [21] 21bb201 | keep | reduce numerical histogram resolution to64 bins ===
+  holdout=0.6835
+=== [22] 31106f7 | discard | pairwise ranking with global group and mean pair sampling ===
+  SKIP: status discard
+=== [23] 5142fc1 | keep | explicit categorical index codes preserve features and speed preparation ===
+  holdout=0.6835
+=== [24] 2df6f46 | discard | average three independently seeded forests with identical parameters ===
+  SKIP: status discard
+=== [25] cdc76bd | discard | remove low-gain departure minute feature ===
+  SKIP: status discard
+=== [26] 8b53424 | discard | add annual week and sine-cosine seasonal features ===
+  SKIP: status discard
+=== [27] e5e4a2b | keep | cap categorical partition split candidates at16 ===
+  holdout=0.6832
+=== [28] e3db4ad | crash | dropout0.1 skip0.5 with200 forest boosting rounds ===
+  SKIP: status crash
+=== [29] 35c5bb4 | discard | dropout0.1 skip0.5 with100 forest boosting rounds ===
+  SKIP: status discard
+=== [30] ddd32cf | discard | revisit airport geometry with short boosting and holiday features ===
+  SKIP: status discard
+=== [31] 431a3de | discard | add approximate flight-ending clock and periodic components ===
+  SKIP: status discard
+=== [32] f0df75b | discard | remove within-round averaging and use one tree per round ===
+  SKIP: status discard
+=== [33] 4eb06f9 | discard | increase within-round forest from3 to9 trees ===
+  SKIP: status discard
+=== [34] 4fdc056 | keep | apply normalized24-month half-life recency training weights ===
+  holdout=0.6834
+=== [35] 205250f | keep | weighted logistic objective with0.05/0.95 smoothed targets ===
+  holdout=0.6835
+=== [36] b4f6243 | keep | loss-guided growth with24 leaves and no fixed depth cap ===
+  holdout=0.6844
+=== [37] 205293e | discard | increase target smoothing to0.15/0.85 ===
+  SKIP: status discard
+=== [38] 37c5779 | discard | 100 stump warmup rounds followed by100 loss-guided rounds ===
+  SKIP: status discard
+=== [39] d8749b7 | discard | require gamma2 split gain with loss-guided growth ===
+  SKIP: status discard
+=== [40] e767316 | discard | Reduce row subsampling from 0.7 to 0.5 ===
+  SKIP: status discard
+=== [41] abbe46c | keep | Clip holiday offsets to plus or minus 7 days ===
+  holdout=0.6851
+=== [42] aed6770 | discard | Use gradient-based row sampling at subsample 0.7 ===
+  SKIP: status discard
+=== [43] d0a17a4 | discard | Halve learning rate and double rounds at fixed nominal shrinkage ===
+  SKIP: status discard
+=== [44] 4dabe76 | discard | Reduce loss-guided tree leaf budget from 24 to 12 ===
+  SKIP: status discard
+=== [45] a996279 | keep | Add L1 leaf regularization with reg_alpha 5 ===
+  holdout=0.6855
+=== [46] 0617ebf | discard | Increase L1 penalty from 5 to 20 ===
+  SKIP: status discard
+=== [47] 954290c | keep | Strengthen recency weighting to a 12-month half-life ===
+  holdout=0.6860
+=== [48] eccad8d | keep | Remove raw HHMM departure feature while retaining decomposed time ===
+  holdout=0.6856
+=== [49] 68c0995 | discard | Double boosting rounds to 200 with L1 regularization ===
+  SKIP: status discard
+=== [50] 41a43e9 | discard | Remove the summer holiday offset feature family ===
+  SKIP: status discard
+=== [51] f2491c8 | discard | Remove per-node random column sampling ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

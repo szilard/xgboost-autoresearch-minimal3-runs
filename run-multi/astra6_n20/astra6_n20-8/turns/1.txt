@@ -1,0 +1,9 @@
+Setup is ready:
+
+- Created `oct6` from the current HEAD, `b15ec66`.
+- Read the training code and harness.
+- Verified both data files and dependency imports.
+- Initialized results and research logs.
+- Left the baseline unchanged; the clock has not started.
+
+[program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md) requires confirmation before starting the one-hour run. Say **go** to begin with the baseline.

@@ -1,0 +1,192 @@
+commit eccad8d65b44c7584a9f80f1bcc37a5b54ad770a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:40:02 2026 +0000
+
+    Remove raw departure time after explicit time decomposition
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 954290c74f5b325b0d32ed07d31319dd5d35d5bc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:39:26 2026 +0000
+
+    Increase recency weighting under L1 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a9962795916c58e7c1dfd9b48d507c52140c12fd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:38:00 2026 +0000
+
+    Regularize weak leaf outputs with an L1 penalty
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit abbe46ce2602c996976bcab6d0ec893edd85eaa9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:34:42 2026 +0000
+
+    Restrict holiday offsets to the immediate travel week
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b4f624364216bd992a68579a9763993b904969cf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:26:23 2026 +0000
+
+    Allocate a fixed leaf budget with loss-guided tree growth
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 205250fbcb951e0ab146e8c3b231a0fcb1657e5f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:24:45 2026 +0000
+
+    Test label-smoothed weighted logistic training
+
+ train.py | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 4fdc0566de05f3fa2eff2031d420811ee8965f2d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:22:21 2026 +0000
+
+    Weight recent training months mildly for temporal transfer
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit e5e4a2b6ab05ae8feae35bb9f2c1e29ea96e0dff
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:13:34 2026 +0000
+
+    Limit categorical partition split candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5142fc14f43740416f70931be5b3fb05085cd92f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:09:17 2026 +0000
+
+    Use explicit fixed category codes for faster robust row preparation
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 21bb201c9b7d907d9ac3413c771d9b53bc4da36f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:07:03 2026 +0000
+
+    Coarsen numerical histogram splits for schedule stability
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 86abd8ba9d498a2b971a4ae9045345635cacfc33
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:06:14 2026 +0000
+
+    Test richer tree interactions with short boosting duration
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 00b5521490b92cd463f489eaaf710482a300426e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:04:42 2026 +0000
+
+    Test whether half the boosting rounds preserve useful signal
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 91310ec07fd9adad108ddb5d4626b7059126f846
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:03:32 2026 +0000
+
+    Test a shorter boosting path with holiday features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fbce28e048955c2ad96dbe6843fb9e9b1ace3bba
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:02:35 2026 +0000
+
+    Add year-aligned distances to major travel holidays
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 3f7660ecf7c7f433139362ceb90c088822ab7b4a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:59:36 2026 +0000
+
+    Average sampled trees within boosting rounds
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 6b9edc7f52ae3b562df361c08c5ffda533e9f333
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:52:43 2026 +0000
+
+    Add scheduled hour minute and periodic time features
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 218d66be7add5f2e50dab7f6ad494ed59d19dbbd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:51:36 2026 +0000
+
+    Use ordered month values to regularize seasonal splits
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c1cd9317ac29a8a457ac615bc36bf1429d8a538e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:48:33 2026 +0000
+
+    Remove potentially unstable day-of-month categorical splits
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c9795e48353d7493928569173d5756e7f991c96d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:47:41 2026 +0000
+
+    Simplify fixed categorical preparation for faster row scoring
+
+ train.py | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit 01bd06e07331a7f7514f4cbcb4dc9df35cd89ffa
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:46:00 2026 +0000
+
+    Try longer shallow boosting with stronger regularization
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

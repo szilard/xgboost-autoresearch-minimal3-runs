@@ -1,0 +1,5 @@
+Completed **49 experiments**. Best Eval AUC improved from **0.6743 → 0.6879** (+0.0136).
+
+Branch `oct6` is at best commit `eccad8d`. Saved artifact verified and clock stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
