@@ -1,0 +1,183 @@
+commit d9dcf2d0a3950808e834f691b9023917ba120736
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:05:53 2026 +0000
+
+    Reduce calendar preparation overhead without changing features
+
+ train.py | 39 +++++++++++++++++++++++++--------------
+ 1 file changed, 25 insertions(+), 14 deletions(-)
+
+commit 0d44d86629e63a45ef6ff9e2ca519b1278df6baf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:52:54 2026 +0000
+
+    Test soft-label logistic training for the ensemble
+
+ train.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 2e97e073f0771a3fd9dcf9609a096e60852c6000
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:51:40 2026 +0000
+
+    Test intermediate L1 strength with loss-guided trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 57d25fc6f9136fa39e677ad036101cdcd581df17
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:50:24 2026 +0000
+
+    Allocate tree splits by gain under fixed leaf limits
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 2eb894317e3081ddd98f57b5f1e9abd0368aec38
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:48:55 2026 +0000
+
+    Test whether the winter feature is necessary
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 623c77d26edeb34ac9145d6efec9bb2315cd97fb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:46:02 2026 +0000
+
+    Ablate route-relative schedule while keeping carrier-origin context
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit fdb1056a53a02ad50f3728df1510f7d192086fd7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:44:56 2026 +0000
+
+    Test L1 shrinkage in the feature-rich ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1e9a8b25e42cc17edb385de1a51cb9381e57e87d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:41:22 2026 +0000
+
+    Test coarse winter and summer indicators
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b64357797fa2aad6b4895c47a46a10821a2475bc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:40:11 2026 +0000
+
+    Add compact holiday travel indicators
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 01fce2ee8d37a856b38e60c1712a55251ae95380
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:38:35 2026 +0000
+
+    Add train-fitted relative departure schedule features
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 99fae219ec8d6d214fc29038da0f331fd29e0a32
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:36:08 2026 +0000
+
+    Blend XGBoost models with complementary interaction depths
+
+ train.py | 37 +++++++++++++++++++++++++++----------
+ 1 file changed, 27 insertions(+), 10 deletions(-)
+
+commit b5eb08c62889cfe3715f0706893cbb536b4c14a5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:28:57 2026 +0000
+
+    Favor recent operational patterns with six-month weight half-life
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 1a581d4888bedaf4bccf2b2b6a931712aa87c28d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:26:47 2026 +0000
+
+    Balance training class weights within each month
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 4f14bdbb69bb17ef1ead77efdc2f3bfb53719511
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:23:25 2026 +0000
+
+    Use stable dictionary codes for faster categorical preparation
+
+ train.py | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 71505698ae051e3f1bc3b8dbc960fe5336e0b71d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:18:08 2026 +0000
+
+    Test lower interaction depth
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 550de127cb9515ca0d881123bfa571ce6a6bd60e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:14:43 2026 +0000
+
+    Test removal of year-sensitive month signal
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 72121094128c9509d5541c1c4a54338895d2d4cf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:13:09 2026 +0000
+
+    Test shallow regularized trees for transfer across years
+
+ train.py | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit a456db6a2a6ee66fa4f9b64e5851ca533411c67d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:12:20 2026 +0000
+
+    Ablate day-of-month to reduce year-specific calendar overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9b015b004e5a5e6aeb3b7500662b4fd657e595bb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 20:11:06 2026 +0000
+
+    Simplify categorical preparation for faster row scoring
+
+ train.py | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

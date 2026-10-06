@@ -14,6 +14,7 @@ Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.16
 | astra6_n20-8 | gpt-6-astra | max | 50 | 0.6879 (`eccad8d`) | 0.6856 | -0.0023 | 0h59m40s | 78.1% | caveat | caveat: `keep_rule`: `e5e4a2b` (`max_cat_threshold` 16) kept at a tie, 0.2 s faster, not simpler; it stayed in the best model |
 | astra6_n20-9 | gpt-6-astra | max | 36 | 0.6913 (`d1fbdd2`) | 0.6888 | -0.0025 | 0h59m14s | 68.1% | yes | |
 | astra6_n20-10 | gpt-6-astra | max | 45 | 0.6878 (`0d30a13`) | 0.6845 | -0.0033 | 0h59m41s | 69.8% | yes | |
+| astra6_n20-11 | gpt-6-astra | max | 52 | 0.6897 (`d9dcf2d`) | 0.6860 | -0.0037 | 0h59m59s | 84.1% | yes | |
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).
 
@@ -23,3 +24,4 @@ For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdou
 - astra6_n20-6: leak_check's CONTENT HITS 1 is a false positive. The matched line of make_data.py (`"Origin", "Dest", "Distance", "dep_delayed_15min"]`, the end of its `keep_cols` list) appears only in the agent's own setup check, a one-line list of the nine train.csv columns in header order; no command touched `human/` or `/opt` (see run.md).
 - astra6_n20-7: for the human to judge. The kept commit `dec4d13` maps carrier HP (America West) to US in train and scoring, after the agent opened the BTS on-time index page (`transtats.bts.gov/ONTIME/`), which notes that HP and US report jointly as US from January 2006. The page is documentation only (no flight records, nothing downloaded) and eval.csv was never read, so the run stays valid; the change was worth +0.0001 on eval (+0.0004 on holdout) when made.
 - astra6_n20-8: leak_check's CONTENT HITS 1 is a false positive. The matched line of score_holdout.py, `artifact = load_artifact(commit)`, appears only in the agent's own final check, which calls harness.py's `load_artifact` on its best commit and runs `prepare` on train.csv rows (see run.md). One training timeout (DART at 200 rounds), logged as crash and reverted.
+- astra6_n20-11: the best commit `d9dcf2d` is a tie kept as faster code (scalar per-row calendar arithmetic, identical features, evaluation 6.1 s against 6.7 to 7.3 s for the ten runs before it); counted as faster, borderline. It changes no prediction.

@@ -1,0 +1,53 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+9d256c8	discard	600 trees rate .05 child weight 20 L2 10	0.6697	N/A
+9b015b0	keep	faster prepare same features and AUC	0.6743	0.6725
+a456db6	keep	remove day-of-month	0.6759	0.6762
+7212109	keep	300 shallow depth4 trees rate .05 child20 L2 10	0.6800	0.6790
+f466729	discard	one-vs-rest categorical splits threshold512	0.6754	N/A
+550de12	keep	remove month seasonal feature	0.6830	0.6815
+2521738	discard	add native route category and stable code preparation	0.6756	N/A
+bdc0cba	discard	800 depth4 trees after calendar removal	0.6787	N/A
+46f0a57	discard	minimum child weight100	0.6828	N/A
+7150569	keep	depth3 instead of depth4	0.6838	0.6816
+15312a1	discard	half-hour departure bins; equal AUC without simplification	0.6838	N/A
+e3e224e	discard	4 parallel trees subsample.8 column sampling.8	0.6838	N/A
+7049e52	discard	additive airport carrier weekday effects	0.6755	N/A
+0835e2b	discard	train-only airport distance embedding	0.6838	N/A
+4f14bdb	keep	explicit category codes; same AUC faster evaluation	0.6838	0.6816
+75256cb	discard	max categorical threshold16	0.6827	N/A
+5b6625e	discard	monotonic daytime with late-time and red-eye exceptions	0.6838	N/A
+1a581d4	keep	balance training classes within month	0.6841	0.6815
+7739099	discard	daily class balancing preserving weekday rates	0.6838	N/A
+b5eb08c	keep	six-month recency weighting plus monthly balance	0.6843	0.6820
+8dad4aa	discard	three-month recency half-life	0.6822	N/A
+a8728ec	discard	global pairwise ranking objective	0.6826	N/A
+5786efe	discard	monthly pairwise ranking with recency query weights	0.6829	N/A
+f850104	discard	monthly training offsets instead of class balancing	0.6841	N/A
+80110a1	discard	200 boosting rounds with adapted weights	0.6839	N/A
+99fae21	keep	blend depth2/3/4 with weights1:2:1	0.6850	0.6827
+54babad	discard	remove depth4 ensemble member	0.6847	N/A
+01fce2e	keep	relative route and carrier-origin departure medians	0.6851	0.6825
+b643577	keep	pooled holiday pre-holiday and post-holiday flags	0.6865	0.6839
+1e9a8b2	keep	coarse winter and summer indicators	0.6872	0.6846
+941286b	discard	DART dropout on central depth3 member	0.6870	N/A
+3be8673	discard	geometry combined with seasons and holiday ensemble	0.6872	N/A
+fdb1056	keep	L1 leaf regularization5 in all ensemble members	0.6890	0.6858
+623c77d	keep	remove route-median feature and lookup	0.6891	0.6858
+6b1b6f4	discard	stronger L1 regularization20	0.6885	N/A
+3542724	discard	retain coarse-season label priors in month weights	0.6865	N/A
+2eb8943	keep	remove winter indicator keep summer	0.6893	0.6858
+879dd21	discard	carrier-origin 5th/95th schedule percentile offsets	0.6892	N/A
+57d25fc	keep	lossguide growth with4/8/16 leaf limits	0.6894	0.6860
+2e97e07	keep	L1 regularization10 with loss-guided trees	0.6895	0.6860
+0d44d86	keep	soft training labels .05/.95 with logistic regressors	0.6897	0.6860
+c0d2c85	discard	numeric histogram max_bin64	0.6893	N/A
+8d5d93c	discard	carrier-origin category under stronger regularization	0.6897	N/A
+b5dcec2	discard	remove recency multiplier keep monthly balance	0.6888	N/A
+740085f	discard	finer histogram max_bin512	0.6893	N/A
+bb6c56e	discard	average raw margins before sigmoid	0.6897	N/A
+8a28150	discard	85 percent feature sampling per tree	0.6895	N/A
+6523914	discard	add Memorial/Labor Day to pooled holiday windows	0.6887	N/A
+fa375e1	discard	stronger soft targets .1/.9	0.6894	N/A
+8dc2c14	discard	minimum split loss gamma1	0.6897	N/A
+d9dcf2d	keep	faster scalar calendar preparation with identical features	0.6897	0.6860

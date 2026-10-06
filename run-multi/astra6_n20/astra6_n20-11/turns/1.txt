@@ -1,0 +1,8 @@
+Setup complete on branch `oct6`, created from `b15ec66`.
+
+- Read the experiment instructions and both Python files.
+- Verified both data files and required packages.
+- Initialized `output/results.tsv` with its header and `output/research-log.md`.
+- Verified the training code is unchanged.
+
+The clock hasn’t started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md), say **“go”** to confirm setup and begin the one-hour experiment with the baseline run.
