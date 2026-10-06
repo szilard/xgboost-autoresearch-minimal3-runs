@@ -1,0 +1,156 @@
+commit 43d5c460c7469c0dd15047a67420eb221e96ad21
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:24:58 2026 +0000
+
+    Add origin-weekday schedule offset feature
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit cc61e23173051ae11976d854e22e6905a3a0e8b0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:17:21 2026 +0000
+
+    Remove unused numeric month input
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit f667d1fa11f584a28d760bf9c2a51c388e1461c2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:06:27 2026 +0000
+
+    Add categorical month alongside numeric date
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 91e270770e7b3f1dcc2212cdc64b970151027769
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:04:37 2026 +0000
+
+    Add continuous day of year
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 66651d40437cf22243bfdb24cfd8fc53777265bc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:03:03 2026 +0000
+
+    Test numeric day of month
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit aace12dfdf0190f65d877837907db967567e1c2e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:59:18 2026 +0000
+
+    Add off-five-minute schedule indicator
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c0e8c0b998a5ce470857f245759937524f875bf9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:53:04 2026 +0000
+
+    Add carrier origin schedule offset
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 54bfecfdd5f56a6337ffcf48a3deb952a8171c4e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:52:05 2026 +0000
+
+    Add route relative departure time
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit e1ab62c2f4575f8c24caf4fc9c6a6c92846c53e6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:50:00 2026 +0000
+
+    Encode month as ordinal number
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit d3d439be2c9416b7fcbd4eddf511924c9be15ddb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:45:49 2026 +0000
+
+    Simplify categorical preparation
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a71508bd2ca5f758a6249c9396224c646e09aff
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:43:45 2026 +0000
+
+    Test stronger child weight regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 03b211a4e6fdccc36cfe0875604779c5aa32c05c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:43:04 2026 +0000
+
+    Regularize splits with min child weight ten
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a61db0bba9ed2276666abb90008fcc739c7dd047
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:40:27 2026 +0000
+
+    Ablate day of month feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7bb42f598812700e860bdd462922c96b5abacec7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:37:44 2026 +0000
+
+    Test 150 depth three rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 21564913245884dfc610b84dfbaa1a77a558120c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:36:15 2026 +0000
+
+    Test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 77f4cfb45d4c7f36fb39f0dad6b6b4ce35bd426e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:34:45 2026 +0000
+
+    Test shallower depth four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

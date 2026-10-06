@@ -1,0 +1,3 @@
+The experiment is complete on branch `oct6`. Across 69 variants, the best Eval AUC was **0.6870**, up from the 0.6743 baseline. I restored the best commit, `43d5c46`, and stopped the harness.
+
+The results are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and the experiment notes are in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

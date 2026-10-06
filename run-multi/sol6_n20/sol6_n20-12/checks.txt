@@ -1,0 +1,21 @@
+== results.tsv
+  70 rows: 17 keep, 53 discard, 0 crash
+  kept ties (allowed only for simpler or faster code; look at the description): d3d439b (0.6811, after 3a71508), e1ab62c (0.6811, after d3d439b), cc61e23 (0.6866, after f667d1f)
+  kept Eval AUC: 0.6743 -> 0.6870, max 0.6870
+
+== clock and harness runs
+  70 harness runs: 70 ok, 0 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3532 s (+68 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct6: 17 commits, first 8d9c760, HEAD 43d5c46
+  69 commits by the agent (branch and reflog) checked for files other than train.py
+  70 artifacts, 64 MB
+  FLAG train_py_review: ae5f066: global_delay_rate = encoding_data["label"].mean()
+  FLAG train_py_review: ae5f066: key: (row["sum"] + 50 * global_delay_rate) / (row["count"] + 50)
+  FLAG train_py_review: ae5f066: carrier_origin_delay_prior[fold].get((c, o), global_delay_rate)
+  train.py of 69 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none

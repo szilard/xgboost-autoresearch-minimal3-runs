@@ -1,0 +1,71 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+8d58d96	0.6652	discard	400 boosting rounds
+77f4cfb	0.6789	keep	depth 4 at 100 rounds
+34af316	0.6777	discard	depth 4 at 200 rounds
+2156491	0.6798	keep	depth 3 at 100 rounds
+69556f5	0.6751	discard	depth 2 at 100 rounds
+7bb42f5	0.6805	keep	depth 3 at 150 rounds
+2ae43f5	0.6805	discard	depth 3 at 250 rounds; tied but slower
+23860d6	0.6805	discard	add scheduled departure minute; tied but slower
+a61db0b	0.6809	keep	ablate day of month
+c44033c	0.6799	discard	ablate flight distance
+9f5fc98	0.6719	discard	add origin destination route category
+03b211a	0.6810	keep	min child weight 10
+3a71508	0.6811	keep	min child weight 30
+086c851	0.6811	discard	min child weight 100; tied
+3d99637	0.6760	discard	max cat threshold 16
+d3d439b	0.6811	keep	simplify categorical prepare; eval 18.3s
+e30ebc8	0.6795	discard	subsample 0.8
+a9fc916	0.6806	discard	colsample by tree 0.8
+9774a5e	0.6811	discard	gamma 1; tied
+51874f6	0.6793	discard	depth 4 with regularization
+7f500c3	0.6809	discard	max bin 512
+3ce37c8	0.6808	discard	approx tree method
+e1ab62c	0.6811	keep	numeric month; tied and faster
+0e6644a	0.6796	discard	monotonic departure time
+54bfecf	0.6813	keep	departure time relative to route median
+c0e8c0b	0.6822	keep	add carrier origin schedule offset
+3f3d81a	0.6820	discard	add origin wide schedule offset
+072e278	0.6815	discard	add carrier destination schedule offset
+365b27e	0.6820	discard	learning rate 0.05 and 300 rounds
+6faca08	0.6795	discard	depth 4 with schedule offsets
+ae5f066	0.6813	discard	cross fitted carrier origin delay prior
+8a96bf5	0.6791	discard	onehot carrier and weekday splits
+d3f440d	0.6819	discard	add categorical departure hour
+aace12d	0.6823	keep	add off-five-minute schedule indicator
+9c47930	0.6823	discard	add on-the-hour indicator; tied slower
+b5ebe62	0.6818	discard	L2 regularization 10
+daa6d22	0.6811	discard	lossguide growth with eight leaves
+c7593ea	0.6807	discard	numeric weekday
+66651d4	0.6854	keep	add numeric day of month
+8ded6b7	0.6844	discard	225 rounds with numeric day of month
+91e2707	0.6857	keep	add numeric day of year
+e093f07	0.6845	discard	cyclic day of year sine cosine
+f667d1f	0.6866	keep	add categorical month copy
+18b8a37	0.6841	discard	add categorical day of month copy
+e9e6280	0.6866	discard	add numeric weekday copy; tied slower
+806ba36	0.6865	discard	min child weight 10 with calendar features
+ea61346	0.6862	discard	min child weight 60 with calendar features
+cc41c09	0.6842	discard	depth 4 with calendar features
+cff786d	0.6852	discard	100 rounds with calendar features
+b12448b	0.6859	discard	three-tree boosted forest
+bdc59df	0.6850	discard	DART tree dropout
+c8076b0	0.6866	discard	Thanksgiving window; tied slower
+fa4e3ce	0.6866	discard	year-end holiday window; tied slower
+cc61e23	0.6866	keep	remove unused numeric month input
+05c088e	0.6862	discard	ablate route schedule offset
+d1a2176	0.6865	discard	ablate off-five-minute indicator
+26f0a7c	0.6854	discard	L1 regularization 1
+c859a20	0.6860	discard	add carrier route schedule offset
+76d5f1f	0.6849	discard	max cat threshold 128
+12fd5ee	0.6855	discard	max_bin=128 on best; lower than 0.6866
+e31dea2	0.6864	discard	carrier-origin distance offset
+43d5c46	0.6870	keep	origin-weekday schedule offset
+7e2eb2f	0.6857	discard	destination-weekday schedule offset
+6569090	0.6859	discard	carrier-weekday schedule offset
+2f5b55f	0.6863	discard	origin-month schedule offset
+c321848	0.6866	discard	ablate route schedule offset with origin-weekday context
+172c9ab	0.6867	discard	175 boosting rounds with origin-weekday context
+2996970	0.6868	discard	min_child_weight=20 with origin-weekday context
+1a225de	0.6863	discard	mean instead of median origin-weekday schedule offset

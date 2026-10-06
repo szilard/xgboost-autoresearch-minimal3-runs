@@ -1,0 +1,71 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+8d58d96	discard	400 boosting rounds	0.6652	N/A
+77f4cfb	keep	depth 4 at 100 rounds	0.6789	0.6771
+34af316	discard	depth 4 at 200 rounds	0.6777	N/A
+2156491	keep	depth 3 at 100 rounds	0.6798	0.6786
+69556f5	discard	depth 2 at 100 rounds	0.6751	N/A
+7bb42f5	keep	depth 3 at 150 rounds	0.6805	0.6788
+2ae43f5	discard	depth 3 at 250 rounds; tied but slower	0.6805	N/A
+23860d6	discard	add scheduled departure minute; tied but slower	0.6805	N/A
+a61db0b	keep	ablate day of month	0.6809	0.6790
+c44033c	discard	ablate flight distance	0.6799	N/A
+9f5fc98	discard	add origin destination route category	0.6719	N/A
+03b211a	keep	min child weight 10	0.6810	0.6791
+3a71508	keep	min child weight 30	0.6811	0.6789
+086c851	discard	min child weight 100; tied	0.6811	N/A
+3d99637	discard	max cat threshold 16	0.6760	N/A
+d3d439b	keep	simplify categorical prepare; eval 18.3s	0.6811	0.6789
+e30ebc8	discard	subsample 0.8	0.6795	N/A
+a9fc916	discard	colsample by tree 0.8	0.6806	N/A
+9774a5e	discard	gamma 1; tied	0.6811	N/A
+51874f6	discard	depth 4 with regularization	0.6793	N/A
+7f500c3	discard	max bin 512	0.6809	N/A
+3ce37c8	discard	approx tree method	0.6808	N/A
+e1ab62c	keep	numeric month; tied and faster	0.6811	0.6805
+0e6644a	discard	monotonic departure time	0.6796	N/A
+54bfecf	keep	departure time relative to route median	0.6813	0.6803
+c0e8c0b	keep	add carrier origin schedule offset	0.6822	0.6807
+3f3d81a	discard	add origin wide schedule offset	0.6820	N/A
+072e278	discard	add carrier destination schedule offset	0.6815	N/A
+365b27e	discard	learning rate 0.05 and 300 rounds	0.6820	N/A
+6faca08	discard	depth 4 with schedule offsets	0.6795	N/A
+ae5f066	discard	cross fitted carrier origin delay prior	0.6813	N/A
+8a96bf5	discard	onehot carrier and weekday splits	0.6791	N/A
+d3f440d	discard	add categorical departure hour	0.6819	N/A
+aace12d	keep	add off-five-minute schedule indicator	0.6823	0.6808
+9c47930	discard	add on-the-hour indicator; tied slower	0.6823	N/A
+b5ebe62	discard	L2 regularization 10	0.6818	N/A
+daa6d22	discard	lossguide growth with eight leaves	0.6811	N/A
+c7593ea	discard	numeric weekday	0.6807	N/A
+66651d4	keep	add numeric day of month	0.6854	0.6840
+8ded6b7	discard	225 rounds with numeric day of month	0.6844	N/A
+91e2707	keep	add numeric day of year	0.6857	0.6844
+e093f07	discard	cyclic day of year sine cosine	0.6845	N/A
+f667d1f	keep	add categorical month copy	0.6866	0.6836
+18b8a37	discard	add categorical day of month copy	0.6841	N/A
+e9e6280	discard	add numeric weekday copy; tied slower	0.6866	N/A
+806ba36	discard	min child weight 10 with calendar features	0.6865	N/A
+ea61346	discard	min child weight 60 with calendar features	0.6862	N/A
+cc41c09	discard	depth 4 with calendar features	0.6842	N/A
+cff786d	discard	100 rounds with calendar features	0.6852	N/A
+b12448b	discard	three-tree boosted forest	0.6859	N/A
+bdc59df	discard	DART tree dropout	0.6850	N/A
+c8076b0	discard	Thanksgiving window; tied slower	0.6866	N/A
+fa4e3ce	discard	year-end holiday window; tied slower	0.6866	N/A
+cc61e23	keep	remove unused numeric month input	0.6866	0.6836
+05c088e	discard	ablate route schedule offset	0.6862	N/A
+d1a2176	discard	ablate off-five-minute indicator	0.6865	N/A
+26f0a7c	discard	L1 regularization 1	0.6854	N/A
+c859a20	discard	add carrier route schedule offset	0.6860	N/A
+76d5f1f	discard	max cat threshold 128	0.6849	N/A
+12fd5ee	discard	max_bin=128 on best; lower than 0.6866	0.6855	N/A
+e31dea2	discard	carrier-origin distance offset	0.6864	N/A
+43d5c46	keep	origin-weekday schedule offset	0.6870	0.6846
+7e2eb2f	discard	destination-weekday schedule offset	0.6857	N/A
+6569090	discard	carrier-weekday schedule offset	0.6859	N/A
+2f5b55f	discard	origin-month schedule offset	0.6863	N/A
+c321848	discard	ablate route schedule offset with origin-weekday context	0.6866	N/A
+172c9ab	discard	175 boosting rounds with origin-weekday context	0.6867	N/A
+2996970	discard	min_child_weight=20 with origin-weekday context	0.6868	N/A
+1a225de	discard	mean instead of median origin-weekday schedule offset	0.6863	N/A

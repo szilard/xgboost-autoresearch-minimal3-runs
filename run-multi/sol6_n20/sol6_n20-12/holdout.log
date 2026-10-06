@@ -1,0 +1,142 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 8d58d96 | discard | 400 boosting rounds ===
+  SKIP: status discard
+=== [4] 77f4cfb | keep | depth 4 at 100 rounds ===
+  holdout=0.6771
+=== [5] 34af316 | discard | depth 4 at 200 rounds ===
+  SKIP: status discard
+=== [6] 2156491 | keep | depth 3 at 100 rounds ===
+  holdout=0.6786
+=== [7] 69556f5 | discard | depth 2 at 100 rounds ===
+  SKIP: status discard
+=== [8] 7bb42f5 | keep | depth 3 at 150 rounds ===
+  holdout=0.6788
+=== [9] 2ae43f5 | discard | depth 3 at 250 rounds; tied but slower ===
+  SKIP: status discard
+=== [10] 23860d6 | discard | add scheduled departure minute; tied but slower ===
+  SKIP: status discard
+=== [11] a61db0b | keep | ablate day of month ===
+  holdout=0.6790
+=== [12] c44033c | discard | ablate flight distance ===
+  SKIP: status discard
+=== [13] 9f5fc98 | discard | add origin destination route category ===
+  SKIP: status discard
+=== [14] 03b211a | keep | min child weight 10 ===
+  holdout=0.6791
+=== [15] 3a71508 | keep | min child weight 30 ===
+  holdout=0.6789
+=== [16] 086c851 | discard | min child weight 100; tied ===
+  SKIP: status discard
+=== [17] 3d99637 | discard | max cat threshold 16 ===
+  SKIP: status discard
+=== [18] d3d439b | keep | simplify categorical prepare; eval 18.3s ===
+  holdout=0.6789
+=== [19] e30ebc8 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [20] a9fc916 | discard | colsample by tree 0.8 ===
+  SKIP: status discard
+=== [21] 9774a5e | discard | gamma 1; tied ===
+  SKIP: status discard
+=== [22] 51874f6 | discard | depth 4 with regularization ===
+  SKIP: status discard
+=== [23] 7f500c3 | discard | max bin 512 ===
+  SKIP: status discard
+=== [24] 3ce37c8 | discard | approx tree method ===
+  SKIP: status discard
+=== [25] e1ab62c | keep | numeric month; tied and faster ===
+  holdout=0.6805
+=== [26] 0e6644a | discard | monotonic departure time ===
+  SKIP: status discard
+=== [27] 54bfecf | keep | departure time relative to route median ===
+  holdout=0.6803
+=== [28] c0e8c0b | keep | add carrier origin schedule offset ===
+  holdout=0.6807
+=== [29] 3f3d81a | discard | add origin wide schedule offset ===
+  SKIP: status discard
+=== [30] 072e278 | discard | add carrier destination schedule offset ===
+  SKIP: status discard
+=== [31] 365b27e | discard | learning rate 0.05 and 300 rounds ===
+  SKIP: status discard
+=== [32] 6faca08 | discard | depth 4 with schedule offsets ===
+  SKIP: status discard
+=== [33] ae5f066 | discard | cross fitted carrier origin delay prior ===
+  SKIP: status discard
+=== [34] 8a96bf5 | discard | onehot carrier and weekday splits ===
+  SKIP: status discard
+=== [35] d3f440d | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [36] aace12d | keep | add off-five-minute schedule indicator ===
+  holdout=0.6808
+=== [37] 9c47930 | discard | add on-the-hour indicator; tied slower ===
+  SKIP: status discard
+=== [38] b5ebe62 | discard | L2 regularization 10 ===
+  SKIP: status discard
+=== [39] daa6d22 | discard | lossguide growth with eight leaves ===
+  SKIP: status discard
+=== [40] c7593ea | discard | numeric weekday ===
+  SKIP: status discard
+=== [41] 66651d4 | keep | add numeric day of month ===
+  holdout=0.6840
+=== [42] 8ded6b7 | discard | 225 rounds with numeric day of month ===
+  SKIP: status discard
+=== [43] 91e2707 | keep | add numeric day of year ===
+  holdout=0.6844
+=== [44] e093f07 | discard | cyclic day of year sine cosine ===
+  SKIP: status discard
+=== [45] f667d1f | keep | add categorical month copy ===
+  holdout=0.6836
+=== [46] 18b8a37 | discard | add categorical day of month copy ===
+  SKIP: status discard
+=== [47] e9e6280 | discard | add numeric weekday copy; tied slower ===
+  SKIP: status discard
+=== [48] 806ba36 | discard | min child weight 10 with calendar features ===
+  SKIP: status discard
+=== [49] ea61346 | discard | min child weight 60 with calendar features ===
+  SKIP: status discard
+=== [50] cc41c09 | discard | depth 4 with calendar features ===
+  SKIP: status discard
+=== [51] cff786d | discard | 100 rounds with calendar features ===
+  SKIP: status discard
+=== [52] b12448b | discard | three-tree boosted forest ===
+  SKIP: status discard
+=== [53] bdc59df | discard | DART tree dropout ===
+  SKIP: status discard
+=== [54] c8076b0 | discard | Thanksgiving window; tied slower ===
+  SKIP: status discard
+=== [55] fa4e3ce | discard | year-end holiday window; tied slower ===
+  SKIP: status discard
+=== [56] cc61e23 | keep | remove unused numeric month input ===
+  holdout=0.6836
+=== [57] 05c088e | discard | ablate route schedule offset ===
+  SKIP: status discard
+=== [58] d1a2176 | discard | ablate off-five-minute indicator ===
+  SKIP: status discard
+=== [59] 26f0a7c | discard | L1 regularization 1 ===
+  SKIP: status discard
+=== [60] c859a20 | discard | add carrier route schedule offset ===
+  SKIP: status discard
+=== [61] 76d5f1f | discard | max cat threshold 128 ===
+  SKIP: status discard
+=== [62] 12fd5ee | discard | max_bin=128 on best; lower than 0.6866 ===
+  SKIP: status discard
+=== [63] e31dea2 | discard | carrier-origin distance offset ===
+  SKIP: status discard
+=== [64] 43d5c46 | keep | origin-weekday schedule offset ===
+  holdout=0.6846
+=== [65] 7e2eb2f | discard | destination-weekday schedule offset ===
+  SKIP: status discard
+=== [66] 6569090 | discard | carrier-weekday schedule offset ===
+  SKIP: status discard
+=== [67] 2f5b55f | discard | origin-month schedule offset ===
+  SKIP: status discard
+=== [68] c321848 | discard | ablate route schedule offset with origin-weekday context ===
+  SKIP: status discard
+=== [69] 172c9ab | discard | 175 boosting rounds with origin-weekday context ===
+  SKIP: status discard
+=== [70] 2996970 | discard | min_child_weight=20 with origin-weekday context ===
+  SKIP: status discard
+=== [71] 1a225de | discard | mean instead of median origin-weekday schedule offset ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
