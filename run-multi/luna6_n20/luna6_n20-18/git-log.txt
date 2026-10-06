@@ -1,0 +1,102 @@
+commit dfccd9c73a2552e6a13366c843fd5d6fe7e48001
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:28:52 2026 +0000
+
+    Require loss reduction before splitting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3867890cacd8cd85deb5af17d4d2cf44e5799be5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:18:56 2026 +0000
+
+    Increase minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7b0bb0fa72a2cd1080aacc2ae89c28f8712a077f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:16:12 2026 +0000
+
+    Add cyclic scheduled departure time features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit dc9842ac6ee8d55a4a4edbd84cc95d4bc61b07f7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:12:43 2026 +0000
+
+    Ablate month and day categorical features
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b1cad7054ad62e9c84d262886572deed05efe40e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:03:08 2026 +0000
+
+    Parse calendar features before deriving day of year
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 615d08f96a3ca3877c83a3007478768146064f5c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:01:40 2026 +0000
+
+    Add calendar day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 675d861256ccd1fc088a2212d694dd5b68221bba
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:54:25 2026 +0000
+
+    Increase boosting rounds to 200
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 40cbb4f85f9f8f950302fd0e0d28962461b9ab9c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:50:24 2026 +0000
+
+    Tune tree depth to three
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3b9c40abf26b879e1e71a7f5771c2a46992a9d91
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:49:17 2026 +0000
+
+    Reduce tree depth to limit overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 088f052f461c60bbba91fa1632d4a74f526386dc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:44:34 2026 +0000
+
+    Add scheduled departure hour feature
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

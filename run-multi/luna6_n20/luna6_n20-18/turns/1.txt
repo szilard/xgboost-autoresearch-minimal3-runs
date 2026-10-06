@@ -1,0 +1,1 @@
+Setup checks are complete: the required data files exist, the working tree is clean on `main`, and `oct6` is available. I’m waiting for your run-tag choice before creating the branch and `output/` files. No experiment clock has been started.

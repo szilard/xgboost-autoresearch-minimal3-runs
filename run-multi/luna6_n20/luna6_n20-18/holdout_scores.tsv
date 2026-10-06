@@ -1,0 +1,37 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+088f052	keep	add scheduled departure hour	0.6751	0.6728
+1a97956	discard	add directed route category	0.6673	N/A
+3b9c40a	keep	reduce max_depth to 4	0.6794	0.6784
+40cbb4f	keep	reduce max_depth to 3	0.6803	0.6790
+288debc	discard	reduce max_depth to 2	0.6751	N/A
+f12939a	discard	lower learning rate and double trees	0.6800	N/A
+675d861	keep	double rounds at learning rate 0.1	0.6811	0.6792
+dc3d1c7	discard	increase rounds to 300	0.6804	N/A
+b1301b9	discard	set row subsample to 0.8	0.6791	N/A
+af10941	discard	set colsample_bytree to 0.8	0.6803	N/A
+615d08f	crash	day-of-year mapping assumed numeric month and day	0.0000	N/A
+b1cad70	keep	add row-wise day of year	0.6832	0.6819
+166afeb	discard	add carrier by departure hour category	0.6806	N/A
+28d0463	discard	add late night indicator	0.6832	N/A
+ba56037	discard	add annual sine and cosine features	0.6832	N/A
+dc9842a	keep	ablate month and day categories	0.6838	0.6826
+6d796f9	discard	add annual sine and cosine after date ablation	0.6828	N/A
+7b0bb0f	keep	add cyclical scheduled departure time	0.6847	0.6828
+cfc0324	discard	increase depth to 4 with engineered features	0.6818	N/A
+3867890	keep	set min_child_weight to 5	0.6849	0.6831
+240c74e	discard	set min_child_weight to 10	0.6848	N/A
+5aa14af	discard	add season category	0.6842	N/A
+4700ccd	discard	set max_cat_threshold to 128	0.6836	N/A
+da0aeab	discard	set max_bin to 512	0.6839	N/A
+979d9ed	discard	set max_bin to 128	0.6845	N/A
+5f675a6	discard	set max_cat_threshold to 32	0.6837	N/A
+dfccd9c	keep	set gamma to 1.0; tied AUC and slightly faster	0.6849	0.6831
+44a4b3b	discard	increase gamma to 2	0.6849	N/A
+b01379a	discard	set reg_lambda to 2	0.6840	N/A
+304e289	discard	remove raw time and hour features	0.6843	N/A
+9c27131	discard	reduce gamma to 0.5	0.6849	N/A
+7ea4842	discard	add smoothed carrier origin and destination rates	0.6840	N/A
+8474fe9	discard	add smoothed carrier delay rate only	0.6849	N/A
+b52b90a	discard	add weekend indicator	0.6849	N/A
+b836e46	discard	remove DayOfWeek and keep weekend flag	0.6799	N/A

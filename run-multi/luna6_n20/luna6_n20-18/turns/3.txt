@@ -1,0 +1,5 @@
+The `oct6` experiment is complete, and the clock is stopped at **58m44s**. The branch is at the best kept commit, `dfccd9c`.
+
+Best Eval AUC was **0.6849**, up from the **0.6743** baseline. The strongest gains came from shallower trees, `DayOfYear`, and cyclic departure-time features. Route and carrier-hour interactions, subsampling, and the final calendar and encoding trials did not improve the score.
+
+Results and experiment notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The kept model code is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py).

@@ -1,0 +1,3 @@
+Setup is ready on branch `oct6`: both data files are present, and `output/results.tsv` has the required header. The working tree has no `train.py` changes, and the experiment clock is not started.
+
+`program.md` says to wait for confirmation after setup before starting the clock. Reply **start** and I’ll begin with the baseline run.

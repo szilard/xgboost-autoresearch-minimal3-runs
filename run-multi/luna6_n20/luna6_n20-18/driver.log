@@ -1,0 +1,42 @@
+2026-10-06T02:39:21Z run luna6_n20-18: model=gpt-6-luna effort=max out=/home/ubuntu/xgb_ar3/xgboost-autoresearch-minimal3-runs/run-multi/luna6_n20/luna6_n20-18
+2026-10-06T02:39:21Z container started
+2026-10-06T02:39:21Z memory limit: 25769803776 bytes (24g requested, no swap)
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Oct  4 19:29 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Oct  4 21:03 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Oct  4 19:29 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+b15ec66 xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+README.md
+data
+harness.py
+program.md
+train.py
+2026-10-06T02:39:21Z setup check: python3 train.py
+2026-10-06T02:39:54Z setup check: Eval AUC: 0.6743
+2026-10-06T02:39:55Z time budget: 3600 s; packages: cloudpickle==3.1.2 numpy==2.5.3 pandas==3.0.6 scikit-learn==1.9.1 xgboost==3.4.1 
+Logged in using ChatGPT
+2026-10-06T02:39:56Z reasoning levels for gpt-6-luna: low medium high xhigh max
+2026-10-06T02:39:56Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-10-06T02:41:25Z session id: 01a10f14-fea5-7bd0-91c8-884a2c0424f6
+2026-10-06T02:41:25Z turn 1 done (exit 0): Setup checks are complete: the required data files exist, the working tree is clean on `main`, and `oct6` is available. I’m waiting for your run-tag choice before creating the branch and `output/` files. No experiment clock has been started.
+2026-10-06T02:41:25Z turn_context: [('gpt-6-luna', 'max', 'never', 'danger-full-access')]
+2026-10-06T02:41:26Z clock: Clock not started 
+2026-10-06T02:41:26Z turn 2 send: go
+2026-10-06T02:42:00Z turn 2 done (exit 0): Setup is ready on branch `oct6`: both data files are present, and `output/results.tsv` has the required header. The working tree has no `train.py` changes, and the experiment clock is not started.  `program.md` says to wait for confirmation after setup before starting the clock. Reply **start** and I’ll begin with the baseline run.
+2026-10-06T02:42:01Z clock: Clock not started 
+2026-10-06T02:42:01Z turn 3 send: go
+2026-10-06T03:41:09Z turn 3 done (exit 0): The `oct6` experiment is complete, and the clock is stopped at **58m44s**. The branch is at the best kept commit, `dfccd9c`.  Best Eval AUC was **0.6849**, up from the **0.6743** baseline. The strongest gains came from shallower trees, `DayOfYear`, and cyclic departure-time features. Route and carrier-hour interactions, subsampling, and the final calendar and encoding trials did not improve the sc
+2026-10-06T03:41:10Z clock: Elapsed: 0h58m44s, remaining: 0h01m16s Clock stopped 
+2026-10-06T03:41:12Z final clock: Elapsed: 0h58m44s, remaining: 0h01m16s Clock stopped 
+2026-10-06T03:41:12Z memory: peak=12585824256 bytes, oom_kills=0
+2026-10-06T03:41:13Z report: Clock:        2026-10-06 02:42:13 -> 2026-10-06 03:40:57 Total:        0h58m44s XGBoost runs: 0h21m28s  36.6%   (36 runs: 35 ok, 1 crash, 0 training timeout, 0 eval timeout)   training:   0h00m51s   1.5%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h20m38s  35.1%   (saving the artifact + row-by-row scoring of eval.csv) AI:           0h37m16s  63.4%   (everything else: token generation, tool calls, web research, API latency) 
+2026-10-06T03:41:13Z checks: integrity flags: none; protocol flags: none
+2026-10-06T03:41:13Z human/score_holdout_all.sh
+eval_auc: max=0.6849 at n=21
+holdout_auc: max=0.6831 at n=21
+2026-10-06T03:46:52Z branch=oct6 first=b15ec66f306812020bf48c0fc4fc83e50cb24ce1 best=dfccd9c upstream: xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+2026-10-06T03:46:53Z .codex-session-raw.jsonl: 4.0 MB -> codex-session.jsonl.gz: 0.42 MB (3338 lines, 2 account id(s) redacted)
+2026-10-06T03:46:53Z redacted 2 account id(s) in .codex-session-raw.jsonl
+2026-10-06T03:46:53Z summary: {  "container": "luna6_n20-18",  "status": "ok",  "reason": "",  "model": "gpt-6-luna",  "effort": "max",  "codex_version": "codex-cli 0.160.0",  "turn_context": "[('gpt-6-luna', 'max', 'never', 'danger-full-access')]",  "session_id": "01a10f14-fea5-7bd0-91c8-884a2c0424f6",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go",    "go"  ],  "failed_turns": 0,  "retry_wait_s": 0,  "clock_stopped_by": "agent",  "time_budget_s": 3600,  "clock_elapsed_s": 3524,  "clock_remaining_s": 76,  "branch": "oct6",  "first_commit": "b15ec66f306812020bf48c0fc4fc83e50cb24ce1",  "upstream": "xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62",  "results_rows": 36,  "best_commit": "dfccd9c",  "best_eval_auc": "0.6849",  "best_holdout_auc": "0.6831",  "kept_without_holdout_auc": 0,  "integrity_flags": "none",  "protocol_flags": "none",  "memory_limit_bytes": "25769803776",  "memory_peak_bytes": "12585824256",  "oom_kills": "0"}
+2026-10-06T03:47:03Z container deleted

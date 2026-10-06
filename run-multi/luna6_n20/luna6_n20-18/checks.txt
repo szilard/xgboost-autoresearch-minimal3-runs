@@ -1,0 +1,19 @@
+== results.tsv
+  36 rows: 10 keep, 25 discard, 1 crash
+  kept ties (allowed only for simpler or faster code; look at the description): dfccd9c (0.6849, after 3867890)
+  kept Eval AUC: 0.6743 -> 0.6849, max 0.6849
+
+== clock and harness runs
+  36 harness runs: 35 ok, 1 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3524 s (+76 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct6: 11 commits, first b15ec66, HEAD dfccd9c
+  615d08f is in the branch history, logged as crash (fine if the next commit fixes it)
+  35 commits by the agent (branch and reflog) checked for files other than train.py
+  35 artifacts, 46 MB
+  train.py of 35 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: none
+PROTOCOL FLAGS: none

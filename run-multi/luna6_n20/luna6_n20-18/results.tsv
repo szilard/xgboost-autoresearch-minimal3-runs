@@ -1,0 +1,37 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+088f052	0.6751	keep	add scheduled departure hour
+1a97956	0.6673	discard	add directed route category
+3b9c40a	0.6794	keep	reduce max_depth to 4
+40cbb4f	0.6803	keep	reduce max_depth to 3
+288debc	0.6751	discard	reduce max_depth to 2
+f12939a	0.6800	discard	lower learning rate and double trees
+675d861	0.6811	keep	double rounds at learning rate 0.1
+dc3d1c7	0.6804	discard	increase rounds to 300
+b1301b9	0.6791	discard	set row subsample to 0.8
+af10941	0.6803	discard	set colsample_bytree to 0.8
+615d08f	0.0000	crash	day-of-year mapping assumed numeric month and day
+b1cad70	0.6832	keep	add row-wise day of year
+166afeb	0.6806	discard	add carrier by departure hour category
+28d0463	0.6832	discard	add late night indicator
+ba56037	0.6832	discard	add annual sine and cosine features
+dc9842a	0.6838	keep	ablate month and day categories
+6d796f9	0.6828	discard	add annual sine and cosine after date ablation
+7b0bb0f	0.6847	keep	add cyclical scheduled departure time
+cfc0324	0.6818	discard	increase depth to 4 with engineered features
+3867890	0.6849	keep	set min_child_weight to 5
+240c74e	0.6848	discard	set min_child_weight to 10
+5aa14af	0.6842	discard	add season category
+4700ccd	0.6836	discard	set max_cat_threshold to 128
+da0aeab	0.6839	discard	set max_bin to 512
+979d9ed	0.6845	discard	set max_bin to 128
+5f675a6	0.6837	discard	set max_cat_threshold to 32
+dfccd9c	0.6849	keep	set gamma to 1.0; tied AUC and slightly faster
+44a4b3b	0.6849	discard	increase gamma to 2
+b01379a	0.6840	discard	set reg_lambda to 2
+304e289	0.6843	discard	remove raw time and hour features
+9c27131	0.6849	discard	reduce gamma to 0.5
+7ea4842	0.6840	discard	add smoothed carrier origin and destination rates
+8474fe9	0.6849	discard	add smoothed carrier delay rate only
+b52b90a	0.6849	discard	add weekend indicator
+b836e46	0.6799	discard	remove DayOfWeek and keep weekend flag
