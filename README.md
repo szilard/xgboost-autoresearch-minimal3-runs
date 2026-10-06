@@ -27,11 +27,11 @@ All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and 
 
 | model | groups | valid runs | excluded | holdout AUC mean | sd | min | median | max |
 |---|---|---|---|---|---|---|---|---|
-| gpt-6-astra | [astra6_n20](run-multi/astra6_n20/results_summary.md) | 9 (2 with caveat) | 0 | 0.6859 | 0.0026 | 0.6815 | 0.6856 | 0.6888 |
+| gpt-6-astra | [astra6_n20](run-multi/astra6_n20/results_summary.md) | 10 (2 with caveat) | 0 | 0.6858 | 0.0025 | 0.6815 | 0.6851 | 0.6888 |
 | gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 20 (3 with caveat) | 0 | 0.6842 | 0.0018 | 0.6803 | 0.6844 | 0.6871 |
 | gpt-6-luna | [luna6_n20](run-multi/luna6_n20/results_summary.md) | 20 (4 with caveat) | 0 | 0.6806 | 0.0019 | 0.6773 | 0.6800 | 0.6844 |
 
-Nine runs carry a caveat; the plots draw them like any other run. Eight are `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15, -18, sol6_n20-8, -19 and astra6_n20-5, -8. One is `turn_retries` (the waits after failed turns, with the model at capacity, took more than 2 minutes out of the hour): sol6_n20-16. No run was excluded. luna6_n20 and sol6_n20 are complete (20 runs each); astra6_n20 is in progress, with 9 of its 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. astra6_n20-4 is valid with an `artifact_outside_clock` flag, explained in its `run.md`: the artifact of its last run, started inside the clock and cut off before it finished. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
+Nine runs carry a caveat; the plots draw them like any other run. Eight are `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15, -18, sol6_n20-8, -19 and astra6_n20-5, -8. One is `turn_retries` (the waits after failed turns, with the model at capacity, took more than 2 minutes out of the hour): sol6_n20-16. No run was excluded. luna6_n20 and sol6_n20 are complete (20 runs each); astra6_n20 is in progress, with 10 of its 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. astra6_n20-4 is valid with an `artifact_outside_clock` flag, explained in its `run.md`: the artifact of its last run, started inside the clock and cut off before it finished. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
 
 ![Holdout AUC per run](run-multi/SUMMARY/holdout_auc_beeswarm.png)
 <!-- xgb-summary: end -->
