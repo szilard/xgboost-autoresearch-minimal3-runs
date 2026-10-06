@@ -1,0 +1,3 @@
+The `oct6` experiment is complete. The clock stopped at **59m09s**, and the branch is clean at the best kept commit, `ac85c11`.
+
+Best Eval AUC was **0.6860**, up from the **0.6743** baseline. The model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py); the run history and findings are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The human holdout has not been scored.

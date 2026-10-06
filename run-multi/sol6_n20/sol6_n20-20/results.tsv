@@ -1,0 +1,31 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+8b8a252	0.6795	keep	depth 4, 300 trees, learning rate 0.05
+93540c3	0.6812	keep	depth 3 with same boosting budget
+4d61736	0.6796	discard	add categorical departure hour
+fbf65e3	0.0000	crash	numeric day conversion omitted c- prefix
+1fefbc3	0.6856	keep	parse day of month and use numeric splits
+0b43513	0.6854	discard	treat month as numeric
+7a47967	0.6857	keep	add day of year numeric feature
+66ed609	0.6786	discard	max cat threshold 16
+9f6d0f8	0.6842	discard	max cat threshold 128
+5e360b3	0.6850	discard	500 depth 3 boosting rounds
+d8aa74b	0.6762	discard	add origin-destination route category
+760ae82	0.6815	discard	depth 2 trees
+4ecadd4	0.6853	discard	departure time relative to route median
+edbffec	0.6849	discard	subsample 0.8
+0189d66	0.6835	discard	treat day of week as numeric
+9667470	0.6858	keep	min child weight 10
+439485a	0.6858	discard	min child weight 30 no meaningful speedup
+aac1325	0.6857	discard	remove day of year under min child weight 10
+23760b9	0.6841	discard	one hot month and weekday categorical splits
+ac85c11	0.6860	keep	add cyclic departure time sine and cosine
+a48965b	0.6844	discard	add cyclic day of year sine and cosine
+ee4ecef	0.6850	discard	reg lambda 10
+2df8037	0.6853	discard	loss guided growth with eight leaves
+0ffcd6b	0.6860	discard	gamma 5 no AUC or speed gain
+a85d65b	0.6802	discard	add carrier origin category
+9c49e76	0.6856	discard	max bin 512
+a72ccbb	0.6854	discard	max bin 128
+96cdf9b	0.6858	discard	add half day time harmonic
+8cd9a08	0.6857	discard	remove daily sine feature

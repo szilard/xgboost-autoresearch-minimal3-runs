@@ -1,0 +1,75 @@
+commit ac85c11c242897fa4e4e2f0aa25511c121672b56
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:32:20 2026 +0000
+
+    Add cyclic departure time features
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 96674705d2464685953e47bfd1bce47c683fc7f2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:24:44 2026 +0000
+
+    Raise minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7a479673f667ed1f090c5bb63685593979f42c1b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:07:21 2026 +0000
+
+    Add day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 1fefbc3362dd4474c265b61efddc7a8a6d8823de
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:03:45 2026 +0000
+
+    Parse prefixed day of month values
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fbf65e3697817ba88eb600f67d386f8bd58e87d3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:02:00 2026 +0000
+
+    Treat day of month as ordered
+
+ train.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 93540c391bfaed091181e4ede4e2ef185812cc90
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:57:58 2026 +0000
+
+    Test depth three
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8b8a2521f8c1e3bc619780a7a2ba8f6d36d6dc49
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:56:05 2026 +0000
+
+    Try shallower slower boosting
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

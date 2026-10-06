@@ -1,0 +1,62 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 8b8a252 | keep | depth 4, 300 trees, learning rate 0.05 ===
+  holdout=0.6779
+=== [4] 93540c3 | keep | depth 3 with same boosting budget ===
+  holdout=0.6794
+=== [5] 4d61736 | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [6] fbf65e3 | crash | numeric day conversion omitted c- prefix ===
+  SKIP: status crash
+=== [7] 1fefbc3 | keep | parse day of month and use numeric splits ===
+  holdout=0.6830
+=== [8] 0b43513 | discard | treat month as numeric ===
+  SKIP: status discard
+=== [9] 7a47967 | keep | add day of year numeric feature ===
+  holdout=0.6841
+=== [10] 66ed609 | discard | max cat threshold 16 ===
+  SKIP: status discard
+=== [11] 9f6d0f8 | discard | max cat threshold 128 ===
+  SKIP: status discard
+=== [12] 5e360b3 | discard | 500 depth 3 boosting rounds ===
+  SKIP: status discard
+=== [13] d8aa74b | discard | add origin-destination route category ===
+  SKIP: status discard
+=== [14] 760ae82 | discard | depth 2 trees ===
+  SKIP: status discard
+=== [15] 4ecadd4 | discard | departure time relative to route median ===
+  SKIP: status discard
+=== [16] edbffec | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [17] 0189d66 | discard | treat day of week as numeric ===
+  SKIP: status discard
+=== [18] 9667470 | keep | min child weight 10 ===
+  holdout=0.6842
+=== [19] 439485a | discard | min child weight 30 no meaningful speedup ===
+  SKIP: status discard
+=== [20] aac1325 | discard | remove day of year under min child weight 10 ===
+  SKIP: status discard
+=== [21] 23760b9 | discard | one hot month and weekday categorical splits ===
+  SKIP: status discard
+=== [22] ac85c11 | keep | add cyclic departure time sine and cosine ===
+  holdout=0.6838
+=== [23] a48965b | discard | add cyclic day of year sine and cosine ===
+  SKIP: status discard
+=== [24] ee4ecef | discard | reg lambda 10 ===
+  SKIP: status discard
+=== [25] 2df8037 | discard | loss guided growth with eight leaves ===
+  SKIP: status discard
+=== [26] 0ffcd6b | discard | gamma 5 no AUC or speed gain ===
+  SKIP: status discard
+=== [27] a85d65b | discard | add carrier origin category ===
+  SKIP: status discard
+=== [28] 9c49e76 | discard | max bin 512 ===
+  SKIP: status discard
+=== [29] a72ccbb | discard | max bin 128 ===
+  SKIP: status discard
+=== [30] 96cdf9b | discard | add half day time harmonic ===
+  SKIP: status discard
+=== [31] 8cd9a08 | discard | remove daily sine feature ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
