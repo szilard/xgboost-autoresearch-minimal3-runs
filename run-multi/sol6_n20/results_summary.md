@@ -11,7 +11,7 @@ Group `sol6_n20`: model `gpt-6-sol`, effort `max`, N_RUNS 20, codex-cli 0.160.0,
 | sol6_n20-5 | gpt-6-sol | max | 47 | 0.6839 (`8202360`) | 0.6826 | -0.0013 | 0h58m46s | 40.2% | yes | |
 | sol6_n20-6 | gpt-6-sol | max | 43 | 0.6818 (`44473d1`) | 0.6803 | -0.0015 | 0h59m02s | 47.6% | yes | |
 | sol6_n20-7 | gpt-6-sol | max | 58 | 0.6866 (`eb1987a`) | 0.6837 | -0.0029 | 0h59m01s | 43.1% | yes | |
-| sol6_n20-8 | gpt-6-sol | max | 48 | 0.6877 (`83775c5`) | 0.6871 | -0.0006 | 0h59m22s | 44.8% | yes | |
+| sol6_n20-8 | gpt-6-sol | max | 48 | 0.6877 (`83775c5`) | 0.6871 | -0.0006 | 0h59m22s | 44.8% | caveat | caveat: keep_rule (tie kept as "faster" by 1.0 s, not simpler) |
 | sol6_n20-9 | gpt-6-sol | max | 51 | 0.6846 (`348d81c`) | 0.6834 | -0.0012 | 0h58m28s | 41.4% | yes | |
 | sol6_n20-10 | gpt-6-sol | max | 51 | 0.6885 (`c3b3a92`) | 0.6864 | -0.0021 | 0h59m06s | 49.0% | yes | |
 | sol6_n20-11 | gpt-6-sol | max | 55 | 0.6893 (`cd0df4b`) | 0.6857 | -0.0036 | 0h59m15s | 47.3% | yes | |
@@ -22,7 +22,7 @@ Group `sol6_n20`: model `gpt-6-sol`, effort `max`, N_RUNS 20, codex-cli 0.160.0,
 | sol6_n20-16 | gpt-6-sol | max | 31 | 0.6817 (`519d0ef`) | 0.6804 | -0.0013 | 0h59m42s | 70.0% | caveat | caveat: turn_retries (7 failed turns, model at capacity; retry waits 216 s) |
 | sol6_n20-17 | gpt-6-sol | max | 35 | 0.6853 (`6321ab4`) | 0.6839 | -0.0014 | 0h58m26s | 54.7% | yes | |
 | sol6_n20-18 | gpt-6-sol | max | 60 | 0.6864 (`08500bb`) | 0.6847 | -0.0017 | 0h59m08s | 39.8% | yes | |
-| sol6_n20-19 | gpt-6-sol | max | 58 | 0.6889 (`c4b427d`) | 0.6866 | -0.0023 | 0h59m02s | 41.1% | yes | |
+| sol6_n20-19 | gpt-6-sol | max | 58 | 0.6889 (`c4b427d`) | 0.6866 | -0.0023 | 0h59m02s | 41.1% | caveat | caveat: keep_rule (tie kept as "faster" by 1.0 s, not simpler) |
 
 In progress: 19 of 20 runs done. The statistics follow once all runs are done.
 

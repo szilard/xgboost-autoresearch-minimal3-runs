@@ -1,6 +1,6 @@
 # sol6_n20-8
 
-**Valid** (no flags). Best Eval AUC **0.6877** (`83775c5`), Holdout AUC **0.6871**, gap **-0.0006**.
+**Valid with a caveat: `keep_rule`** (a kept tie that is neither simpler nor measurably faster; see Protocol checks). Best Eval AUC **0.6877** (`83775c5`), Holdout AUC **0.6871**, gap **-0.0006**.
 
 ## Setup
 
@@ -56,12 +56,13 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0, turns/
 - diff-stat.txt (first commit to best): train.py only (+34 -7).
 - The best commit has a holdout AUC; `kept_without_holdout_auc` = 0.
 
-## Protocol checks: pass
+## Protocol checks: caveat `keep_rule`
 
-- checks.txt: `PROTOCOL FLAGS: none`. Branch `oct5` = the 19 kept commits in results.tsv order; HEAD = `83775c5` = last keep; no discarded commit on the branch; nothing of output/ committed; no stray files.
+- checks.txt: `PROTOCOL FLAGS: none` (the check lists kept ties; whether they are allowed is the reviewer's call). Branch `oct5` = the 19 kept commits in results.tsv order; HEAD = `83775c5` = last keep; no discarded commit on the branch; nothing of output/ committed; no stray files.
 - **Two kept ties:**
   - `ec130fa` "four depth-three one depth-four; equal AUC smaller faster", 0.6873 as `21f1021`: one of the five members goes from depth 4 to depth 3, a smaller model and faster by construction. Allowed. Holdout 0.6868 against 0.6867.
-  - `83775c5` "two DART members rate drop 0.2; equal AUC faster", 0.6877 as `b600d30` (rate drop 0.1). **Borderline, counted as faster.** The code is not simpler (one value changed). The harness timed it 0.9 s faster in total (training 28.1 → 27.6 s, evaluation 35.8 → 35.3 s, -1.4%), about the size of run-to-run noise. Training can be faster by construction, though: a DART booster recomputes its predictions from the trees it keeps in each round, and dropping 20% instead of 10% leaves fewer trees to sum; evaluation uses all trees either way, so that half of the difference is noise. As in luna6_n20-1 (a 1.4% speed-up of a smaller model), I did not add `keep_rule`. It changes nothing measurable: both commits have Eval 0.6877 and Holdout 0.6871, so the best commit's AUCs are the same whichever of the two counts.
+  - **`83775c5` "two DART members rate drop 0.2; equal AUC faster", 0.6877 as `b600d30` (rate drop 0.1): `keep_rule`.** The code is not simpler (one value changed) and the model is not smaller. The harness timed it 1.0 s faster in total (training 28.1 → 27.6 s, evaluation 35.8 → 35.3 s, -1.6%), within run-to-run noise. A DART booster that drops more trees per round may train slightly faster, but evaluation uses all trees either way, and nothing measurable changed. First counted as faster; reclassified at the end of the group for consistency with luna6_n20, whose review flags `keep_rule` on ties kept for 0.3-1.1 s of "faster" evaluation (luna6_n20-6, -8, -15, -18) and allows only real simplifications or speed-ups (e.g. a smaller model in luna6_n20-1).
+  - The caveat changes no number: both commits have Eval 0.6877 and Holdout 0.6871, so the best commit's AUCs are the same whichever of the two counts, and no later commit was built on it (it is the last keep).
 - Clock stopped by the agent (`clock_stopped_by` = agent), 38 s remaining.
 - No retry waits (`retry_wait_s` 0).
 

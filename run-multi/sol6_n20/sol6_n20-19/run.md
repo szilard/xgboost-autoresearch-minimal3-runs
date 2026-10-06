@@ -1,6 +1,6 @@
 # sol6_n20-19
 
-**Valid** (no flags). Best Eval AUC **0.6889** (`c4b427d`), Holdout AUC **0.6866**, gap **-0.0023**.
+**Valid with a caveat: `keep_rule`** (a kept tie that is neither simpler nor measurably faster; see Protocol checks). Best Eval AUC **0.6889** (`c4b427d`), Holdout AUC **0.6866**, gap **-0.0023**.
 
 ## Setup
 
@@ -58,10 +58,11 @@ No "keep going". **No failed turns:** `failed_turns` 0, `retry_wait_s` 0. turns/
 - diff-stat.txt (first commit to best): train.py only (+34 -5).
 - The best commit has a holdout AUC; `kept_without_holdout_auc` = 0.
 
-## Protocol checks: pass
+## Protocol checks: caveat `keep_rule`
 
-- checks.txt: `PROTOCOL FLAGS: none`. Branch `oct6` = the 22 kept commits in results.tsv order; HEAD = `c4b427d` = last keep; no discarded commit on the branch; nothing of output/ committed; no stray files.
-- **One kept tie, faster:** `f833740` "lossguide tree growth; same AUC and faster total run", 0.6875 as `7d3cd17`: training 6.5 s → 5.4 s (-17%), evaluation unchanged (31.1 / 31.2 s); same holdout (0.6846). Allowed. The next commit (`5b71d1b`, 8 leaves without a depth cap) built on it and gained +0.0007.
+- checks.txt: `PROTOCOL FLAGS: none` (the check lists kept ties; whether they are allowed is the reviewer's call). Branch `oct6` = the 22 kept commits in results.tsv order; HEAD = `c4b427d` = last keep; no discarded commit on the branch; nothing of output/ committed; no stray files.
+- **One kept tie, `keep_rule`:** `f833740` "lossguide tree growth; same AUC and faster total run", 0.6875 as `7d3cd17`. The code is not simpler (one parameter more: `grow_policy="lossguide"` at the same depth cap) and the model is not smaller. The harness timed it 1.0 s faster in total (training 6.5 → 5.4 s, evaluation 31.1 → 31.2 s, -2.7%), within run-to-run noise; same holdout (0.6846). First counted as faster; reclassified at the end of the group for consistency with luna6_n20, whose review flags `keep_rule` on ties kept for 0.3-1.1 s of "faster" runs and allows only real simplifications or speed-ups.
+  - The reported AUCs are unaffected (the best commit is a later, strict improvement), but here a later gain was measured on top of the tied commit: `5b71d1b` (loss-guided growth with 8 leaves and no depth cap, +0.0007) builds on the loss-guided setting `f833740` introduced, and the best model keeps it.
 - Clock stopped by the agent (`clock_stopped_by` = agent), 58 s remaining.
 - No retry waits (`retry_wait_s` 0).
 
