@@ -1,0 +1,29 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+2686e0b	keep	max_depth=4	0.6789	0.6771
+194d5f4	keep	min_child_weight=25 on max_depth=4	0.6791	0.6777
+f2a8b74	discard	gamma=1; tied at four decimals with no simplification	0.6791	N/A
+558859f	discard	subsample=0.8	0.6784	N/A
+9e15f89	discard	add categorical scheduled departure hour	0.6784	N/A
+3d95ef4	keep	add daily cyclic departure-time features	0.6798	0.6783
+a4199d9	keep	add second daily departure-time harmonic	0.6800	0.6787
+1647db8	discard	add cyclic month features; tied with no simplification	0.6800	N/A
+816c82d	discard	add cyclic weekday features; tied with no simplification	0.6800	N/A
+32beb38	keep	learning_rate=0.05 and n_estimators=200	0.6802	0.6785
+d6c3bdc	discard	max_cat_to_onehot=32	0.6798	N/A
+a429e6b	discard	max_cat_threshold=32	0.6799	N/A
+fc4aaca	keep	max_depth=3; tied AUC with simpler trees	0.6802	0.6784
+2512b87	keep	learning_rate=0.025 and n_estimators=400	0.6806	0.6790
+895f60c	keep	learning_rate=0.0125 and n_estimators=800	0.6807	0.6791
+b233f1f	discard	learning_rate=0.00625 and n_estimators=1600	0.6806	N/A
+275677a	discard	min_child_weight=50; tied with no simplification	0.6807	N/A
+b04f4fe	discard	add training carrier delay-rate lookup; tied with no simplification	0.6807	N/A
+e5bb78e	discard	add directed route category	0.6747	N/A
+17f5fd8	keep	soft average of depth-3 and depth-4 models	0.6810	0.6795
+9aae12a	discard	add major U.S. holiday window	0.6810	N/A
+47d58a9	discard	weight depth-3 model twice in soft vote; tied without simplification	0.6810	N/A
+7525671	discard	depth-4 model alone; below ensemble	0.6799	N/A
+3d17dc0	discard	add depth-2 member to ensemble	0.6806	N/A
+ffc8d70	crash	DART ensemble exceeded 60-second training limit	0.0000	N/A
+03bbc84	keep	add first day-of-year harmonic	0.6826	0.6811
+7d831ef	discard	add second annual harmonic	0.6822	N/A

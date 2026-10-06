@@ -1,0 +1,58 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 2686e0b | keep | max_depth=4 ===
+  holdout=0.6771
+=== [4] 194d5f4 | keep | min_child_weight=25 on max_depth=4 ===
+  holdout=0.6777
+=== [5] f2a8b74 | discard | gamma=1; tied at four decimals with no simplification ===
+  SKIP: status discard
+=== [6] 558859f | discard | subsample=0.8 ===
+  SKIP: status discard
+=== [7] 9e15f89 | discard | add categorical scheduled departure hour ===
+  SKIP: status discard
+=== [8] 3d95ef4 | keep | add daily cyclic departure-time features ===
+  holdout=0.6783
+=== [9] a4199d9 | keep | add second daily departure-time harmonic ===
+  holdout=0.6787
+=== [10] 1647db8 | discard | add cyclic month features; tied with no simplification ===
+  SKIP: status discard
+=== [11] 816c82d | discard | add cyclic weekday features; tied with no simplification ===
+  SKIP: status discard
+=== [12] 32beb38 | keep | learning_rate=0.05 and n_estimators=200 ===
+  holdout=0.6785
+=== [13] d6c3bdc | discard | max_cat_to_onehot=32 ===
+  SKIP: status discard
+=== [14] a429e6b | discard | max_cat_threshold=32 ===
+  SKIP: status discard
+=== [15] fc4aaca | keep | max_depth=3; tied AUC with simpler trees ===
+  holdout=0.6784
+=== [16] 2512b87 | keep | learning_rate=0.025 and n_estimators=400 ===
+  holdout=0.6790
+=== [17] 895f60c | keep | learning_rate=0.0125 and n_estimators=800 ===
+  holdout=0.6791
+=== [18] b233f1f | discard | learning_rate=0.00625 and n_estimators=1600 ===
+  SKIP: status discard
+=== [19] 275677a | discard | min_child_weight=50; tied with no simplification ===
+  SKIP: status discard
+=== [20] b04f4fe | discard | add training carrier delay-rate lookup; tied with no simplification ===
+  SKIP: status discard
+=== [21] e5bb78e | discard | add directed route category ===
+  SKIP: status discard
+=== [22] 17f5fd8 | keep | soft average of depth-3 and depth-4 models ===
+  holdout=0.6795
+=== [23] 9aae12a | discard | add major U.S. holiday window ===
+  SKIP: status discard
+=== [24] 47d58a9 | discard | weight depth-3 model twice in soft vote; tied without simplification ===
+  SKIP: status discard
+=== [25] 7525671 | discard | depth-4 model alone; below ensemble ===
+  SKIP: status discard
+=== [26] 3d17dc0 | discard | add depth-2 member to ensemble ===
+  SKIP: status discard
+=== [27] ffc8d70 | crash | DART ensemble exceeded 60-second training limit ===
+  SKIP: status crash
+=== [28] 03bbc84 | keep | add first day-of-year harmonic ===
+  holdout=0.6811
+=== [29] 7d831ef | discard | add second annual harmonic ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

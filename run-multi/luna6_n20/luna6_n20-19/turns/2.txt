@@ -1,0 +1,5 @@
+Setup and experiment are complete. I followed `program.md`, ran the harness on branch `oct6`, and stopped its clock after 58m45s.
+
+The best checkpoint is **`03bbc84`**, with Eval AUC **0.6826**, up from the 0.6743 baseline. The winning change added a smooth annual day-of-year feature to the depth-3/depth-4 ensemble. A second annual harmonic scored lower, and the DART trial timed out during training.
+
+The branch is restored to the best checkpoint. The experiment ledger and summary are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md); the model code is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py).

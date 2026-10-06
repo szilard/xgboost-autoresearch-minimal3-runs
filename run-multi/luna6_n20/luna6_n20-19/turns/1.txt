@@ -1,0 +1,8 @@
+Setup is ready:
+
+- Created branch `oct6` from the current `HEAD`.
+- Verified `data/train.csv` and `data/eval.csv` exist.
+- Read `train.py` and `harness.py`.
+- Created `output/results.tsv` with the required header.
+
+Confirm the setup, and I’ll start the experiment clock and run the baseline.

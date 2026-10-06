@@ -22,7 +22,8 @@ Group `luna6_n20`: model `gpt-6-luna`, effort `max`, N_RUNS 20, codex-cli 0.160.
 | luna6_n20-16 | gpt-6-luna | max | 26 | 0.6833 (`c2febf2`) | 0.6819 | -0.0014 | 0h58m38s | 66.2% | yes | |
 | luna6_n20-17 | gpt-6-luna | max | 32 | 0.6841 (`075d2ee`) | 0.6817 | -0.0024 | 0h58m49s | 63.8% | yes | |
 | luna6_n20-18 | gpt-6-luna | max | 36 | 0.6849 (`dfccd9c`) | 0.6831 | -0.0018 | 0h58m44s | 63.4% | caveat | caveat: `keep_rule`: `dfccd9c` (gamma 1) kept at a tie for an evaluation 0.3 s faster, within noise; the commit before it has the same Eval and Holdout AUC. Needed a second "go" |
+| luna6_n20-19 | gpt-6-luna | max | 28 | 0.6826 (`03bbc84`) | 0.6811 | -0.0015 | 0h58m45s | 65.3% | yes | |
 
-In progress: 18 of 20 runs done. The statistics follow once all runs are done.
+In progress: 19 of 20 runs done. The statistics follow once all runs are done.
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).

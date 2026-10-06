@@ -1,0 +1,102 @@
+commit 03bbc84122889bcec7b905d7fc635c4f9009e4c2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:44:29 2026 +0000
+
+    add annual day-of-year harmonic
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 17f5fd80cc420934ff497cd22694988093b65b7f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:28:29 2026 +0000
+
+    average depth three and four models
+
+ train.py | 24 ++++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
+
+commit 895f60c768c89b249ce266f99053dee334015252
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:15:53 2026 +0000
+
+    halve learning rate and double rounds again
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 2512b875dda94457602664fbbe7387e8451d8fdc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:14:30 2026 +0000
+
+    reduce learning rate and add more rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit fc4aacafb8a45e742d94d90e5359754f438caf75
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:12:53 2026 +0000
+
+    test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 32beb38436c7b5dfc4a0990eb6d95404877f16ad
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:07:01 2026 +0000
+
+    halve learning rate and double rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a4199d9878582bc03d1af4406ca56ebfc2a59743
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:02:04 2026 +0000
+
+    add second harmonic departure time features
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 3d95ef4b612511c3851b02351a5093f3f4328999
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:00:44 2026 +0000
+
+    add cyclic departure time features
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 194d5f4ea0e99d0ee7f0c567384f616cd08bc051
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:53:39 2026 +0000
+
+    raise minimum child weight
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2686e0bda60090d7206188f3486b96b65b8542f9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:52:23 2026 +0000
+
+    test shallower XGBoost trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
