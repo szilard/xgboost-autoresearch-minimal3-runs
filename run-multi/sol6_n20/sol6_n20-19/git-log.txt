@@ -1,0 +1,201 @@
+commit c4b427d1b93dbe45b56591907ca420040baade78
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:36:59 2026 +0000
+
+    Try 500 boosting rounds in blend
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eb007014d981123c8e2c19bac2f253cc11776827
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:26:03 2026 +0000
+
+    Give lighter blend component more leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7f7970b756f217b5faa3a392b6a0c7b9eb49eeb5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:21:28 2026 +0000
+
+    Favor regularized model in blend
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8203f153d1cd03d597267f9cedf550d252b8cc34
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:20:20 2026 +0000
+
+    Blend regularized and lighter XGBoost models
+
+ train.py | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+commit 5b71d1b5d38268aa9135b2daf64b110bfa7f8d28
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:15:42 2026 +0000
+
+    Allocate eight leaves by split gain
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit f833740b5f0208790c0f8c718d3d24395a5b5f3a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:14:36 2026 +0000
+
+    Prioritize high-gain tree branches
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7d3cd17ae5044a251b76692a8dfeeea4c592140a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:12:24 2026 +0000
+
+    Apply L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a1f3820c553c001b8fb74cd7c9355526c06738b3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:08:11 2026 +0000
+
+    Use hourly departure categories
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 101f75b40f4cf22b0e209aa0d6a38f632d671f29
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:07:17 2026 +0000
+
+    Add half-hour departure category
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 9bbcc685e1715c7d60fcbafca6b5a6b87052df3c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:04:18 2026 +0000
+
+    Boost small forests each round
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 00b2eb13fc5bf50a760142550c306ab98b8ecb93
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:00:03 2026 +0000
+
+    Test stronger split gain penalty
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7ad5c6784354f990a08a134881d57ac5b09e90e3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:57:30 2026 +0000
+
+    Test heavy leaf L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 55f1fa88cae74fe0119087a97b194e7db8236fae
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:56:44 2026 +0000
+
+    Test stronger leaf L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 71f87224c3025cd5d6805774d8ea8534a18dccaa
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:56:00 2026 +0000
+
+    Increase leaf L2 regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 95b92f3c05db0b2d3a8ebfe5a1767a6de610dcd3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:50:08 2026 +0000
+
+    Sample features for each tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ecf07b6c44a036f9a9b29d629d9e96b6aa1de964
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:49:26 2026 +0000
+
+    Sample rows during boosting
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0d2499fa6bd3d5a869fdd56e4adbabe6a10a3c31
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:47:33 2026 +0000
+
+    Regularize small tree leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 106d27ec4182f238efa516d88503d827846d13a7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:46:48 2026 +0000
+
+    Use day of year instead of calendar categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 98d2ed61d59111844e2415f917c1eb0a4e21e251
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:44:40 2026 +0000
+
+    Add ordinal day of year
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 84e0d0b60cde5bac35180c4b6212f7f26be493c9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:43:03 2026 +0000
+
+    Test depth three boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 41bb4db200eec581ed3eb7ecd82921bcd9c5052b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:41:15 2026 +0000
+
+    Try longer shallow boosting
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

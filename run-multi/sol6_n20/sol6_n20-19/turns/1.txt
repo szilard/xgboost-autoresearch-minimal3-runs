@@ -1,0 +1,3 @@
+Setup is ready on the new `oct6` branch. The data files and required packages are present, and `output/results.tsv` contains only its header. I used the proposed tag after allowing time for a preference; the experiment clock has **not** started.
+
+Reply **go** to start the one-hour run, or give me a different tag before we begin.

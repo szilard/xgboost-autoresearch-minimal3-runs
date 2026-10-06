@@ -1,0 +1,59 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+2bd2405	0.6743	discard	add departure minute alongside HHMM; no gain
+41bb4db	0.6789	keep	400 depth-4 trees at learning rate 0.05
+8aa123d	0.6776	discard	600 trees; lower than 400
+84e0d0b	0.6813	keep	depth 3 at 400 trees and learning rate 0.05
+ba24c69	0.6768	discard	depth 2 underfits relative to depth 3
+98d2ed6	0.6842	keep	add ordinal day of year
+80d635a	0.6738	discard	add route categorical; worsened transfer
+106d27e	0.6846	keep	replace month and day categories with day of year
+0d2499f	0.6847	keep	minimum child weight 10
+65d7aa8	0.6843	discard	minimum child weight 30 too strong
+ecf07b6	0.6852	keep	row subsample 0.8
+95b92f3	0.6856	keep	column subsample 0.8 on top of row subsampling
+e2b80f3	0.6856	discard	600 sampled trees tied but slower
+441d723	0.6856	discard	force partitioning of categorical features; tie without simplification
+7060617	0.6794	discard	one-hot splits for all categories; large decline
+cf0287b	0.6800	discard	category split threshold 16; large decline
+d1cd332	0.6854	discard	cross-fitted smoothed origin delay rate; slight decline
+71f8722	0.6857	keep	L2 leaf regularization 10
+55f1fa8	0.6861	keep	L2 leaf regularization 50
+7ad5c67	0.6863	keep	L2 leaf regularization 200
+bf86e57	0.6857	discard	L2 800 over-shrinks
+50b4de5	0.6863	discard	gamma 1 tied without simplification
+00b2eb1	0.6865	keep	gamma 5 split gain penalty
+ed7128f	0.6861	discard	gamma 15 prunes too much
+46c83f3	0.6860	discard	depth 4 under strong regularization still worse
+e9c4eb5	0.6857	discard	monotone departure time too rigid
+8c42cc6	0.6854	discard	cyclic annual sin/cos; slower and lower AUC
+9bbcc68	0.6867	keep	three trees per boosting round
+a511db2	0.6866	discard	five trees per boosting round; lower and slower
+c41d981	0.6863	discard	600 boosted forest rounds; lower and slower
+101f75b	0.6869	keep	48-level half-hour departure slot
+a1f3820	0.6870	keep	24-level hourly departure category
+fec5301	0.6869	discard	two-hour departure bins; small decline
+6c15974	0.6870	discard	64 histogram bins tied without simplifying and was slower
+51ede0e	0.6861	discard	separate destination/distance interactions; lower AUC
+7d3cd17	0.6875	keep	L1 leaf regularization 10
+85b5a57	0.6857	discard	L1 30 too strong
+f833740	0.6875	keep	lossguide tree growth; same AUC and faster total run
+5b71d1b	0.6882	keep	lossguide with eight leaves and no depth cap
+568e2ec	0.6879	discard	twelve loss-guided leaves; lower and slower
+cf03068	0.6878	discard	gradient-based row sampling slower and lower
+cff5b5f	0.6876	discard	uniform row sampling 0.6 lower AUC
+8203f15	0.6886	keep	equal blend of regularized and lighter XGBoost
+7f7970b	0.6887	keep	2:1 regularized to lighter model blend
+423aad8	0.6886	discard	3:1 blend lower than 2:1
+b13aade	0.6869	discard	month category alongside day of year hurt
+3c7ac23	0.6883	discard	two trees per round in blend reduced AUC
+eb00701	0.6888	keep	lighter blend component uses twelve leaves
+8e5348a	0.6888	discard	sixteen leaves in lighter model tied but slower
+c6826a6	0.6888	discard	lighter model L2 100 tied but slower
+2b0c79c	0.6882	discard	feature sampling at each split lowered AUC
+a02e1d7	0.6887	discard	third depthwise model lowered blend and increased cost
+14b0c63	0.6881	discard	remove Distance; lower AUC
+f32bfb5	0.6888	discard	minimum child weight 5 tied but slower
+c47f3b4	0.6888	discard	minimum child weight 20 tied but slower
+83651e2	0.6886	discard	300 rounds faster but lower AUC
+c4b427d	0.6889	keep	500 rounds in 2:1 blended models

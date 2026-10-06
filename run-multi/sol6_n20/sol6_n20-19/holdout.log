@@ -1,0 +1,118 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 2bd2405 | discard | add departure minute alongside HHMM; no gain ===
+  SKIP: status discard
+=== [4] 41bb4db | keep | 400 depth-4 trees at learning rate 0.05 ===
+  holdout=0.6775
+=== [5] 8aa123d | discard | 600 trees; lower than 400 ===
+  SKIP: status discard
+=== [6] 84e0d0b | keep | depth 3 at 400 trees and learning rate 0.05 ===
+  holdout=0.6792
+=== [7] ba24c69 | discard | depth 2 underfits relative to depth 3 ===
+  SKIP: status discard
+=== [8] 98d2ed6 | keep | add ordinal day of year ===
+  holdout=0.6831
+=== [9] 80d635a | discard | add route categorical; worsened transfer ===
+  SKIP: status discard
+=== [10] 106d27e | keep | replace month and day categories with day of year ===
+  holdout=0.6832
+=== [11] 0d2499f | keep | minimum child weight 10 ===
+  holdout=0.6832
+=== [12] 65d7aa8 | discard | minimum child weight 30 too strong ===
+  SKIP: status discard
+=== [13] ecf07b6 | keep | row subsample 0.8 ===
+  holdout=0.6838
+=== [14] 95b92f3 | keep | column subsample 0.8 on top of row subsampling ===
+  holdout=0.6844
+=== [15] e2b80f3 | discard | 600 sampled trees tied but slower ===
+  SKIP: status discard
+=== [16] 441d723 | discard | force partitioning of categorical features; tie without simplification ===
+  SKIP: status discard
+=== [17] 7060617 | discard | one-hot splits for all categories; large decline ===
+  SKIP: status discard
+=== [18] cf0287b | discard | category split threshold 16; large decline ===
+  SKIP: status discard
+=== [19] d1cd332 | discard | cross-fitted smoothed origin delay rate; slight decline ===
+  SKIP: status discard
+=== [20] 71f8722 | keep | L2 leaf regularization 10 ===
+  holdout=0.6841
+=== [21] 55f1fa8 | keep | L2 leaf regularization 50 ===
+  holdout=0.6845
+=== [22] 7ad5c67 | keep | L2 leaf regularization 200 ===
+  holdout=0.6847
+=== [23] bf86e57 | discard | L2 800 over-shrinks ===
+  SKIP: status discard
+=== [24] 50b4de5 | discard | gamma 1 tied without simplification ===
+  SKIP: status discard
+=== [25] 00b2eb1 | keep | gamma 5 split gain penalty ===
+  holdout=0.6847
+=== [26] ed7128f | discard | gamma 15 prunes too much ===
+  SKIP: status discard
+=== [27] 46c83f3 | discard | depth 4 under strong regularization still worse ===
+  SKIP: status discard
+=== [28] e9c4eb5 | discard | monotone departure time too rigid ===
+  SKIP: status discard
+=== [29] 8c42cc6 | discard | cyclic annual sin/cos; slower and lower AUC ===
+  SKIP: status discard
+=== [30] 9bbcc68 | keep | three trees per boosting round ===
+  holdout=0.6853
+=== [31] a511db2 | discard | five trees per boosting round; lower and slower ===
+  SKIP: status discard
+=== [32] c41d981 | discard | 600 boosted forest rounds; lower and slower ===
+  SKIP: status discard
+=== [33] 101f75b | keep | 48-level half-hour departure slot ===
+  holdout=0.6854
+=== [34] a1f3820 | keep | 24-level hourly departure category ===
+  holdout=0.6853
+=== [35] fec5301 | discard | two-hour departure bins; small decline ===
+  SKIP: status discard
+=== [36] 6c15974 | discard | 64 histogram bins tied without simplifying and was slower ===
+  SKIP: status discard
+=== [37] 51ede0e | discard | separate destination/distance interactions; lower AUC ===
+  SKIP: status discard
+=== [38] 7d3cd17 | keep | L1 leaf regularization 10 ===
+  holdout=0.6846
+=== [39] 85b5a57 | discard | L1 30 too strong ===
+  SKIP: status discard
+=== [40] f833740 | keep | lossguide tree growth; same AUC and faster total run ===
+  holdout=0.6846
+=== [41] 5b71d1b | keep | lossguide with eight leaves and no depth cap ===
+  holdout=0.6851
+=== [42] 568e2ec | discard | twelve loss-guided leaves; lower and slower ===
+  SKIP: status discard
+=== [43] cf03068 | discard | gradient-based row sampling slower and lower ===
+  SKIP: status discard
+=== [44] cff5b5f | discard | uniform row sampling 0.6 lower AUC ===
+  SKIP: status discard
+=== [45] 8203f15 | keep | equal blend of regularized and lighter XGBoost ===
+  holdout=0.6864
+=== [46] 7f7970b | keep | 2:1 regularized to lighter model blend ===
+  holdout=0.6861
+=== [47] 423aad8 | discard | 3:1 blend lower than 2:1 ===
+  SKIP: status discard
+=== [48] b13aade | discard | month category alongside day of year hurt ===
+  SKIP: status discard
+=== [49] 3c7ac23 | discard | two trees per round in blend reduced AUC ===
+  SKIP: status discard
+=== [50] eb00701 | keep | lighter blend component uses twelve leaves ===
+  holdout=0.6865
+=== [51] 8e5348a | discard | sixteen leaves in lighter model tied but slower ===
+  SKIP: status discard
+=== [52] c6826a6 | discard | lighter model L2 100 tied but slower ===
+  SKIP: status discard
+=== [53] 2b0c79c | discard | feature sampling at each split lowered AUC ===
+  SKIP: status discard
+=== [54] a02e1d7 | discard | third depthwise model lowered blend and increased cost ===
+  SKIP: status discard
+=== [55] 14b0c63 | discard | remove Distance; lower AUC ===
+  SKIP: status discard
+=== [56] f32bfb5 | discard | minimum child weight 5 tied but slower ===
+  SKIP: status discard
+=== [57] c47f3b4 | discard | minimum child weight 20 tied but slower ===
+  SKIP: status discard
+=== [58] 83651e2 | discard | 300 rounds faster but lower AUC ===
+  SKIP: status discard
+=== [59] c4b427d | keep | 500 rounds in 2:1 blended models ===
+  holdout=0.6866
+
+=== DONE: results written to output/holdout_scores.tsv ===

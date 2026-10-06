@@ -1,0 +1,3 @@
+The `oct6` experiment is complete, and the clock is stopped. Across 57 experiments, Eval AUC rose from **0.6743** to **0.6889**. The branch is at the best commit, `c4b427d`.
+
+The final model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py). The full results and research notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). Holdout scoring remains for your post-run check.
