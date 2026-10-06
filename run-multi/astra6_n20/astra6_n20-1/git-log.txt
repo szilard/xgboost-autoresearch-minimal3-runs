@@ -1,0 +1,174 @@
+commit 50e74b8d2c9cac58aff904770a831325fdaaf338
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:43:09 2026 +0000
+
+    Ablate monthly weighting after explicit holiday modeling
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 828bde179101bceef13d9f373e2fc9f83043c01e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:41:57 2026 +0000
+
+    Ablate route-relative time from the holiday model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b0e924c71cefe2848d32a913dd3a2cc7592376a0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:40:27 2026 +0000
+
+    Test a shared winter Monday holiday feature
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit d990aac586a586c58c1b0119b6ebc526b44cd378
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:39:13 2026 +0000
+
+    Extend holiday-relative features to Memorial and Labor Day
+
+ train.py | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit aa2150c96e4f45aefd40a23f26fc77814e89d0ca
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:36:46 2026 +0000
+
+    Test narrow holiday-relative calendar features
+
+ train.py | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+commit f5b6a9e5dba09d43cd4b77f1837bd4e00bb2ff2b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:29:25 2026 +0000
+
+    Test best-first tree growth with a 16-leaf budget
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 974dee2bf88f7b6617ab4ffd7da1eb521be64af5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:25:34 2026 +0000
+
+    Test smaller boosting updates at matched cumulative strength
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 092ca0ce57876794078801b0ae967fcdd5f45f09
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:17:54 2026 +0000
+
+    Ablate geography while retaining the three-seed ensemble
+
+ train.py | 42 +++++++-----------------------------------
+ 1 file changed, 7 insertions(+), 35 deletions(-)
+
+commit df3244fb85ba74c8543723ba3fc9e400c5682f6f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:16:57 2026 +0000
+
+    Average independent boosting seeds across both feature representations
+
+ train.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 30ae55b8673637cfb334ffc189b90654baf18deb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:15:57 2026 +0000
+
+    Average schedule and latent-geography classifiers
+
+ train.py | 45 ++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 42 insertions(+), 3 deletions(-)
+
+commit 35fa9765b78767a249b7212252e5cd76c170cec5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:07:11 2026 +0000
+
+    Balance training labels within months to reduce seasonal confounding
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 0327a73d841049d7a9bc69fe7a7c50751b2aea58
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:00:11 2026 +0000
+
+    Add train-fitted schedule-relative departure features
+
+ train.py | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 4399805bbc3048e894f8c8e7c6cf3ed0dd1075fc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:56:34 2026 +0000
+
+    Test earlier stopping through a 200-round model
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7f1baf3724d9b1529907005a6e26f2d2ad4bc1dd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:55:01 2026 +0000
+
+    Use fixed category codes with explicit categorical feature types
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit d3d94122043fc776eda56dc9b08a481cd5972f02
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:53:59 2026 +0000
+
+    Test removing month to isolate repeatable weekly and schedule effects
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d85b27218303f196507b2e6f011ae945c6f92a50
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:52:15 2026 +0000
+
+    Remove exact day-of-month to test cross-year calendar stability
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac0b398cca559eec83155e387b530e0cffa021b6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:51:34 2026 +0000
+
+    Test shallower regularized boosting for cross-year generalization
+
+ train.py | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit 73d66595e1498e6f9d0a965ccb87bd7782ab20b1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:50:31 2026 +0000
+
+    Simplify categorical preparation to reduce per-row overhead
+
+ train.py | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

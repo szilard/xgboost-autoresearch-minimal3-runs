@@ -1,0 +1,96 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 73d6659 | keep | simplify prepare; same features and faster evaluation ===
+  holdout=0.6725
+=== [4] ac0b398 | keep | depth 4; 400 trees; stronger leaf and L2 regularization ===
+  holdout=0.6784
+=== [5] d85b272 | keep | remove day-of-month calendar feature ===
+  holdout=0.6797
+=== [6] 736e573 | discard | one-hot categorical splits at all cardinalities ===
+  SKIP: status discard
+=== [7] d3d9412 | keep | remove month; retain weekday and schedule inputs ===
+  holdout=0.6810
+=== [8] 7f1baf3 | keep | fixed category codes; identical AUC and faster evaluation ===
+  holdout=0.6810
+=== [9] 224fc17 | discard | 1000 boosting rounds without month or day-of-month ===
+  SKIP: status discard
+=== [10] 4399805 | keep | 200 rounds; equal AUC with a smaller faster model ===
+  holdout=0.6814
+=== [11] bdc8047 | discard | route and carrier-airport categorical interactions ===
+  SKIP: status discard
+=== [12] ce97526 | discard | four broad seasonal categories ===
+  SKIP: status discard
+=== [13] 3a69f13 | discard | additive time-by-factor interaction constraints ===
+  SKIP: status discard
+=== [14] 0327a73 | keep | departure offsets from train-fitted origin/route/carrier-origin medians ===
+  holdout=0.6824
+=== [15] 9091038 | discard | departure minute and cyclic time; equal AUC but more complexity ===
+  SKIP: status discard
+=== [16] 4d9d5d9 | discard | origin-only schedule offset; remove finer offsets ===
+  SKIP: status discard
+=== [17] 3cb6daa | discard | minimum child weight 200 ===
+  SKIP: status discard
+=== [18] 765ea8a | discard | four randomized trees per boosting step; equal AUC slower ===
+  SKIP: status discard
+=== [19] 8a9fbff | discard | independent-half smoothed delay-rate ensemble ===
+  SKIP: status discard
+=== [20] 35fa976 | keep | balance class weights within each training month ===
+  holdout=0.6822
+=== [21] 1f7cae3 | discard | max_cat_threshold 8 ===
+  SKIP: status discard
+=== [22] 221ff7e | discard | train-distance airport geometry; equal AUC more complexity ===
+  SKIP: status discard
+=== [23] 13f1665 | discard | 64 histogram bins ===
+  SKIP: status discard
+=== [24] 9d4578b | discard | depth 6 with stable features and monthly weights ===
+  SKIP: status discard
+=== [25] 5260816 | discard | day-balanced weights preserving weekday label rates ===
+  SKIP: status discard
+=== [26] 9a5f307 | discard | pairwise RankNet objective with global query ===
+  SKIP: status discard
+=== [27] 30ae55b | keep | equal blend of schedule and geography classifiers ===
+  holdout=0.6823
+=== [28] df3244f | keep | three fixed seeds for each schedule/geography representation ===
+  holdout=0.6823
+=== [29] 092ca0c | keep | remove geography; equal AUC with half the ensemble ===
+  holdout=0.6823
+=== [30] 99778d7 | discard | remove weekday from the seed ensemble ===
+  SKIP: status discard
+=== [31] 88ff34c | discard | monotone direct scheduled-departure effect ===
+  SKIP: status discard
+=== [32] 4f5bbe9 | discard | deterministic excluded-partition delay-rate features ===
+  SKIP: status discard
+=== [33] fa9afe7 | discard | gradient-based sampling at 0.35 ===
+  SKIP: status discard
+=== [34] 974dee2 | keep | 400 rounds at learning rate 0.025 ===
+  holdout=0.6825
+=== [35] 480e1fe | discard | single full-row deterministic classifier ===
+  SKIP: status discard
+=== [36] 60b4dc6 | discard | excluded-partition rates conditioned on departure blocks ===
+  SKIP: status discard
+=== [37] 8acfb0c | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [38] f5b6a9e | keep | lossguide growth with 16 leaves ===
+  holdout=0.6828
+=== [39] 8a359df | discard | approx tree method with lossguide ===
+  SKIP: status discard
+=== [40] 026b1dd | discard | gamma 5; all trees identical to best model ===
+  SKIP: status discard
+=== [41] 809b2c7 | discard | active gamma 20 split pruning ===
+  SKIP: status discard
+=== [42] aa2150c | keep | narrow Thanksgiving/winter/July-4 relative-date features ===
+  holdout=0.6855
+=== [43] d990aac | keep | add Memorial Day and Labor Day offsets ===
+  holdout=0.6857
+=== [44] b0e924c | keep | shared MLK/Presidents Day relative-date feature ===
+  holdout=0.6857
+=== [45] 828bde1 | keep | remove route-time offset from holiday ensemble ===
+  holdout=0.6857
+=== [46] 50e74b8 | keep | remove monthly weighting after adding holiday features ===
+  holdout=0.6880
+=== [47] c93136d | discard | complete Memorial/Labor windows across month boundaries ===
+  SKIP: status discard
+=== [48] e4832c1 | discard | eight-leaf holiday ensemble ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

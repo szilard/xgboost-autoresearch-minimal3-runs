@@ -1,0 +1,48 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+73d6659	0.6743	keep	simplify prepare; same features and faster evaluation
+ac0b398	0.6800	keep	depth 4; 400 trees; stronger leaf and L2 regularization
+d85b272	0.6812	keep	remove day-of-month calendar feature
+736e573	0.6771	discard	one-hot categorical splits at all cardinalities
+d3d9412	0.6837	keep	remove month; retain weekday and schedule inputs
+7f1baf3	0.6837	keep	fixed category codes; identical AUC and faster evaluation
+224fc17	0.6817	discard	1000 boosting rounds without month or day-of-month
+4399805	0.6837	keep	200 rounds; equal AUC with a smaller faster model
+bdc8047	0.6789	discard	route and carrier-airport categorical interactions
+ce97526	0.6820	discard	four broad seasonal categories
+3a69f13	0.6796	discard	additive time-by-factor interaction constraints
+0327a73	0.6841	keep	departure offsets from train-fitted origin/route/carrier-origin medians
+9091038	0.6841	discard	departure minute and cyclic time; equal AUC but more complexity
+4d9d5d9	0.6837	discard	origin-only schedule offset; remove finer offsets
+3cb6daa	0.6840	discard	minimum child weight 200
+765ea8a	0.6841	discard	four randomized trees per boosting step; equal AUC slower
+8a9fbff	0.6836	discard	independent-half smoothed delay-rate ensemble
+35fa976	0.6842	keep	balance class weights within each training month
+1f7cae3	0.6804	discard	max_cat_threshold 8
+221ff7e	0.6842	discard	train-distance airport geometry; equal AUC more complexity
+13f1665	0.6841	discard	64 histogram bins
+9d4578b	0.6828	discard	depth 6 with stable features and monthly weights
+5260816	0.6837	discard	day-balanced weights preserving weekday label rates
+9a5f307	0.6810	discard	pairwise RankNet objective with global query
+30ae55b	0.6843	keep	equal blend of schedule and geography classifiers
+df3244f	0.6845	keep	three fixed seeds for each schedule/geography representation
+092ca0c	0.6845	keep	remove geography; equal AUC with half the ensemble
+99778d7	0.6791	discard	remove weekday from the seed ensemble
+88ff34c	0.6841	discard	monotone direct scheduled-departure effect
+4f5bbe9	0.6840	discard	deterministic excluded-partition delay-rate features
+fa9afe7	0.6814	discard	gradient-based sampling at 0.35
+974dee2	0.6846	keep	400 rounds at learning rate 0.025
+480e1fe	0.6842	discard	single full-row deterministic classifier
+60b4dc6	0.6831	discard	excluded-partition rates conditioned on departure blocks
+8acfb0c	0.6837	discard	max_cat_threshold 128
+f5b6a9e	0.6848	keep	lossguide growth with 16 leaves
+8a359df	0.6846	discard	approx tree method with lossguide
+026b1dd	0.6848	discard	gamma 5; all trees identical to best model
+809b2c7	0.6842	discard	active gamma 20 split pruning
+aa2150c	0.6871	keep	narrow Thanksgiving/winter/July-4 relative-date features
+d990aac	0.6876	keep	add Memorial Day and Labor Day offsets
+b0e924c	0.6880	keep	shared MLK/Presidents Day relative-date feature
+828bde1	0.6881	keep	remove route-time offset from holiday ensemble
+50e74b8	0.6900	keep	remove monthly weighting after adding holiday features
+c93136d	0.6898	discard	complete Memorial/Labor windows across month boundaries
+e4832c1	0.6890	discard	eight-leaf holiday ensemble

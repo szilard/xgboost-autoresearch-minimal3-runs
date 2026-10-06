@@ -1,0 +1,7 @@
+Setup is complete on branch `oct6`, created from `b15ec66`.
+
+- Data and installed dependencies verified.
+- Results header and research log initialized in `output/`.
+- Baseline code unchanged; no experiments run.
+
+The one-hour clock hasn’t started. Say **go** to begin; [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md:20) requires confirmation before starting it.

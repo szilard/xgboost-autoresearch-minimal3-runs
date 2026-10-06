@@ -1,0 +1,7 @@
+Completed **46 experiments plus baseline** in **59m34s**. Clock stopped.
+
+Best Eval AUC: **0.6900**, up from **0.6743** (**+0.0157**). Holiday features and a three-seed XGBoost ensemble drove the final gains.
+
+Best commit: `50e74b8` on `oct6`. All runs succeeded; saved-model checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
