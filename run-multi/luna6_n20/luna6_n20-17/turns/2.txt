@@ -1,0 +1,5 @@
+The experiment clock stopped at **58m49s**, following the program’s two-minute wrap-up rule.
+
+Best checkpoint: **`075d2ee`**, with Eval AUC **0.6841**, up from the **0.6743** baseline. It uses 100 trees at depth 3, with departure-hour and annual-cycle features. The `oct6` branch is clean and returned to that checkpoint.
+
+The run ledger and research notes are in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

@@ -1,0 +1,33 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline (starter configuration)	0.6743	0.6725
+fdafcab	keep	add train-fitted categorical scheduled departure hour	0.6747	0.6735
+2f16df6	discard	replace HHMM with minutes since midnight	0.6747	N/A
+08ac293	discard	add train-fitted directed route category	0.6660	N/A
+63a982b	keep	reduce max_depth from 6 to 4	0.6789	0.6773
+49874fc	discard	set subsample to 0.8	0.6781	N/A
+1ab8d45	discard	set min_child_weight to 5	0.6789	N/A
+17c0c0c	discard	set max_cat_threshold to 32	0.6784	N/A
+04aa02a	discard	replace HHMM with cyclic sine and cosine	0.6789	N/A
+044bc6e	crash	annual-cycle feature assumed numeric month labels	0.0000	N/A
+f8a5db9	keep	add annual day-of-year sine and cosine	0.6820	0.6805
+b24a4ef	discard	use one-hot splits for categories below 32 levels	0.6809	N/A
+cc18d90	discard	add train-fitted carrier by departure-hour category	0.6787	N/A
+75b1438	keep	drop Month and DayofMonth model inputs	0.6832	0.6808
+df4ab78	discard	remove categorical scheduled departure hour	0.6828	N/A
+6d078d9	discard	add second annual Fourier harmonic	0.6825	N/A
+f11dbf2	discard	double trees and halve learning rate	0.6829	N/A
+d5cd65a	discard	add meteorological season category	0.6825	N/A
+3e408ff	discard	origin-relative scheduled departure minutes	0.6827	N/A
+e452737	discard	origin-weekday-relative scheduled departure minutes	0.6824	N/A
+26166c6	discard	origin-month-relative scheduled departure minutes	0.6823	N/A
+9bf3bf3	discard	add three-hour scheduled departure category	0.6832	N/A
+075d2ee	keep	reduce max_depth from four to three	0.6841	0.6817
+4fcbf62	discard	set colsample_bytree to 0.8	0.6832	N/A
+97fe5b9	discard	set min_child_weight to 2	0.6841	N/A
+ec69646	discard	reduce estimator count to 80	0.6838	N/A
+c6c871a	discard	reduce max_depth to two	0.6800	N/A
+0ff5ff4	discard	add Saturday-Sunday indicator	0.6841	N/A
+c657316	discard	add numeric day-of-year feature	0.6837	N/A
+aa7fdd2	discard	set reg_lambda to 2	0.6835	N/A
+2edce46	discard	add cyclic weekday sine and cosine	0.6841	N/A
+5c7c7bd	discard	set gamma to 0.1	0.6841	N/A

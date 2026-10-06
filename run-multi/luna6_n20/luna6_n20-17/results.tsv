@@ -1,0 +1,33 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline (starter configuration)
+fdafcab	0.6747	keep	add train-fitted categorical scheduled departure hour
+2f16df6	0.6747	discard	replace HHMM with minutes since midnight
+08ac293	0.6660	discard	add train-fitted directed route category
+63a982b	0.6789	keep	reduce max_depth from 6 to 4
+49874fc	0.6781	discard	set subsample to 0.8
+1ab8d45	0.6789	discard	set min_child_weight to 5
+17c0c0c	0.6784	discard	set max_cat_threshold to 32
+04aa02a	0.6789	discard	replace HHMM with cyclic sine and cosine
+044bc6e	0.0000	crash	annual-cycle feature assumed numeric month labels
+f8a5db9	0.6820	keep	add annual day-of-year sine and cosine
+b24a4ef	0.6809	discard	use one-hot splits for categories below 32 levels
+cc18d90	0.6787	discard	add train-fitted carrier by departure-hour category
+75b1438	0.6832	keep	drop Month and DayofMonth model inputs
+df4ab78	0.6828	discard	remove categorical scheduled departure hour
+6d078d9	0.6825	discard	add second annual Fourier harmonic
+f11dbf2	0.6829	discard	double trees and halve learning rate
+d5cd65a	0.6825	discard	add meteorological season category
+3e408ff	0.6827	discard	origin-relative scheduled departure minutes
+e452737	0.6824	discard	origin-weekday-relative scheduled departure minutes
+26166c6	0.6823	discard	origin-month-relative scheduled departure minutes
+9bf3bf3	0.6832	discard	add three-hour scheduled departure category
+075d2ee	0.6841	keep	reduce max_depth from four to three
+4fcbf62	0.6832	discard	set colsample_bytree to 0.8
+97fe5b9	0.6841	discard	set min_child_weight to 2
+ec69646	0.6838	discard	reduce estimator count to 80
+c6c871a	0.6800	discard	reduce max_depth to two
+0ff5ff4	0.6841	discard	add Saturday-Sunday indicator
+c657316	0.6837	discard	add numeric day-of-year feature
+aa7fdd2	0.6835	discard	set reg_lambda to 2
+2edce46	0.6841	discard	add cyclic weekday sine and cosine
+5c7c7bd	0.6841	discard	set gamma to 0.1

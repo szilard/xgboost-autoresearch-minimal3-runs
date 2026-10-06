@@ -1,0 +1,3 @@
+Setup is ready on branch `oct6`. The working tree was clean, both data files are present, and `output/results.tsv` has the required header.
+
+Reply **go** and I’ll start the experiment clock and run the baseline.
