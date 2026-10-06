@@ -23,8 +23,9 @@ median ends at the median of the runs' last kept models. Models with fewer than
 MIN_N_PATH runs get no median.
 
 run-multi/SUMMARY/holdout_auc_path_panels.png - small multiples, one panel per
-  model on shared axes: its runs as thin lines, their median path in bold, the
-  other models' runs faint grey behind.
+  model on shared axes: its runs as thin lines, their median path in bold
+  (outlined, to stand clear of the runs it crosses), the other models' runs
+  faint grey behind.
 
 run-multi/SUMMARY/holdout_auc_path_median.png - one panel: all runs as thin
   faded lines, the median path per model in bold.
@@ -41,6 +42,7 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
+import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
@@ -258,11 +260,13 @@ def draw_runs(ax, runs, colour_of, lw, alpha):
                 lw=lw, alpha=alpha, ls=(0, (4, 2)) if r["marked"] else "-", zorder=2)
 
 
-def draw_median(ax, runs, m, colour, lw=2.4):
+def draw_median(ax, runs, m, colour, lw=2.4, outline=False):
     if sum(r["model"] == m for r in runs) < MIN_N_PATH:
         return
     t, median = median_path(runs, m)
-    ax.step(t, median, where="post", color=colour, lw=lw, zorder=4, solid_capstyle="round")
+    # outline: an edge in the surface colour, so the median stands clear of the runs it crosses
+    effects = [pe.Stroke(linewidth=lw + 2.2, foreground=SURFACE), pe.Normal()] if outline else None
+    ax.step(t, median, where="post", color=colour, lw=lw, zorder=4, solid_capstyle="round", path_effects=effects)
 
 
 def path_panels(runs, colour):
@@ -272,9 +276,9 @@ def path_panels(runs, colour):
     axes = np.atleast_1d(axes)
     fig.subplots_adjust(bottom=0.24, top=0.82, left=0.07, right=0.98, wspace=0.08)
     for ax, m in zip(axes, models):
-        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: OTHER_RUNS, lw=0.6, alpha=0.8)
-        draw_runs(ax, [r for r in runs if r["model"] == m], lambda r: colour[m], lw=0.9, alpha=0.8)
-        draw_median(ax, runs, m, colour[m])
+        draw_runs(ax, [r for r in runs if r["model"] != m], lambda r: OTHER_RUNS, lw=0.45, alpha=0.8)
+        draw_runs(ax, [r for r in runs if r["model"] == m], lambda r: colour[m], lw=0.6, alpha=0.8)
+        draw_median(ax, runs, m, colour[m], outline=True)
         ax.grid(color=GRID, lw=0.8)
         ax.set_xlim(left=0)
         style(ax, "")
@@ -284,8 +288,8 @@ def path_panels(runs, colour):
     fig.suptitle("Holdout AUC path per run, one panel per model", x=0.07, ha="left", color=INK, fontsize=11)
     caveat = marked_label(runs)
     legend = [
-        Line2D([], [], color=INK2, lw=0.9, label="run"),
-        *([Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label=caveat)] if caveat else []),
+        Line2D([], [], color=INK2, lw=0.6, label="run"),
+        *([Line2D([], [], color=INK2, lw=0.6, ls=(0, (4, 2)), label=caveat)] if caveat else []),
         Line2D([], [], color=INK2, lw=2.4, label="median of the runs"),
         Line2D([], [], color=OTHER_RUNS, alpha=0.8, lw=1.2, label="other models' runs"),
     ]
