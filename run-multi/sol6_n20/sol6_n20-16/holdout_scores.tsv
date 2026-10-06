@@ -1,0 +1,32 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline starter model	0.6743	0.6725
+6adffa4	keep	400 depth-4 trees at learning rate 0.05	0.6789	0.6775
+2a1c0b0	discard	add categorical origin-destination route	0.6680	N/A
+4a164fb	discard	add scheduled departure hour category	0.6786	N/A
+1ca8048	keep	sampling at 0.8 and min child weight 10	0.6805	0.6782
+215cf01	discard	600 depth-3 trees with same regularization	0.6803	N/A
+89451e6	discard	add numeric month and day of month	0.6802	N/A
+d158b12	keep	one-category splits for small categorical fields	0.6807	0.6795
+7f85091	discard	cap airport categorical partitions at 16	0.6775	N/A
+d472ddc	discard	allow 128 airport partition candidates	0.6804	N/A
+519d0ef	keep	increase L2 leaf regularization to 10	0.6817	0.6804
+7ca38f8	discard	boost forests of three trees per round	0.6816	N/A
+8ba276d	discard	departure minute relative to origin median	0.6806	N/A
+667c7ec	discard	increase minimum child weight to 30	0.6816	N/A
+013c760	discard	average three independently seeded boosted models	0.6817	N/A
+aebae40	discard	increase L2 regularization from 10 to 30	0.6815	N/A
+78458b6	discard	remove column sampling	0.6801	N/A
+b6b60be	discard	reduce row subsample to 0.6	0.6806	N/A
+07a9743	discard	loss-guided tree growth with 16 leaves	0.6814	N/A
+715893c	crash	DART dropout exceeded 60-second training limit	0.0000	N/A
+c733449	discard	add origin-carrier interaction category	0.6782	N/A
+ffb5347	discard	increase histogram max_bin to 512	0.6814	N/A
+40f38d8	discard	decrease histogram max_bin to 128	0.6810	N/A
+397a148	discard	require minimum split gain gamma 1	0.6815	N/A
+24119de	discard	add L1 leaf regularization of 1	0.6815	N/A
+9e88338	discard	700 trees at learning rate 0.03	0.6810	N/A
+c8d133a	discard	300 depth-5 trees at learning rate 0.05	0.6815	N/A
+65ac930	discard	one-category splits for month and weekday only	0.6816	N/A
+a8130de	discard	one-category carrier splits with grouped day of month	0.6796	N/A
+80ff81f	discard	300 depth-4 trees at learning rate 0.05	0.6814	N/A
+b3dbe20	discard	500 depth-4 trees at learning rate 0.05	0.6813	N/A

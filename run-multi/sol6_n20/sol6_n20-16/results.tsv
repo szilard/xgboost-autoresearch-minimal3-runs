@@ -1,0 +1,32 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline starter model
+6adffa4	0.6789	keep	400 depth-4 trees at learning rate 0.05
+2a1c0b0	0.6680	discard	add categorical origin-destination route
+4a164fb	0.6786	discard	add scheduled departure hour category
+1ca8048	0.6805	keep	sampling at 0.8 and min child weight 10
+215cf01	0.6803	discard	600 depth-3 trees with same regularization
+89451e6	0.6802	discard	add numeric month and day of month
+d158b12	0.6807	keep	one-category splits for small categorical fields
+7f85091	0.6775	discard	cap airport categorical partitions at 16
+d472ddc	0.6804	discard	allow 128 airport partition candidates
+519d0ef	0.6817	keep	increase L2 leaf regularization to 10
+7ca38f8	0.6816	discard	boost forests of three trees per round
+8ba276d	0.6806	discard	departure minute relative to origin median
+667c7ec	0.6816	discard	increase minimum child weight to 30
+013c760	0.6817	discard	average three independently seeded boosted models
+aebae40	0.6815	discard	increase L2 regularization from 10 to 30
+78458b6	0.6801	discard	remove column sampling
+b6b60be	0.6806	discard	reduce row subsample to 0.6
+07a9743	0.6814	discard	loss-guided tree growth with 16 leaves
+715893c	0.0000	crash	DART dropout exceeded 60-second training limit
+c733449	0.6782	discard	add origin-carrier interaction category
+ffb5347	0.6814	discard	increase histogram max_bin to 512
+40f38d8	0.6810	discard	decrease histogram max_bin to 128
+397a148	0.6815	discard	require minimum split gain gamma 1
+24119de	0.6815	discard	add L1 leaf regularization of 1
+9e88338	0.6810	discard	700 trees at learning rate 0.03
+c8d133a	0.6815	discard	300 depth-5 trees at learning rate 0.05
+65ac930	0.6816	discard	one-category splits for month and weekday only
+a8130de	0.6796	discard	one-category carrier splits with grouped day of month
+80ff81f	0.6814	discard	300 depth-4 trees at learning rate 0.05
+b3dbe20	0.6813	discard	500 depth-4 trees at learning rate 0.05

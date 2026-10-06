@@ -1,0 +1,3 @@
+The `oct6` experiment is complete. The clock stopped after **59m42s**.
+
+Best Eval AUC was **0.6817** at commit `519d0ef`, up from the **0.6743** baseline. The branch is at that best commit. All 30 candidates are recorded in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv), with findings and next ideas in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The holdout set was not accessed.

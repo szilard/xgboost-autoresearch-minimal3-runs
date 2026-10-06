@@ -1,0 +1,48 @@
+commit 519d0ef2969f4f6fe173c08a082b1b96682d1b9b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:33:40 2026 +0000
+
+    Strengthen L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d158b1266e1269d6918a23bdf20859880d245e98
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:28:18 2026 +0000
+
+    Use one-category splits for smaller categorical fields
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 1ca8048cd08b479ef2232c5a7f51be05cbad28d4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:23:08 2026 +0000
+
+    Regularize boosting with sampling and larger leaves
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 6adffa47fb15a8324e34b012d5e549f673455827
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 08:17:51 2026 +0000
+
+    Use shallower longer boosting
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

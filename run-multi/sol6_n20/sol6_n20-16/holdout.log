@@ -1,0 +1,64 @@
+=== [2] 8d9c760 | keep | baseline starter model ===
+  holdout=0.6725
+=== [3] 6adffa4 | keep | 400 depth-4 trees at learning rate 0.05 ===
+  holdout=0.6775
+=== [4] 2a1c0b0 | discard | add categorical origin-destination route ===
+  SKIP: status discard
+=== [5] 4a164fb | discard | add scheduled departure hour category ===
+  SKIP: status discard
+=== [6] 1ca8048 | keep | sampling at 0.8 and min child weight 10 ===
+  holdout=0.6782
+=== [7] 215cf01 | discard | 600 depth-3 trees with same regularization ===
+  SKIP: status discard
+=== [8] 89451e6 | discard | add numeric month and day of month ===
+  SKIP: status discard
+=== [9] d158b12 | keep | one-category splits for small categorical fields ===
+  holdout=0.6795
+=== [10] 7f85091 | discard | cap airport categorical partitions at 16 ===
+  SKIP: status discard
+=== [11] d472ddc | discard | allow 128 airport partition candidates ===
+  SKIP: status discard
+=== [12] 519d0ef | keep | increase L2 leaf regularization to 10 ===
+  holdout=0.6804
+=== [13] 7ca38f8 | discard | boost forests of three trees per round ===
+  SKIP: status discard
+=== [14] 8ba276d | discard | departure minute relative to origin median ===
+  SKIP: status discard
+=== [15] 667c7ec | discard | increase minimum child weight to 30 ===
+  SKIP: status discard
+=== [16] 013c760 | discard | average three independently seeded boosted models ===
+  SKIP: status discard
+=== [17] aebae40 | discard | increase L2 regularization from 10 to 30 ===
+  SKIP: status discard
+=== [18] 78458b6 | discard | remove column sampling ===
+  SKIP: status discard
+=== [19] b6b60be | discard | reduce row subsample to 0.6 ===
+  SKIP: status discard
+=== [20] 07a9743 | discard | loss-guided tree growth with 16 leaves ===
+  SKIP: status discard
+=== [21] 715893c | crash | DART dropout exceeded 60-second training limit ===
+  SKIP: status crash
+=== [22] c733449 | discard | add origin-carrier interaction category ===
+  SKIP: status discard
+=== [23] ffb5347 | discard | increase histogram max_bin to 512 ===
+  SKIP: status discard
+=== [24] 40f38d8 | discard | decrease histogram max_bin to 128 ===
+  SKIP: status discard
+=== [25] 397a148 | discard | require minimum split gain gamma 1 ===
+  SKIP: status discard
+=== [26] 24119de | discard | add L1 leaf regularization of 1 ===
+  SKIP: status discard
+=== [27] 9e88338 | discard | 700 trees at learning rate 0.03 ===
+  SKIP: status discard
+=== [28] c8d133a | discard | 300 depth-5 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [29] 65ac930 | discard | one-category splits for month and weekday only ===
+  SKIP: status discard
+=== [30] a8130de | discard | one-category carrier splits with grouped day of month ===
+  SKIP: status discard
+=== [31] 80ff81f | discard | 300 depth-4 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [32] b3dbe20 | discard | 500 depth-4 trees at learning rate 0.05 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
