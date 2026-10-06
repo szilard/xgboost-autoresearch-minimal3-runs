@@ -1,0 +1,147 @@
+commit 6826f09dcc6587cb522448ae153363ec9a46627e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:53:50 2026 +0000
+
+    Test weighted feature sampling for time and calendar effects
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit dad684083012985bdb482a0233fa545ef31a3940
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:52:14 2026 +0000
+
+    Test longer boosting under stronger L2 regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cabaa53b80cb2ea7649a5f826c232b65c4f94b30
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:50:53 2026 +0000
+
+    Test stronger L2 leaf shrinkage on the simpler feature set
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c4328a2c2231774f56903c7dfe9ac02919dc336b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:48:32 2026 +0000
+
+    Test keeping only origin geographic coordinates
+
+ train.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 8ac2c82e198b17df9bdc58eab9d6d1bb6e8874aa
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:47:19 2026 +0000
+
+    Test removing the weakest airport embedding component
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b816657b1a59d9d3a875e47122041d3abd99e640
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:46:02 2026 +0000
+
+    Test removing the carrier-destination crossed feature
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit dc9e866930ef3adef6cdf48cb4914c67767cd90e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:39:37 2026 +0000
+
+    Test removing late boosting rounds from the best forest
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 39f066bdae833d7cbbe911b577f808b3dbd511cf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:22:18 2026 +0000
+
+    Test finer histogram bins for times distances and coordinates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5c00033b99704c4925b523838d0dec89aabf53a2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:14:57 2026 +0000
+
+    Test three-tree boosted forests to reduce variance
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 00b3cfbb3ddba3f6667095d7dc1674f25bf81a6a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:07:51 2026 +0000
+
+    Test simplifying airport embeddings to endpoint coordinates
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 241a3f5dee32343875a2d43d83809c2f5af7ed76
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:05:55 2026 +0000
+
+    Test airport geometry learned from training route distances
+
+ train.py | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 8ce9e5459659980954f488c0fbcf90743313a495
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:03:44 2026 +0000
+
+    Test carrier-airport crosses with fixed category index lookups
+
+ train.py | 20 ++++++++++++++------
+ 1 file changed, 14 insertions(+), 6 deletions(-)
+
+commit ce92ffab67f4f1c1536735c175133f15a1758f28
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:02:12 2026 +0000
+
+    Test longer boosting for one-hot categorical splits
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8035ce43805d70d388befa7abed998032ae579db
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:00:14 2026 +0000
+
+    Test one-hot categorical splits for all base categories
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4a1bbc0993c884f625d64c53374c78996dc4c6c6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:57:36 2026 +0000
+
+    Test longer boosting with stronger regularization
+
+ train.py | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,86 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 4a1bbc0 | keep | 600 trees at 0.05 with stronger regularization and sampling ===
+  holdout=0.6724
+=== [4] 38707e6 | discard | Add departure-hour/minute and ordered calendar features ===
+  SKIP: status discard
+=== [5] 8035ce4 | keep | One-hot splits for all base categorical features ===
+  holdout=0.6812
+=== [6] 355209b | discard | Remove day-of-month category ===
+  SKIP: status discard
+=== [7] ce92ffa | keep | Increase one-hot boosting to 1200 rounds ===
+  holdout=0.6817
+=== [8] 8ce9e54 | keep | Add carrier-origin/destination categories and streamline prepare ===
+  holdout=0.6822
+=== [9] 2956780 | discard | Increase tree depth from six to eight ===
+  SKIP: status discard
+=== [10] 241a3f5 | keep | Add three-dimensional airport embeddings from training route distances ===
+  holdout=0.6829
+=== [11] 24cd958 | discard | Add departure minute within hour only ===
+  SKIP: status discard
+=== [12] 00b3cfb | keep | Remove route-direction differences from geographic features ===
+  holdout=0.6827
+=== [13] e6a8aab | discard | Add smoothed target risks with deterministic excluded-fold lookups ===
+  SKIP: status discard
+=== [14] 9b1703c | discard | Prevent month and day-of-month interaction paths ===
+  SKIP: status discard
+=== [15] 2b29867 | discard | Raise min_child_weight from 20 to 100 ===
+  SKIP: status discard
+=== [16] 539607a | discard | Add row-derived proximity to six major holidays ===
+  SKIP: status discard
+=== [17] 5c00033 | keep | Average three randomized trees per boosting round ===
+  holdout=0.6831
+=== [18] 0109617 | discard | Add explicit route category to boosted forest ===
+  SKIP: status discard
+=== [19] 5ec8ada | discard | Increase forest diversity with row and node sampling ===
+  SKIP: status discard
+=== [20] ff3efb2 | discard | Add departure offsets from route and carrier-airport schedule medians ===
+  SKIP: status discard
+=== [21] c5c9c9c | discard | Use loss-guided trees with 31 leaves and no depth cap ===
+  SKIP: status discard
+=== [22] 39f066b | keep | Increase numerical histogram resolution to 1024 bins ===
+  holdout=0.6833
+=== [23] 38d1c76 | discard | Depth-four forest with 2400 boosting rounds ===
+  SKIP: status discard
+=== [24] 5a7f06c | discard | Average depth-six forest and depth-four model probabilities ===
+  SKIP: status discard
+=== [25] 729aa5f | discard | Remove airport coordinates and embedding machinery ===
+  SKIP: status discard
+=== [26] 73926df | discard | Constrain daytime delay trend and model night departures separately ===
+  SKIP: status discard
+=== [27] adceff9 | discard | Add L1 penalty of ten to leaf weights ===
+  SKIP: status discard
+=== [28] b28222c | discard | Dropout boosting with 300 rounds and occasional tree removal ===
+  SKIP: status discard
+=== [29] d9de5f4 | discard | Replace month category with sine and cosine seasonal coordinates ===
+  SKIP: status discard
+=== [30] cf59fbc | discard | Replace MDS airport coordinates with four landmark-distance features per endpoint ===
+  SKIP: status discard
+=== [31] 2a0defc | discard | Limited categorical partitions for airports and carrier-airport pairs ===
+  SKIP: status discard
+=== [32] dc9e866 | keep | Reduce boosted forest from 1200 to 800 rounds ===
+  holdout=0.6832
+=== [33] 8772057 | discard | Make all features available in every tree ===
+  SKIP: status discard
+=== [34] 92a6bc4 | discard | Average three independently boosted models at the same total tree budget ===
+  SKIP: status discard
+=== [35] 88fb9c6 | discard | Cosine learning-rate decay from 0.08 to 0.02 over 800 rounds ===
+  SKIP: status discard
+=== [36] 0ad34f0 | discard | Halve constant learning rate and double rounds at matched boosting budget ===
+  SKIP: status discard
+=== [37] b816657 | keep | Remove carrier-destination cross while retaining carrier-origin ===
+  holdout=0.6829
+=== [38] 8ac2c82 | keep | Keep only the two largest airport embedding components ===
+  holdout=0.6831
+=== [39] c4328a2 | keep | Remove destination coordinates while retaining origin geography ===
+  holdout=0.6832
+=== [40] b7b05d3 | discard | Increase per-round forest size from three to seven trees ===
+  SKIP: status discard
+=== [41] cabaa53 | keep | Increase L2 leaf penalty from ten to one hundred ===
+  holdout=0.6835
+=== [42] dad6840 | keep | Double boosting rounds under the stronger L2 penalty ===
+  holdout=0.6837
+=== [43] 6826f09 | keep | Weight feature sampling toward departure time and away from fine calendar effects ===
+  holdout=0.6836
+
+=== DONE: results written to output/holdout_scores.tsv ===

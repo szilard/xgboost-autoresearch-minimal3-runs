@@ -1,0 +1,43 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+4a1bbc0	0.6762	keep	600 trees at 0.05 with stronger regularization and sampling
+38707e6	0.6755	discard	Add departure-hour/minute and ordered calendar features
+8035ce4	0.6834	keep	One-hot splits for all base categorical features
+355209b	0.6815	discard	Remove day-of-month category
+ce92ffa	0.6840	keep	Increase one-hot boosting to 1200 rounds
+8ce9e54	0.6844	keep	Add carrier-origin/destination categories and streamline prepare
+2956780	0.6838	discard	Increase tree depth from six to eight
+241a3f5	0.6845	keep	Add three-dimensional airport embeddings from training route distances
+24cd958	0.6841	discard	Add departure minute within hour only
+00b3cfb	0.6846	keep	Remove route-direction differences from geographic features
+e6a8aab	0.6827	discard	Add smoothed target risks with deterministic excluded-fold lookups
+9b1703c	0.6822	discard	Prevent month and day-of-month interaction paths
+2b29867	0.6846	discard	Raise min_child_weight from 20 to 100
+539607a	0.6832	discard	Add row-derived proximity to six major holidays
+5c00033	0.6851	keep	Average three randomized trees per boosting round
+0109617	0.6851	discard	Add explicit route category to boosted forest
+5ec8ada	0.6846	discard	Increase forest diversity with row and node sampling
+ff3efb2	0.6845	discard	Add departure offsets from route and carrier-airport schedule medians
+c5c9c9c	0.6843	discard	Use loss-guided trees with 31 leaves and no depth cap
+39f066b	0.6852	keep	Increase numerical histogram resolution to 1024 bins
+38d1c76	0.6848	discard	Depth-four forest with 2400 boosting rounds
+5a7f06c	0.6852	discard	Average depth-six forest and depth-four model probabilities
+729aa5f	0.6846	discard	Remove airport coordinates and embedding machinery
+73926df	0.6850	discard	Constrain daytime delay trend and model night departures separately
+adceff9	0.6850	discard	Add L1 penalty of ten to leaf weights
+b28222c	0.6838	discard	Dropout boosting with 300 rounds and occasional tree removal
+d9de5f4	0.6847	discard	Replace month category with sine and cosine seasonal coordinates
+cf59fbc	0.6850	discard	Replace MDS airport coordinates with four landmark-distance features per endpoint
+2a0defc	0.6818	discard	Limited categorical partitions for airports and carrier-airport pairs
+dc9e866	0.6852	keep	Reduce boosted forest from 1200 to 800 rounds
+8772057	0.6849	discard	Make all features available in every tree
+92a6bc4	0.6851	discard	Average three independently boosted models at the same total tree budget
+88fb9c6	0.6850	discard	Cosine learning-rate decay from 0.08 to 0.02 over 800 rounds
+0ad34f0	0.6852	discard	Halve constant learning rate and double rounds at matched boosting budget
+b816657	0.6854	keep	Remove carrier-destination cross while retaining carrier-origin
+8ac2c82	0.6856	keep	Keep only the two largest airport embedding components
+c4328a2	0.6856	keep	Remove destination coordinates while retaining origin geography
+b7b05d3	0.6856	discard	Increase per-round forest size from three to seven trees
+cabaa53	0.6859	keep	Increase L2 leaf penalty from ten to one hundred
+dad6840	0.6861	keep	Double boosting rounds under the stronger L2 penalty
+6826f09	0.6863	keep	Weight feature sampling toward departure time and away from fine calendar effects

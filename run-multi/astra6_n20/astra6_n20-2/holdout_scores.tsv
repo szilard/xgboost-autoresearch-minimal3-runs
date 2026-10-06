@@ -1,0 +1,43 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+4a1bbc0	keep	600 trees at 0.05 with stronger regularization and sampling	0.6762	0.6724
+38707e6	discard	Add departure-hour/minute and ordered calendar features	0.6755	N/A
+8035ce4	keep	One-hot splits for all base categorical features	0.6834	0.6812
+355209b	discard	Remove day-of-month category	0.6815	N/A
+ce92ffa	keep	Increase one-hot boosting to 1200 rounds	0.6840	0.6817
+8ce9e54	keep	Add carrier-origin/destination categories and streamline prepare	0.6844	0.6822
+2956780	discard	Increase tree depth from six to eight	0.6838	N/A
+241a3f5	keep	Add three-dimensional airport embeddings from training route distances	0.6845	0.6829
+24cd958	discard	Add departure minute within hour only	0.6841	N/A
+00b3cfb	keep	Remove route-direction differences from geographic features	0.6846	0.6827
+e6a8aab	discard	Add smoothed target risks with deterministic excluded-fold lookups	0.6827	N/A
+9b1703c	discard	Prevent month and day-of-month interaction paths	0.6822	N/A
+2b29867	discard	Raise min_child_weight from 20 to 100	0.6846	N/A
+539607a	discard	Add row-derived proximity to six major holidays	0.6832	N/A
+5c00033	keep	Average three randomized trees per boosting round	0.6851	0.6831
+0109617	discard	Add explicit route category to boosted forest	0.6851	N/A
+5ec8ada	discard	Increase forest diversity with row and node sampling	0.6846	N/A
+ff3efb2	discard	Add departure offsets from route and carrier-airport schedule medians	0.6845	N/A
+c5c9c9c	discard	Use loss-guided trees with 31 leaves and no depth cap	0.6843	N/A
+39f066b	keep	Increase numerical histogram resolution to 1024 bins	0.6852	0.6833
+38d1c76	discard	Depth-four forest with 2400 boosting rounds	0.6848	N/A
+5a7f06c	discard	Average depth-six forest and depth-four model probabilities	0.6852	N/A
+729aa5f	discard	Remove airport coordinates and embedding machinery	0.6846	N/A
+73926df	discard	Constrain daytime delay trend and model night departures separately	0.6850	N/A
+adceff9	discard	Add L1 penalty of ten to leaf weights	0.6850	N/A
+b28222c	discard	Dropout boosting with 300 rounds and occasional tree removal	0.6838	N/A
+d9de5f4	discard	Replace month category with sine and cosine seasonal coordinates	0.6847	N/A
+cf59fbc	discard	Replace MDS airport coordinates with four landmark-distance features per endpoint	0.6850	N/A
+2a0defc	discard	Limited categorical partitions for airports and carrier-airport pairs	0.6818	N/A
+dc9e866	keep	Reduce boosted forest from 1200 to 800 rounds	0.6852	0.6832
+8772057	discard	Make all features available in every tree	0.6849	N/A
+92a6bc4	discard	Average three independently boosted models at the same total tree budget	0.6851	N/A
+88fb9c6	discard	Cosine learning-rate decay from 0.08 to 0.02 over 800 rounds	0.6850	N/A
+0ad34f0	discard	Halve constant learning rate and double rounds at matched boosting budget	0.6852	N/A
+b816657	keep	Remove carrier-destination cross while retaining carrier-origin	0.6854	0.6829
+8ac2c82	keep	Keep only the two largest airport embedding components	0.6856	0.6831
+c4328a2	keep	Remove destination coordinates while retaining origin geography	0.6856	0.6832
+b7b05d3	discard	Increase per-round forest size from three to seven trees	0.6856	N/A
+cabaa53	keep	Increase L2 leaf penalty from ten to one hundred	0.6859	0.6835
+dad6840	keep	Double boosting rounds under the stronger L2 penalty	0.6861	0.6837
+6826f09	keep	Weight feature sampling toward departure time and away from fine calendar effects	0.6863	0.6836

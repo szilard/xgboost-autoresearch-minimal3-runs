@@ -1,0 +1,7 @@
+Completed **41 experiments plus baseline**, with no crashes or timeouts.
+
+Best Eval AUC: **0.6863**, up from **0.6743** (+0.0120). Retained commit `6826f09` on `oct6`; saved artifact verified.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
+
+Clock stopped at **1h00m34s**, including final verification and wrap-up.
