@@ -1,0 +1,92 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 48ac2f6 | discard | 400 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [4] e130f87 | keep | simpler categorical preparation; evaluation 31s to 10s ===
+  holdout=0.6725
+=== [5] a1068df | keep | remove day-of-month categories ===
+  holdout=0.6762
+=== [6] 1c1f67f | keep | one-category splits for all categorical predictors ===
+  holdout=0.6752
+=== [7] f6d76c6 | keep | 400 trees at 0.05 with one-category splits ===
+  holdout=0.6772
+=== [8] f6a1a79 | discard | depth 4 instead of 6 ===
+  SKIP: status discard
+=== [9] a5275d0 | keep | min_child_weight 30 ===
+  holdout=0.6776
+=== [10] cd56cb0 | discard | separate departure hour and minute ===
+  SKIP: status discard
+=== [11] 366d017 | keep | add one-category route identity ===
+  holdout=0.6778
+=== [12] e08ff31 | keep | add carrier-origin and carrier-destination identities ===
+  holdout=0.6783
+=== [13] 8642581 | keep | depth 8 with supported operational interactions ===
+  holdout=0.6782
+=== [14] 79421cd | discard | five partition-excluded smoothed categorical risk features ===
+  SKIP: status discard
+=== [15] c052fa8 | discard | smoothed risks with conservative depth-4 trees ===
+  SKIP: status discard
+=== [16] 27ee967 | keep | train-distance airport embedding and route direction ===
+  holdout=0.6799
+=== [17] e273acc | keep | L2 leaf regularization 20 ===
+  holdout=0.6802
+=== [18] 67e3f16 | discard | 800 trees with geographic features and L2 20 ===
+  SKIP: status discard
+=== [19] 198c8c7 | discard | ordinal and cyclic month features ===
+  SKIP: status discard
+=== [20] 0c09316 | keep | Thanksgiving Christmas New Year and July 4 offsets ===
+  holdout=0.6828
+=== [21] 940a0b7 | discard | add Memorial Day and Labor Day offsets; tied but more complex ===
+  SKIP: status discard
+=== [22] e076935 | keep | subsample 0.8 and colsample_bytree 0.85 ===
+  holdout=0.6835
+=== [23] b94dc2f | keep | three randomized trees per boosting round ===
+  holdout=0.6839
+=== [24] c1cda88 | discard | average three independently boosted models; tied AUC ===
+  SKIP: status discard
+=== [25] 29377e1 | discard | train-fitted route median departure and deviation; tied AUC ===
+  SKIP: status discard
+=== [26] ddb1b11 | discard | disjoint holiday and operational interaction groups ===
+  SKIP: status discard
+=== [27] 6f70aaf | discard | restricted categorical partitions with threshold 8 ===
+  SKIP: status discard
+=== [28] 7090fd7 | discard | remove route identity after geographic features ===
+  SKIP: status discard
+=== [29] 9c795e7 | discard | label-smoothed logistic loss; tied AUC with more code ===
+  SKIP: status discard
+=== [30] c175384 | discard | depth 6 forest after engineered features ===
+  SKIP: status discard
+=== [31] 8bb5af6 | discard | loss-guided growth with 64 leaves; tied and slower ===
+  SKIP: status discard
+=== [32] 8af0d94 | keep | direct fitted category codes; evaluation 15s to 9s ===
+  holdout=0.6839
+=== [33] 94196b7 | discard | 12-month half-life recency weights; tied AUC ===
+  SKIP: status discard
+=== [34] 039ad87 | keep | circular and 04:00-based departure clock features ===
+  holdout=0.6838
+=== [35] 681e7db | keep | training graph distances to five airport landmarks ===
+  holdout=0.6839
+=== [36] a808052 | discard | min_child_weight 100 with landmark geography ===
+  SKIP: status discard
+=== [37] 32a9642 | keep | L1 leaf-weight regularization 5 ===
+  holdout=0.6840
+=== [38] ca7cffd | keep | departure-distance arrival-clock proxy ===
+  holdout=0.6844
+=== [39] 583572a | discard | 3:1 blend of depth-8 and depth-6 forests; tied and slower ===
+  SKIP: status discard
+=== [40] 0d30a13 | keep | extend Christmas lead-up from 7 to 14 days ===
+  holdout=0.6845
+=== [41] 58c4452 | discard | remove three route-direction coordinates ===
+  SKIP: status discard
+=== [42] 6151ce6 | discard | 512 histogram bins ===
+  SKIP: status discard
+=== [43] b6e2c21 | discard | 128 histogram bins ===
+  SKIP: status discard
+=== [44] fcb456a | discard | gradient-based sampling with subsample 0.8 ===
+  SKIP: status discard
+=== [45] e41ac1e | discard | 600 rounds at learning rate 1/30; matched boosting exposure ===
+  SKIP: status discard
+=== [46] 292bb6a | discard | two trees per round instead of three ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

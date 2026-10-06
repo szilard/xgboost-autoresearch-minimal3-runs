@@ -1,0 +1,183 @@
+commit 0d30a13101ee0a8b501f94cb850da7b7119202fb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:50:38 2026 +0000
+
+    Test a longer pre-Christmas travel window
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit ca7cffd8f402f0ba0a16c37e3e2056e0cbec31b7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:47:46 2026 +0000
+
+    Expose a departure-time and distance clock interaction
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 32a964233c5c30d787bd9d79f609924e7f3823dc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:46:50 2026 +0000
+
+    Test sparse leaf-weight regularization with L1
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 681e7dbb4a9dd5cbbacc75368076279f979fab6e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:44:17 2026 +0000
+
+    Add training graph distances to fixed airport landmarks
+
+ train.py | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 039ad87fa170b5795b7de6dfa27fbc56ac38c72d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:42:59 2026 +0000
+
+    Add circular and operational departure time representations
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 8af0d948a388f11af920877c5491cdacd8ca325b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:40:40 2026 +0000
+
+    Use direct fitted category codes for faster preparation
+
+ train.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit b94dc2fcb5614aa417bd8e4b64b869311dbff9b1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:25:29 2026 +0000
+
+    Average randomized trees within each boosting round
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e0769355ab5ba5009d0b493a477c992f2ce86296
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:24:01 2026 +0000
+
+    Test stochastic row and feature regularization
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 0c0931609fd3d2b78c01306009dd77a9cac92e3e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:20:49 2026 +0000
+
+    Add year-relative travel holiday offsets
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit e273accb7ed3c59f3e068e39d9bad2306b4d7205
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:17:03 2026 +0000
+
+    Regularize geographic tree leaf weights with L2
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 27ee967399403971bc5477a4495a1ca67dfc2356
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:16:06 2026 +0000
+
+    Infer airport geography from training route distances
+
+ train.py | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+commit 864258198536adb07af405f3ef89918b6a2995f4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:11:33 2026 +0000
+
+    Test deeper supported operational interactions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e08ff310a3b1c22dff739e5dc477753932eb8e5a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:10:40 2026 +0000
+
+    Add carrier and airport categorical interactions
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 366d01758dfee545fb57756f6f27452cdec162f4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:09:50 2026 +0000
+
+    Add route categorical interaction with conservative splits
+
+ train.py | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit a5275d01b009a72be445198fa5d5ef0e21af892f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:07:50 2026 +0000
+
+    Require more support for leaf estimates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f6d76c6cc35f2aaf59cb94044450fa2432e447e9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:06:31 2026 +0000
+
+    Increase boosting budget with simpler categorical splits
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1c1f67fe311808c8e7774340de4bd8856721a0c6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:05:26 2026 +0000
+
+    Test one-category splits for categorical predictors
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a1068df261f824a2e11cbddc4c256be44124bbcb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:04:38 2026 +0000
+
+    Ablate day-of-month categories for temporal transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e130f877f6a5eb1428a98bc9b72d3f00d449f3f5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 19:03:52 2026 +0000
+
+    Simplify categorical preparation for row-wise evaluation
+
+ train.py | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

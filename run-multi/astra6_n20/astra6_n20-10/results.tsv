@@ -1,0 +1,46 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+48ac2f6	0.6724	discard	400 trees at learning rate 0.05
+e130f87	0.6743	keep	simpler categorical preparation; evaluation 31s to 10s
+a1068df	0.6759	keep	remove day-of-month categories
+1c1f67f	0.6771	keep	one-category splits for all categorical predictors
+f6d76c6	0.6796	keep	400 trees at 0.05 with one-category splits
+f6a1a79	0.6770	discard	depth 4 instead of 6
+a5275d0	0.6800	keep	min_child_weight 30
+cd56cb0	0.6797	discard	separate departure hour and minute
+366d017	0.6801	keep	add one-category route identity
+e08ff31	0.6810	keep	add carrier-origin and carrier-destination identities
+8642581	0.6815	keep	depth 8 with supported operational interactions
+79421cd	0.6798	discard	five partition-excluded smoothed categorical risk features
+c052fa8	0.6793	discard	smoothed risks with conservative depth-4 trees
+27ee967	0.6824	keep	train-distance airport embedding and route direction
+e273acc	0.6827	keep	L2 leaf regularization 20
+67e3f16	0.6826	discard	800 trees with geographic features and L2 20
+198c8c7	0.6823	discard	ordinal and cyclic month features
+0c09316	0.6858	keep	Thanksgiving Christmas New Year and July 4 offsets
+940a0b7	0.6858	discard	add Memorial Day and Labor Day offsets; tied but more complex
+e076935	0.6863	keep	subsample 0.8 and colsample_bytree 0.85
+b94dc2f	0.6866	keep	three randomized trees per boosting round
+c1cda88	0.6866	discard	average three independently boosted models; tied AUC
+29377e1	0.6866	discard	train-fitted route median departure and deviation; tied AUC
+ddb1b11	0.6854	discard	disjoint holiday and operational interaction groups
+6f70aaf	0.6836	discard	restricted categorical partitions with threshold 8
+7090fd7	0.6864	discard	remove route identity after geographic features
+9c795e7	0.6866	discard	label-smoothed logistic loss; tied AUC with more code
+c175384	0.6856	discard	depth 6 forest after engineered features
+8bb5af6	0.6866	discard	loss-guided growth with 64 leaves; tied and slower
+8af0d94	0.6866	keep	direct fitted category codes; evaluation 15s to 9s
+94196b7	0.6866	discard	12-month half-life recency weights; tied AUC
+039ad87	0.6868	keep	circular and 04:00-based departure clock features
+681e7db	0.6873	keep	training graph distances to five airport landmarks
+a808052	0.6871	discard	min_child_weight 100 with landmark geography
+32a9642	0.6874	keep	L1 leaf-weight regularization 5
+ca7cffd	0.6875	keep	departure-distance arrival-clock proxy
+583572a	0.6875	discard	3:1 blend of depth-8 and depth-6 forests; tied and slower
+0d30a13	0.6878	keep	extend Christmas lead-up from 7 to 14 days
+58c4452	0.6877	discard	remove three route-direction coordinates
+6151ce6	0.6876	discard	512 histogram bins
+b6e2c21	0.6872	discard	128 histogram bins
+fcb456a	0.6872	discard	gradient-based sampling with subsample 0.8
+e41ac1e	0.6875	discard	600 rounds at learning rate 1/30; matched boosting exposure
+292bb6a	0.6875	discard	two trees per round instead of three

@@ -1,0 +1,7 @@
+Finished in **59m41s**; clock stopped.
+
+- **Best Eval AUC: 0.6878**, versus baseline **0.6743** (+0.0135).
+- Completed **44 experiments** plus baseline, with no crashes.
+- Best commit: `0d30a13` on `oct6`. Saved-artifact checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) · [Best model](/home/ubuntu/xgboost-autoresearch-minimal3/artifacts/0d30a13101ee0a8b501f94cb850da7b7119202fb.pkl)
