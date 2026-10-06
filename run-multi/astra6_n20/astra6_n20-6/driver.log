@@ -1,0 +1,39 @@
+2026-10-06T14:27:58Z run astra6_n20-6: model=gpt-6-astra effort=max out=/home/ubuntu/xgb_ar3/xgboost-autoresearch-minimal3-runs/run-multi/astra6_n20/astra6_n20-6
+2026-10-06T14:27:58Z container started
+2026-10-06T14:27:58Z memory limit: 25769803776 bytes (24g requested, no swap)
+total 8
+drwxr-xr-x 2 ubuntu ubuntu 4096 Oct  4 19:29 .
+drwxr-x--- 1 ubuntu ubuntu 4096 Oct  4 21:03 ..
+lrwxrwxrwx 1 ubuntu ubuntu   34 Oct  4 19:29 auth.json -> /home/ubuntu/.codex-auth/auth.json
+## main
+b15ec66 xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+README.md
+data
+harness.py
+program.md
+train.py
+2026-10-06T14:27:58Z setup check: python3 train.py
+2026-10-06T14:28:30Z setup check: Eval AUC: 0.6743
+2026-10-06T14:28:31Z time budget: 3600 s; packages: cloudpickle==3.1.2 numpy==2.5.3 pandas==3.0.6 scikit-learn==1.9.1 xgboost==3.4.1 
+Logged in using ChatGPT
+2026-10-06T14:28:32Z reasoning levels for gpt-6-astra: low medium high xhigh max ultra
+2026-10-06T14:28:32Z turn 1 send: Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.
+2026-10-06T14:32:29Z session id: 01a1119d-bb88-7410-810b-d3c9c2c907ad
+2026-10-06T14:32:29Z turn 1 done (exit 0): Setup is complete on branch `oct6`, created from `b15ec66`.  - Reviewed `train.py` and `harness.py`. - Verified both datasets and installed dependencies. - Initialized [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with the required header.  The clock hasn’t started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md), say **go** to begin 
+2026-10-06T14:32:29Z turn_context: [('gpt-6-astra', 'max', 'never', 'danger-full-access')]
+2026-10-06T14:32:30Z clock: Clock not started 
+2026-10-06T14:32:30Z turn 2 send: go
+2026-10-06T15:32:45Z turn 2 done (exit 0): Completed **40 experiments plus the baseline** in **59m39s**.  Best eval AUC: **0.6881**, up from **0.6743** (**+0.0138**). Schedule-relative features and regularization helped most.  Branch `oct6` is restored to best commit `e8e4e36`. All runs succeeded; the clock is stopped. Holdout performance remains untested.  [Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Resear
+2026-10-06T15:32:46Z clock: Elapsed: 0h59m39s, remaining: 0h00m21s Clock stopped 
+2026-10-06T15:32:48Z final clock: Elapsed: 0h59m39s, remaining: 0h00m21s Clock stopped 
+2026-10-06T15:32:48Z memory: peak=3624685568 bytes, oom_kills=0
+2026-10-06T15:32:49Z report: Clock:        2026-10-06 14:32:40 -> 2026-10-06 15:32:19 Total:        0h59m39s XGBoost runs: 0h12m25s  20.8%   (41 runs: 41 ok, 0 crash, 0 training timeout, 0 eval timeout)   training:   0h06m36s  11.1%   (train.py up to evaluation: startup, data, features, fit)   evaluation: 0h05m48s   9.7%   (saving the artifact + row-by-row scoring of eval.csv) AI:           0h47m14s  79.2%   (everything else: token generation, tool calls, web research, API latency) 
+2026-10-06T15:32:49Z checks: integrity flags: none; protocol flags: none
+2026-10-06T15:32:49Z human/score_holdout_all.sh
+eval_auc: max=0.6881 at n=36
+holdout_auc: max=0.6848 at n=36
+2026-10-06T15:35:25Z branch=oct6 first=b15ec66f306812020bf48c0fc4fc83e50cb24ce1 best=e8e4e36 upstream: xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+2026-10-06T15:35:25Z .codex-session-raw.jsonl: 2.1 MB -> codex-session.jsonl.gz: 0.29 MB (842 lines, 2 account id(s) redacted)
+2026-10-06T15:35:25Z redacted 2 account id(s) in .codex-session-raw.jsonl
+2026-10-06T15:35:25Z summary: {  "container": "astra6_n20-6",  "status": "ok",  "reason": "",  "model": "gpt-6-astra",  "effort": "max",  "codex_version": "codex-cli 0.160.0",  "turn_context": "[('gpt-6-astra', 'max', 'never', 'danger-full-access')]",  "session_id": "01a1119d-bb88-7410-810b-d3c9c2c907ad",  "turns": [    "Hi have a look at program.md and let's kick off a new experiment! let's do the setup first.",    "go"  ],  "failed_turns": 0,  "retry_wait_s": 0,  "clock_stopped_by": "agent",  "time_budget_s": 3600,  "clock_elapsed_s": 3579,  "clock_remaining_s": 21,  "branch": "oct6",  "first_commit": "b15ec66f306812020bf48c0fc4fc83e50cb24ce1",  "upstream": "xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62",  "results_rows": 41,  "best_commit": "e8e4e36",  "best_eval_auc": "0.6881",  "best_holdout_auc": "0.6846",  "kept_without_holdout_auc": 0,  "integrity_flags": "none",  "protocol_flags": "none",  "memory_limit_bytes": "25769803776",  "memory_peak_bytes": "3624685568",  "oom_kills": "0"}
+2026-10-06T15:35:36Z container deleted

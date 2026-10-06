@@ -1,0 +1,84 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] f0a8403 | keep | depth4 500 rounds lr0.05 child20 lambda10 subsample0.9 category32 ===
+  holdout=0.6794
+=== [4] 56dd6de | keep | ordered numeric day of month instead of native categorical ===
+  holdout=0.6828
+=== [5] 453721c | discard | remove day of month ===
+  SKIP: status discard
+=== [6] a0e3c12 | keep | same features with faster row preparation ===
+  holdout=0.6828
+=== [7] 5509bdc | discard | native route carrier-origin carrier-destination interactions ===
+  SKIP: status discard
+=== [8] b4b6084 | discard | one-hot categorical splits with 500 shallow trees ===
+  SKIP: status discard
+=== [9] f395d82 | discard | one-hot categorical splits with 1500 shallow trees ===
+  SKIP: status discard
+=== [10] 5fce5ad | discard | 3D airport distance embedding and route displacement; tied AUC with extra complexity ===
+  SKIP: status discard
+=== [11] fccc8f2 | keep | explicit categorical code lookups; equivalent and faster ===
+  holdout=0.6828
+=== [12] 704efa1 | discard | relative dates for six holidays ===
+  SKIP: status discard
+=== [13] de7dfd5 | discard | limit day-of-month feature interactions ===
+  SKIP: status discard
+=== [14] 5ec6ed4 | discard | 250 boosting rounds instead of 500 ===
+  SKIP: status discard
+=== [15] 9a5ed96 | discard | partition-excluded smoothed risk lookups for six category groups ===
+  SKIP: status discard
+=== [16] fe30e6c | discard | depth3 instead of depth4 at 500 rounds ===
+  SKIP: status discard
+=== [17] ce33a49 | discard | four sampled trees per boosting step with column sampling ===
+  SKIP: status discard
+=== [18] 3dda7b8 | discard | hour minute and sine cosine departure-time features ===
+  SKIP: status discard
+=== [19] d558752 | discard | minimum child weight 200 instead of 20 ===
+  SKIP: status discard
+=== [20] f747db0 | discard | square-root date-to-seasonal class reweighting ===
+  SKIP: status discard
+=== [21] 2c44c6d | discard | ordered numeric month instead of categorical month ===
+  SKIP: status discard
+=== [22] 3d84601 | keep | equal average of best booster and sampled boosted forest ===
+  holdout=0.6832
+=== [23] cc595a1 | discard | 64 numerical histogram bins in both ensemble members ===
+  SKIP: status discard
+=== [24] 4c702d7 | discard | 1250 rounds at lr0.02 in both members; tied and slower ===
+  SKIP: status discard
+=== [25] feb8760 | discard | replace airport categories with smoothed risk features in ensemble ===
+  SKIP: status discard
+=== [26] 3e8b018 | keep | L1 leaf penalty alpha10 in both ensemble members ===
+  holdout=0.6832
+=== [27] 63b2e27 | discard | stronger L1 penalty alpha50 in both ensemble members ===
+  SKIP: status discard
+=== [28] 108eed1 | discard | single alpha10 booster without the forest member ===
+  SKIP: status discard
+=== [29] 4dd5962 | keep | category split threshold128 with L1 alpha10 ===
+  holdout=0.6831
+=== [30] c752a6c | discard | depth5 with alpha10 and category threshold128 ===
+  SKIP: status discard
+=== [31] b8ad6e0 | discard | monotone daytime clock feature plus unrestricted overnight time ===
+  SKIP: status discard
+=== [32] 1c39700 | discard | sampled pairwise ranking; 300 rounds lr0.08 ===
+  SKIP: status discard
+=== [33] cba13f9 | keep | loss-guided trees capped at 16 leaves in both ensemble members ===
+  holdout=0.6837
+=== [34] c2b240a | discard | occasional tree dropout; 300 rounds lr0.1 ===
+  SKIP: status discard
+=== [35] 5568b0c | keep | departure offsets from origin route and carrier-origin medians ===
+  holdout=0.6843
+=== [36] 03b1ca8 | discard | retain only origin-relative departure and remove finer schedule offsets ===
+  SKIP: status discard
+=== [37] 2d267a3 | keep | gamma3 split-gain floor with schedule features ===
+  holdout=0.6848
+=== [38] e8e4e36 | keep | forest member alone; equal AUC with simpler and faster model ===
+  holdout=0.6846
+=== [39] cc4ba53 | discard | add origin offset normalized by training IQR; tied and more complex ===
+  SKIP: status discard
+=== [40] 65ad711 | discard | reduce L1 alpha10 to alpha5 with gamma3 ===
+  SKIP: status discard
+=== [41] fe648d5 | discard | two trees per boosting round instead of four ===
+  SKIP: status discard
+=== [42] 4c91b06 | discard | add destination-relative schedule median ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

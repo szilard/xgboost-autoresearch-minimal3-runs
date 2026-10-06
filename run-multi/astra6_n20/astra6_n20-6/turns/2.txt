@@ -1,0 +1,7 @@
+Completed **40 experiments plus the baseline** in **59m39s**.
+
+Best eval AUC: **0.6881**, up from **0.6743** (**+0.0138**). Schedule-relative features and regularization helped most.
+
+Branch `oct6` is restored to best commit `e8e4e36`. All runs succeeded; the clock is stopped. Holdout performance remains untested.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

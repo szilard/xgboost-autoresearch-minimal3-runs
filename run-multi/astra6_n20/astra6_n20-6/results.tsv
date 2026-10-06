@@ -1,0 +1,42 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+f0a8403	0.6813	keep	depth4 500 rounds lr0.05 child20 lambda10 subsample0.9 category32
+56dd6de	0.6855	keep	ordered numeric day of month instead of native categorical
+453721c	0.6809	discard	remove day of month
+a0e3c12	0.6855	keep	same features with faster row preparation
+5509bdc	0.6764	discard	native route carrier-origin carrier-destination interactions
+b4b6084	0.6813	discard	one-hot categorical splits with 500 shallow trees
+f395d82	0.6834	discard	one-hot categorical splits with 1500 shallow trees
+5fce5ad	0.6855	discard	3D airport distance embedding and route displacement; tied AUC with extra complexity
+fccc8f2	0.6855	keep	explicit categorical code lookups; equivalent and faster
+704efa1	0.6841	discard	relative dates for six holidays
+de7dfd5	0.6850	discard	limit day-of-month feature interactions
+5ec6ed4	0.6852	discard	250 boosting rounds instead of 500
+9a5ed96	0.6838	discard	partition-excluded smoothed risk lookups for six category groups
+fe30e6c	0.6848	discard	depth3 instead of depth4 at 500 rounds
+ce33a49	0.6853	discard	four sampled trees per boosting step with column sampling
+3dda7b8	0.6852	discard	hour minute and sine cosine departure-time features
+d558752	0.6852	discard	minimum child weight 200 instead of 20
+f747db0	0.6830	discard	square-root date-to-seasonal class reweighting
+2c44c6d	0.6852	discard	ordered numeric month instead of categorical month
+3d84601	0.6857	keep	equal average of best booster and sampled boosted forest
+cc595a1	0.6855	discard	64 numerical histogram bins in both ensemble members
+4c702d7	0.6857	discard	1250 rounds at lr0.02 in both members; tied and slower
+feb8760	0.6827	discard	replace airport categories with smoothed risk features in ensemble
+3e8b018	0.6870	keep	L1 leaf penalty alpha10 in both ensemble members
+63b2e27	0.6840	discard	stronger L1 penalty alpha50 in both ensemble members
+108eed1	0.6862	discard	single alpha10 booster without the forest member
+4dd5962	0.6871	keep	category split threshold128 with L1 alpha10
+c752a6c	0.6860	discard	depth5 with alpha10 and category threshold128
+b8ad6e0	0.6866	discard	monotone daytime clock feature plus unrestricted overnight time
+1c39700	0.6860	discard	sampled pairwise ranking; 300 rounds lr0.08
+cba13f9	0.6872	keep	loss-guided trees capped at 16 leaves in both ensemble members
+c2b240a	0.6867	discard	occasional tree dropout; 300 rounds lr0.1
+5568b0c	0.6879	keep	departure offsets from origin route and carrier-origin medians
+03b1ca8	0.6874	discard	retain only origin-relative departure and remove finer schedule offsets
+2d267a3	0.6881	keep	gamma3 split-gain floor with schedule features
+e8e4e36	0.6881	keep	forest member alone; equal AUC with simpler and faster model
+cc4ba53	0.6881	discard	add origin offset normalized by training IQR; tied and more complex
+65ad711	0.6872	discard	reduce L1 alpha10 to alpha5 with gamma3
+fe648d5	0.6880	discard	two trees per boosting round instead of four
+4c91b06	0.6879	discard	add destination-relative schedule median

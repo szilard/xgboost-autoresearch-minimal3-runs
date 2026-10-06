@@ -1,0 +1,7 @@
+Setup is complete on branch `oct6`, created from `b15ec66`.
+
+- Reviewed `train.py` and `harness.py`.
+- Verified both datasets and installed dependencies.
+- Initialized [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with the required header.
+
+The clock hasn’t started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md), say **go** to begin the one-hour experiment, starting with the unchanged baseline.
