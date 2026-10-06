@@ -1,0 +1,52 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+f906baa	discard	300 rounds at depth 6	0.6678	N/A
+647e659	keep	300 rounds at depth 3	0.6805	0.6783
+2c1e6b8	discard	500 rounds at depth 3	0.6804	N/A
+791f43e	discard	route categorical feature	0.6694	N/A
+63a3b3c	discard	departure minute within hour	0.6801	N/A
+6d346df	discard	depth 2 with 500 rounds	0.6776	N/A
+65c5c6e	discard	max_cat_threshold 16	0.6778	N/A
+518f710	discard	ablate day of month	0.6799	N/A
+c350f7e	discard	subsample 0.8	0.6793	N/A
+b769b26	keep	continuous day of year	0.6817	0.6805
+b45afba	keep	remove day category with day of year	0.6825	0.6809
+7d1cb76	keep	remove month category with day of year	0.6826	0.6815
+8ce980b	discard	ablate distance	0.6813	N/A
+9d783e9	keep	600 rounds learning rate 0.05	0.6834	0.6819
+2a94ea7	discard	1000 rounds learning rate 0.03	0.6829	N/A
+5bad961	discard	minimum child weight 10 equal AUC with extra complexity	0.6834	N/A
+f218a9a	discard	depth 4 on seasonal model	0.6790	N/A
+c80c546	discard	loss-guided eight-leaf trees	0.6827	N/A
+9cd3ea0	discard	one-hot splits for weekday and carrier	0.6817	N/A
+43e4787	discard	max_bin 64	0.6829	N/A
+6450a4b	discard	departure time relative to route median	0.6827	N/A
+b037f04	discard	departure time relative to origin median	0.6829	N/A
+1f0a6db	discard	depth 2 with 1000 rounds equal AUC but not simpler code or faster	0.6834	N/A
+18c9d50	keep	equal soft vote of depth 3 and depth 2	0.6843	0.6828
+c1f1c54	discard	soft vote weights depth3:depth2 = 2:1	0.6842	N/A
+118c441	discard	soft vote weights depth3:depth2 = 1:2	0.6842	N/A
+e172c26	discard	monotone increasing departure time	0.6828	N/A
+93d3f79	discard	categorical departure hour	0.6840	N/A
+45bddf3	discard	cyclic day-of-year sine and cosine	0.6819	N/A
+a9c2f88	discard	max_cat_threshold 128	0.6838	N/A
+9539abe	discard	reg_lambda 10	0.6842	N/A
+cc7a8cf	discard	reg_lambda 0	0.6842	N/A
+dc2d6f4	keep	gamma 5 on both blend components	0.6852	0.6838
+55e57a0	discard	gamma 10	0.6850	N/A
+5891582	discard	gamma 2	0.6845	N/A
+b9e711c	discard	800 and 1300 rounds with gamma 5 equal AUC but slower	0.6852	N/A
+91594fb	keep	400 and 700 pruned rounds equal AUC faster and smaller	0.6852	0.6838
+be41f0d	discard	300 and 500 pruned rounds	0.6851	N/A
+bc771d6	discard	depth 3 only with gamma 5	0.6846	N/A
+0487fde	discard	depth 2 only with gamma 5	0.6843	N/A
+a9c5589	keep	three-way blend with 20 percent depth 4	0.6855	0.6842
+12712ae	discard	equal weights tie with same code complexity	0.6855	N/A
+016b53e	keep	implicit equal three-way vote ties AUC with simpler code	0.6855	0.6842
+a2e8649	discard	depth 4 component 500 rounds equal AUC slower	0.6855	N/A
+77d7068	keep	depth 4 component 200 rounds	0.6857	0.6846
+da23300	keep	depth 4 component 100 rounds	0.6862	0.6850
+0b710ae	keep	depth 4 component 50 rounds	0.6867	0.6854
+419aca2	keep	depth 4 component 25 rounds	0.6869	0.6855
+733e48d	discard	depth 4 component 10 rounds	0.6865	N/A
+5ed0a2f	keep	depth 4 component 18 rounds ties AUC with smaller artifact	0.6869	0.6854

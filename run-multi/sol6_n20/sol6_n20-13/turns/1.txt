@@ -1,0 +1,3 @@
+Setup checks passed: the working tree is clean, `oct6` is available, and the required data files and dependencies are present. I’ve read `train.py` and `harness.py`. The experiment clock has not started.
+
+Please confirm `oct6` as the run tag, or give me another tag. I’ll then create the branch and initialize `output/results.tsv`.

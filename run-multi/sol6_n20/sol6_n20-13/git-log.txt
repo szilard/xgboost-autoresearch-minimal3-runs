@@ -1,0 +1,147 @@
+commit 5ed0a2fb7833ac00378cf32aece927520e6c16a2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:41:23 2026 +0000
+
+    Bracket short deeper vote component
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 419aca2f55fca77da770b797c39b3385ca69bfde
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:39:05 2026 +0000
+
+    Test earliest deeper interactions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0b710ae6b4b6866042e6d075fce866fc44cf17c3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:38:01 2026 +0000
+
+    Try very short deeper vote component
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da2330017e3821f04f9b6bf5f9a7072ac5542173
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:36:56 2026 +0000
+
+    Test brief deeper ensemble member
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 77d706816670fe8d88fe6ab9ea1fcc06d0815ed3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:35:50 2026 +0000
+
+    Shorten deeper ensemble member
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 016b53ecc71f20901f3cde6e52c7ce34af4bad05
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:33:37 2026 +0000
+
+    Use implicit equal ensemble weights
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit a9c5589cd74d247074af1d3f371f77e1b4259cf6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:31:09 2026 +0000
+
+    Add pruned depth-four vote component
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 91594fb854d9e66ba43fbb38e8f11f44a27f200c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:26:41 2026 +0000
+
+    Shorten pruned boosting ensembles
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit dc2d6f48503bd2d311823db873051949321596f2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:22:24 2026 +0000
+
+    Require stronger split gain
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 18c9d500af72f476c141329964ecf90accb1cd5b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:11:20 2026 +0000
+
+    Blend additive and interaction models
+
+ train.py | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 9d783e9f0a1843f8866251147bc52fc9681b543b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:00:17 2026 +0000
+
+    Use smaller boosting steps
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7d1cb7617213bf15bbc3c8923052f1d34a2ce774
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:57:58 2026 +0000
+
+    Ablate month with day-of-year
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b45afba677f67a337823511c2f798c8d1889186f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:57:05 2026 +0000
+
+    Ablate day category with day-of-year
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b769b2626749aacb3882cafdf22506a5bf5e7081
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:55:38 2026 +0000
+
+    Add continuous day-of-year feature
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 647e6594704a9f0486dfffb22c6ff96b01e56c56
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 04:46:17 2026 +0000
+
+    Try shallow 300-tree model
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,3 @@
+The `oct6` experiment is complete. Across 50 runs in **59m23s**, the best Eval AUC rose from **0.6743** to **0.6869**. The branch is at kept commit `5ed0a2f`, and the clock is stopped.
+
+The final [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py) uses day of year and a three-model XGBoost blend. The [results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) record every experiment. The holdout was not accessed.
