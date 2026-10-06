@@ -1,0 +1,40 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+9929f55	0.6808	keep	regularized 400-tree depth-4 boosting
+86b0c61	0.6731	discard	route category
+025174b	0.6833	keep	ordered day of year
+b116968	0.6841	keep	ablate day of month category
+b5ad9ca	0.6852	keep	ablate month category
+d6f5f95	0.6807	discard	carrier origin category
+db6ae25	0.6834	discard	800 boosting rounds
+01174c5	0.6854	keep	200 boosting rounds
+6adfac0	0.6849	discard	100 boosting rounds
+9278944	0.6846	discard	depth three trees
+1f4026b	0.6848	discard	max_cat_threshold 32
+14d8e9f	0.6857	keep	categorical departure hour
+c1f7ce2	0.6835	discard	cyclic annual sine cosine
+af8fedd	0.6852	discard	min_child_weight 20
+90d3a13	0.6855	discard	min_child_weight 1
+cf21516	0.6856	discard	departure versus origin median
+1cba2cc	0.6845	discard	all columns per tree
+1f4aaa2	0.6864	keep	colsample_bytree 0.6
+531f92d	0.6867	keep	colsample_bytree 0.4
+37db054	0.6772	discard	colsample_bytree 0.2
+0ee67de	0.6856	discard	subsample 0.6
+d7d0191	0.6865	discard	subsample 1.0
+8ee51bf	0.6839	discard	seasonal week category
+d4e2f30	0.6861	discard	Thanksgiving relative day
+22d2c6e	0.6840	discard	one hot small categories
+3207333	0.6866	discard	depth five trees
+e653274	0.6869	keep	lossguide 16 leaves
+1b68b8b	0.6860	discard	lossguide 8 leaves
+da79746	0.6856	discard	lossguide 32 leaves
+e0169f1	0.6868	discard	300 trees 0.03 learning rate
+837e399	0.6868	discard	gamma 5
+4a8f3a9	0.6874	keep	reg_lambda 10
+c7c19c0	0.6878	keep	reg_lambda 30
+7d02dfe	0.6865	discard	reg_lambda 100
+f822ba7	0.6872	discard	reg_lambda 50
+f25d6ee	0.6874	discard	reg_alpha 5
+ca09b30	0.6870	discard	colsample_bytree 0.5
+0d1de46	0.6868	discard	max_bin 512

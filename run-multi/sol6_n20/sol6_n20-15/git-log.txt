@@ -1,0 +1,111 @@
+commit c7c19c0eb8ce30f6da0ec99915057cd012e77671
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:55:48 2026 +0000
+
+    Test stronger L2 shrinkage
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4a8f3a96a70e93f8065975b67eac6eea7e2d7c03
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:54:27 2026 +0000
+
+    Strengthen leaf weight regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e653274a3c8a579f6a9d838844cc60afc106dbc2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:46:57 2026 +0000
+
+    Try loss guided sixteen leaf trees
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 531f92de32ca0b0ba455504ad84fa5c3aa08e6e4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:33:25 2026 +0000
+
+    Test stronger column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1f4aaa227affdd3abde44955eee751c10e010744
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:31:54 2026 +0000
+
+    Increase column sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 14d8e9f536aedc954e67c64542579babe0964ac7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:22:38 2026 +0000
+
+    Add categorical departure hour
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 01174c5fb66371848a711402cbd449b5551a4c89
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:16:43 2026 +0000
+
+    Test two hundred boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b5ad9cafad5e37f44fbbe577224270d55056b80d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:12:35 2026 +0000
+
+    Ablate month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b1169680ee20d17f2eedd3f89da9f4f66b3f0014
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:11:15 2026 +0000
+
+    Ablate day of month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 025174b4f33d9123295e1deea2252be720087f5d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:10:06 2026 +0000
+
+    Add ordered day of year feature
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 9929f55ab70aabccf36d9949538651fd26ba64a2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 07:06:49 2026 +0000
+
+    Try regularized slower boosting
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

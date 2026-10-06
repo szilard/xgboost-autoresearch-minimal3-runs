@@ -1,0 +1,3 @@
+I’ve read `program.md`, `train.py`, and `harness.py`. Both required data files are present, `oct6` is available, and there’s no existing experiment clock or results file.
+
+`program.md` requires us to agree on the run tag before I create the branch. **Can we use `oct6`?** I haven’t started the clock.

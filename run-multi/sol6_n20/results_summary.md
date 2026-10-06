@@ -18,7 +18,8 @@ Group `sol6_n20`: model `gpt-6-sol`, effort `max`, N_RUNS 20, codex-cli 0.160.0,
 | sol6_n20-12 | gpt-6-sol | max | 70 | 0.6870 (`43d5c46`) | 0.6846 | -0.0024 | 0h58m52s | 43.1% | yes | |
 | sol6_n20-13 | gpt-6-sol | max | 51 | 0.6869 (`5ed0a2f`) | 0.6854 | -0.0015 | 0h59m23s | 55.4% | yes | |
 | sol6_n20-14 | gpt-6-sol | max | 43 | 0.6858 (`b27ca12`) | 0.6846 | -0.0012 | 0h59m12s | 56.5% | yes | |
+| sol6_n20-15 | gpt-6-sol | max | 39 | 0.6878 (`c7c19c0`) | 0.6856 | -0.0022 | 0h59m39s | 64.0% | yes | |
 
-In progress: 14 of 20 runs done. The statistics follow once all runs are done.
+In progress: 15 of 20 runs done. The statistics follow once all runs are done.
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).

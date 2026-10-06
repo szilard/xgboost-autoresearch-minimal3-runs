@@ -1,0 +1,80 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 9929f55 | keep | regularized 400-tree depth-4 boosting ===
+  holdout=0.6787
+=== [4] 86b0c61 | discard | route category ===
+  SKIP: status discard
+=== [5] 025174b | keep | ordered day of year ===
+  holdout=0.6826
+=== [6] b116968 | keep | ablate day of month category ===
+  holdout=0.6830
+=== [7] b5ad9ca | keep | ablate month category ===
+  holdout=0.6842
+=== [8] d6f5f95 | discard | carrier origin category ===
+  SKIP: status discard
+=== [9] db6ae25 | discard | 800 boosting rounds ===
+  SKIP: status discard
+=== [10] 01174c5 | keep | 200 boosting rounds ===
+  holdout=0.6842
+=== [11] 6adfac0 | discard | 100 boosting rounds ===
+  SKIP: status discard
+=== [12] 9278944 | discard | depth three trees ===
+  SKIP: status discard
+=== [13] 1f4026b | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [14] 14d8e9f | keep | categorical departure hour ===
+  holdout=0.6847
+=== [15] c1f7ce2 | discard | cyclic annual sine cosine ===
+  SKIP: status discard
+=== [16] af8fedd | discard | min_child_weight 20 ===
+  SKIP: status discard
+=== [17] 90d3a13 | discard | min_child_weight 1 ===
+  SKIP: status discard
+=== [18] cf21516 | discard | departure versus origin median ===
+  SKIP: status discard
+=== [19] 1cba2cc | discard | all columns per tree ===
+  SKIP: status discard
+=== [20] 1f4aaa2 | keep | colsample_bytree 0.6 ===
+  holdout=0.6849
+=== [21] 531f92d | keep | colsample_bytree 0.4 ===
+  holdout=0.6854
+=== [22] 37db054 | discard | colsample_bytree 0.2 ===
+  SKIP: status discard
+=== [23] 0ee67de | discard | subsample 0.6 ===
+  SKIP: status discard
+=== [24] d7d0191 | discard | subsample 1.0 ===
+  SKIP: status discard
+=== [25] 8ee51bf | discard | seasonal week category ===
+  SKIP: status discard
+=== [26] d4e2f30 | discard | Thanksgiving relative day ===
+  SKIP: status discard
+=== [27] 22d2c6e | discard | one hot small categories ===
+  SKIP: status discard
+=== [28] 3207333 | discard | depth five trees ===
+  SKIP: status discard
+=== [29] e653274 | keep | lossguide 16 leaves ===
+  holdout=0.6852
+=== [30] 1b68b8b | discard | lossguide 8 leaves ===
+  SKIP: status discard
+=== [31] da79746 | discard | lossguide 32 leaves ===
+  SKIP: status discard
+=== [32] e0169f1 | discard | 300 trees 0.03 learning rate ===
+  SKIP: status discard
+=== [33] 837e399 | discard | gamma 5 ===
+  SKIP: status discard
+=== [34] 4a8f3a9 | keep | reg_lambda 10 ===
+  holdout=0.6852
+=== [35] c7c19c0 | keep | reg_lambda 30 ===
+  holdout=0.6856
+=== [36] 7d02dfe | discard | reg_lambda 100 ===
+  SKIP: status discard
+=== [37] f822ba7 | discard | reg_lambda 50 ===
+  SKIP: status discard
+=== [38] f25d6ee | discard | reg_alpha 5 ===
+  SKIP: status discard
+=== [39] ca09b30 | discard | colsample_bytree 0.5 ===
+  SKIP: status discard
+=== [40] 0d1de46 | discard | max_bin 512 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===
