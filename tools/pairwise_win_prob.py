@@ -5,7 +5,7 @@ For each pair of models A, B: draw one run of A and one run of B at random;
 P(A > B) is the share of all (run of A, run of B) pairs in which A's holdout AUC
 is higher, counting ties (equal at the 4 decimals stored) as half
 (the Mann-Whitney / "probability of superiority" estimate, AUC of A vs B).
-The table also gives P(A < B) and P(tie) separately. The 90% interval is a
+The table also gives P(A < B) and P(tie) separately. The 95% interval is a
 percentile bootstrap: the runs of each model are resampled with replacement
 (N_BOOT times, fixed seed) and P recomputed.
 
@@ -17,7 +17,7 @@ included unless --no-caveat is given.
 run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models, the
   better one by mean holdout AUC labelled on the right, the other on the left:
   a dot at P(the right-hand model wins), so it leans toward the usual winner,
-  its 90% bootstrap interval and a reference line at 0.5 (coin flip).
+  its 95% bootstrap interval and a reference line at 0.5 (coin flip).
   Not written with --no-caveat or with fewer than two models.
 
 Usage:
@@ -60,13 +60,13 @@ def win_matrix(a, b):
 
 
 def compare(a, b, rng):
-    """P(a > b), P(a < b), P(tie), and the 90% bootstrap interval of P(a > b) + P(tie) / 2."""
+    """P(a > b), P(a < b), P(tie), and the 95% bootstrap interval of P(a > b) + P(tie) / 2."""
     gt, eq = a[:, None] > b[None, :], a[:, None] == b[None, :]
     win = win_matrix(a, b)
     ia = rng.integers(0, len(a), (N_BOOT, len(a)))
     ib = rng.integers(0, len(b), (N_BOOT, len(b)))
     boot = win[ia[:, :, None], ib[:, None, :]].mean(axis=(1, 2))
-    lo, hi = np.percentile(boot, [5, 95])
+    lo, hi = np.percentile(boot, [2.5, 97.5])
     return gt.mean(), (~gt & ~eq).mean(), eq.mean(), lo, hi
 
 
@@ -114,7 +114,7 @@ def plot(rows, runs):
     style(ax, "Head to head: one run of each model")
     legend = [
         Line2D([], [], marker="o", ls="", color=INK, markersize=7, label="estimate (all pairs of runs)"),
-        Line2D([], [], color=RANGE, lw=6, label="90% bootstrap interval (runs resampled per model)"),
+        Line2D([], [], color=RANGE, lw=6, label="95% bootstrap interval (runs resampled per model)"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
                ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handlelength=2.4, handletextpad=0.8, columnspacing=2.0)
@@ -132,7 +132,7 @@ def main():
         print(f"  {m:14s} n={len(runs[m]):2d}  mean holdout AUC {runs[m].mean():.4f}")
     print()
     print(f"{'model 1':14s} {'model 2':14s} {'P(1 better)':>12s} {'P(2 better)':>12s} {'P(tie)':>8s}"
-          f" {'ties half':>10s} {'90% interval':>14s}")
+          f" {'ties half':>10s} {'95% interval':>14s}")
     rows = []
     # models are sorted by mean, so model 1 is always the better one on average
     for m1, m2 in itertools.combinations(models, 2):

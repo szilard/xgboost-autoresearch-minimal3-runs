@@ -10,7 +10,7 @@ left out; caveat runs are drawn hollow/dashed.
 run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
   (modelled on Fig. 1 of arXiv:2609.33812): a filled dot per valid run and a
   hollow dot per caveat run, a grey bar over the full range, the mean with its
-  90% confidence interval (t) and the 10th/90th percentiles (nearest run) when
+  95% confidence interval (t) and the 10th/90th percentiles (nearest run) when
   the row has >= 5 runs.
 
 Two views of the holdout AUC path of each run, i.e. the holdout AUC of the
@@ -178,7 +178,7 @@ def strip_plot(runs, colour):
                        facecolors=colour[m] if filled else SURFACE, edgecolors=colour[m])
         mean = x.mean()
         if n >= MIN_N_STATS:
-            half = stats.t.ppf(0.95, n - 1) * x.std(ddof=1) / np.sqrt(n)
+            half = stats.t.ppf(0.975, n - 1) * x.std(ddof=1) / np.sqrt(n)
             ax.errorbar(mean, y + 0.22, xerr=half, fmt="none", ecolor=INK, elinewidth=1.6, capsize=3, zorder=4)
             # "nearest": each percentile is an actual run (with n = 10, the 2nd and 9th)
             p10, p90 = np.percentile(x, [10, 90], method="nearest")
@@ -195,7 +195,7 @@ def strip_plot(runs, colour):
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
         Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
                label="run with caveat"),
-        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 90% CI of the mean (n >= {MIN_N_STATS})"),
+        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 95% CI of the mean (n >= {MIN_N_STATS})"),
         Line2D([], [], marker="|", ls="", color=INK2, markersize=9, markeredgewidth=1.6, label="10th and 90th percentile"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),

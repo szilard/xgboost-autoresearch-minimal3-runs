@@ -37,8 +37,8 @@ Four runs carry a caveat, all `keep_rule` (commits kept at an equal Eval AUC wit
 
 Plots over all groups go to `run-multi/SUMMARY/`:
 
-- `holdout_auc_beeswarm.png`: one dot per run (hollow: with caveat), the mean with its 90% confidence interval and the 10th/90th percentiles per model;
-- `holdout_auc_pairwise.png`: head to head - the probability that one run of a model beats one run of another, with a 90% bootstrap interval;
+- `holdout_auc_beeswarm.png`: one dot per run (hollow: with caveat), the mean with its 95% confidence interval and the 10th/90th percentiles per model;
+- `holdout_auc_pairwise.png`: head to head - the probability that one run of a model beats one run of another, with a 95% bootstrap interval;
 - `holdout_auc_path_panels.png`, `holdout_auc_path_median.png`: the holdout AUC of the kept model over the time of the run (minutes since its clock started) - per run in one panel per model, and all runs faded with the medians in bold.
 
 They are made by `tools/plot_holdout_auc.py` (beeswarm and paths) and `tools/pairwise_win_prob.py` (head to head; it also prints the table), which read every group's `holdout_auc.tsv` and pool groups of the same model. The project skill `/xgb-summary` runs them, checks the group files and the plots, and rewrites the table above (`tools/summary_table.py`).
