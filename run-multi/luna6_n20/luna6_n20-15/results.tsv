@@ -1,0 +1,26 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+de98aaa	0.6793	keep	depth 4 and min_child_weight 5
+00e9c22	0.0000	crash	cyclic time features failed: Month and DayOfWeek are strings
+6c5db7e	0.0000	crash	cyclic time retry failed: calendar values have c- prefixes
+6c75204	0.6799	keep	cyclic month, weekday, and departure-time features
+8f35102	0.6719	discard	Origin-Destination route category
+650f847	0.6795	discard	max_cat_threshold 32
+527611b	0.6785	discard	subsample and colsample_bytree 0.8
+9b7ee8f	0.6782	discard	two-hour scheduled departure periods
+d80b528	0.6787	discard	carrier by two-hour departure period
+ed15768	0.6796	discard	300 trees at learning_rate 0.05
+588b539	0.6768	discard	Origin by six-hour departure period
+de00d7b	0.6797	discard	smoothed origin and destination delay priors
+b64e257	0.6799	keep	remove explicit min_child_weight setting
+b30fb9e	0.6797	discard	max_depth 3
+744705b	0.6799	keep	gamma 1.0 minimum split gain
+4ee7bee	0.6775	discard	max_depth 5 with gamma 1
+41db4a7	0.6799	keep	gamma 2.0 minimum split gain
+b2a5393	0.6799	discard	gamma 3.0 minimum split gain
+ef8c1a8	0.6802	keep	reg_lambda 2.0
+2e8277e	0.6788	discard	reg_lambda 3.0
+46c7ab3	0.6804	keep	reg_alpha 0.1 with reg_lambda 2
+31305bc	0.6800	discard	reg_alpha 0.2 with reg_lambda 2
+efec3cd	0.6785	discard	reg_alpha 0.05 with reg_lambda 2
+e44fe1b	0.6787	discard	reg_alpha 0.15 with reg_lambda 2

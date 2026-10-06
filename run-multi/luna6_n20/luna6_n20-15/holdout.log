@@ -1,0 +1,52 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] de98aaa | keep | depth 4 and min_child_weight 5 ===
+  holdout=0.6776
+=== [4] 00e9c22 | crash | cyclic time features failed: Month and DayOfWeek are strings ===
+  SKIP: status crash
+=== [5] 6c5db7e | crash | cyclic time retry failed: calendar values have c- prefixes ===
+  SKIP: status crash
+=== [6] 6c75204 | keep | cyclic month, weekday, and departure-time features ===
+  holdout=0.6779
+=== [7] 8f35102 | discard | Origin-Destination route category ===
+  SKIP: status discard
+=== [8] 650f847 | discard | max_cat_threshold 32 ===
+  SKIP: status discard
+=== [9] 527611b | discard | subsample and colsample_bytree 0.8 ===
+  SKIP: status discard
+=== [10] 9b7ee8f | discard | two-hour scheduled departure periods ===
+  SKIP: status discard
+=== [11] d80b528 | discard | carrier by two-hour departure period ===
+  SKIP: status discard
+=== [12] ed15768 | discard | 300 trees at learning_rate 0.05 ===
+  SKIP: status discard
+=== [13] 588b539 | discard | Origin by six-hour departure period ===
+  SKIP: status discard
+=== [14] de00d7b | discard | smoothed origin and destination delay priors ===
+  SKIP: status discard
+=== [15] b64e257 | keep | remove explicit min_child_weight setting ===
+  holdout=0.6779
+=== [16] b30fb9e | discard | max_depth 3 ===
+  SKIP: status discard
+=== [17] 744705b | keep | gamma 1.0 minimum split gain ===
+  holdout=0.6779
+=== [18] 4ee7bee | discard | max_depth 5 with gamma 1 ===
+  SKIP: status discard
+=== [19] 41db4a7 | keep | gamma 2.0 minimum split gain ===
+  holdout=0.6779
+=== [20] b2a5393 | discard | gamma 3.0 minimum split gain ===
+  SKIP: status discard
+=== [21] ef8c1a8 | keep | reg_lambda 2.0 ===
+  holdout=0.6777
+=== [22] 2e8277e | discard | reg_lambda 3.0 ===
+  SKIP: status discard
+=== [23] 46c7ab3 | keep | reg_alpha 0.1 with reg_lambda 2 ===
+  holdout=0.6785
+=== [24] 31305bc | discard | reg_alpha 0.2 with reg_lambda 2 ===
+  SKIP: status discard
+=== [25] efec3cd | discard | reg_alpha 0.05 with reg_lambda 2 ===
+  SKIP: status discard
+=== [26] e44fe1b | discard | reg_alpha 0.15 with reg_lambda 2 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

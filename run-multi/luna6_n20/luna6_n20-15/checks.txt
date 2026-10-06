@@ -1,0 +1,25 @@
+== results.tsv
+  25 rows: 8 keep, 15 discard, 2 crash
+  kept ties (allowed only for simpler or faster code; look at the description): b64e257 (0.6799, after 6c75204), 744705b (0.6799, after b64e257), 41db4a7 (0.6799, after 744705b)
+  kept Eval AUC: 0.6743 -> 0.6804, max 0.6804
+
+== clock and harness runs
+  25 harness runs: 23 ok, 2 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3560 s (+40 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct5: 10 commits, first b15ec66, HEAD 46c7ab3
+  00e9c22 is in the branch history, logged as crash (fine if the next commit fixes it)
+  6c5db7e is in the branch history, logged as crash (fine if the next commit fixes it)
+  24 commits by the agent (branch and reflog) checked for files other than train.py
+  23 artifacts, 25 MB
+  FLAG train_py_review: de00d7b: global_delay_rate = train_delay.mean()
+  FLAG train_py_review: de00d7b: (origin_delay_stats["sum"] + 100.0 * global_delay_rate)
+  FLAG train_py_review: de00d7b: (dest_delay_stats["sum"] + 100.0 * global_delay_rate)
+  FLAG train_py_review: de00d7b: X["OriginDelayPrior"] = df["Origin"].map(origin_delay_rate).fillna(global_delay_rate)
+  FLAG train_py_review: de00d7b: X["DestDelayPrior"] = df["Dest"].map(dest_delay_rate).fillna(global_delay_rate)
+  train.py of 24 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none

@@ -1,0 +1,5 @@
+Experiment complete. The clock ran for **59m20s** and is stopped. Branch `oct5` is clean and reset to the best kept commit, `46c7ab3`.
+
+Best Eval AUC was **0.6804**, up from the **0.6743** baseline. The best model uses depth 4, cyclic calendar and departure-time features, `gamma=2`, `reg_lambda=2`, and `reg_alpha=0.1`.
+
+The full run history is in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv); findings and the final summary are in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).

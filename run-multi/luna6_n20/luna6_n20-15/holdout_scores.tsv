@@ -1,0 +1,26 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+de98aaa	keep	depth 4 and min_child_weight 5	0.6793	0.6776
+00e9c22	crash	cyclic time features failed: Month and DayOfWeek are strings	0.0000	N/A
+6c5db7e	crash	cyclic time retry failed: calendar values have c- prefixes	0.0000	N/A
+6c75204	keep	cyclic month, weekday, and departure-time features	0.6799	0.6779
+8f35102	discard	Origin-Destination route category	0.6719	N/A
+650f847	discard	max_cat_threshold 32	0.6795	N/A
+527611b	discard	subsample and colsample_bytree 0.8	0.6785	N/A
+9b7ee8f	discard	two-hour scheduled departure periods	0.6782	N/A
+d80b528	discard	carrier by two-hour departure period	0.6787	N/A
+ed15768	discard	300 trees at learning_rate 0.05	0.6796	N/A
+588b539	discard	Origin by six-hour departure period	0.6768	N/A
+de00d7b	discard	smoothed origin and destination delay priors	0.6797	N/A
+b64e257	keep	remove explicit min_child_weight setting	0.6799	0.6779
+b30fb9e	discard	max_depth 3	0.6797	N/A
+744705b	keep	gamma 1.0 minimum split gain	0.6799	0.6779
+4ee7bee	discard	max_depth 5 with gamma 1	0.6775	N/A
+41db4a7	keep	gamma 2.0 minimum split gain	0.6799	0.6779
+b2a5393	discard	gamma 3.0 minimum split gain	0.6799	N/A
+ef8c1a8	keep	reg_lambda 2.0	0.6802	0.6777
+2e8277e	discard	reg_lambda 3.0	0.6788	N/A
+46c7ab3	keep	reg_alpha 0.1 with reg_lambda 2	0.6804	0.6785
+31305bc	discard	reg_alpha 0.2 with reg_lambda 2	0.6800	N/A
+efec3cd	discard	reg_alpha 0.05 with reg_lambda 2	0.6785	N/A
+e44fe1b	discard	reg_alpha 0.15 with reg_lambda 2	0.6787	N/A

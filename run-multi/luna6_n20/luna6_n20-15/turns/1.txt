@@ -1,0 +1,5 @@
+Setup is ready on branch `oct5`, created from the current HEAD. Both data files are present, `train.py` is unchanged, and the clock has not started.
+
+I initialized [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with its header and added a setup note to [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).
+
+`program.md` says to wait for your confirmation before starting the one-hour clock. Reply **go** and I’ll start it, then run the baseline first.
