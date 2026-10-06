@@ -12,12 +12,13 @@ Prints
   budget, memory cap), which should be the same for all runs that are compared;
 - the table, as markdown: one row per model, the best mean on top, AUCs rounded
   to 4 decimals, sd the sample standard deviation (n - 1);
-- NOTE lines for the caveats, the exclusions and valid runs with integrity
-  flags (to be explained in the run's run.md);
+- NOTE lines for the caveats (with how the plots draw them), the exclusions
+  and valid runs with integrity flags (to be explained in the run's run.md);
 - WARNING lines for anything that doesn't fit: a group that looks like a test,
   a row of holdout_auc.tsv that disagrees with the run's driver-summary.json, a
   valid run without a holdout AUC or of a failed driver, a run folder that is
-  not in holdout_auc.tsv, mixed settings.
+  not in holdout_auc.tsv, mixed settings, a caveat of a kind that has no
+  plotting rule yet (CAVEAT_MARKED / CAVEAT_PLAIN of plot_holdout_auc.py).
 
 Usage:
     tools/summary_table.py
@@ -28,7 +29,7 @@ import statistics as st
 import sys
 from collections import Counter, defaultdict
 
-from plot_holdout_auc import RUN_MULTI
+from plot_holdout_auc import CAVEAT_MARKED, CAVEAT_PLAIN, RUN_MULTI, caveat_kinds
 
 SETTINGS = ["codex_version", "effort", "upstream", "time_budget_s", "memory_limit_bytes"]
 
@@ -48,6 +49,7 @@ def main():
     notes, warnings = [], []
     models = defaultdict(lambda: {"groups": [], "holdout": [], "caveat": 0, "excluded": 0})
     settings = {k: Counter() for k in SETTINGS}
+    no_rule = defaultdict(list)  # caveat kind -> runs, for kinds the plots have no rule for
 
     print("groups:")
     for g in groups:
@@ -97,7 +99,15 @@ def main():
                     notes.append(f"{r['run']} is valid with integrity flags: {s['integrity_flags']}")
                 if valid == "caveat":
                     m["caveat"] += 1
-                    notes.append(f"{r['run']} caveat: {flags or 'no flags given'}")
+                    kinds = caveat_kinds(flags, s)
+                    marked = [k for k in kinds if k not in CAVEAT_PLAIN]
+                    notes.append(f"{r['run']} caveat: {flags or 'no flags given'}; in the plots: "
+                                 f"{'marked' if marked else 'as any other run'} ({', '.join(kinds) or 'no kind'})")
+                    for k in kinds:
+                        if k not in CAVEAT_MARKED | CAVEAT_PLAIN:
+                            no_rule[k].append(r["run"])
+                    if not kinds:
+                        warnings.append(f"{r['run']}: valid = caveat without flags")
                 elif flags:
                     warnings.append(f"{r['run']}: valid = yes with flags: {flags}")
             else:
@@ -110,6 +120,10 @@ def main():
             warnings.append(f"group {g.name} looks like a test group: its runs are pooled with all other {model} runs")
         print(f"  {g.name}: {model}, {len(rows)} runs: {n['yes'] + n['caveat']} valid "
               f"({n['caveat']} with caveat), {n['no']} excluded")
+
+    for k, runs in no_rule.items():
+        warnings.append(f"caveat {k} ({', '.join(runs)}) has no plotting rule: add it to CAVEAT_MARKED "
+                        "or CAVEAT_PLAIN in tools/plot_holdout_auc.py")
 
     print("\nsettings of the valid runs:")
     for k in SETTINGS:

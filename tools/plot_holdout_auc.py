@@ -5,11 +5,12 @@ Reads each group's holdout_auc.tsv (written by /xgb-multi), the model from each
 run's driver-summary.json, the per-experiment scores from its
 holdout_scores.tsv and the harness timing from its timing/ folder. Groups with
 the same model are pooled (all runs are effort max). Runs with valid = "no" are
-left out; caveat runs are drawn hollow/dashed.
+left out. Caveat runs are drawn like any other run, unless one of their caveats
+is of a kind to be marked (see CAVEAT_MARKED): those are drawn hollow/dashed.
 
 run-multi/SUMMARY/holdout_auc_beeswarm.png - one row per model, one dot per run
-  (modelled on Fig. 1 of arXiv:2609.33812): a filled dot per valid run and a
-  hollow dot per caveat run, a grey bar over the full range, the mean with its
+  (modelled on Fig. 1 of arXiv:2609.33812): a filled dot per run and a hollow
+  dot per run with a marked caveat, a grey bar over the full range, the mean with its
   95% confidence interval (t) and the 10th/90th percentiles (nearest run) when
   the row has >= 5 runs.
 
@@ -50,6 +51,11 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a
 # colour follows the model in every plot: add new models here with the next free slot;
 # models not listed get the remaining slots in sorted order (and a warning)
 MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2}
+# caveats by kind (see caveat_kinds): a run is drawn hollow/dashed unless all its caveats are in
+# CAVEAT_PLAIN. Each kind is decided once, when it first turns up: summary_table.py warns about a
+# kind that is in neither set. Never move a kind from one set to the other.
+CAVEAT_MARKED = set()
+CAVEAT_PLAIN = {"keep_rule_tie"}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
@@ -59,17 +65,38 @@ RUN_MULTI = Path(__file__).resolve().parent.parent / "run-multi"
 OUT_DIR = RUN_MULTI / "SUMMARY"
 
 
+def caveat_kinds(flags, summary):
+    """The caveats of a run: the flags of its holdout_auc.tsv row, with keep_rule split in two.
+
+    run_checks.py flags keep_rule itself only for a kept commit with a lower Eval AUC
+    (protocol_flags of driver-summary.json). A keep_rule that is in holdout_auc.tsv only
+    was added in the review, for a tie kept without being simpler or faster: keep_rule_tie.
+    """
+    kinds = [k.strip() for k in flags.split(",") if k.strip()]
+    if "keep_rule" not in summary.get("protocol_flags", "").split():
+        kinds = ["keep_rule_tie" if k == "keep_rule" else k for k in kinds]
+    return kinds
+
+
 def load_group(gdir):
-    """Runs of one group as dicts: run, dir, model, holdout, valid."""
+    """Runs of one group as dicts: run, dir, model, holdout, valid, marked (its caveats not in CAVEAT_PLAIN)."""
     runs = []
     with open(gdir / "holdout_auc.tsv") as f:
         for r in csv.DictReader(f, delimiter="\t"):
             if r["valid"] not in ("yes", "caveat") or not r["holdout_auc"]:
                 continue
             summary = json.loads((gdir / r["run"] / "driver-summary.json").read_text())
+            kinds = caveat_kinds(r.get("flags") or "", summary) if r["valid"] == "caveat" else []
             runs.append({"run": r["run"], "dir": gdir / r["run"], "model": summary["model"],
-                         "holdout": float(r["holdout_auc"]), "valid": r["valid"]})
+                         "holdout": float(r["holdout_auc"]), "valid": r["valid"],
+                         "marked": [k for k in kinds if k not in CAVEAT_PLAIN]})
     return runs
+
+
+def marked_label(runs):
+    """Legend label of the runs drawn hollow/dashed, None if there are none."""
+    kinds = sorted({k for r in runs for k in r["marked"]})
+    return f"run with caveat ({', '.join(kinds)})" if kinds else None
 
 
 def keep_path(run_dir):
@@ -173,7 +200,7 @@ def strip_plot(runs, colour):
         # diameter: marker size 46 pt^2 -> ~6.8 pt, plus the 1.4 pt edge, plus 0.6 pt of air
         dys = swarm_offsets(x, ax, y, np.sqrt(46) + 1.4 + 0.6)
         for r, dy in zip(rr, dys):
-            filled = r["valid"] == "yes"
+            filled = not r["marked"]
             ax.scatter(r["holdout"], y + dy, s=46, zorder=3, linewidths=1.4,
                        facecolors=colour[m] if filled else SURFACE, edgecolors=colour[m])
         mean = x.mean()
@@ -191,10 +218,11 @@ def strip_plot(runs, colour):
     ax.set_xlabel("holdout AUC", color=INK2)
     ax.grid(axis="x", color=GRID, lw=0.8)
     style(ax, "Holdout AUC per run")
+    caveat = marked_label(runs)
     legend = [
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
-        Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
-               label="run with caveat"),
+        *([Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
+                  label=caveat)] if caveat else []),
         Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 95% CI of the mean (n >= {MIN_N_STATS})"),
         Line2D([], [], marker="|", ls="", color=INK2, markersize=9, markeredgewidth=1.6, label="10th and 90th percentile"),
     ]
@@ -225,7 +253,7 @@ def draw_runs(ax, runs, colour_of, lw, alpha):
             continue
         t, auc = zip(*path)
         ax.step(list(t) + [end], list(auc) + [auc[-1]], where="post", color=colour_of(r),
-                lw=lw, alpha=alpha, ls="-" if r["valid"] == "yes" else (0, (4, 2)), zorder=2)
+                lw=lw, alpha=alpha, ls=(0, (4, 2)) if r["marked"] else "-", zorder=2)
 
 
 def draw_median(ax, runs, m, colour, lw=2.4):
@@ -252,9 +280,10 @@ def path_panels(runs, colour):
         ax.set_xlabel("minutes since the clock started", color=INK2)
     axes[0].set_ylabel("holdout AUC", color=INK2)
     fig.suptitle("Holdout AUC path per run, one panel per model", x=0.07, ha="left", color=INK, fontsize=11)
+    caveat = marked_label(runs)
     legend = [
         Line2D([], [], color=INK2, lw=0.9, label="run"),
-        Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label="run with caveat"),
+        *([Line2D([], [], color=INK2, lw=0.9, ls=(0, (4, 2)), label=caveat)] if caveat else []),
         Line2D([], [], color=INK2, lw=2.4, label="median of the runs"),
         Line2D([], [], color=OTHER_RUNS, alpha=0.8, lw=1.2, label="other models' runs"),
     ]
@@ -275,9 +304,10 @@ def path_median(runs, colour):
     ax.grid(color=GRID, lw=0.8)
     ax.set_xlim(left=0)
     style(ax, "Holdout AUC path per run, median in bold")
+    caveat = marked_label(runs)
     legend = [Line2D([], [], color=colour[m], lw=2.6, label=m) for m in models] + [
         Line2D([], [], color=INK2, lw=0.75, alpha=0.6, label="run"),
-        Line2D([], [], color=INK2, lw=0.75, alpha=0.6, ls=(0, (4, 2)), label="run with caveat"),
+        *([Line2D([], [], color=INK2, lw=0.75, alpha=0.6, ls=(0, (4, 2)), label=caveat)] if caveat else []),
         Line2D([], [], color=INK2, lw=2.6, label="median of the runs"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
@@ -291,6 +321,9 @@ def main():
     if not runs:
         sys.exit(f"no valid runs in {RUN_MULTI}")
 
+    for k in sorted({k for r in runs for k in r["marked"]} - CAVEAT_MARKED):
+        print(f"warning: caveat {k} has no plotting rule (drawn as marked); add it to CAVEAT_MARKED or CAVEAT_PLAIN",
+              file=sys.stderr)
     colour = model_colours({r["model"] for r in runs})
     strip_plot(runs, colour)
     path_panels(runs, colour)

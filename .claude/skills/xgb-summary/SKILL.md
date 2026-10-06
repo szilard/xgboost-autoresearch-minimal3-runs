@@ -31,8 +31,9 @@ yourself: every number in the README comes from the scripts' output.
      archive/<group>`; do that only if I say so). Its runs would be pooled
      with all other runs of that model.
    - **a row of holdout_auc.tsv disagrees with driver-summary.json**, a wrong
-     gap, a `valid` that is not yes, caveat or no, or `valid` = yes with
-     flags: stop and tell me which rows. Don't correct the files yourself.
+     gap, a `valid` that is not yes, caveat or no, `valid` = yes with
+     flags, or `valid` = caveat without flags: stop and tell me which rows.
+     Don't correct the files yourself.
    - **a valid run without a holdout AUC**, or valid although the driver's
      status is failed: stop and tell me.
    - **mixed effort, upstream or time_budget_s**: stop and ask me. Runs at a
@@ -45,6 +46,17 @@ yourself: every number in the README comes from the scripts' output.
      the README notes that the group is in progress.
    - **more than one model in a group**, or a missing driver-summary.json:
      stop and tell me.
+   - **a caveat that has no plotting rule**: a kind of caveat that turns up
+     for the first time. Stop and ask me whether runs with it are to be
+     marked in the plots (hollow dots, dashed lines) or drawn like any other
+     run. Tell me what the caveat is and what it did to the result, from the
+     runs' run.md. Then add the kind to `CAVEAT_MARKED` or `CAVEAT_PLAIN` in
+     `tools/plot_holdout_auc.py` as I say, and run `summary_table.py` again.
+     Never move a kind that is already in one of the two sets. The kinds are
+     the flags of holdout_auc.tsv, except that `keep_rule` is split: it
+     stays `keep_rule` when the driver's own checks flagged it (a kept
+     commit with a lower Eval AUC) and is `keep_rule_tie` when it was added
+     in the review (a tie kept without being simpler or faster).
 
 2. Run `tools/plot_holdout_auc.py`, then `tools/pairwise_win_prob.py`. They
    write the PNGs to `run-multi/SUMMARY/`.
@@ -54,13 +66,15 @@ yourself: every number in the README comes from the scripts' output.
      model that is already there: the colour follows the model in all plots.
    - With fewer than two models there is no head-to-head plot. With fewer
      than 5 runs a model has no interval, percentile marks or median path.
-     Both are as intended.
+     The legends have a "run with caveat" entry only when a run is marked.
+     All are as intended.
 
 3. Look at every PNG in `run-multi/SUMMARY/` that was just written. Each
    model with valid runs must be there, with as many dots or lines as the
-   table has valid runs; nothing cut off, overlapping or unreadable; the
-   range of the dots in the beeswarm plot must match the table's min and
-   max. If a plot is wrong, tell me what is wrong. Don't restyle the plots
+   table has valid runs; the runs whose NOTE line says "marked" hollow
+   (dashed in the path plots) and no others; nothing cut off, overlapping
+   or unreadable; the range of the dots in the beeswarm plot must match the
+   table's min and max. If a plot is wrong, tell me what is wrong. Don't restyle the plots
    yourself.
 
 4. In README.md, replace everything between the lines
@@ -75,7 +89,8 @@ yourself: every number in the README comes from the scripts' output.
      the starter `train.py` scores 0.6725:"
    - The markdown table exactly as printed.
    - One short paragraph of notes, from the NOTE lines: which caveats there
-     are and how many runs carry each; how many runs were excluded and why,
+     are, how many runs carry each and whether the plots mark them; how
+     many runs were excluded and why,
      in a few words each (or "No run was excluded."); which groups are in
      progress; anything mixed from step 1. A valid run with integrity flags
      must be explained in its run.md: read it, and tell me if it is not.
