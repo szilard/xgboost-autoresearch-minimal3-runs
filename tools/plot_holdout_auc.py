@@ -223,8 +223,10 @@ def strip_plot(runs, colour):
         Line2D([], [], marker="o", ls="", color=INK2, markersize=7, label="run"),
         *([Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=INK2, markersize=7,
                   label=caveat)] if caveat else []),
-        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 95% CI of the mean (n >= {MIN_N_STATS})"),
+        # what describes the runs first (range, percentiles), then the mean
+        Line2D([], [], color=RANGE, lw=6, solid_capstyle="butt", label="full range"),  # butt: stays clear of its label
         Line2D([], [], marker="|", ls="", color=INK2, markersize=9, markeredgewidth=1.6, label="10th and 90th percentile"),
+        Line2D([], [], marker="o", color=INK, markersize=5, lw=1.6, label=f"mean, 95% CI of the mean (n >= {MIN_N_STATS})"),
     ]
     fig.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.02),
                ncol=len(legend), frameon=False, fontsize=8, labelcolor=INK2, handletextpad=0.4, columnspacing=1.2)
