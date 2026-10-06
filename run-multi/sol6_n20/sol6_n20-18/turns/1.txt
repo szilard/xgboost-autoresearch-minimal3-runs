@@ -1,0 +1,3 @@
+I’ve read `program.md`, `train.py`, and `harness.py`. The working tree is clean, both required CSVs exist, and `oct6` is available.
+
+Please confirm **`oct6`** as the run tag, or give me another tag. I’ll then create the branch and initialize `output/results.tsv`. The experiment clock has not started.

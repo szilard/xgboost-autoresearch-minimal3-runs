@@ -1,0 +1,93 @@
+commit 08500bb5e563ef0d49bc4275ada24a2cccf1e59a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:20:39 2026 +0000
+
+    Simplify categorical preparation
+
+ train.py | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 55b9ff77c5a5ba96d8424f52ec953eda58c0a88c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:04:38 2026 +0000
+
+    Add split gain penalty to ensemble
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 4553d6453009fe37ccd4cd08f3c196cf5b116196
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 11:01:19 2026 +0000
+
+    Blend depth three and four models
+
+ train.py | 18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
+
+commit 3fb1f20e59e9fa515690dd56661936fe4c5d3f7a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:56:11 2026 +0000
+
+    Increase histogram bins to 512
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit fb0813c4c918c10ffe5d2201efcbf327c2114bba
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:54:10 2026 +0000
+
+    Add departure relative to origin median
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 144065eb91c7ed19df9317a160fd341dd7e4b545
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:47:26 2026 +0000
+
+    Add day of year feature
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit d6bc1794d3243313349515a7256be1b0ca245ce6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:44:42 2026 +0000
+
+    Treat day of month as ordered
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 34f38d2d91fdbee96799f6c443b55e53e1191862
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:35:50 2026 +0000
+
+    Try depth three boosting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 23922818735496ec0c9a5860b85c5a8715259cf9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:34:04 2026 +0000
+
+    Try shallower trees with lower learning rate
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,122 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 2f54219 | discard | 300 trees at eta 0.05, equal AUC but slower ===
+  SKIP: status discard
+=== [4] 2392281 | keep | 300 trees depth 4 eta 0.05 ===
+  holdout=0.6779
+=== [5] 228021c | discard | add categorical departure hour ===
+  SKIP: status discard
+=== [6] 34f38d2 | keep | 300 trees depth 3 eta 0.05 ===
+  holdout=0.6794
+=== [7] a37a81f | discard | depth 2 at 300 trees eta 0.05 ===
+  SKIP: status discard
+=== [8] 9c44602 | discard | 600 trees depth 3 eta 0.05 ===
+  SKIP: status discard
+=== [9] 1f952d9 | discard | carrier by departure hour category ===
+  SKIP: status discard
+=== [10] 9f11a00 | discard | force one-hot categorical splits ===
+  SKIP: status discard
+=== [11] dda1b1f | discard | min_child_weight 10 ===
+  SKIP: status discard
+=== [12] b6e6cba | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [13] f41382e | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [14] 81512a9 | discard | max_cat_threshold 128 ===
+  SKIP: status discard
+=== [15] c91710b | discard | remove day of month ===
+  SKIP: status discard
+=== [16] 43d7a9e | crash | initial ordered-day attempt used string values as numeric ===
+  SKIP: status crash
+=== [17] d6bc179 | keep | parse day of month as ordered numeric ===
+  holdout=0.6830
+=== [18] d0bd846 | discard | parse month as ordered numeric ===
+  SKIP: status discard
+=== [19] 5e6cd8e | discard | parse weekday as ordered numeric ===
+  SKIP: status discard
+=== [20] 144065e | keep | add ordered day of year ===
+  holdout=0.6841
+=== [21] b189096 | discard | remove day of month after adding day of year ===
+  SKIP: status discard
+=== [22] cd27109 | discard | remove month after adding day of year ===
+  SKIP: status discard
+=== [23] e34f77d | discard | add annual sine and cosine ===
+  SKIP: status discard
+=== [24] a452399 | discard | add numeric departure hour ===
+  SKIP: status discard
+=== [25] d094a43 | discard | add scheduled minute within hour ===
+  SKIP: status discard
+=== [26] 3a06a19 | discard | add origin by carrier category ===
+  SKIP: status discard
+=== [27] fb0813c | keep | departure minutes relative to origin median ===
+  holdout=0.6838
+=== [28] caaf5d8 | discard | departure minutes relative to route median ===
+  SKIP: status discard
+=== [29] 3fb1f20 | keep | max_bin 512 ===
+  holdout=0.6845
+=== [30] d672186 | discard | max_bin 1024 ===
+  SKIP: status discard
+=== [31] 6e34ffa | discard | depth 4 with improved features ===
+  SKIP: status discard
+=== [32] acfd02e | discard | lossguide with eight leaves ===
+  SKIP: status discard
+=== [33] a424c6b | discard | remove destination airport ===
+  SKIP: status discard
+=== [34] 4553d64 | keep | soft vote depth 3 and 4 weights 2:1 ===
+  holdout=0.6847
+=== [35] 7f85274 | discard | soft vote depth 3 and 4 weights 1:1 ===
+  SKIP: status discard
+=== [36] 8a56cc6 | discard | slower depth 4 ensemble member, equal AUC but slower ===
+  SKIP: status discard
+=== [37] 55b9ff7 | keep | gamma 1 in both ensemble members ===
+  holdout=0.6847
+=== [38] 986d86d | discard | gamma 2 in both ensemble members ===
+  SKIP: status discard
+=== [39] b96c060 | discard | reg_lambda 10 in both ensemble members ===
+  SKIP: status discard
+=== [40] b2a2e2a | discard | add fixed holiday distance ===
+  SKIP: status discard
+=== [41] 434c9bc | discard | remove origin median departure feature ===
+  SKIP: status discard
+=== [42] 6ffe323 | discard | remove distance ===
+  SKIP: status discard
+=== [43] fbee64d | discard | reg_alpha 1 in both ensemble members ===
+  SKIP: status discard
+=== [44] a03030d | discard | weekend-specific scheduled departure time ===
+  SKIP: status discard
+=== [45] f76c958 | discard | colsample_bytree 0.8 ===
+  SKIP: status discard
+=== [46] bec1a80 | discard | DART dropout in depth 4 ensemble member ===
+  SKIP: status discard
+=== [47] fb9a408 | discard | month by weekday category ===
+  SKIP: status discard
+=== [48] 05e698d | discard | add third 150-tree eta 0.1 model ===
+  SKIP: status discard
+=== [49] c1df43f | discard | min_child_weight 3 in both ensemble members ===
+  SKIP: status discard
+=== [50] e863f54 | discard | gamma 2 in depth 4 ensemble member ===
+  SKIP: status discard
+=== [51] 08500bb | keep | simplify categorical preparation, equal AUC faster ===
+  holdout=0.6847
+=== [52] a1807b5 | discard | gamma 0.5, equal AUC without simplification ===
+  SKIP: status discard
+=== [53] 2dd4050 | discard | 250 trees per ensemble member ===
+  SKIP: status discard
+=== [54] 857256f | discard | remove day of year, faster but lower AUC ===
+  SKIP: status discard
+=== [55] f835afd | discard | 350 trees, equal AUC but larger/slower ===
+  SKIP: status discard
+=== [56] 74e668b | discard | max_bin 384 ===
+  SKIP: status discard
+=== [57] 78a75cf | discard | depth 5 secondary ensemble member ===
+  SKIP: status discard
+=== [58] 5420d55 | discard | constrained feature interaction groups ===
+  SKIP: status discard
+=== [59] 6ecc1a6 | discard | dictionary origin lookup, equal AUC slower ===
+  SKIP: status discard
+=== [60] 2a10038 | discard | gamma 1.5 ===
+  SKIP: status discard
+=== [61] f4de4c1 | discard | max_bin 768, equal AUC but slower ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

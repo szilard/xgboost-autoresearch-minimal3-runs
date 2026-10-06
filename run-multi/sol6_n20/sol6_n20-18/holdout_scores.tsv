@@ -1,0 +1,61 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+2f54219	discard	300 trees at eta 0.05, equal AUC but slower	0.6743	N/A
+2392281	keep	300 trees depth 4 eta 0.05	0.6795	0.6779
+228021c	discard	add categorical departure hour	0.6792	N/A
+34f38d2	keep	300 trees depth 3 eta 0.05	0.6812	0.6794
+a37a81f	discard	depth 2 at 300 trees eta 0.05	0.6760	N/A
+9c44602	discard	600 trees depth 3 eta 0.05	0.6810	N/A
+1f952d9	discard	carrier by departure hour category	0.6787	N/A
+9f11a00	discard	force one-hot categorical splits	0.6735	N/A
+dda1b1f	discard	min_child_weight 10	0.6810	N/A
+b6e6cba	discard	subsample 0.8	0.6798	N/A
+f41382e	discard	max_cat_threshold 16	0.6737	N/A
+81512a9	discard	max_cat_threshold 128	0.6795	N/A
+c91710b	discard	remove day of month	0.6811	N/A
+43d7a9e	crash	initial ordered-day attempt used string values as numeric	0.0000	N/A
+d6bc179	keep	parse day of month as ordered numeric	0.6856	0.6830
+d0bd846	discard	parse month as ordered numeric	0.6854	N/A
+5e6cd8e	discard	parse weekday as ordered numeric	0.6833	N/A
+144065e	keep	add ordered day of year	0.6857	0.6841
+b189096	discard	remove day of month after adding day of year	0.6844	N/A
+cd27109	discard	remove month after adding day of year	0.6854	N/A
+e34f77d	discard	add annual sine and cosine	0.6842	N/A
+a452399	discard	add numeric departure hour	0.6856	N/A
+d094a43	discard	add scheduled minute within hour	0.6855	N/A
+3a06a19	discard	add origin by carrier category	0.6798	N/A
+fb0813c	keep	departure minutes relative to origin median	0.6858	0.6838
+caaf5d8	discard	departure minutes relative to route median	0.6855	N/A
+3fb1f20	keep	max_bin 512	0.6860	0.6845
+d672186	discard	max_bin 1024	0.6858	N/A
+6e34ffa	discard	depth 4 with improved features	0.6846	N/A
+acfd02e	discard	lossguide with eight leaves	0.6854	N/A
+a424c6b	discard	remove destination airport	0.6781	N/A
+4553d64	keep	soft vote depth 3 and 4 weights 2:1	0.6862	0.6847
+7f85274	discard	soft vote depth 3 and 4 weights 1:1	0.6861	N/A
+8a56cc6	discard	slower depth 4 ensemble member, equal AUC but slower	0.6862	N/A
+55b9ff7	keep	gamma 1 in both ensemble members	0.6864	0.6847
+986d86d	discard	gamma 2 in both ensemble members	0.6862	N/A
+b96c060	discard	reg_lambda 10 in both ensemble members	0.6852	N/A
+b2a2e2a	discard	add fixed holiday distance	0.6863	N/A
+434c9bc	discard	remove origin median departure feature	0.6856	N/A
+6ffe323	discard	remove distance	0.6854	N/A
+fbee64d	discard	reg_alpha 1 in both ensemble members	0.6860	N/A
+a03030d	discard	weekend-specific scheduled departure time	0.6863	N/A
+f76c958	discard	colsample_bytree 0.8	0.6860	N/A
+bec1a80	discard	DART dropout in depth 4 ensemble member	0.6861	N/A
+fb9a408	discard	month by weekday category	0.6825	N/A
+05e698d	discard	add third 150-tree eta 0.1 model	0.6863	N/A
+c1df43f	discard	min_child_weight 3 in both ensemble members	0.6862	N/A
+e863f54	discard	gamma 2 in depth 4 ensemble member	0.6862	N/A
+08500bb	keep	simplify categorical preparation, equal AUC faster	0.6864	0.6847
+a1807b5	discard	gamma 0.5, equal AUC without simplification	0.6864	N/A
+2dd4050	discard	250 trees per ensemble member	0.6861	N/A
+857256f	discard	remove day of year, faster but lower AUC	0.6863	N/A
+f835afd	discard	350 trees, equal AUC but larger/slower	0.6864	N/A
+74e668b	discard	max_bin 384	0.6862	N/A
+78a75cf	discard	depth 5 secondary ensemble member	0.6859	N/A
+5420d55	discard	constrained feature interaction groups	0.6862	N/A
+6ecc1a6	discard	dictionary origin lookup, equal AUC slower	0.6864	N/A
+2a10038	discard	gamma 1.5	0.6862	N/A
+f4de4c1	discard	max_bin 768, equal AUC but slower	0.6864	N/A
