@@ -57,7 +57,7 @@ MODEL_SLOT = {"gpt-6-astra": 0, "gpt-6-sol": 1, "gpt-6-luna": 2}
 # CAVEAT_PLAIN. Each kind is decided once, when it first turns up: summary_table.py warns about a
 # kind that is in neither set. Never move a kind from one set to the other.
 CAVEAT_MARKED = set()
-CAVEAT_PLAIN = {"keep_rule_tie"}
+CAVEAT_PLAIN = {"keep_rule_tie", "turn_retries"}
 SURFACE, INK, INK2, GRID, RANGE = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df", "#d9d8d3"
 OTHER_RUNS = "#bebdb7"  # the other models' runs behind each panel of the panels path plot
 MIN_N_STATS = 5  # interval and percentiles only from this many runs up
