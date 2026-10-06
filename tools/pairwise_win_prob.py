@@ -16,7 +16,7 @@ included unless --no-caveat is given.
 
 run-multi/SUMMARY/holdout_auc_pairwise.png - one row per pair of models, the
   better one by mean holdout AUC labelled on the right, the other on the left:
-  a dot at P(the right-hand model wins), so it leans toward the usual winner,
+  a dot at P(the right-hand model wins) in percent, so it leans toward the usual winner,
   its 95% bootstrap interval and a reference line at 0.5 (coin flip).
   Not written with --no-caveat or with fewer than two models.
 
@@ -34,6 +34,7 @@ import numpy as np
 from matplotlib.lines import Line2D
 from matplotlib.offsetbox import AnnotationBbox, DrawingArea, HPacker, TextArea
 from matplotlib.patches import Circle
+from matplotlib.ticker import PercentFormatter
 
 from plot_holdout_auc import GRID, INK, INK2, RANGE, RUN_MULTI, SURFACE, model_colours, save, style
 
@@ -70,6 +71,16 @@ def compare(a, b, rng):
     return gt.mean(), (~gt & ~eq).mean(), eq.mean(), lo, hi
 
 
+def percent(p):
+    """p as a whole percent; 0% and 100% only when it is exactly that."""
+    s = f"{p:.0%}"
+    if s == "0%" and p > 0:
+        return "<1%"
+    if s == "100%" and p < 1:
+        return ">99%"
+    return s
+
+
 def plot(rows, runs):
     """rows: (better model, worse model, P, lo, hi), drawn top to bottom in the given order.
 
@@ -86,7 +97,7 @@ def plot(rows, runs):
         y = len(rows) - 1 - i
         ax.plot([lo, hi], [y, y], color=RANGE, lw=6, solid_capstyle="round", zorder=2)
         ax.scatter(p, y, s=46, color=INK, zorder=3)
-        ax.text(p, y + 0.2, f"{p:.2f}", color=INK, fontsize=9, ha="center", va="bottom")
+        ax.text(p, y + 0.2, percent(p), color=INK, fontsize=9, ha="center", va="bottom")
 
     # model labels: a dot in the model's colour (as in the other plots) and the name in ink,
     # model 2 outside the left edge, model 1 (the better one) outside the right edge
@@ -109,6 +120,7 @@ def plot(rows, runs):
     ax.set_ylim(-0.6, len(rows) - 0.1)
     ax.set_xlim(-0.02, 1.02)  # room for the round caps of intervals reaching 0 or 1
     ax.set_xticks(np.linspace(0, 1, 5))
+    ax.xaxis.set_major_formatter(PercentFormatter(1, decimals=0))
     ax.set_xlabel("P(right-hand model wins)", color=INK2)
     ax.grid(axis="x", color=GRID, lw=0.8)
     style(ax, "Head to head: one run of each model")
