@@ -1,0 +1,44 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+b3f5d13	0.6678	discard	300 trees at learning rate 0.1
+029705b	0.6743	keep	faster equivalent categorical preparation
+53f3a8d	0.6759	keep	remove categorical day-of-month
+9bd4174	0.6804	keep	depth 4 instead of 6
+bcc6d6d	0.6771	discard	300 rounds at depth 4
+804ff74	0.6774	discard	limit categorical split threshold to 16
+00d9ae4	0.6829	keep	remove month
+6496aa1	0.6808	discard	add four broad seasons
+dec4d13	0.6830	keep	harmonize HP carrier code to US
+4596fe1	0.6832	keep	minimum child weight 50
+7475247	0.6826	discard	one-hot splits with 500 rounds at eta 0.05
+a233875	0.6830	discard	route-relative median departure time
+9f61a4c	0.6833	keep	four randomized trees per boosting round
+b42688b	0.6832	discard	airport geometry from route distance graph
+f810db2	0.6819	discard	300 rounds without calendar features and with averaging
+a713052	0.6780	discard	carrier-origin categorical interaction
+a19f18d	0.6720	discard	date-excluded smoothed airport and route delay rates
+a375971	0.6832	discard	64 numerical histogram bins
+a6f16bf	0.6837	keep	depth 3 with 200 boosting rounds
+ee567b6	0.6835	discard	monotone rising-then-falling daily time features
+45fe7d3	0.6839	keep	class-balanced loss within training months
+01243cc	0.6834	discard	date balancing preserving weekday prevalence
+7135af7	0.6828	discard	make weekday effects additive
+7fb6983	0.6855	keep	75/25 blend of partition and one-hot models
+a9b8f71	0.6826	discard	weighted one-hot model alone
+6740b54	0.6859	keep	equal blend of partition and one-hot models
+4b8e8fb	0.6860	keep	add departure minute-of-hour to both models
+b91276e	0.6866	keep	add distance-derived airport geometry to blended models
+df32702	0.6866	keep	reduce airport geometry from three axes to two
+d961d2e	0.6824	discard	within-month pairwise ranking objective
+f7dc1a3	0.6872	keep	one-hot component depth 5
+ef014b1	0.6893	keep	actual holiday and holiday travel-window flags
+4ce4ac8	0.6872	discard	remove holiday travel window and retain holiday-day flag
+8e9971a	0.6893	keep	retain travel window and remove actual-holiday flag
+62e624e	0.6894	keep	L2 regularization 20 in both models
+8d7aed3	0.6894	keep	faster categorical code lookups without unknown-category warnings
+104f916	0.6892	discard	separate Thanksgiving year-end and July window indicators
+e9f7ec6	0.6900	keep	one-hot component depth 6
+a961790	0.6897	discard	add 20 percent within-month ranking model
+601eaed	0.6902	keep	one-hot component depth 7
+53ae862	0.6888	discard	current depth-7 one-hot model alone
+063f35f	0.6905	keep	row subsampling 0.8 in the depth-7 one-hot component

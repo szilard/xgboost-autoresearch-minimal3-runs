@@ -1,0 +1,8 @@
+Completed **42 experiments plus baseline** in 59m13s.
+
+- Best Eval AUC: **0.6905**, up from **0.6743** (+0.0162).
+- Best model retained on `oct6` at `063f35f`.
+- All 43 runs succeeded; saved artifact checks passed.
+- Clock stopped. Holdout untouched.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

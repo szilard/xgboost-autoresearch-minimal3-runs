@@ -1,0 +1,44 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+b3f5d13	discard	300 trees at learning rate 0.1	0.6678	N/A
+029705b	keep	faster equivalent categorical preparation	0.6743	0.6725
+53f3a8d	keep	remove categorical day-of-month	0.6759	0.6762
+9bd4174	keep	depth 4 instead of 6	0.6804	0.6791
+bcc6d6d	discard	300 rounds at depth 4	0.6771	N/A
+804ff74	discard	limit categorical split threshold to 16	0.6774	N/A
+00d9ae4	keep	remove month	0.6829	0.6808
+6496aa1	discard	add four broad seasons	0.6808	N/A
+dec4d13	keep	harmonize HP carrier code to US	0.6830	0.6812
+4596fe1	keep	minimum child weight 50	0.6832	0.6819
+7475247	discard	one-hot splits with 500 rounds at eta 0.05	0.6826	N/A
+a233875	discard	route-relative median departure time	0.6830	N/A
+9f61a4c	keep	four randomized trees per boosting round	0.6833	0.6819
+b42688b	discard	airport geometry from route distance graph	0.6832	N/A
+f810db2	discard	300 rounds without calendar features and with averaging	0.6819	N/A
+a713052	discard	carrier-origin categorical interaction	0.6780	N/A
+a19f18d	discard	date-excluded smoothed airport and route delay rates	0.6720	N/A
+a375971	discard	64 numerical histogram bins	0.6832	N/A
+a6f16bf	keep	depth 3 with 200 boosting rounds	0.6837	0.6814
+ee567b6	discard	monotone rising-then-falling daily time features	0.6835	N/A
+45fe7d3	keep	class-balanced loss within training months	0.6839	0.6813
+01243cc	discard	date balancing preserving weekday prevalence	0.6834	N/A
+7135af7	discard	make weekday effects additive	0.6828	N/A
+7fb6983	keep	75/25 blend of partition and one-hot models	0.6855	0.6829
+a9b8f71	discard	weighted one-hot model alone	0.6826	N/A
+6740b54	keep	equal blend of partition and one-hot models	0.6859	0.6834
+4b8e8fb	keep	add departure minute-of-hour to both models	0.6860	0.6834
+b91276e	keep	add distance-derived airport geometry to blended models	0.6866	0.6837
+df32702	keep	reduce airport geometry from three axes to two	0.6866	0.6837
+d961d2e	discard	within-month pairwise ranking objective	0.6824	N/A
+f7dc1a3	keep	one-hot component depth 5	0.6872	0.6844
+ef014b1	keep	actual holiday and holiday travel-window flags	0.6893	0.6867
+4ce4ac8	discard	remove holiday travel window and retain holiday-day flag	0.6872	N/A
+8e9971a	keep	retain travel window and remove actual-holiday flag	0.6893	0.6869
+62e624e	keep	L2 regularization 20 in both models	0.6894	0.6869
+8d7aed3	keep	faster categorical code lookups without unknown-category warnings	0.6894	0.6869
+104f916	discard	separate Thanksgiving year-end and July window indicators	0.6892	N/A
+e9f7ec6	keep	one-hot component depth 6	0.6900	0.6875
+a961790	discard	add 20 percent within-month ranking model	0.6897	N/A
+601eaed	keep	one-hot component depth 7	0.6902	0.6878
+53ae862	discard	current depth-7 one-hot model alone	0.6888	N/A
+063f35f	keep	row subsampling 0.8 in the depth-7 one-hot component	0.6905	0.6881

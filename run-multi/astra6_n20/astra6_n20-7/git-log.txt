@@ -1,0 +1,210 @@
+commit 063f35ff652d1eec464134af55e968ebbe2bf7de
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:34:35 2026 +0000
+
+    Test row subsampling in the deeper one-hot component
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 601eaed5b852165617a3e26bb59e864f3ab80711
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:31:18 2026 +0000
+
+    Check the one-hot component depth boundary
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e9f7ec62c85b115edb56ba5f4acc123d974058b0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:28:19 2026 +0000
+
+    Test another depth level in the one-hot component
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d7aed3d037a829f23cdb23a3ef00391454e33bc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:25:52 2026 +0000
+
+    Use cached categorical codes for row-wise preparation
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 62e624ea4c899500a7c6d7dbaac2d608a13a71b6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:24:28 2026 +0000
+
+    Test stronger L2 shrinkage in both ensemble components
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8e9971a898c7e159f07808405cc389dd5272a072
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:23:48 2026 +0000
+
+    Ablate actual-holiday flag while retaining travel windows
+
+ train.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit ef014b1da3500b8948e08c85a308101baf13a2fd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:21:15 2026 +0000
+
+    Test transferable holiday-day and travel-window indicators
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit f7dc1a3ff095f96d19bf6293ece250c8d8cbcb9e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:19:52 2026 +0000
+
+    Increase interaction capacity only in the one-hot component
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit df32702a46dd6e3a0dcd632f54630cfa9a73451e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:15:22 2026 +0000
+
+    Ablate the third airport geometry coordinate
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b91276e0a24c8bae9b2b5378a7835299c59c9c2e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:14:17 2026 +0000
+
+    Test geographic pooling in the categorical strategy ensemble
+
+ train.py | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 4b8e8fbca50a4bcf1639e78c6e3e4c0cc93e7f9f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:12:48 2026 +0000
+
+    Expose minute-of-hour scheduling patterns
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6740b54a1b0ee05d5696e75981168ecb40bbb232
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:11:51 2026 +0000
+
+    Test equal weights for complementary category models
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7fb698374b2daf8c3b1ebc3310b64563940032a9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:09:57 2026 +0000
+
+    Blend partition and one-hot XGBoost predictions
+
+ train.py | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 45fe7d34a170dc87b5e4586ef622d331cccd9552
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:05:38 2026 +0000
+
+    Balance training classes within each calendar month
+
+ train.py | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit a6f16bfd70cb934c8093cdf880c9f24a3b21e50f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 16:01:54 2026 +0000
+
+    Allocate capacity to more shallower trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 9f61a4cffe78244f50d7218d331c88e97aac8a9a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:53:06 2026 +0000
+
+    Average randomized trees within each boosting round
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 4596fe16685c26f5c4bbc42834fdca94448e5bfc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:48:35 2026 +0000
+
+    Require more support for each tree leaf
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit dec4d130c431ce5baaba3dfaaae891e4a7c78245
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:47:55 2026 +0000
+
+    Harmonize America West with US Airways reporting
+
+ train.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 00d9ae441fa53232aff5504756090922c41c1251
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:45:58 2026 +0000
+
+    Ablate month to test seasonal transfer value
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9bd4174f0b339456f9803f3f8a0c36e15bc95713
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:43:48 2026 +0000
+
+    Test shallower depth-four trees for temporal transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 53f3a8d64bac14ef1262d0af0fa25980ba5c60e9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:43:18 2026 +0000
+
+    Remove day-of-month to reduce year-specific calendar fitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 029705bc126d353734113b4590d2b40ccaa330e9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 15:42:23 2026 +0000
+
+    Simplify row preparation with cached categorical dtypes
+
+ train.py | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

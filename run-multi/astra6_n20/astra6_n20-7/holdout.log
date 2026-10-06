@@ -1,0 +1,88 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] b3f5d13 | discard | 300 trees at learning rate 0.1 ===
+  SKIP: status discard
+=== [4] 029705b | keep | faster equivalent categorical preparation ===
+  holdout=0.6725
+=== [5] 53f3a8d | keep | remove categorical day-of-month ===
+  holdout=0.6762
+=== [6] 9bd4174 | keep | depth 4 instead of 6 ===
+  holdout=0.6791
+=== [7] bcc6d6d | discard | 300 rounds at depth 4 ===
+  SKIP: status discard
+=== [8] 804ff74 | discard | limit categorical split threshold to 16 ===
+  SKIP: status discard
+=== [9] 00d9ae4 | keep | remove month ===
+  holdout=0.6808
+=== [10] 6496aa1 | discard | add four broad seasons ===
+  SKIP: status discard
+=== [11] dec4d13 | keep | harmonize HP carrier code to US ===
+  holdout=0.6812
+=== [12] 4596fe1 | keep | minimum child weight 50 ===
+  holdout=0.6819
+=== [13] 7475247 | discard | one-hot splits with 500 rounds at eta 0.05 ===
+  SKIP: status discard
+=== [14] a233875 | discard | route-relative median departure time ===
+  SKIP: status discard
+=== [15] 9f61a4c | keep | four randomized trees per boosting round ===
+  holdout=0.6819
+=== [16] b42688b | discard | airport geometry from route distance graph ===
+  SKIP: status discard
+=== [17] f810db2 | discard | 300 rounds without calendar features and with averaging ===
+  SKIP: status discard
+=== [18] a713052 | discard | carrier-origin categorical interaction ===
+  SKIP: status discard
+=== [19] a19f18d | discard | date-excluded smoothed airport and route delay rates ===
+  SKIP: status discard
+=== [20] a375971 | discard | 64 numerical histogram bins ===
+  SKIP: status discard
+=== [21] a6f16bf | keep | depth 3 with 200 boosting rounds ===
+  holdout=0.6814
+=== [22] ee567b6 | discard | monotone rising-then-falling daily time features ===
+  SKIP: status discard
+=== [23] 45fe7d3 | keep | class-balanced loss within training months ===
+  holdout=0.6813
+=== [24] 01243cc | discard | date balancing preserving weekday prevalence ===
+  SKIP: status discard
+=== [25] 7135af7 | discard | make weekday effects additive ===
+  SKIP: status discard
+=== [26] 7fb6983 | keep | 75/25 blend of partition and one-hot models ===
+  holdout=0.6829
+=== [27] a9b8f71 | discard | weighted one-hot model alone ===
+  SKIP: status discard
+=== [28] 6740b54 | keep | equal blend of partition and one-hot models ===
+  holdout=0.6834
+=== [29] 4b8e8fb | keep | add departure minute-of-hour to both models ===
+  holdout=0.6834
+=== [30] b91276e | keep | add distance-derived airport geometry to blended models ===
+  holdout=0.6837
+=== [31] df32702 | keep | reduce airport geometry from three axes to two ===
+  holdout=0.6837
+=== [32] d961d2e | discard | within-month pairwise ranking objective ===
+  SKIP: status discard
+=== [33] f7dc1a3 | keep | one-hot component depth 5 ===
+  holdout=0.6844
+=== [34] ef014b1 | keep | actual holiday and holiday travel-window flags ===
+  holdout=0.6867
+=== [35] 4ce4ac8 | discard | remove holiday travel window and retain holiday-day flag ===
+  SKIP: status discard
+=== [36] 8e9971a | keep | retain travel window and remove actual-holiday flag ===
+  holdout=0.6869
+=== [37] 62e624e | keep | L2 regularization 20 in both models ===
+  holdout=0.6869
+=== [38] 8d7aed3 | keep | faster categorical code lookups without unknown-category warnings ===
+  holdout=0.6869
+=== [39] 104f916 | discard | separate Thanksgiving year-end and July window indicators ===
+  SKIP: status discard
+=== [40] e9f7ec6 | keep | one-hot component depth 6 ===
+  holdout=0.6875
+=== [41] a961790 | discard | add 20 percent within-month ranking model ===
+  SKIP: status discard
+=== [42] 601eaed | keep | one-hot component depth 7 ===
+  holdout=0.6878
+=== [43] 53ae862 | discard | current depth-7 one-hot model alone ===
+  SKIP: status discard
+=== [44] 063f35f | keep | row subsampling 0.8 in the depth-7 one-hot component ===
+  holdout=0.6881
+
+=== DONE: results written to output/holdout_scores.tsv ===
