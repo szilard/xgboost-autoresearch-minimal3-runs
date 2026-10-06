@@ -1,0 +1,7 @@
+Completed 50 experiments plus the baseline; stopped after 59m24s.
+
+- Eval AUC: **0.6743 → 0.6909** (+0.0166).
+- Best commit: `8052d06` on `oct6`.
+- Saved artifact verified; working tree clean.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

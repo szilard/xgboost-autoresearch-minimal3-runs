@@ -1,0 +1,219 @@
+commit 8052d06d9fdaa6a6852cd7ed93e17d16d58c5132
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:11:18 2026 +0000
+
+    Test stronger shrinkage of leaf effects
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 860b28d70952828be4f5355029cbdb7916fc6522
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:10:07 2026 +0000
+
+    Test tree-level feature sampling for forest diversity
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d48e4063e5a1ab020f2b72d84f1aae125bdb36ac
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:09:38 2026 +0000
+
+    Test a smaller boosted forest after calendar refinements
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a0dbe028d5f506f01b350763ad8fb1a137464c02
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:08:03 2026 +0000
+
+    Test a broader winter holiday travel envelope
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c3ed334cf8fb2aea292c460509431885be23e6ab
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:05:33 2026 +0000
+
+    Align four holiday features with asymmetric travel windows
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit bdfa03971e11f0d1f31125776815434a6f7ccc95
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 22:02:35 2026 +0000
+
+    Test ordinary logistic loss after month balancing
+
+ train.py | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
+
+commit d4bd0fce3e8a4260477480362edae00baafaa0c0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:58:28 2026 +0000
+
+    Pool nearby numeric values with coarser histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5dc2911cd8308b3ccb95df2470ddf7be57ed2d16
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:54:48 2026 +0000
+
+    Balance training outcomes within months to reduce seasonal confounding
+
+ train.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit af8cfd2c1cad970a93508e768cdc8b9dbd6d4d52
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:53:39 2026 +0000
+
+    Expose an approximate arrival phase for destination constraints
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 33dad0aabc26087abe271d213b2a887d5b25006a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:48:16 2026 +0000
+
+    Test label smoothing to regularize binary-logistic fits
+
+ train.py | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 08f1415b9747082fff83ff5723ff368df0ceaace
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:41:51 2026 +0000
+
+    Compare departure time with training schedule medians
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 0aa897893fdaf1db75cc38da9022f301fde3b37e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:38:31 2026 +0000
+
+    Require stronger support for each fitted leaf
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f02dba3c8fbe6d43d0476cfe05bda57d90dce1a8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:37:29 2026 +0000
+
+    Harmonize America West and US Airways reporting codes
+
+ train.py | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 97521858d811c0ee8eba846d885c01eb49ec5317
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:34:37 2026 +0000
+
+    Measure whether broad month effects transfer across years
+
+ train.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 66224b1fadaea532ee6f607edad8b1a7de83b650
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:31:40 2026 +0000
+
+    Average sampled trees within each boosting round
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit fd0abe0fd7a3d29f4bbd6c44983d3c117dd96f91
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:29:30 2026 +0000
+
+    Add moving winter Monday holiday features
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 99b5a33f482e1b26cbcb43237a6bb475ad356a45
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:27:29 2026 +0000
+
+    Represent travel holidays relative to each row calendar
+
+ train.py | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+commit 85855eed951874c0749bf96303c94d67b39bf3c8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:25:56 2026 +0000
+
+    Separate global month seasonality from other interactions
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 90b46c6aea55e70450e8f2213cbecd5ac1745ad4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:24:03 2026 +0000
+
+    Test lower-order interactions with depth-three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 26fd5a1a8ee05e3528f12817d5a1b9928996cdae
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:20:09 2026 +0000
+
+    Expose schedule time components and daily cyclic structure
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 0eb7523645954847f9fe400d1b34381c3c9002ee
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:18:18 2026 +0000
+
+    Remove day-of-month to reduce date-specific overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b95c3da6b82ed7da60bd369395d842253efb7ce8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:17:42 2026 +0000
+
+    Regularize shallow boosting for cross-year generalization
+
+ train.py | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit 14af27347c9c204d0ef8b285c63c8801f5cc80a4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 21:16:12 2026 +0000
+
+    Simplify categorical preparation for faster row scoring
+
+ train.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,104 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 14af273 | keep | simplify categorical preparation ===
+  holdout=0.6725
+=== [4] b95c3da | keep | 500 shallow regularized trees ===
+  holdout=0.6786
+=== [5] 0eb7523 | keep | remove day-of-month category ===
+  holdout=0.6785
+=== [6] 70e1e86 | discard | one-hot categorical splits ===
+  SKIP: status discard
+=== [7] 26fd5a1 | keep | departure hour minute and cyclic features ===
+  holdout=0.6784
+=== [8] 37c5371 | discard | route and carrier-airport categories ===
+  SKIP: status discard
+=== [9] 0ae9070 | discard | max_cat_threshold 8 ===
+  SKIP: status discard
+=== [10] 16c3e31 | discard | airport distance-graph coordinates ===
+  SKIP: status discard
+=== [11] 90b46c6 | keep | depth 3 trees ===
+  holdout=0.6791
+=== [12] c446bcb | discard | 1500 depth 3 trees at eta 0.03 ===
+  SKIP: status discard
+=== [13] 85855ee | keep | Month additive interaction constraint ===
+  holdout=0.6800
+=== [14] 99b5a33 | keep | holiday-relative offset and identity ===
+  holdout=0.6818
+=== [15] 1f2aac9 | discard | remove holiday identity ===
+  SKIP: status discard
+=== [16] fd0abe0 | keep | add MLK and Presidents Day ===
+  holdout=0.6819
+=== [17] 8c9f9d0 | discard | reference-split smoothed category risk features ===
+  SKIP: status discard
+=== [18] 66224b1 | keep | four sampled trees per boosting round ===
+  holdout=0.6827
+=== [19] 242d13a | discard | additive weekday constraint ===
+  SKIP: status discard
+=== [20] 2479704 | discard | 250 boosted-forest rounds ===
+  SKIP: status discard
+=== [21] 9752185 | keep | remove broad Month seasonality ===
+  holdout=0.6841
+=== [22] 175e802 | discard | coarse additive seasons ===
+  SKIP: status discard
+=== [23] f02dba3 | keep | harmonize HP and US carrier codes ===
+  holdout=0.6848
+=== [24] 0aa8978 | keep | minimum child weight 100 ===
+  holdout=0.6848
+=== [25] 86273f1 | discard | depth 2 boosted forest ===
+  SKIP: status discard
+=== [26] bac3d4e | discard | pairwise ranking loss ===
+  SKIP: status discard
+=== [27] 08f1415 | keep | departure deviations from schedule medians ===
+  holdout=0.6850
+=== [28] 6a316f6 | discard | deterministic carrier feature masking ===
+  SKIP: status discard
+=== [29] 2ca86f9 | discard | depth 4 after robust feature engineering ===
+  SKIP: status discard
+=== [30] 51e99a6 | discard | origin-only relative schedule feature ===
+  SKIP: status discard
+=== [31] 1498076 | discard | DART tree dropout ===
+  SKIP: status discard
+=== [32] 33dad0a | keep | 10 percent label smoothing ===
+  holdout=0.6849
+=== [33] fb39512 | discard | one-hot low-cardinality features only ===
+  SKIP: status discard
+=== [34] 645137e | discard | smoothed numeric airport risks ===
+  SKIP: status discard
+=== [35] af8cfd2 | keep | approximate arrival-time phase ===
+  holdout=0.6852
+=== [36] 5dc2911 | keep | balance outcomes within training months ===
+  holdout=0.6851
+=== [37] 04d4089 | discard | Easter travel-window alignment ===
+  SKIP: status discard
+=== [38] d4bd0fc | keep | Coarser numeric histograms: max_bin=64 ===
+  holdout=0.6850
+=== [39] c9b84a1 | discard | Average two fixed-seed boosted forests ===
+  SKIP: status discard
+=== [40] bdfa039 | keep | Remove label smoothing after month balancing ===
+  holdout=0.6850
+=== [41] 725359f | discard | Time-distance rotation exposure proxy ===
+  SKIP: status discard
+=== [42] eba2076 | discard | Remove minute-within-hour feature ===
+  SKIP: status discard
+=== [43] c35166c | discard | Minimum split-loss penalty gamma 2 ===
+  SKIP: status discard
+=== [44] c3ed334 | keep | Asymmetric BTS travel windows for four holidays ===
+  holdout=0.6859
+=== [45] 7b59ca0 | discard | Independence Day weekend travel window ===
+  SKIP: status discard
+=== [46] a0dbe02 | keep | Broader Christmas and shorter New Year travel windows ===
+  holdout=0.6864
+=== [47] 3091b2c | discard | Isolate holiday interactions ===
+  SKIP: status discard
+=== [48] d48e406 | keep | Halve parallel trees from four to two ===
+  holdout=0.6866
+=== [49] 860b28d | keep | Tree-level rather than node-level feature sampling ===
+  holdout=0.6866
+=== [50] d290bb3 | discard | One tree per boosting round ===
+  SKIP: status discard
+=== [51] 8052d06 | keep | L2 leaf penalty 50 ===
+  holdout=0.6873
+=== [52] bbcaa90 | discard | Remove feature subsampling after stronger L2 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

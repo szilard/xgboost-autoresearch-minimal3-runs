@@ -1,0 +1,52 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+14af273	keep	simplify categorical preparation	0.6743	0.6725
+b95c3da	keep	500 shallow regularized trees	0.6797	0.6786
+0eb7523	keep	remove day-of-month category	0.6797	0.6785
+70e1e86	discard	one-hot categorical splits	0.6780	N/A
+26fd5a1	keep	departure hour minute and cyclic features	0.6801	0.6784
+37c5371	discard	route and carrier-airport categories	0.6703	N/A
+0ae9070	discard	max_cat_threshold 8	0.6800	N/A
+16c3e31	discard	airport distance-graph coordinates	0.6800	N/A
+90b46c6	keep	depth 3 trees	0.6809	0.6791
+c446bcb	discard	1500 depth 3 trees at eta 0.03	0.6800	N/A
+85855ee	keep	Month additive interaction constraint	0.6815	0.6800
+99b5a33	keep	holiday-relative offset and identity	0.6840	0.6818
+1f2aac9	discard	remove holiday identity	0.6823	N/A
+fd0abe0	keep	add MLK and Presidents Day	0.6842	0.6819
+8c9f9d0	discard	reference-split smoothed category risk features	0.6823	N/A
+66224b1	keep	four sampled trees per boosting round	0.6848	0.6827
+242d13a	discard	additive weekday constraint	0.6832	N/A
+2479704	discard	250 boosted-forest rounds	0.6837	N/A
+9752185	keep	remove broad Month seasonality	0.6868	0.6841
+175e802	discard	coarse additive seasons	0.6852	N/A
+f02dba3	keep	harmonize HP and US carrier codes	0.6871	0.6848
+0aa8978	keep	minimum child weight 100	0.6872	0.6848
+86273f1	discard	depth 2 boosted forest	0.6848	N/A
+bac3d4e	discard	pairwise ranking loss	0.6841	N/A
+08f1415	keep	departure deviations from schedule medians	0.6874	0.6850
+6a316f6	discard	deterministic carrier feature masking	0.6862	N/A
+2ca86f9	discard	depth 4 after robust feature engineering	0.6868	N/A
+51e99a6	discard	origin-only relative schedule feature	0.6872	N/A
+1498076	discard	DART tree dropout	0.6868	N/A
+33dad0a	keep	10 percent label smoothing	0.6875	0.6849
+fb39512	discard	one-hot low-cardinality features only	0.6856	N/A
+645137e	discard	smoothed numeric airport risks	0.6850	N/A
+af8cfd2	keep	approximate arrival-time phase	0.6878	0.6852
+5dc2911	keep	balance outcomes within training months	0.6883	0.6851
+04d4089	discard	Easter travel-window alignment	0.6863	N/A
+d4bd0fc	keep	Coarser numeric histograms: max_bin=64	0.6883	0.6850
+c9b84a1	discard	Average two fixed-seed boosted forests	0.6883	N/A
+bdfa039	keep	Remove label smoothing after month balancing	0.6884	0.6850
+725359f	discard	Time-distance rotation exposure proxy	0.6883	N/A
+eba2076	discard	Remove minute-within-hour feature	0.6883	N/A
+c35166c	discard	Minimum split-loss penalty gamma 2	0.6884	N/A
+c3ed334	keep	Asymmetric BTS travel windows for four holidays	0.6891	0.6859
+7b59ca0	discard	Independence Day weekend travel window	0.6885	N/A
+a0dbe02	keep	Broader Christmas and shorter New Year travel windows	0.6900	0.6864
+3091b2c	discard	Isolate holiday interactions	0.6894	N/A
+d48e406	keep	Halve parallel trees from four to two	0.6903	0.6866
+860b28d	keep	Tree-level rather than node-level feature sampling	0.6904	0.6866
+d290bb3	discard	One tree per boosting round	0.6901	N/A
+8052d06	keep	L2 leaf penalty 50	0.6909	0.6873
+bbcaa90	discard	Remove feature subsampling after stronger L2	0.6895	N/A
