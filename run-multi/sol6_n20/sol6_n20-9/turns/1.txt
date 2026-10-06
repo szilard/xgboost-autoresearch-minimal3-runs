@@ -1,0 +1,3 @@
+Setup checks passed: the working tree is clean, both required CSV files exist, dependencies import, and `oct6` is available.
+
+`program.md` asks us to agree on the run tag before creating the branch. Please confirm **`oct6`** or give me another tag. I haven’t started the experiment clock.

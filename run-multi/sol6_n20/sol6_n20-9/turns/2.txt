@@ -1,0 +1,3 @@
+The experiment is complete. Across 50 trials, the best Eval AUC was **0.6846**, up from the 0.6743 baseline. Branch `oct6` is at best commit `348d81c`, and the clock is stopped.
+
+The kept [model](/home/ubuntu/xgboost-autoresearch-minimal3/train.py) combines three XGBoost classifiers with calendar and departure-hour features. The full trial history is in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and the reasoning is in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). No holdout results were inspected.

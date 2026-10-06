@@ -1,0 +1,111 @@
+commit 348d81c0b5b2017dd5da548495cfffee9994d563
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:36:25 2026 +0000
+
+    Require stronger gain for tree splits
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b0ae0aa89ac4bfe6ca0eba335884fa8194ac584e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:31:21 2026 +0000
+
+    Coarsen histogram bins in XGBoost ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 432c8e73601d13cd57c41b2a59c42e741a0848ef
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:30:20 2026 +0000
+
+    Add row sampled member to XGBoost ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cb8b096073df8a09466ade3c3d638c3438c81d02
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:29:13 2026 +0000
+
+    Average full and sampled column XGBoost models
+
+ train.py | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+commit 2d2332cdd1de14edd94e78287774d258f68f4aae
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:21:12 2026 +0000
+
+    Remove unused departure minute feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 8892cfacd9e94d1da0c8cedc0358da54ef07b7e9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:19:11 2026 +0000
+
+    Use smaller boosting steps over four hundred rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ec501be27f6f4327b318aed658e26b049688bc21
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:13:55 2026 +0000
+
+    Regularize shallow trees with minimum child weight ten
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 732c84f7cd6b17b20b6dab7835f96e18eb9e4d4c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:10:13 2026 +0000
+
+    Add day of year from scheduled date
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 0d662ebc80e61ec41d1c15dfcfaec254111dd3bc
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:08:18 2026 +0000
+
+    Test two hundred shallow boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d43437b7e605afdf827a3ffbb0804ded5812c6c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:07:24 2026 +0000
+
+    Use depth three trees for stronger regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bad36fb4290a58de73c0313a2e39505dc4263c86
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:05:19 2026 +0000
+
+    Add scheduled departure hour and minute features
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

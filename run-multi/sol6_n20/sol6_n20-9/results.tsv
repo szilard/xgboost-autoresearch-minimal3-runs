@@ -1,0 +1,52 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+bad36fb	0.6752	keep	add departure hour and minute features
+13434dd	0.6682	discard	increase trees from 100 to 300
+5d43437	0.6803	keep	reduce tree depth from 6 to 3
+0d662eb	0.6810	keep	increase depth-three model to 200 trees
+a12f6a2	0.6803	discard	increase depth-three model to 300 trees
+732c84f	0.6832	keep	add numeric day of year
+18e1ab6	0.6832	discard	add weekday-by-hour category with no AUC gain and slower eval
+ef585c5	0.6832	discard	add route-relative scheduled departure with no AUC gain
+ec501be	0.6837	keep	raise minimum child weight to 10
+bed7a5c	0.6836	discard	raise minimum child weight from 10 to 30
+7a461be	0.6819	discard	one-hot low-cardinality category splits
+fe3573e	0.6798	discard	limit categorical split search to 16 categories
+01c5828	0.6826	discard	expand categorical split search to 128 categories
+8892cfa	0.6839	keep	400 trees at learning rate 0.05
+5baf8d2	0.6836	discard	800 trees at learning rate 0.025
+2d2332c	0.6839	keep	remove unused departure minute feature
+024e8ac	0.6779	discard	add carrier-origin category
+a37b2b6	0.6810	discard	add month-by-departure-hour category
+8e47cb5	0.6831	discard	row subsampling at 0.8
+c3d614a	0.6839	discard	column subsampling at 0.8 with equal AUC
+2ed84ce	0.6839	discard	add winter Thanksgiving and July travel flags with equal AUC
+db25ae4	0.6812	discard	reduce tree depth from 3 to 2
+cb8b096	0.6842	keep	average full-column and sampled-column models
+432c8e7	0.6843	keep	add row-sampled model to probability average
+b0ae0aa	0.6844	keep	reduce histogram bins from 256 to 128
+7573bea	0.6840	discard	reduce histogram bins from 128 to 64
+b6535cb	0.6837	discard	treat departure hour as categorical
+e4d03bf	0.6844	discard	raise L2 regularization to 10 with equal AUC
+ba0f30b	0.6842	discard	remove day-of-month categorical input
+348d81c	0.6846	keep	set split gain threshold gamma to 2
+fc166b9	0.6845	discard	infer airport coordinates from route distances
+40b355a	0.6845	discard	raise split gain threshold from 2 to 5
+d54e391	0.6798	discard	separate schedule calendar and spatial interaction groups
+47dc359	0.6836	discard	loss-guided growth with eight leaves
+6d92adc	0.6843	discard	add L1 regularization alpha 1
+97eda2d	0.6838	discard	remove flight distance feature
+c04defc	0.6846	discard	average raw margins instead of probabilities with equal AUC
+3e047fa	0.6829	discard	add annual sine and cosine features
+9b59121	0.6844	discard	set gamma to 1 between tested values
+b292b5b	0.6846	discard	add depth-four ensemble member with equal AUC
+756ee63	0.6845	discard	add second seed with row and column sampling
+b81d4bd	0.6845	discard	add boosted forest member to ensemble
+1c6070e	0.6844	discard	raise child weight from 10 to 20
+790bfed	0.6840	discard	replace row sampler with gradient-based sampling
+8ee45b0	0.6846	discard	add DART dropout member with equal AUC and slower training
+ccd5ff3	0.6844	discard	replace tree-level column sampling with node-level sampling
+1078f30	0.6843	discard	reduce min_child_weight to 5
+aa2754d	0.6846	discard	increase ensemble boosting rounds to 500, equal and slower
+4719e44	0.6843	discard	add smoothed airport and carrier delay priors
+7458aa2	0.6844	discard	reduce gamma-regularized ensemble to 300 rounds

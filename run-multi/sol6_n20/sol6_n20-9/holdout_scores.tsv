@@ -1,0 +1,52 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+bad36fb	keep	add departure hour and minute features	0.6752	0.6731
+13434dd	discard	increase trees from 100 to 300	0.6682	N/A
+5d43437	keep	reduce tree depth from 6 to 3	0.6803	0.6790
+0d662eb	keep	increase depth-three model to 200 trees	0.6810	0.6792
+a12f6a2	discard	increase depth-three model to 300 trees	0.6803	N/A
+732c84f	keep	add numeric day of year	0.6832	0.6819
+18e1ab6	discard	add weekday-by-hour category with no AUC gain and slower eval	0.6832	N/A
+ef585c5	discard	add route-relative scheduled departure with no AUC gain	0.6832	N/A
+ec501be	keep	raise minimum child weight to 10	0.6837	0.6820
+bed7a5c	discard	raise minimum child weight from 10 to 30	0.6836	N/A
+7a461be	discard	one-hot low-cardinality category splits	0.6819	N/A
+fe3573e	discard	limit categorical split search to 16 categories	0.6798	N/A
+01c5828	discard	expand categorical split search to 128 categories	0.6826	N/A
+8892cfa	keep	400 trees at learning rate 0.05	0.6839	0.6831
+5baf8d2	discard	800 trees at learning rate 0.025	0.6836	N/A
+2d2332c	keep	remove unused departure minute feature	0.6839	0.6831
+024e8ac	discard	add carrier-origin category	0.6779	N/A
+a37b2b6	discard	add month-by-departure-hour category	0.6810	N/A
+8e47cb5	discard	row subsampling at 0.8	0.6831	N/A
+c3d614a	discard	column subsampling at 0.8 with equal AUC	0.6839	N/A
+2ed84ce	discard	add winter Thanksgiving and July travel flags with equal AUC	0.6839	N/A
+db25ae4	discard	reduce tree depth from 3 to 2	0.6812	N/A
+cb8b096	keep	average full-column and sampled-column models	0.6842	0.6833
+432c8e7	keep	add row-sampled model to probability average	0.6843	0.6833
+b0ae0aa	keep	reduce histogram bins from 256 to 128	0.6844	0.6832
+7573bea	discard	reduce histogram bins from 128 to 64	0.6840	N/A
+b6535cb	discard	treat departure hour as categorical	0.6837	N/A
+e4d03bf	discard	raise L2 regularization to 10 with equal AUC	0.6844	N/A
+ba0f30b	discard	remove day-of-month categorical input	0.6842	N/A
+348d81c	keep	set split gain threshold gamma to 2	0.6846	0.6834
+fc166b9	discard	infer airport coordinates from route distances	0.6845	N/A
+40b355a	discard	raise split gain threshold from 2 to 5	0.6845	N/A
+d54e391	discard	separate schedule calendar and spatial interaction groups	0.6798	N/A
+47dc359	discard	loss-guided growth with eight leaves	0.6836	N/A
+6d92adc	discard	add L1 regularization alpha 1	0.6843	N/A
+97eda2d	discard	remove flight distance feature	0.6838	N/A
+c04defc	discard	average raw margins instead of probabilities with equal AUC	0.6846	N/A
+3e047fa	discard	add annual sine and cosine features	0.6829	N/A
+9b59121	discard	set gamma to 1 between tested values	0.6844	N/A
+b292b5b	discard	add depth-four ensemble member with equal AUC	0.6846	N/A
+756ee63	discard	add second seed with row and column sampling	0.6845	N/A
+b81d4bd	discard	add boosted forest member to ensemble	0.6845	N/A
+1c6070e	discard	raise child weight from 10 to 20	0.6844	N/A
+790bfed	discard	replace row sampler with gradient-based sampling	0.6840	N/A
+8ee45b0	discard	add DART dropout member with equal AUC and slower training	0.6846	N/A
+ccd5ff3	discard	replace tree-level column sampling with node-level sampling	0.6844	N/A
+1078f30	discard	reduce min_child_weight to 5	0.6843	N/A
+aa2754d	discard	increase ensemble boosting rounds to 500, equal and slower	0.6846	N/A
+4719e44	discard	add smoothed airport and carrier delay priors	0.6843	N/A
+7458aa2	discard	reduce gamma-regularized ensemble to 300 rounds	0.6844	N/A
