@@ -1,0 +1,88 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 8075471 | discard | 300 trees at learning rate 0.05; equal AUC but slower ===
+  SKIP: status discard
+=== [4] 24cb14f | keep | add categorical departure hour ===
+  holdout=0.6735
+=== [5] bbdc4fd | discard | add carrier by departure hour category ===
+  SKIP: status discard
+=== [6] babd3b3 | keep | use depth 4 instead of 6 ===
+  holdout=0.6773
+=== [7] c116efe | keep | use depth 3 instead of 4 ===
+  holdout=0.6784
+=== [8] 45fb2db | discard | use depth 2 instead of 3 ===
+  SKIP: status discard
+=== [9] b7751b3 | discard | 300 depth-3 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [10] 5ef9c62 | discard | min_child_weight 10; equal AUC without simplification ===
+  SKIP: status discard
+=== [11] 8a8de8b | discard | subsample 0.8 per tree ===
+  SKIP: status discard
+=== [12] 2f1be6a | keep | add numeric day of year ===
+  holdout=0.6823
+=== [13] d7a19db | discard | add raw origin-destination route category ===
+  SKIP: status discard
+=== [14] 705a337 | discard | add five-fold smoothed route risk encoding ===
+  SKIP: status discard
+=== [15] 97abac4 | discard | add numeric weekday; equal AUC and slower ===
+  SKIP: status discard
+=== [16] d4206f7 | discard | add fixed-holiday window; equal AUC and slower ===
+  SKIP: status discard
+=== [17] 8671bcb | keep | remove redundant day-of-month category ===
+  holdout=0.6828
+=== [18] 8d16e61 | keep | remove month category; day of year retained ===
+  holdout=0.6837
+=== [19] e8c1a74 | discard | remove departure hour; lower AUC despite faster eval ===
+  SKIP: status discard
+=== [20] 2a87a1d | discard | add minute within hour; equal AUC without clear speed gain ===
+  SKIP: status discard
+=== [21] 9ab381d | discard | one-hot splits for categories under 32 levels ===
+  SKIP: status discard
+=== [22] e16bb6c | discard | limit categorical partition search to 16 levels ===
+  SKIP: status discard
+=== [23] 4c1329c | discard | add annual sine and cosine features ===
+  SKIP: status discard
+=== [24] b213587 | discard | use 60 rather than 100 boosting rounds ===
+  SKIP: status discard
+=== [25] 77c3641 | discard | use 150 rather than 100 boosting rounds ===
+  SKIP: status discard
+=== [26] 4e1ae9a | discard | reg_lambda 10 instead of default 1 ===
+  SKIP: status discard
+=== [27] dd31ca4 | discard | depth 4 after removing date categories ===
+  SKIP: status discard
+=== [28] 089c280 | keep | average depth 3 and depth 4 model probabilities ===
+  holdout=0.6845
+=== [29] 52040bb | keep | weight depth 3 twice versus depth 4 ===
+  holdout=0.6844
+=== [30] 6c7f7ef | discard | weight depth 3 three times; equal without simplification ===
+  SKIP: status discard
+=== [31] f7db797 | discard | add gamma 1 split penalty; equal without simplification ===
+  SKIP: status discard
+=== [32] 4ad843f | discard | blend depth 3 with loss-guided eight-leaf model ===
+  SKIP: status discard
+=== [33] dceb3d1 | discard | max_bin 512 rather than default 256 ===
+  SKIP: status discard
+=== [34] 15212fd | discard | remove distance feature ===
+  SKIP: status discard
+=== [35] 53a683a | discard | constrain scheduled time to increase in depth-4 model ===
+  SKIP: status discard
+=== [36] f781674 | keep | DART regularization in depth-4 model ===
+  holdout=0.6843
+=== [37] d64f29d | discard | raise depth-4 DART rate_drop from 0.05 to 0.1 ===
+  SKIP: status discard
+=== [38] 7ac099d | discard | apply DART dropout to both blend components ===
+  SKIP: status discard
+=== [39] 61f163b | discard | use depth 5 DART secondary model; equal but larger ===
+  SKIP: status discard
+=== [40] ca386b0 | discard | column sample 80 percent in DART secondary model ===
+  SKIP: status discard
+=== [41] 1d7468b | discard | use 128 histogram bins instead of default 256 ===
+  SKIP: status discard
+=== [42] 899e1ec | discard | add four-level seasonal category ===
+  SKIP: status discard
+=== [43] b27ca12 | keep | forest normalization in DART secondary model ===
+  holdout=0.6846
+=== [44] b6dfc06 | discard | raise forest-normalized DART dropout to 10 percent ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

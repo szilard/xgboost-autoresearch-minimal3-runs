@@ -1,0 +1,44 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+8075471	discard	300 trees at learning rate 0.05; equal AUC but slower	0.6743	N/A
+24cb14f	keep	add categorical departure hour	0.6747	0.6735
+bbdc4fd	discard	add carrier by departure hour category	0.6721	N/A
+babd3b3	keep	use depth 4 instead of 6	0.6789	0.6773
+c116efe	keep	use depth 3 instead of 4	0.6797	0.6784
+45fb2db	discard	use depth 2 instead of 3	0.6754	N/A
+b7751b3	discard	300 depth-3 trees at learning rate 0.05	0.6796	N/A
+5ef9c62	discard	min_child_weight 10; equal AUC without simplification	0.6797	N/A
+8a8de8b	discard	subsample 0.8 per tree	0.6784	N/A
+2f1be6a	keep	add numeric day of year	0.6832	0.6823
+d7a19db	discard	add raw origin-destination route category	0.6759	N/A
+705a337	discard	add five-fold smoothed route risk encoding	0.6825	N/A
+97abac4	discard	add numeric weekday; equal AUC and slower	0.6832	N/A
+d4206f7	discard	add fixed-holiday window; equal AUC and slower	0.6832	N/A
+8671bcb	keep	remove redundant day-of-month category	0.6842	0.6828
+8d16e61	keep	remove month category; day of year retained	0.6850	0.6837
+e8c1a74	discard	remove departure hour; lower AUC despite faster eval	0.6843	N/A
+2a87a1d	discard	add minute within hour; equal AUC without clear speed gain	0.6850	N/A
+9ab381d	discard	one-hot splits for categories under 32 levels	0.6818	N/A
+e16bb6c	discard	limit categorical partition search to 16 levels	0.6758	N/A
+4c1329c	discard	add annual sine and cosine features	0.6837	N/A
+b213587	discard	use 60 rather than 100 boosting rounds	0.6838	N/A
+77c3641	discard	use 150 rather than 100 boosting rounds	0.6846	N/A
+4e1ae9a	discard	reg_lambda 10 instead of default 1	0.6844	N/A
+dd31ca4	discard	depth 4 after removing date categories	0.6840	N/A
+089c280	keep	average depth 3 and depth 4 model probabilities	0.6853	0.6845
+52040bb	keep	weight depth 3 twice versus depth 4	0.6854	0.6844
+6c7f7ef	discard	weight depth 3 three times; equal without simplification	0.6854	N/A
+f7db797	discard	add gamma 1 split penalty; equal without simplification	0.6854	N/A
+4ad843f	discard	blend depth 3 with loss-guided eight-leaf model	0.6853	N/A
+dceb3d1	discard	max_bin 512 rather than default 256	0.6847	N/A
+15212fd	discard	remove distance feature	0.6845	N/A
+53a683a	discard	constrain scheduled time to increase in depth-4 model	0.6847	N/A
+f781674	keep	DART regularization in depth-4 model	0.6856	0.6843
+d64f29d	discard	raise depth-4 DART rate_drop from 0.05 to 0.1	0.6855	N/A
+7ac099d	discard	apply DART dropout to both blend components	0.6851	N/A
+61f163b	discard	use depth 5 DART secondary model; equal but larger	0.6856	N/A
+ca386b0	discard	column sample 80 percent in DART secondary model	0.6855	N/A
+1d7468b	discard	use 128 histogram bins instead of default 256	0.6855	N/A
+899e1ec	discard	add four-level seasonal category	0.6848	N/A
+b27ca12	keep	forest normalization in DART secondary model	0.6858	0.6846
+b6dfc06	discard	raise forest-normalized DART dropout to 10 percent	0.6857	N/A

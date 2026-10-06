@@ -1,0 +1,102 @@
+commit b27ca12f3e779f2026b8806936c70ac749bb41bd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:52:23 2026 +0000
+
+    Test forest normalization in DART blend
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f78167462d1cbcb81064d3791c4cfdd8cece87ee
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:42:53 2026 +0000
+
+    Test DART regularization in secondary model
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 52040bbe3693bd97c8fd735b499fb94c2c09aea3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:33:19 2026 +0000
+
+    Weight depth three twice in blended predictions
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 089c2806e30e21804db466f9314fb83586c830c4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:32:13 2026 +0000
+
+    Average depth three and four XGBoost models
+
+ train.py | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+
+commit 8d16e611ac17ffbdc66df8cd8aaab384ec3b62f8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:19:33 2026 +0000
+
+    Ablate month category with day of year retained
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8671bcbf011d0c4a918c69a35180e776452533f1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:18:29 2026 +0000
+
+    Ablate day-of-month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f1be6a1502983d50e23bd7447a5b346d8f5b7b6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:07:07 2026 +0000
+
+    Add numeric day of year feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit c116efeeddcde843b6fdbdf3c3a5bc9749f1f95a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:01:26 2026 +0000
+
+    Test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit babd3b3a252874f8fe0eb91edbe388d2821b53e4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 06:00:26 2026 +0000
+
+    Test depth four trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 24cb14fb063f7b9e8c39c43696a1284ceb135ce3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 05:58:12 2026 +0000
+
+    Add categorical scheduled departure hour
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
