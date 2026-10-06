@@ -1,0 +1,165 @@
+commit d1fbdd2428145627717d57075fb8468d929a0725
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:50:44 2026 +0000
+
+    Test stronger operational leaf regularization
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 47c19da1b767901d86398388afacd20bd2854257
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:41:09 2026 +0000
+
+    Test removal of the weakest airport geometry component
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 432fa749c98670382e55b9168aad43fb2b033dec
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:39:23 2026 +0000
+
+    Allocate operational tree capacity with loss-guided growth
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit e4feece97fb5aa6f45b68fa117ec339572f29e0a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:28:43 2026 +0000
+
+    Test reduced calendar contribution across the year shift
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a87bd7d66f50a446d828d276d07e7d68b0ac3413
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:26:15 2026 +0000
+
+    Fit a shallow calendar offset before operational boosting
+
+ train.py | 38 ++++++++++++++++++++++++++++++++------
+ 1 file changed, 32 insertions(+), 6 deletions(-)
+
+commit cb1d7347ae30e5f1ad8fe546856bb3036112c23a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:20:21 2026 +0000
+
+    Add route direction from learned airport coordinates
+
+ train.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit c492d8ae94793f6e9d298120f738f1d7773ef56c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:16:41 2026 +0000
+
+    Add transferable holiday-relative calendar features
+
+ train.py | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+
+commit 43551507de655b539021e7cb28812cae57d4e2cf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:14:10 2026 +0000
+
+    Average randomized trees within each boosting round
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 9333601bbac63c4b054230b9885917da4b76418e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:11:00 2026 +0000
+
+    Learn continuous airport coordinates from training distances
+
+ train.py | 24 +++++++++++++++++++++++-
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+
+commit 2ef73b43c000b2cf254a0e1db471bdebfb58902d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:06:18 2026 +0000
+
+    Test one-hot categorical splits for year-shift robustness
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit aefb79b626d45230a49e06eedd3a5d03c99d18a6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:04:17 2026 +0000
+
+    Restrict month to an additive seasonal effect
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit f98683439fac63edb92a1bc61ae8ab76c1120198
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:02:51 2026 +0000
+
+    Expose scheduled departure minute within the hour
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bd946b5b5c9e2c5c2d2e98488bf117f4cccf7ee2
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:01:53 2026 +0000
+
+    Test deeper interactions with constrained categorical splits
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c09ab85e5e9b320db0c3e4f6bfecbcc6a2865b9c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 18:00:28 2026 +0000
+
+    Regularize categorical partitions with a smaller threshold
+
+ train.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit a50cfe715d0c48bfe98c7928d892e1d17ffc049e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:57:42 2026 +0000
+
+    Simplify categorical preparation for row-wise evaluation
+
+ train.py | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+commit feb7777e7e4523588e2608ed4f515cffb0eaf0a3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:56:21 2026 +0000
+
+    Test removal of day-of-month calendar noise
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08ae37d1228b3eb11cad860fe570e3222665bbe9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 17:54:45 2026 +0000
+
+    Try shallow regularized boosting with more rounds
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

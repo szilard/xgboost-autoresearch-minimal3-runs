@@ -1,0 +1,37 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+08ae37d	keep	shallow regularized boosting: 600 trees depth 4 eta .05	0.6786	0.6777
+feb7777	keep	remove day-of-month categorical feature	0.6794	0.6787
+a50cfe7	keep	simplify categorical conversion with identical features	0.6794	0.6787
+fa6bd3a	discard	add native categorical origin-destination route	0.6704	N/A
+c09ab85	keep	limit categorical split threshold to 8; explicit category codes	0.6799	0.6781
+bd946b5	keep	increase depth to 6 with categorical threshold 8	0.6803	0.6789
+f986834	keep	add scheduled departure minute component	0.6807	0.6787
+aefb79b	keep	make month additive by restricting its interactions	0.6817	0.6804
+a192f54	discard	add departure minutes relative to route median	0.6815	N/A
+2ef73b4	keep	use one-hot splits for all categorical features	0.6833	0.6813
+c253c99	discard	increase one-hot boosting from 600 to 1500 rounds	0.6833	N/A
+2da62f4	discard	add five smoothed self-excluding airport and route delay rates	0.6820	N/A
+9333601	keep	add three distance-graph coordinates for origin and destination	0.6845	0.6827
+c4106c1	discard	increase minimum child weight from 20 to 80	0.6843	N/A
+4355150	keep	boost four randomized trees per round with column sampling	0.6846	0.6831
+c492d8a	keep	add nearest-holiday type and signed day offset with calendar isolation	0.6871	0.6854
+3fe581d	discard	pairwise rank loss with 400 trees and two sampled pairs per row	0.6858	N/A
+cb1d734	keep	add distance-normalized direction between airport coordinates	0.6874	0.6855
+1ba6167	discard	require split gain of at least 5	0.6866	N/A
+0b8edbf	discard	narrow holiday window from seven days to three	0.6873	N/A
+2083555	discard	average two boosted forests using seeds 42 and 2026	0.6874	N/A
+a87bd7d	keep	shallow calendar model plus operational residual boosted forest	0.6893	0.6867
+e4feece	keep	shrink calendar log-odds to half strength	0.6908	0.6881
+813bd37	discard	reduce calendar contribution from one-half to one-quarter	0.6896	N/A
+7589ee3	discard	add one-hot carrier-origin and carrier-destination categories	0.6908	N/A
+0288118	discard	separate month and holiday models; half month and full holiday weight	0.6897	N/A
+88596b3	discard	constrain daytime progression while retaining flexible overnight phase	0.6902	N/A
+d12cb11	discard	reduce operational booster to one tree per round	0.6904	N/A
+432fa74	keep	use loss-guided operational trees with at most 32 leaves	0.6910	0.6886
+47c19da	keep	remove weakest airport coordinate and matching direction feature	0.6911	0.6888
+d4f8c6d	discard	weight departure time and carrier more heavily in column sampling	0.6911	N/A
+e5ba63d	discard	reduce operational numeric histogram bins to 64	0.6907	N/A
+973e152	discard	isolate weekday as an additive operational effect	0.6889	N/A
+8468c61	discard	Reduce calendar model to depth-one additive stumps	0.6902	N/A
+d1fbdd2	keep	Increase operational L2 leaf regularization from 10 to 50	0.6913	0.6888

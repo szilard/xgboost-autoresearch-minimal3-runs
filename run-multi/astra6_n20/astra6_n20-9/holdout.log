@@ -1,0 +1,74 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 08ae37d | keep | shallow regularized boosting: 600 trees depth 4 eta .05 ===
+  holdout=0.6777
+=== [4] feb7777 | keep | remove day-of-month categorical feature ===
+  holdout=0.6787
+=== [5] a50cfe7 | keep | simplify categorical conversion with identical features ===
+  holdout=0.6787
+=== [6] fa6bd3a | discard | add native categorical origin-destination route ===
+  SKIP: status discard
+=== [7] c09ab85 | keep | limit categorical split threshold to 8; explicit category codes ===
+  holdout=0.6781
+=== [8] bd946b5 | keep | increase depth to 6 with categorical threshold 8 ===
+  holdout=0.6789
+=== [9] f986834 | keep | add scheduled departure minute component ===
+  holdout=0.6787
+=== [10] aefb79b | keep | make month additive by restricting its interactions ===
+  holdout=0.6804
+=== [11] a192f54 | discard | add departure minutes relative to route median ===
+  SKIP: status discard
+=== [12] 2ef73b4 | keep | use one-hot splits for all categorical features ===
+  holdout=0.6813
+=== [13] c253c99 | discard | increase one-hot boosting from 600 to 1500 rounds ===
+  SKIP: status discard
+=== [14] 2da62f4 | discard | add five smoothed self-excluding airport and route delay rates ===
+  SKIP: status discard
+=== [15] 9333601 | keep | add three distance-graph coordinates for origin and destination ===
+  holdout=0.6827
+=== [16] c4106c1 | discard | increase minimum child weight from 20 to 80 ===
+  SKIP: status discard
+=== [17] 4355150 | keep | boost four randomized trees per round with column sampling ===
+  holdout=0.6831
+=== [18] c492d8a | keep | add nearest-holiday type and signed day offset with calendar isolation ===
+  holdout=0.6854
+=== [19] 3fe581d | discard | pairwise rank loss with 400 trees and two sampled pairs per row ===
+  SKIP: status discard
+=== [20] cb1d734 | keep | add distance-normalized direction between airport coordinates ===
+  holdout=0.6855
+=== [21] 1ba6167 | discard | require split gain of at least 5 ===
+  SKIP: status discard
+=== [22] 0b8edbf | discard | narrow holiday window from seven days to three ===
+  SKIP: status discard
+=== [23] 2083555 | discard | average two boosted forests using seeds 42 and 2026 ===
+  SKIP: status discard
+=== [24] a87bd7d | keep | shallow calendar model plus operational residual boosted forest ===
+  holdout=0.6867
+=== [25] e4feece | keep | shrink calendar log-odds to half strength ===
+  holdout=0.6881
+=== [26] 813bd37 | discard | reduce calendar contribution from one-half to one-quarter ===
+  SKIP: status discard
+=== [27] 7589ee3 | discard | add one-hot carrier-origin and carrier-destination categories ===
+  SKIP: status discard
+=== [28] 0288118 | discard | separate month and holiday models; half month and full holiday weight ===
+  SKIP: status discard
+=== [29] 88596b3 | discard | constrain daytime progression while retaining flexible overnight phase ===
+  SKIP: status discard
+=== [30] d12cb11 | discard | reduce operational booster to one tree per round ===
+  SKIP: status discard
+=== [31] 432fa74 | keep | use loss-guided operational trees with at most 32 leaves ===
+  holdout=0.6886
+=== [32] 47c19da | keep | remove weakest airport coordinate and matching direction feature ===
+  holdout=0.6888
+=== [33] d4f8c6d | discard | weight departure time and carrier more heavily in column sampling ===
+  SKIP: status discard
+=== [34] e5ba63d | discard | reduce operational numeric histogram bins to 64 ===
+  SKIP: status discard
+=== [35] 973e152 | discard | isolate weekday as an additive operational effect ===
+  SKIP: status discard
+=== [36] 8468c61 | discard | Reduce calendar model to depth-one additive stumps ===
+  SKIP: status discard
+=== [37] d1fbdd2 | keep | Increase operational L2 leaf regularization from 10 to 50 ===
+  holdout=0.6888
+
+=== DONE: results written to output/holdout_scores.tsv ===

@@ -1,0 +1,7 @@
+Completed **35 experiments plus baseline** on `oct6`.
+
+- Best AUC: **0.6913**, up from **0.6743**.
+- Best commit: `d1fbdd2`; saved model verified.
+- All 36 runs succeeded. Clock stopped at **59m14s**.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
