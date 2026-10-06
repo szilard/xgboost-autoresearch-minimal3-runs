@@ -1,0 +1,98 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 68a447d | keep | 300 depth-4 trees eta .05 child weight 5 ===
+  holdout=0.6783
+=== [4] fc0936c | discard | 600 rounds at eta .05 ===
+  SKIP: status discard
+=== [5] 02f27d7 | discard | add origin-destination categorical route ===
+  SKIP: status discard
+=== [6] 640425f | keep | add categorical departure hour ===
+  holdout=0.6784
+=== [7] 9e14fc6 | discard | 200 rounds with hour feature ===
+  SKIP: status discard
+=== [8] 92581fa | discard | min child weight 10 ===
+  SKIP: status discard
+=== [9] 3f5a38a | keep | remove categorical day of month ===
+  holdout=0.6795
+=== [10] ceda777 | keep | add ordinal day of month ===
+  holdout=0.6818
+=== [11] f9671ea | discard | add ordinal day of year ===
+  SKIP: status discard
+=== [12] 3ddcbe5 | discard | one-hot splits for categories under 32 ===
+  SKIP: status discard
+=== [13] bbe896f | keep | row subsample 0.8 ===
+  holdout=0.6824
+=== [14] 65b03fc | discard | feature subsample 0.8 per tree ===
+  SKIP: status discard
+=== [15] 46c5c7f | keep | use ordinal month instead of category ===
+  holdout=0.6844
+=== [16] 1126f4c | discard | use ordinal weekday instead of category ===
+  SKIP: status discard
+=== [17] 3a909a5 | keep | depth three trees ===
+  holdout=0.6840
+=== [18] eca5d72 | discard | 500 depth three rounds equal AUC slower ===
+  SKIP: status discard
+=== [19] dd48267 | discard | limit categorical partition threshold to 16 ===
+  SKIP: status discard
+=== [20] 2d55590 | keep | average three depth-three seeds ===
+  holdout=0.6843
+=== [21] 4ddf980 | keep | two depth-three plus one depth-four models ===
+  holdout=0.6848
+=== [22] fc43335 | discard | add carrier by departure hour category ===
+  SKIP: status discard
+=== [23] 36e0784 | keep | add Thanksgiving and year-end travel windows ===
+  holdout=0.6864
+=== [24] e7c6aa9 | discard | remove year-end travel indicator ===
+  SKIP: status discard
+=== [25] d1d5b1a | keep | year-end window only; remove Thanksgiving ===
+  holdout=0.6867
+=== [26] d7e27e8 | discard | split year-end into Christmas and New Year ===
+  SKIP: status discard
+=== [27] 5f19dfa | discard | add numeric departure minute ===
+  SKIP: status discard
+=== [28] 9fbaa9f | discard | whole or half hour flag tied AUC slower ===
+  SKIP: status discard
+=== [29] 46bc127 | discard | departure minutes relative to origin median ===
+  SKIP: status discard
+=== [30] edf9ef0 | keep | five-member mixed-depth ensemble ===
+  holdout=0.6867
+=== [31] 21f1021 | keep | max bin 512 ===
+  holdout=0.6867
+=== [32] de50e84 | discard | max bin 1024 ===
+  SKIP: status discard
+=== [33] 157412f | discard | loss-guided growth with 12-leaf cap tied AUC ===
+  SKIP: status discard
+=== [34] 115f60f | discard | reg lambda 5 ===
+  SKIP: status discard
+=== [35] c8181fa | discard | min child weight 2 ===
+  SKIP: status discard
+=== [36] d249bdf | discard | gamma one tied AUC ===
+  SKIP: status discard
+=== [37] 02bd726 | discard | max categorical threshold 128 ===
+  SKIP: status discard
+=== [38] a5d5757 | discard | add July Fourth travel window ===
+  SKIP: status discard
+=== [39] 47f7561 | discard | 500 rounds eta .03 matched strength ===
+  SKIP: status discard
+=== [40] 236f495 | discard | 200 rounds eta .075 matched strength ===
+  SKIP: status discard
+=== [41] e99523e | discard | row subsample 0.9 ===
+  SKIP: status discard
+=== [42] ec130fa | keep | four depth-three one depth-four; equal AUC smaller faster ===
+  holdout=0.6868
+=== [43] 799b48f | discard | add annual sine cosine features ===
+  SKIP: status discard
+=== [44] 3b5f70c | discard | one depth-two ensemble member ===
+  SKIP: status discard
+=== [45] f24eced | keep | one DART member in ensemble ===
+  holdout=0.6869
+=== [46] 51991b5 | keep | two DART ensemble members ===
+  holdout=0.6870
+=== [47] ee9daf2 | discard | three DART ensemble members ===
+  SKIP: status discard
+=== [48] b600d30 | keep | two DART members rate drop 0.1 ===
+  holdout=0.6871
+=== [49] 83775c5 | keep | two DART members rate drop 0.2; equal AUC faster ===
+  holdout=0.6871
+
+=== DONE: results written to output/holdout_scores.tsv ===

@@ -1,0 +1,49 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+68a447d	keep	300 depth-4 trees eta .05 child weight 5	0.6793	0.6783
+fc0936c	discard	600 rounds at eta .05	0.6775	N/A
+02f27d7	discard	add origin-destination categorical route	0.6694	N/A
+640425f	keep	add categorical departure hour	0.6801	0.6784
+9e14fc6	discard	200 rounds with hour feature	0.6796	N/A
+92581fa	discard	min child weight 10	0.6795	N/A
+3f5a38a	keep	remove categorical day of month	0.6805	0.6795
+ceda777	keep	add ordinal day of month	0.6842	0.6818
+f9671ea	discard	add ordinal day of year	0.6837	N/A
+3ddcbe5	discard	one-hot splits for categories under 32	0.6813	N/A
+bbe896f	keep	row subsample 0.8	0.6844	0.6824
+65b03fc	discard	feature subsample 0.8 per tree	0.6838	N/A
+46c5c7f	keep	use ordinal month instead of category	0.6847	0.6844
+1126f4c	discard	use ordinal weekday instead of category	0.6831	N/A
+3a909a5	keep	depth three trees	0.6850	0.6840
+eca5d72	discard	500 depth three rounds equal AUC slower	0.6850	N/A
+dd48267	discard	limit categorical partition threshold to 16	0.6791	N/A
+2d55590	keep	average three depth-three seeds	0.6853	0.6843
+4ddf980	keep	two depth-three plus one depth-four models	0.6856	0.6848
+fc43335	discard	add carrier by departure hour category	0.6833	N/A
+36e0784	keep	add Thanksgiving and year-end travel windows	0.6868	0.6864
+e7c6aa9	discard	remove year-end travel indicator	0.6853	N/A
+d1d5b1a	keep	year-end window only; remove Thanksgiving	0.6871	0.6867
+d7e27e8	discard	split year-end into Christmas and New Year	0.6864	N/A
+5f19dfa	discard	add numeric departure minute	0.6869	N/A
+9fbaa9f	discard	whole or half hour flag tied AUC slower	0.6871	N/A
+46bc127	discard	departure minutes relative to origin median	0.6870	N/A
+edf9ef0	keep	five-member mixed-depth ensemble	0.6872	0.6867
+21f1021	keep	max bin 512	0.6873	0.6867
+de50e84	discard	max bin 1024	0.6872	N/A
+157412f	discard	loss-guided growth with 12-leaf cap tied AUC	0.6873	N/A
+115f60f	discard	reg lambda 5	0.6871	N/A
+c8181fa	discard	min child weight 2	0.6871	N/A
+d249bdf	discard	gamma one tied AUC	0.6873	N/A
+02bd726	discard	max categorical threshold 128	0.6866	N/A
+a5d5757	discard	add July Fourth travel window	0.6870	N/A
+47f7561	discard	500 rounds eta .03 matched strength	0.6871	N/A
+236f495	discard	200 rounds eta .075 matched strength	0.6870	N/A
+e99523e	discard	row subsample 0.9	0.6868	N/A
+ec130fa	keep	four depth-three one depth-four; equal AUC smaller faster	0.6873	0.6868
+799b48f	discard	add annual sine cosine features	0.6848	N/A
+3b5f70c	discard	one depth-two ensemble member	0.6872	N/A
+f24eced	keep	one DART member in ensemble	0.6874	0.6869
+51991b5	keep	two DART ensemble members	0.6875	0.6870
+ee9daf2	discard	three DART ensemble members	0.6874	N/A
+b600d30	keep	two DART members rate drop 0.1	0.6877	0.6871
+83775c5	keep	two DART members rate drop 0.2; equal AUC faster	0.6877	0.6871

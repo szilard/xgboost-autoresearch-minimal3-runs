@@ -1,0 +1,3 @@
+The setup checks passed: the repo is clean, `train.py` and `harness.py` are reviewed, and both required CSVs are present. `oct5` is available as a fresh branch name.
+
+I’m waiting for your response to the run-tag choice before creating the branch and `output/results.tsv`. The experiment clock has not started.

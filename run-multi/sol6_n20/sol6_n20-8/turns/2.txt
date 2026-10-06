@@ -1,0 +1,5 @@
+The `oct5` experiment is complete. The clock stopped after 59m22s.
+
+Best Eval AUC was **0.6877** at commit `83775c5`, up from the 0.6743 baseline across 47 experiments. The winning model is in [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py); the [results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) record the run.
+
+Holdout performance remains for your check.

@@ -1,0 +1,174 @@
+commit 83775c584deb562f5c517533916ac3ee62130ef9
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:48:30 2026 +0000
+
+    Test higher DART dropout rate
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b600d30d510e1640a7c6f27888405031989885de
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:46:57 2026 +0000
+
+    Increase DART dropout strength
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51991b5ac21d66d0a48e8ad77d945894abc29ab0
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:43:46 2026 +0000
+
+    Use two DART members in ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f24eced0b9aa3c08f3d5793bff6d2885012cd070
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:42:28 2026 +0000
+
+    Blend DART member into XGBoost ensemble
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit ec130fa123488bf5932001cd89b617bd153d5849
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:38:06 2026 +0000
+
+    Favor shallow trees in ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 21f102113f551b946b85c96a0c770a5c8f52b2c3
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:24:59 2026 +0000
+
+    Use finer numeric histogram bins
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit edf9ef06716a60c6ba1a9875bca7801b271c19de
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:23:51 2026 +0000
+
+    Expand mixed-depth ensemble to five seeds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1d5b1abe8eee8f3176572b02436a29e6656463c
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:17:19 2026 +0000
+
+    Ablate Thanksgiving travel feature
+
+ train.py | 8 --------
+ 1 file changed, 8 deletions(-)
+
+commit 36e0784b42d54d8c5e69c5cbd874ba4d27bd379a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:14:57 2026 +0000
+
+    Add recurring holiday travel windows
+
+ train.py | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 4ddf9807844dee1edced5a69184c9c4ae13de54a
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:11:26 2026 +0000
+
+    Blend deeper model into seed ensemble
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 2d55590e4a609433809f0da238503203ab71cfba
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:10:20 2026 +0000
+
+    Average three XGBoost sampling seeds
+
+ train.py | 17 ++++++++++++++---
+ 1 file changed, 14 insertions(+), 3 deletions(-)
+
+commit 3a909a5a6b2fdce080c4df63b6e32a5aaa5d150d
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:06:59 2026 +0000
+
+    Test depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 46c5c7fa11b1fd12ce98e38c77de2bc8b9ab383f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:05:05 2026 +0000
+
+    Use ordinal month feature
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit bbe896fa941dde399f586581fe85f74d5489f292
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 23:03:06 2026 +0000
+
+    Test row subsampling
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ceda7771a468093c91b4be7d5760c6e6c690f04f
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:59:31 2026 +0000
+
+    Try ordinal day of month
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3f5a38acabf550600379d305984844bd7762e6bb
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:58:29 2026 +0000
+
+    Ablate day of month feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 640425fb9b01f5efd770b2219a7799adc5cc3bda
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:55:27 2026 +0000
+
+    Add categorical departure hour
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 68a447d85057bd43d9b4f02e2cedf6a433155e3b
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 22:52:01 2026 +0000
+
+    Try shallow trees with slower boosting
+
+ train.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

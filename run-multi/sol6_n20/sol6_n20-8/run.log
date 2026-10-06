@@ -1,0 +1,8 @@
+/home/ubuntu/.local/lib/python3.14/site-packages/xgboost/training.py:200: UserWarning: [23:48:38] WARNING: /__w/xgboost/xgboost/src/learner.cc:343: `booster=dart` is deprecated. Use the tree booster directly with dropout parameters like `rate_drop`, `skip_drop`, or `one_drop`.
+  bst.update(dtrain, iteration=i, fobj=obj)
+Training time: 26.8s
+Training done, evaluating...
+Artifact: artifacts/83775c584deb562f5c517533916ac3ee62130ef9.pkl (5.6 MB)
+Eval time: 35.0s
+Eval AUC: 0.6877
+Run time: 62.9s (training 27.6s, eval 35.3s, ok)

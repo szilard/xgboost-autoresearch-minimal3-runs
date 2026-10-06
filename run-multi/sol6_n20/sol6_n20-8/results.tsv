@@ -1,0 +1,49 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+68a447d	0.6793	keep	300 depth-4 trees eta .05 child weight 5
+fc0936c	0.6775	discard	600 rounds at eta .05
+02f27d7	0.6694	discard	add origin-destination categorical route
+640425f	0.6801	keep	add categorical departure hour
+9e14fc6	0.6796	discard	200 rounds with hour feature
+92581fa	0.6795	discard	min child weight 10
+3f5a38a	0.6805	keep	remove categorical day of month
+ceda777	0.6842	keep	add ordinal day of month
+f9671ea	0.6837	discard	add ordinal day of year
+3ddcbe5	0.6813	discard	one-hot splits for categories under 32
+bbe896f	0.6844	keep	row subsample 0.8
+65b03fc	0.6838	discard	feature subsample 0.8 per tree
+46c5c7f	0.6847	keep	use ordinal month instead of category
+1126f4c	0.6831	discard	use ordinal weekday instead of category
+3a909a5	0.6850	keep	depth three trees
+eca5d72	0.6850	discard	500 depth three rounds equal AUC slower
+dd48267	0.6791	discard	limit categorical partition threshold to 16
+2d55590	0.6853	keep	average three depth-three seeds
+4ddf980	0.6856	keep	two depth-three plus one depth-four models
+fc43335	0.6833	discard	add carrier by departure hour category
+36e0784	0.6868	keep	add Thanksgiving and year-end travel windows
+e7c6aa9	0.6853	discard	remove year-end travel indicator
+d1d5b1a	0.6871	keep	year-end window only; remove Thanksgiving
+d7e27e8	0.6864	discard	split year-end into Christmas and New Year
+5f19dfa	0.6869	discard	add numeric departure minute
+9fbaa9f	0.6871	discard	whole or half hour flag tied AUC slower
+46bc127	0.6870	discard	departure minutes relative to origin median
+edf9ef0	0.6872	keep	five-member mixed-depth ensemble
+21f1021	0.6873	keep	max bin 512
+de50e84	0.6872	discard	max bin 1024
+157412f	0.6873	discard	loss-guided growth with 12-leaf cap tied AUC
+115f60f	0.6871	discard	reg lambda 5
+c8181fa	0.6871	discard	min child weight 2
+d249bdf	0.6873	discard	gamma one tied AUC
+02bd726	0.6866	discard	max categorical threshold 128
+a5d5757	0.6870	discard	add July Fourth travel window
+47f7561	0.6871	discard	500 rounds eta .03 matched strength
+236f495	0.6870	discard	200 rounds eta .075 matched strength
+e99523e	0.6868	discard	row subsample 0.9
+ec130fa	0.6873	keep	four depth-three one depth-four; equal AUC smaller faster
+799b48f	0.6848	discard	add annual sine cosine features
+3b5f70c	0.6872	discard	one depth-two ensemble member
+f24eced	0.6874	keep	one DART member in ensemble
+51991b5	0.6875	keep	two DART ensemble members
+ee9daf2	0.6874	discard	three DART ensemble members
+b600d30	0.6877	keep	two DART members rate drop 0.1
+83775c5	0.6877	keep	two DART members rate drop 0.2; equal AUC faster
