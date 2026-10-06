@@ -1,0 +1,10 @@
+Setup is ready on branch `oct6`, created from the current HEAD.
+
+- Read the experiment instructions and both Python files.
+- Verified required data files and dependency imports.
+- Initialized `output/results.tsv` and `output/research-log.md`.
+- Baseline code is unchanged; no experiments have run.
+
+Reply **go** to confirm the tag and begin.
+
+[program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md) requires confirmation after setup, so the one-hour clock hasn’t started.

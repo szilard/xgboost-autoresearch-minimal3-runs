@@ -1,0 +1,74 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 791cc82 | keep | 400 depth-5 trees eta .05 child-weight 20 lambda 10 subsample .8 ===
+  holdout=0.6763
+=== [4] 25542f4 | keep | Simplify categorical dataframe construction for faster evaluation ===
+  holdout=0.6763
+=== [5] ca98ffe | keep | Remove day-of-month categorical feature ===
+  holdout=0.6779
+=== [6] f6c57bb | discard | Add carrier-origin and carrier-destination categorical interactions ===
+  SKIP: status discard
+=== [7] 0b6ef6a | keep | Add departure hour minute and circular time features ===
+  holdout=0.6779
+=== [8] ca7d3df | keep | Limit categorical partitions with max_cat_threshold 8 ===
+  holdout=0.6786
+=== [9] 6091e98 | discard | Increase conservative model from 400 to 800 boosting rounds ===
+  SKIP: status discard
+=== [10] e5659ef | keep | Add row-local distance to major travel holidays ===
+  holdout=0.6778
+=== [11] 0b04d34 | keep | Increase minimum child weight from 20 to 100 ===
+  holdout=0.6793
+=== [12] 0c0ac39 | discard | Reduce tree depth from 5 to 3 with other settings fixed ===
+  SKIP: status discard
+=== [13] 04a1e37 | keep | Add deterministic five-fold smoothed airport carrier-route target encodings ===
+  holdout=0.6796
+=== [14] 43782c7 | discard | Remove native Origin and Dest while retaining risk encodings ===
+  SKIP: status discard
+=== [15] beb5f09 | keep | Add three-dimensional airport geometry fitted from train route distances ===
+  holdout=0.6805
+=== [16] 17a7273 | discard | Add departure time relative to airport route and carrier-origin medians ===
+  SKIP: status discard
+=== [17] d132fa6 | keep | Boost four parallel trees per round with 80 percent feature sampling ===
+  holdout=0.6814
+=== [18] ee83e59 | discard | Ablate parallel trees and retain node feature sampling ===
+  SKIP: status discard
+=== [19] 26c89e4 | discard | Separate calendar effects from operational interactions ===
+  SKIP: status discard
+=== [20] 9ae35ba | discard | Retain only the two strongest geographic axes per airport ===
+  SKIP: status discard
+=== [21] 7439161 | discard | Increase target-encoding smoothing from 100 to 500 ===
+  SKIP: status discard
+=== [22] 8592a63 | discard | Add normalized route direction from inferred airport coordinates ===
+  SKIP: status discard
+=== [23] 4dff55d | discard | Use pairwise XGBoost ranking objective with global sampled pairs ===
+  SKIP: status discard
+=== [24] 2018053 | discard | Increase depth to 7 while retaining strong regularization and forests ===
+  SKIP: status discard
+=== [25] f479eb2 | keep | Use 1000 rounds at learning rate .02 for smoother boosting ===
+  holdout=0.6812
+=== [26] 3b822ee | discard | Set gamma 5 to prune weak splits in small-step forest ===
+  SKIP: status discard
+=== [27] a229779 | discard | Average four independently seeded 1000-tree XGBoost classifiers ===
+  SKIP: status discard
+=== [28] b06cf76 | discard | Use logistic label smoothing with training targets .05 and .95 ===
+  SKIP: status discard
+=== [29] feb6da9 | discard | Use native one-hot splits for every categorical feature ===
+  SKIP: status discard
+=== [30] 1ca343c | discard | Add cross-fitted airport and carrier delay rates by three-hour block ===
+  SKIP: status discard
+=== [31] 1ac61f1 | discard | Remove standalone OriginRisk and DestRisk lookup features ===
+  SKIP: status discard
+=== [32] a3d9afd | discard | Replace categorical month with cyclic sine and cosine coordinates ===
+  SKIP: status discard
+=== [33] e51417d | discard | Use loss-guided trees with 24 leaves and no fixed depth limit ===
+  SKIP: status discard
+=== [34] 6902660 | discard | Increase minimum child weight from 100 to 300 ===
+  SKIP: status discard
+=== [35] c58ee9e | keep | Increase L2 leaf regularization from 10 to 100 ===
+  holdout=0.6815
+=== [36] 248ec70 | discard | Blend best forest 75 percent with shallower depth-4 model 25 percent ===
+  SKIP: status discard
+=== [37] f0eb202 | crash | Reduce histogram max_bin from 256 to 64; interrupted during evaluation without a score ===
+  SKIP: status crash
+
+=== DONE: results written to output/holdout_scores.tsv ===

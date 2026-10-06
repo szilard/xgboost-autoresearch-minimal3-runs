@@ -1,0 +1,120 @@
+commit c58ee9ee37b2a1fa17a91398fb40c50e7e9caaae
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:06:53 2026 +0000
+
+    Test stronger continuous shrinkage of leaf estimates
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f479eb2359e9510863f9746c76a3317383eb2b55
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:47:29 2026 +0000
+
+    Test smaller boosting steps at comparable total shrinkage
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d132fa6f40e45bd802f2bab70a75a1aa5e1263a7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:36:50 2026 +0000
+
+    Test randomized parallel trees within each boosting round
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit beb5f09468c40bf1985174398804894cebe41e39
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:33:38 2026 +0000
+
+    Test airport geometry learned from training route distances
+
+ train.py | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+commit 04a1e3708a8acac60016eefd420d0dd1576fe681
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:29:18 2026 +0000
+
+    Test smoothed cross-fitted airport and route delay encodings
+
+ train.py | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit 0b04d34f078246724fa83420d873a9d23d793a58
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:24:46 2026 +0000
+
+    Test higher minimum child weight for year-to-year transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5659efe073540f7184496ecacf04d3f3e41a05a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:24:06 2026 +0000
+
+    Test recurring holiday proximity from row calendar fields
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit ca7d3df5af4b67b76fdb016824f857639c50c877
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:21:22 2026 +0000
+
+    Test conservative categorical split search
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0b6ef6aec4ab6b108cd82c651c290354be489de9
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:20:06 2026 +0000
+
+    Test hour minute and circular departure-time features
+
+ train.py | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit ca98ffe80f9a14e170ff8b8163c958ceb0af581b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:17:46 2026 +0000
+
+    Test removing day-of-month categories for temporal transfer
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 25542f4496568132b3b7a737c5e80c5f943440d5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:16:42 2026 +0000
+
+    Simplify categorical preparation without changing features
+
+ train.py | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit 791cc82348dc544b97b80bc63ad9266d8e54f8e6
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 12:14:48 2026 +0000
+
+    Test longer boosting with shallower regularized trees
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

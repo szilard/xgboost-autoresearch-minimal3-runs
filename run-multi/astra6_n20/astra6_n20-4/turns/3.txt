@@ -1,0 +1,5 @@
+Best Eval AUC: **0.6843**, up from **0.6743** (+0.0100).
+
+Completed 34 scored experiments; the final trial was interrupted and discarded. Best model retained at `c58ee9e` on `oct6`. Saved artifact verified, working tree clean, holdout untouched, and clock stopped.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

@@ -1,0 +1,37 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+791cc82	0.6781	keep	400 depth-5 trees eta .05 child-weight 20 lambda 10 subsample .8
+25542f4	0.6781	keep	Simplify categorical dataframe construction for faster evaluation
+ca98ffe	0.6786	keep	Remove day-of-month categorical feature
+f6c57bb	0.6722	discard	Add carrier-origin and carrier-destination categorical interactions
+0b6ef6a	0.6790	keep	Add departure hour minute and circular time features
+ca7d3df	0.6806	keep	Limit categorical partitions with max_cat_threshold 8
+6091e98	0.6805	discard	Increase conservative model from 400 to 800 boosting rounds
+e5659ef	0.6808	keep	Add row-local distance to major travel holidays
+0b04d34	0.6819	keep	Increase minimum child weight from 20 to 100
+0c0ac39	0.6773	discard	Reduce tree depth from 5 to 3 with other settings fixed
+04a1e37	0.6823	keep	Add deterministic five-fold smoothed airport carrier-route target encodings
+43782c7	0.6808	discard	Remove native Origin and Dest while retaining risk encodings
+beb5f09	0.6834	keep	Add three-dimensional airport geometry fitted from train route distances
+17a7273	0.6832	discard	Add departure time relative to airport route and carrier-origin medians
+d132fa6	0.6841	keep	Boost four parallel trees per round with 80 percent feature sampling
+ee83e59	0.6840	discard	Ablate parallel trees and retain node feature sampling
+26c89e4	0.6816	discard	Separate calendar effects from operational interactions
+9ae35ba	0.6840	discard	Retain only the two strongest geographic axes per airport
+7439161	0.6841	discard	Increase target-encoding smoothing from 100 to 500
+8592a63	0.6837	discard	Add normalized route direction from inferred airport coordinates
+4dff55d	0.6800	discard	Use pairwise XGBoost ranking objective with global sampled pairs
+2018053	0.6830	discard	Increase depth to 7 while retaining strong regularization and forests
+f479eb2	0.6842	keep	Use 1000 rounds at learning rate .02 for smoother boosting
+3b822ee	0.6837	discard	Set gamma 5 to prune weak splits in small-step forest
+a229779	0.6838	discard	Average four independently seeded 1000-tree XGBoost classifiers
+b06cf76	0.6839	discard	Use logistic label smoothing with training targets .05 and .95
+feb6da9	0.6834	discard	Use native one-hot splits for every categorical feature
+1ca343c	0.6837	discard	Add cross-fitted airport and carrier delay rates by three-hour block
+1ac61f1	0.6841	discard	Remove standalone OriginRisk and DestRisk lookup features
+a3d9afd	0.6838	discard	Replace categorical month with cyclic sine and cosine coordinates
+e51417d	0.6842	discard	Use loss-guided trees with 24 leaves and no fixed depth limit
+6902660	0.6838	discard	Increase minimum child weight from 100 to 300
+c58ee9e	0.6843	keep	Increase L2 leaf regularization from 10 to 100
+248ec70	0.6842	discard	Blend best forest 75 percent with shallower depth-4 model 25 percent
+f0eb202	0.0000	crash	Reduce histogram max_bin from 256 to 64; interrupted during evaluation without a score

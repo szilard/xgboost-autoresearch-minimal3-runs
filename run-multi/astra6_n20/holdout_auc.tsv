@@ -2,3 +2,4 @@ run	best_commit	eval_auc	holdout_auc	gap	experiments	valid	flags
 astra6_n20-1	50e74b8	0.6900	0.6880	-0.0020	47	yes	
 astra6_n20-2	6826f09	0.6863	0.6836	-0.0027	42	yes	
 astra6_n20-3	43097e4	0.6918	0.6886	-0.0032	50	yes	
+astra6_n20-4	c58ee9e	0.6843	0.6815	-0.0028	36	yes	
