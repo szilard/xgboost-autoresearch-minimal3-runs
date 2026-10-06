@@ -1,0 +1,72 @@
+=== [2] 8d9c760 | keep | baseline ===
+  holdout=0.6725
+=== [3] 7bdcdb6 | keep | add minute-of-day and departure hour ===
+  holdout=0.6728
+=== [4] bb6dcad | discard | 250 trees and learning rate 0.05 ===
+  SKIP: status discard
+=== [5] 97d9d51 | crash | day-of-year conversion assumed numeric strings ===
+  SKIP: status crash
+=== [6] 4ca56ea | keep | add day of year from prefixed calendar fields ===
+  holdout=0.6766
+=== [7] ce0f3e7 | keep | min_child_weight 10 ===
+  holdout=0.6756
+=== [8] 929df25 | keep | max_depth 4 with min_child_weight 10 ===
+  holdout=0.6816
+=== [9] fdca711 | keep | max_depth 3 ===
+  holdout=0.6816
+=== [10] 4909d98 | discard | max_depth 2 ===
+  SKIP: status discard
+=== [11] ac21572 | keep | depth 3 with 250 trees learning rate 0.05 ===
+  holdout=0.6829
+=== [12] e137f5d | discard | 500 trees at learning rate 0.05 ===
+  SKIP: status discard
+=== [13] f5cbca6 | discard | subsample 0.8 ===
+  SKIP: status discard
+=== [14] 65127a2 | discard | max_cat_threshold 16 ===
+  SKIP: status discard
+=== [15] 1ca261b | discard | one-hot splits for categories under 32 levels ===
+  SKIP: status discard
+=== [16] f8d805e | discard | add departure minute within hour; no AUC gain ===
+  SKIP: status discard
+=== [17] 3ac891c | keep | distance to New Year July 4 and Christmas ===
+  holdout=0.6829
+=== [18] ac8559d | keep | add Thanksgiving proximity ===
+  holdout=0.6831
+=== [19] fe6e301 | discard | Memorial and Labor Day proximity; no AUC gain ===
+  SKIP: status discard
+=== [20] 4fc539b | keep | departure time versus train-fitted route median ===
+  holdout=0.6832
+=== [21] aa5a89d | discard | departure time versus origin median ===
+  SKIP: status discard
+=== [22] 692220b | discard | carrier-origin composite category ===
+  SKIP: status discard
+=== [23] 5304311 | discard | remove min_child_weight 10 ===
+  SKIP: status discard
+=== [24] 115b2df | discard | depth 4 with enriched features and 250 trees ===
+  SKIP: status discard
+=== [25] b555771 | discard | gamma 5 tied without simplification ===
+  SKIP: status discard
+=== [26] 4bb32a1 | discard | night-flight flag tied and slowed evaluation ===
+  SKIP: status discard
+=== [27] a552e9e | discard | loss-guided eight-leaf trees ===
+  SKIP: status discard
+=== [28] 0ca30a2 | discard | reg_lambda 10 ===
+  SKIP: status discard
+=== [29] 0e73596 | discard | annual sine and cosine features ===
+  SKIP: status discard
+=== [30] 2e80f9a | keep | 3-to-1 soft vote of depth 3 and depth 4 models ===
+  holdout=0.6838
+=== [31] 94f446b | keep | equal soft vote of depth 3 and depth 4 models ===
+  holdout=0.6839
+=== [32] 4619a8c | discard | depth 4 weighted two-thirds in blend ===
+  SKIP: status discard
+=== [33] 94fce94 | discard | depth 2 added at one-seventh blend weight ===
+  SKIP: status discard
+=== [34] 6321ab4 | keep | omit minute-of-day model input; retain route calculation ===
+  holdout=0.6839
+=== [35] 1c5cc7b | discard | remove departure hour input ===
+  SKIP: status discard
+=== [36] 46edabb | discard | remove route-median lookup; faster but lower AUC ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

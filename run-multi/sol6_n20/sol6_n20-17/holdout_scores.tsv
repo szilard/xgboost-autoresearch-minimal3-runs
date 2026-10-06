@@ -1,0 +1,36 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+7bdcdb6	keep	add minute-of-day and departure hour	0.6751	0.6728
+bb6dcad	discard	250 trees and learning rate 0.05	0.6746	N/A
+97d9d51	crash	day-of-year conversion assumed numeric strings	0.0000	N/A
+4ca56ea	keep	add day of year from prefixed calendar fields	0.6773	0.6766
+ce0f3e7	keep	min_child_weight 10	0.6774	0.6756
+929df25	keep	max_depth 4 with min_child_weight 10	0.6828	0.6816
+fdca711	keep	max_depth 3	0.6830	0.6816
+4909d98	discard	max_depth 2	0.6777	N/A
+ac21572	keep	depth 3 with 250 trees learning rate 0.05	0.6838	0.6829
+e137f5d	discard	500 trees at learning rate 0.05	0.6836	N/A
+f5cbca6	discard	subsample 0.8	0.6825	N/A
+65127a2	discard	max_cat_threshold 16	0.6761	N/A
+1ca261b	discard	one-hot splits for categories under 32 levels	0.6822	N/A
+f8d805e	discard	add departure minute within hour; no AUC gain	0.6838	N/A
+3ac891c	keep	distance to New Year July 4 and Christmas	0.6839	0.6829
+ac8559d	keep	add Thanksgiving proximity	0.6842	0.6831
+fe6e301	discard	Memorial and Labor Day proximity; no AUC gain	0.6842	N/A
+4fc539b	keep	departure time versus train-fitted route median	0.6846	0.6832
+aa5a89d	discard	departure time versus origin median	0.6843	N/A
+692220b	discard	carrier-origin composite category	0.6796	N/A
+5304311	discard	remove min_child_weight 10	0.6845	N/A
+115b2df	discard	depth 4 with enriched features and 250 trees	0.6844	N/A
+b555771	discard	gamma 5 tied without simplification	0.6846	N/A
+4bb32a1	discard	night-flight flag tied and slowed evaluation	0.6846	N/A
+a552e9e	discard	loss-guided eight-leaf trees	0.6836	N/A
+0ca30a2	discard	reg_lambda 10	0.6842	N/A
+0e73596	discard	annual sine and cosine features	0.6837	N/A
+2e80f9a	keep	3-to-1 soft vote of depth 3 and depth 4 models	0.6851	0.6838
+94f446b	keep	equal soft vote of depth 3 and depth 4 models	0.6853	0.6839
+4619a8c	discard	depth 4 weighted two-thirds in blend	0.6851	N/A
+94fce94	discard	depth 2 added at one-seventh blend weight	0.6851	N/A
+6321ab4	keep	omit minute-of-day model input; retain route calculation	0.6853	0.6839
+1c5cc7b	discard	remove departure hour input	0.6851	N/A
+46edabb	discard	remove route-median lookup; faster but lower AUC	0.6852	N/A

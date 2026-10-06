@@ -1,0 +1,129 @@
+commit 6321ab4ff8b3c6e468e7bdd56d0b423d67eab3b5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:15:30 2026 +0000
+
+    Omit redundant minute of day input
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 94f446b8990c0397703d0dc4f2b474a844ccce9b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:10:48 2026 +0000
+
+    Test equal model blend
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2e80f9a991d722325e5347fcae2714f7acc981ea
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 10:09:19 2026 +0000
+
+    Blend shallow XGBoost models
+
+ train.py | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+commit 4fc539b89bde61723efd044c03312036f795f493
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:50:18 2026 +0000
+
+    Add route-relative departure time
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit ac8559dcc498f28c11f6500f7450748d7ac12fba
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:46:24 2026 +0000
+
+    Add Thanksgiving proximity
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 3ac891ce87f3e4bab6fc04521fe8812871555a53
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:44:43 2026 +0000
+
+    Add fixed holiday proximity
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit ac21572fa8a5877b86d958bbfb3beb8dc6084e06
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:34:52 2026 +0000
+
+    Increase rounds for shallow trees
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit fdca71123270dc4736dc2879192c7e4705dc5e47
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:32:05 2026 +0000
+
+    Try depth three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 929df251a48e61db954cdfe1d8bea2c287a7f775
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:30:24 2026 +0000
+
+    Try shallower trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ce0f3e7988e6ae586b0d74fd4a640cc95072cc61
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:28:47 2026 +0000
+
+    Regularize small leaves
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4ca56ea8b84f1d7d29a14a1ea6b7b315bdbbd1ef
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:27:20 2026 +0000
+
+    Parse calendar codes for day of year
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 97d9d51eee9cf18fb0dee97d988b406e4f1495e1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:26:14 2026 +0000
+
+    Add numeric day of year
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 7bdcdb6f7c83cbddf94b74bea383df7c1c209b3c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 09:23:18 2026 +0000
+
+    Add departure time features
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

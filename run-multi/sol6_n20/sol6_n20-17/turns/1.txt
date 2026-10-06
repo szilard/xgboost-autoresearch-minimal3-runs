@@ -1,0 +1,3 @@
+Setup is ready on the new `oct6` branch. I read `train.py` and `harness.py`, confirmed both required data files and dependencies, and created `output/results.tsv` with its header. The experiment clock has **not** started.
+
+Reply **go** to start the one-hour run.

@@ -1,0 +1,36 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline
+7bdcdb6	0.6751	keep	add minute-of-day and departure hour
+bb6dcad	0.6746	discard	250 trees and learning rate 0.05
+97d9d51	0.0000	crash	day-of-year conversion assumed numeric strings
+4ca56ea	0.6773	keep	add day of year from prefixed calendar fields
+ce0f3e7	0.6774	keep	min_child_weight 10
+929df25	0.6828	keep	max_depth 4 with min_child_weight 10
+fdca711	0.6830	keep	max_depth 3
+4909d98	0.6777	discard	max_depth 2
+ac21572	0.6838	keep	depth 3 with 250 trees learning rate 0.05
+e137f5d	0.6836	discard	500 trees at learning rate 0.05
+f5cbca6	0.6825	discard	subsample 0.8
+65127a2	0.6761	discard	max_cat_threshold 16
+1ca261b	0.6822	discard	one-hot splits for categories under 32 levels
+f8d805e	0.6838	discard	add departure minute within hour; no AUC gain
+3ac891c	0.6839	keep	distance to New Year July 4 and Christmas
+ac8559d	0.6842	keep	add Thanksgiving proximity
+fe6e301	0.6842	discard	Memorial and Labor Day proximity; no AUC gain
+4fc539b	0.6846	keep	departure time versus train-fitted route median
+aa5a89d	0.6843	discard	departure time versus origin median
+692220b	0.6796	discard	carrier-origin composite category
+5304311	0.6845	discard	remove min_child_weight 10
+115b2df	0.6844	discard	depth 4 with enriched features and 250 trees
+b555771	0.6846	discard	gamma 5 tied without simplification
+4bb32a1	0.6846	discard	night-flight flag tied and slowed evaluation
+a552e9e	0.6836	discard	loss-guided eight-leaf trees
+0ca30a2	0.6842	discard	reg_lambda 10
+0e73596	0.6837	discard	annual sine and cosine features
+2e80f9a	0.6851	keep	3-to-1 soft vote of depth 3 and depth 4 models
+94f446b	0.6853	keep	equal soft vote of depth 3 and depth 4 models
+4619a8c	0.6851	discard	depth 4 weighted two-thirds in blend
+94fce94	0.6851	discard	depth 2 added at one-seventh blend weight
+6321ab4	0.6853	keep	omit minute-of-day model input; retain route calculation
+1c5cc7b	0.6851	discard	remove departure hour input
+46edabb	0.6852	discard	remove route-median lookup; faster but lower AUC

@@ -1,0 +1,3 @@
+The `oct6` experiment is complete. Best Eval AUC was **0.6853**, up from the **0.6743** baseline, at commit `6321ab4`. The final model combines depth-3 and depth-4 XGBoost models.
+
+The clock stopped after **58m 26s**. The branch is at the best commit, with results in [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and findings in [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). Holdout scoring remains for the human.
