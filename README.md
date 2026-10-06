@@ -27,11 +27,11 @@ All runs with codex-cli 0.160.0 at effort max, a 24 GB container memory cap and 
 
 | model | groups | valid runs | excluded | holdout AUC mean | sd | min | median | max |
 |---|---|---|---|---|---|---|---|---|
-| gpt-6-astra | [astra6_n20](run-multi/astra6_n20/results_summary.md) | 2 | 0 | 0.6858 | 0.0031 | 0.6836 | 0.6858 | 0.6880 |
-| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 17 (1 with caveat) | 0 | 0.6840 | 0.0019 | 0.6803 | 0.6841 | 0.6871 |
+| gpt-6-astra | [astra6_n20](run-multi/astra6_n20/results_summary.md) | 3 | 0 | 0.6867 | 0.0027 | 0.6836 | 0.6880 | 0.6886 |
+| gpt-6-sol | [sol6_n20](run-multi/sol6_n20/results_summary.md) | 19 (3 with caveat) | 0 | 0.6842 | 0.0019 | 0.6803 | 0.6846 | 0.6871 |
 | gpt-6-luna | [luna6_n20](run-multi/luna6_n20/results_summary.md) | 20 (4 with caveat) | 0 | 0.6806 | 0.0019 | 0.6773 | 0.6800 | 0.6844 |
 
-Five runs carry a caveat; the plots draw them like any other run. Four are `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15 and -18. One is `turn_retries` (the waits after failed turns, with the model at capacity, took more than 2 minutes out of the hour): sol6_n20-16. No run was excluded. luna6_n20 is complete (20 runs); sol6_n20 and astra6_n20 are in progress, with 17 and 2 of their 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
+Seven runs carry a caveat; the plots draw them like any other run. Six are `keep_rule` (commits kept at an equal Eval AUC without being simpler or faster): luna6_n20-6, -8, -15, -18 and sol6_n20-8, -19. One is `turn_retries` (the waits after failed turns, with the model at capacity, took more than 2 minutes out of the hour): sol6_n20-16. No run was excluded. luna6_n20 is complete (20 runs); sol6_n20 and astra6_n20 are in progress, with 19 and 3 of their 20 runs reviewed so far. luna6_n20-1, -7, -11, -15 and sol6_n20-12 are valid with a `train_py_review` flag, a false match explained in their `run.md`. The test group test1 was moved to `archive/` and is not included. All valid runs have the same settings.
 
 ![Holdout AUC per run](run-multi/SUMMARY/holdout_auc_beeswarm.png)
 <!-- xgb-summary: end -->
