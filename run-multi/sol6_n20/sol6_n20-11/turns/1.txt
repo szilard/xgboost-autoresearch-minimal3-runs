@@ -1,0 +1,3 @@
+I’ve read `program.md`, `train.py`, and `harness.py`. The working tree is clean, both required data files exist, and the Python dependencies are available.
+
+I propose **`oct6`** for the fresh branch; it’s unused locally. Confirm that tag (or give me another), and I’ll create the branch and initialize `output/results.tsv`. The one-hour clock will stay off until setup is complete and you say go.

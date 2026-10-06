@@ -1,0 +1,3 @@
+The `oct6` experiment is complete. Across 54 trials, the best Eval AUC was **0.6893** at commit `cd0df4b`, up from the **0.6743** baseline. The branch is at that best commit, and the clock stopped after 59m15s.
+
+The kept model adds day-of-year and holiday-window features and uses stronger regularization and sampling. The [results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md) record every trial. The holdout remains untouched for your check.

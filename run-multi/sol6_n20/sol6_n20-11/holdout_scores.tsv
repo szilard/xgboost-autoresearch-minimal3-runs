@@ -1,0 +1,56 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline	0.6743	0.6725
+cf68766	keep	300 trees depth 4 learning rate 0.05	0.6795	0.6779
+6509d5a	keep	300 trees depth 3 learning rate 0.05	0.6812	0.6794
+74c4872	discard	300 trees depth 2 learning rate 0.05	0.6760	N/A
+8a04ff0	discard	500 trees depth 3 learning rate 0.05	0.6810	N/A
+33c7313	discard	200 trees depth 3 learning rate 0.05	0.6807	N/A
+0a9fcae	discard	min child weight 10 at 300 depth 3	0.6810	N/A
+8649b8d	discard	add categorical departure hour	0.6796	N/A
+1bdd657	discard	add carrier-origin category	0.6741	N/A
+911d836	discard	one-hot splits for categories under 24	0.6782	N/A
+6293bf9	discard	max cat threshold 16	0.6737	N/A
+c3e04ff	keep	add numeric day of year	0.6840	0.6832
+4428768	keep	remove day of month category with day of year	0.6844	0.6831
+d610cd1	keep	remove month category with day of year	0.6850	0.6839
+e1040b0	discard	depth 4 with numeric day of year	0.6838	N/A
+168079e	discard	replace weekday category with ordered number	0.6836	N/A
+b794c7f	discard	departure time versus route median	0.6846	N/A
+2888d8d	keep	subsample 0.8 with day of year	0.6851	0.6840
+e9c404e	discard	subsample 0.6 with day of year	0.6841	N/A
+e3838de	keep	colsample by tree 0.8 with row subsample 0.8	0.6852	0.6840
+6649883	keep	reg lambda 5 with row and feature sampling	0.6854	0.6841
+9f0d5dc	keep	add seven-level major holiday window	0.6867	0.6853
+e68a7eb	discard	binary major holiday flag	0.6858	N/A
+e367e81	discard	narrow major holiday travel windows	0.6861	N/A
+6ac2590	keep	reg lambda 20 with holiday windows	0.6870	0.6855
+a29b296	keep	reg lambda 50 with holiday windows	0.6879	0.6862
+35fe937	discard	reg lambda 100 tied without simplification	0.6879	N/A
+46d159f	keep	500 trees with reg lambda 50	0.6880	0.6862
+37383ca	discard	800 trees with reg lambda 50	0.6874	N/A
+e9431c4	discard	800 trees learning rate 0.03	0.6878	N/A
+59dbd08	discard	gamma 5 minimum split gain	0.6879	N/A
+93885a6	discard	add scheduled minute of hour	0.6872	N/A
+69440c0	discard	remove distance feature	0.6873	N/A
+11157dc	discard	remove destination airport	0.6805	N/A
+339b8a0	discard	max bin 512	0.6879	N/A
+a4ac6a7	discard	max bin 128	0.6877	N/A
+55234f3	discard	loss-guided eight-leaf trees	0.6877	N/A
+6bcb46d	crash	DART 500 trees timed out during training	0.0000	N/A
+7988bb0	discard	DART 300 trees rate drop 0.05	0.6865	N/A
+6671337	discard	add cyclic day of year sine cosine	0.6867	N/A
+9ea1df0	keep	reg alpha 10 with reg lambda 50	0.6889	0.6861
+85d153a	discard	reg alpha 30	0.6864	N/A
+3252876	discard	reg alpha 5	0.6888	N/A
+395d186	discard	approx tree method slower and lower	0.6888	N/A
+a598e9f	discard	max cat threshold 128	0.6887	N/A
+a8eb748	keep	colsample by tree 0.6	0.6892	0.6859
+445ea8c	discard	colsample by tree 0.4	0.6889	N/A
+00a464e	discard	subsample 0.9 with colsample 0.6	0.6881	N/A
+cd0df4b	keep	subsample 0.7 with colsample 0.6	0.6893	0.6857
+30c2407	discard	subsample 0.6 with colsample 0.6	0.6886	N/A
+d9a79d6	discard	depth 4 with current regularization	0.6888	N/A
+aae9e3b	discard	colsample by node 0.8 with tree 0.6	0.6884	N/A
+f746575	discard	min child weight 0.1 tied without simplification	0.6893	N/A
+f34b8ae	discard	reg lambda 30 with L1 and sampling	0.6891	N/A
+c5a84d0	discard	reg lambda 70 with L1 and sampling	0.6891	N/A

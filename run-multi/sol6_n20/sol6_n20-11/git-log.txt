@@ -1,0 +1,147 @@
+commit cd0df4b8a7ab91d00948311e893b397dfe685a5d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:13:25 2026 +0000
+
+    Test seventy-percent row sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a8eb748008df4b4c0a60db4950eee43a12f81d7b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:10:37 2026 +0000
+
+    Test stronger feature sampling
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ea1df08ac0409c07ecbee3e2422938a0dc863b1
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 03:05:24 2026 +0000
+
+    Test L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 46d159f8a72eb4e06b793d5f32df0aff5fa0ea2e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:50:53 2026 +0000
+
+    Test more rounds with strong L2
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a29b2967a8d47c0e924b349bc3fea9be9eab9f9f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:49:06 2026 +0000
+
+    Test L2 leaf penalty of fifty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6ac2590ce20f492fbab0bd4515ed6f67ebbd84b4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:48:12 2026 +0000
+
+    Test stronger L2 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f0d5dccd00ecee78e0ec5b6fd5e427642b79162
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:44:54 2026 +0000
+
+    Add major holiday travel windows
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 6649883b55f1df15318c50c82914b22635372ead
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:42:51 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e3838def583b381f721e746d73671422082f01e0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:42:00 2026 +0000
+
+    Sample features for each boosted tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2888d8dc4581b3d238fb4705fe6a8353e62a0ed8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:40:19 2026 +0000
+
+    Subsample training rows each boosting round
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d610cd19db6db29fb12701bcd84f5d00557ef498
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:35:25 2026 +0000
+
+    Ablate month category with day of year
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 442876832cdf560daf56f30d15888e0338d07c94
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:34:33 2026 +0000
+
+    Ablate day-of-month category
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c3e04ffa698a7a231fe914b7e7c2c09903ab42c0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:33:30 2026 +0000
+
+    Add numeric day-of-year feature
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 6509d5a182e2c95bb2dc864c90f7ec59af60d2f0
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:23:32 2026 +0000
+
+    Test depth-three trees
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cf68766cab4a3263c83618a34f470081b37c8fa3
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:22:38 2026 +0000
+
+    Try conservative boosting with shallow trees
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
