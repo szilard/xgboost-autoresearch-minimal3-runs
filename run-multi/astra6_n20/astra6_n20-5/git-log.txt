@@ -1,0 +1,147 @@
+commit ade4fcfde94564fb8b4be6040a3e925a396cfee8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 14:18:34 2026 +0000
+
+    Test a shorter regularized boosting ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0a7313a7bf83b086a41f80b85aa08f7e2851248c
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 14:13:30 2026 +0000
+
+    Test L1 suppression of weak leaf corrections
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e94a02cee0c13fe4fbcf23eba1e5fc3f2531c157
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 14:09:01 2026 +0000
+
+    Cache categorical indexes for row-wise evaluation
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 836402c9b922a45348fbaeeb37c074e8c92070a5
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 14:06:37 2026 +0000
+
+    Test stronger L2 shrinkage of leaf updates
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8aada05dd2a0700c793807e1ce30cc0fd3b51cad
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:58:22 2026 +0000
+
+    Test full-row trees with random feature selection
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 7b7712fc812844299b8293a39c3fdedd807d806a
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:50:30 2026 +0000
+
+    Prune weak split gains in recency-weighted ensemble
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f12489be15581be2b1d0b447a37937e071e0c0f4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:49:08 2026 +0000
+
+    Weight recent training flights more heavily
+
+ train.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 9b804b34425f02b32102af6f7f04a11eb4e20279
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:41:07 2026 +0000
+
+    Test depth-three trees in the randomized ensemble
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13eca9410a87f2947a0e31983612ec5871349c84
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:40:26 2026 +0000
+
+    Add recurring holiday and holiday-window indicators
+
+ train.py | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit 1a5964e8171f002e23d008d55bb7688faa6a9bf7
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:36:48 2026 +0000
+
+    Test boosted randomized forests for variance reduction
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit cdc5f4ab3fa3e4de112167d8c0b9fe3715cd6066
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:31:27 2026 +0000
+
+    Test whether month seasonality transfers across years
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8edf2038e2467ea75c5b6e3072c16fb25f8c69ce
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:27:22 2026 +0000
+
+    Test shallower trees for cross-year robustness
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a6200e35202e5af1d43cfa74c5b576f4b44b1c8e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:26:42 2026 +0000
+
+    Speed up row-wise category preparation without changing features
+
+ train.py | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+commit c302667e7df94ecf240257cd938b8e67b68027fb
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:25:42 2026 +0000
+
+    Remove day-of-month to reduce year-specific overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 459ffabbe91740ef17ab1977df219320c861c35f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 13:24:33 2026 +0000
+
+    Test regularized longer boosting
+
+ train.py | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

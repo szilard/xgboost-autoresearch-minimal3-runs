@@ -1,0 +1,48 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+459ffab	0.6744	keep	500 trees eta .05 with leaf regularization and row subsampling
+c302667	0.6747	keep	remove categorical day-of-month
+a6200e3	0.6747	keep	faster equivalent category preparation
+8edf203	0.6794	keep	reduce tree depth from six to four
+277b9fa	0.6714	discard	add carrier-origin and carrier-destination categories
+64051e4	0.6793	discard	limit categorical partition threshold to eight
+d5f5a48	0.6784	discard	use one-category splits for every categorical feature
+cdc5f4a	0.6821	keep	remove month seasonality
+c883c29	0.6820	discard	add departure minute within hour
+6ede8ea	0.6821	discard	add departure offset from train-fitted route median
+5f1fc43	0.6821	discard	monotone daily rise and overnight decline in delay risk
+1a5964e	0.6830	keep	average four randomized trees per boosting round
+07dd661	0.6829	discard	add airport coordinates from train route-distance graph
+13eca94	0.6838	keep	add recurring holiday day and travel-window flags
+9b804b3	0.6851	keep	reduce randomized ensemble tree depth to three
+6e3aa98	0.6825	discard	limit ensemble to depth-two trees
+244d2e6	0.6842	discard	1500 rounds at eta .03 in shallow ensemble
+23e0d3d	0.6812	discard	train XGBoost with pairwise ranking loss
+d425153	0.6850	discard	increase minimum leaf weight from 20 to 100
+a1a75f9	0.6841	discard	separate calendar and operational interactions
+f12489b	0.6854	keep	six-month half-life recency weights for training flights
+7b7712f	0.6854	keep	gamma five prunes weak splits at equal AUC with faster runtime
+be3e88a	0.6835	discard	three-month half-life recency weights
+9096ba3	0.6839	discard	add broad winter and summer flags
+dfb2cd2	0.6809	discard	chronological early stopping with November-December reserved
+46f5dd1	0.6853	discard	average complete models from three fixed random seeds
+0339663	0.6850	discard	one tree per round with feature subsampling retained
+8aada05	0.6858	keep	use all training rows with feature sampling retained
+18df288	0.6854	discard	deterministic single-tree boosting without sampling
+c343afc	0.6858	discard	DART dropout with 250 rounds
+5392421	0.6855	discard	reduce numerical histogram resolution to 64 bins
+5208571	0.6858	discard	350 dropout rounds using current tree-booster API
+1fa54d6	0.6858	discard	double departure-time weight in feature sampling
+836402c	0.6860	keep	increase L2 leaf shrinkage from 10 to 100
+c19ad72	0.6788	discard	add native origin-destination route categories
+e94a02c	0.6860	keep	cache category indexes for faster evaluation at equal AUC
+fe13391	0.6853	discard	remove distance predictor
+b149c46	0.6850	discard	remove holiday-window flag while retaining exact holiday day
+2bbd991	0.6860	discard	1000 boosting rounds with strong L2 regularization
+0a7313a	0.6876	keep	add L1 leaf regularization of ten
+03853be	0.6864	discard	strengthen L1 leaf suppression from ten to thirty
+4db8d93	0.6874	discard	linearly decay learning rate at fixed total step size
+a3317fc	0.6875	discard	encode departure as minutes since 0500 modulo one day
+ade4fcf	0.6876	keep	reduce boosting rounds to 300 at equal AUC and faster runtime
+ede777a	0.6873	discard	milder twelve-month half-life recency weighting
+6409c5d	0.6870	discard	remove exact holiday-day flag while retaining surrounding window

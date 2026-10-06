@@ -1,0 +1,5 @@
+Completed 46 experiments plus baseline. **Eval AUC improved from 0.6743 to 0.6876** (+0.0133).
+
+Best commit: `ade4fcf` on `oct6`. All 47 runs completed without crashes or timeouts. Clock stopped at **1h 00m 16s**, including wrap-up.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
