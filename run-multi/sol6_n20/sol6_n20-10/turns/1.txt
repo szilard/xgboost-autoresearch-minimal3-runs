@@ -1,0 +1,3 @@
+Setup is ready on the new `oct6` branch. I read `train.py` and `harness.py`, verified both required data files and Python dependencies, and created [output/results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) with only its header. The experiment clock has not started.
+
+`program.md` requires your confirmation before I start the one-hour clock. Confirm `oct6`, and I’ll start with the baseline run.

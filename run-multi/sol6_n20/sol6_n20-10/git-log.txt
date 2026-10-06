@@ -1,0 +1,120 @@
+commit c3b3a92586bde0208016b5d661e8a8673be701d8
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:07:15 2026 +0000
+
+    Raise minimum child Hessian under L1
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0ecd5dfa6fed8f4d3530030f8fcfac46c4b79c20
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:01:53 2026 +0000
+
+    Test stronger L1 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 999f5432c733d0cd26a8055a85a1b40f52cfb94e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 02:00:36 2026 +0000
+
+    Apply L1 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 28f8c071a7b4fb757ae57dea8efc249e176074e4
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:46:42 2026 +0000
+
+    Average three seeded models
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b9c9717760ea08a45736bdd45442141d75810ccf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:45:40 2026 +0000
+
+    Average two seeded shallow XGBoost models
+
+ train.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 9b694c713436646cd65391c7c8a68ccb02c4a918
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:34:54 2026 +0000
+
+    Test stronger L2 leaf penalty
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 449514de873e50717517bc43fc6cf0c642742e09
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:33:56 2026 +0000
+
+    Increase L2 leaf regularization
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 59fd87c53bd4c171c9e562bb096bc5ce951cd18b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:31:32 2026 +0000
+
+    Use origin median schedule offset
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 0ce63651074d531877d36f21a7f5a8e04a674d17
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:30:33 2026 +0000
+
+    Add relative route departure time
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 02c24fae7b1952d907d9dcb9c7c81a142c893710
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:20:35 2026 +0000
+
+    Subsample training rows per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4dc96f1bde5ebfb3249870f2f4d5a0e7ab8f6562
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:16:11 2026 +0000
+
+    Try shallow long boosting ensemble
+
+ train.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit a6019a88dc2a0970ac102a9d6926d2993dd3cc7d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:14:10 2026 +0000
+
+    Use ordered numeric month and day
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 8d9c76017acc7a00421586eea8bba638f9b9bbfe
+Author: agent <agent@localhost>
+Date:   Mon Oct 5 14:18:40 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

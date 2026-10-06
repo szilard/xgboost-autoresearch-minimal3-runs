@@ -1,0 +1,104 @@
+=== [2] 8d9c760 | keep | baseline native categoricals depth 6 100 trees ===
+  holdout=0.6725
+=== [3] cc26d86 | discard | minutes after midnight replacing HHMM; equal AUC and slower ===
+  SKIP: status discard
+=== [4] a6019a8 | keep | ordered numeric month and day of month ===
+  holdout=0.6776
+=== [5] e44e7ac | discard | 400 trees at eta 0.05 depth 6 ===
+  SKIP: status discard
+=== [6] 4dc96f1 | keep | depth 3 with 400 trees at eta 0.05 ===
+  holdout=0.6838
+=== [7] 074d65a | discard | depth 2 vs 3 at 400 trees eta 0.05 ===
+  SKIP: status discard
+=== [8] fac2ed9 | discard | add high-cardinality route category ===
+  SKIP: status discard
+=== [9] 0fa0034 | discard | add day-of-year numeric feature ===
+  SKIP: status discard
+=== [10] 02c24fa | keep | subsample 0.8 with depth 3 400 trees ===
+  holdout=0.6836
+=== [11] b657601 | discard | min_child_weight 10 at same AUC without meaningful speed gain ===
+  SKIP: status discard
+=== [12] 19ebf81 | discard | colsample_bytree 0.8 equal AUC without simplification ===
+  SKIP: status discard
+=== [13] 1c68ef4 | discard | one-hot day-of-week via max_cat_to_onehot 16 ===
+  SKIP: status discard
+=== [14] cc2a386 | discard | max_cat_threshold 16 reduced category partition search ===
+  SKIP: status discard
+=== [15] 7b88f46 | discard | loss-guided eight-leaf trees ===
+  SKIP: status discard
+=== [16] 0a8a41f | discard | 250 trees vs 400 at eta 0.05 ===
+  SKIP: status discard
+=== [17] 8d64c89 | discard | 700 shallow trees at eta 0.05 ===
+  SKIP: status discard
+=== [18] cbdb4df | discard | monotone scheduled departure time ===
+  SKIP: status discard
+=== [19] 3e3e17c | discard | use numeric ordered day of week ===
+  SKIP: status discard
+=== [20] 0ce6365 | keep | departure minutes relative to train route median ===
+  holdout=0.6840
+=== [21] 59fd87c | keep | origin median schedule replaces route median at equal AUC and lower cost ===
+  holdout=0.6842
+=== [22] 3a2504a | discard | destination median schedule equal AUC without simpler or faster code ===
+  SKIP: status discard
+=== [23] 449514d | keep | reg_lambda 10 shrinks sparse leaf scores ===
+  holdout=0.6845
+=== [24] 9b694c7 | keep | reg_lambda 30 versus 10 ===
+  holdout=0.6850
+=== [25] fea3359 | discard | reg_lambda 100 over-shrinks leaves ===
+  SKIP: status discard
+=== [26] 25123e6 | discard | reg_lambda 50 falls below lambda 30 ===
+  SKIP: status discard
+=== [27] 532d1b8 | discard | gamma 1 ties AUC with same artifact size ===
+  SKIP: status discard
+=== [28] 18e7a84 | discard | winter indicator for annual wrap ===
+  SKIP: status discard
+=== [29] ed1dbab | discard | ablate distance feature ===
+  SKIP: status discard
+=== [30] 5ea1641 | discard | ablate origin schedule offset under lambda 30 ===
+  SKIP: status discard
+=== [31] 3a88d63 | discard | DART dropout rate 0.1 with 400 shallow trees ===
+  SKIP: status discard
+=== [32] b9c9717 | keep | soft vote of two seeded shallow models ===
+  holdout=0.6854
+=== [33] 28f8c07 | keep | soft vote of three independently seeded models ===
+  holdout=0.6855
+=== [34] 7d58d47 | discard | five seeded models; diminishing returns ===
+  SKIP: status discard
+=== [35] 8aa2987 | discard | third voter depth 2 instead of depth 3 ===
+  SKIP: status discard
+=== [36] 1ab8e73 | discard | third voter depth 4 instead of depth 3 ===
+  SKIP: status discard
+=== [37] d42bb6d | discard | forbid direct origin destination interaction ===
+  SKIP: status discard
+=== [38] a7e2770 | discard | max_bin 512 time split resolution ===
+  SKIP: status discard
+=== [39] 937c884 | discard | max_bin 128 smoothing time splits ===
+  SKIP: status discard
+=== [40] 92d36f1 | discard | Thanksgiving travel window from weekday and date ===
+  SKIP: status discard
+=== [41] 2cfd8b8 | discard | July 2-5 holiday flag ===
+  SKIP: status discard
+=== [42] a908b66 | discard | categorical departure hour added to raw HHMM ===
+  SKIP: status discard
+=== [43] 372f48d | discard | num_parallel_tree 3 single boosted forest ===
+  SKIP: status discard
+=== [44] 999f543 | keep | reg_alpha 1 on three-seed ensemble ===
+  holdout=0.6858
+=== [45] 0ecd5df | keep | reg_alpha 5 with lambda 30 ===
+  holdout=0.6864
+=== [46] 66442de | discard | reg_alpha 15 over-sparsifies leaves ===
+  SKIP: status discard
+=== [47] f692cb4 | discard | reg_alpha 8 between 5 and 15 ===
+  SKIP: status discard
+=== [48] ae1d52d | discard | subsample 0.6 with L1 five ===
+  SKIP: status discard
+=== [49] b912678 | discard | subsample 0.9 with L1 five ===
+  SKIP: status discard
+=== [50] c3b3a92 | keep | min_child_weight 5 under L1 five ===
+  holdout=0.6864
+=== [51] dad01c3 | discard | min_child_weight 10 under L1 five ===
+  SKIP: status discard
+=== [52] 35a3859 | discard | colsample_bynode 0.8 split-level randomness ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

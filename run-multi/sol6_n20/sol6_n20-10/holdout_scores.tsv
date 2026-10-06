@@ -1,0 +1,52 @@
+commit	status	description	eval_auc	holdout_auc
+8d9c760	keep	baseline native categoricals depth 6 100 trees	0.6743	0.6725
+cc26d86	discard	minutes after midnight replacing HHMM; equal AUC and slower	0.6743	N/A
+a6019a8	keep	ordered numeric month and day of month	0.6774	0.6776
+e44e7ac	discard	400 trees at eta 0.05 depth 6	0.6723	N/A
+4dc96f1	keep	depth 3 with 400 trees at eta 0.05	0.6850	0.6838
+074d65a	discard	depth 2 vs 3 at 400 trees eta 0.05	0.6836	N/A
+fac2ed9	discard	add high-cardinality route category	0.6739	N/A
+0fa0034	discard	add day-of-year numeric feature	0.6849	N/A
+02c24fa	keep	subsample 0.8 with depth 3 400 trees	0.6852	0.6836
+b657601	discard	min_child_weight 10 at same AUC without meaningful speed gain	0.6852	N/A
+19ebf81	discard	colsample_bytree 0.8 equal AUC without simplification	0.6852	N/A
+1c68ef4	discard	one-hot day-of-week via max_cat_to_onehot 16	0.6850	N/A
+cc2a386	discard	max_cat_threshold 16 reduced category partition search	0.6801	N/A
+7b88f46	discard	loss-guided eight-leaf trees	0.6849	N/A
+0a8a41f	discard	250 trees vs 400 at eta 0.05	0.6848	N/A
+8d64c89	discard	700 shallow trees at eta 0.05	0.6847	N/A
+cbdb4df	discard	monotone scheduled departure time	0.6849	N/A
+3e3e17c	discard	use numeric ordered day of week	0.6836	N/A
+0ce6365	keep	departure minutes relative to train route median	0.6855	0.6840
+59fd87c	keep	origin median schedule replaces route median at equal AUC and lower cost	0.6855	0.6842
+3a2504a	discard	destination median schedule equal AUC without simpler or faster code	0.6855	N/A
+449514d	keep	reg_lambda 10 shrinks sparse leaf scores	0.6858	0.6845
+9b694c7	keep	reg_lambda 30 versus 10	0.6861	0.6850
+fea3359	discard	reg_lambda 100 over-shrinks leaves	0.6855	N/A
+25123e6	discard	reg_lambda 50 falls below lambda 30	0.6854	N/A
+532d1b8	discard	gamma 1 ties AUC with same artifact size	0.6861	N/A
+18e7a84	discard	winter indicator for annual wrap	0.6855	N/A
+ed1dbab	discard	ablate distance feature	0.6854	N/A
+5ea1641	discard	ablate origin schedule offset under lambda 30	0.6858	N/A
+3a88d63	discard	DART dropout rate 0.1 with 400 shallow trees	0.6856	N/A
+b9c9717	keep	soft vote of two seeded shallow models	0.6864	0.6854
+28f8c07	keep	soft vote of three independently seeded models	0.6866	0.6855
+7d58d47	discard	five seeded models; diminishing returns	0.6865	N/A
+8aa2987	discard	third voter depth 2 instead of depth 3	0.6864	N/A
+1ab8e73	discard	third voter depth 4 instead of depth 3	0.6863	N/A
+d42bb6d	discard	forbid direct origin destination interaction	0.6857	N/A
+a7e2770	discard	max_bin 512 time split resolution	0.6862	N/A
+937c884	discard	max_bin 128 smoothing time splits	0.6862	N/A
+92d36f1	discard	Thanksgiving travel window from weekday and date	0.6860	N/A
+2cfd8b8	discard	July 2-5 holiday flag	0.6865	N/A
+a908b66	discard	categorical departure hour added to raw HHMM	0.6862	N/A
+372f48d	discard	num_parallel_tree 3 single boosted forest	0.6860	N/A
+999f543	keep	reg_alpha 1 on three-seed ensemble	0.6869	0.6858
+0ecd5df	keep	reg_alpha 5 with lambda 30	0.6884	0.6864
+66442de	discard	reg_alpha 15 over-sparsifies leaves	0.6874	N/A
+f692cb4	discard	reg_alpha 8 between 5 and 15	0.6881	N/A
+ae1d52d	discard	subsample 0.6 with L1 five	0.6882	N/A
+b912678	discard	subsample 0.9 with L1 five	0.6882	N/A
+c3b3a92	keep	min_child_weight 5 under L1 five	0.6885	0.6864
+dad01c3	discard	min_child_weight 10 under L1 five	0.6882	N/A
+35a3859	discard	colsample_bynode 0.8 split-level randomness	0.6876	N/A

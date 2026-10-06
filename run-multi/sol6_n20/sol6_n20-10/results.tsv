@@ -1,0 +1,52 @@
+commit	Eval_AUC	status	description
+8d9c760	0.6743	keep	baseline native categoricals depth 6 100 trees
+cc26d86	0.6743	discard	minutes after midnight replacing HHMM; equal AUC and slower
+a6019a8	0.6774	keep	ordered numeric month and day of month
+e44e7ac	0.6723	discard	400 trees at eta 0.05 depth 6
+4dc96f1	0.6850	keep	depth 3 with 400 trees at eta 0.05
+074d65a	0.6836	discard	depth 2 vs 3 at 400 trees eta 0.05
+fac2ed9	0.6739	discard	add high-cardinality route category
+0fa0034	0.6849	discard	add day-of-year numeric feature
+02c24fa	0.6852	keep	subsample 0.8 with depth 3 400 trees
+b657601	0.6852	discard	min_child_weight 10 at same AUC without meaningful speed gain
+19ebf81	0.6852	discard	colsample_bytree 0.8 equal AUC without simplification
+1c68ef4	0.6850	discard	one-hot day-of-week via max_cat_to_onehot 16
+cc2a386	0.6801	discard	max_cat_threshold 16 reduced category partition search
+7b88f46	0.6849	discard	loss-guided eight-leaf trees
+0a8a41f	0.6848	discard	250 trees vs 400 at eta 0.05
+8d64c89	0.6847	discard	700 shallow trees at eta 0.05
+cbdb4df	0.6849	discard	monotone scheduled departure time
+3e3e17c	0.6836	discard	use numeric ordered day of week
+0ce6365	0.6855	keep	departure minutes relative to train route median
+59fd87c	0.6855	keep	origin median schedule replaces route median at equal AUC and lower cost
+3a2504a	0.6855	discard	destination median schedule equal AUC without simpler or faster code
+449514d	0.6858	keep	reg_lambda 10 shrinks sparse leaf scores
+9b694c7	0.6861	keep	reg_lambda 30 versus 10
+fea3359	0.6855	discard	reg_lambda 100 over-shrinks leaves
+25123e6	0.6854	discard	reg_lambda 50 falls below lambda 30
+532d1b8	0.6861	discard	gamma 1 ties AUC with same artifact size
+18e7a84	0.6855	discard	winter indicator for annual wrap
+ed1dbab	0.6854	discard	ablate distance feature
+5ea1641	0.6858	discard	ablate origin schedule offset under lambda 30
+3a88d63	0.6856	discard	DART dropout rate 0.1 with 400 shallow trees
+b9c9717	0.6864	keep	soft vote of two seeded shallow models
+28f8c07	0.6866	keep	soft vote of three independently seeded models
+7d58d47	0.6865	discard	five seeded models; diminishing returns
+8aa2987	0.6864	discard	third voter depth 2 instead of depth 3
+1ab8e73	0.6863	discard	third voter depth 4 instead of depth 3
+d42bb6d	0.6857	discard	forbid direct origin destination interaction
+a7e2770	0.6862	discard	max_bin 512 time split resolution
+937c884	0.6862	discard	max_bin 128 smoothing time splits
+92d36f1	0.6860	discard	Thanksgiving travel window from weekday and date
+2cfd8b8	0.6865	discard	July 2-5 holiday flag
+a908b66	0.6862	discard	categorical departure hour added to raw HHMM
+372f48d	0.6860	discard	num_parallel_tree 3 single boosted forest
+999f543	0.6869	keep	reg_alpha 1 on three-seed ensemble
+0ecd5df	0.6884	keep	reg_alpha 5 with lambda 30
+66442de	0.6874	discard	reg_alpha 15 over-sparsifies leaves
+f692cb4	0.6881	discard	reg_alpha 8 between 5 and 15
+ae1d52d	0.6882	discard	subsample 0.6 with L1 five
+b912678	0.6882	discard	subsample 0.9 with L1 five
+c3b3a92	0.6885	keep	min_child_weight 5 under L1 five
+dad01c3	0.6882	discard	min_child_weight 10 under L1 five
+35a3859	0.6876	discard	colsample_bynode 0.8 split-level randomness
