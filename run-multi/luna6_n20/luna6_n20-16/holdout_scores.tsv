@@ -1,0 +1,27 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+2d26e48	discard	add directed Origin_Dest categorical feature	0.6667	N/A
+0445eb1	discard	add minutes-since-midnight and cyclic departure-time features	0.6734	N/A
+97a4c17	keep	add 24-level departure-hour category	0.6747	0.6735
+1aba3f1	discard	add carrier-by-hour categorical interaction	0.6721	N/A
+18b82c0	discard	set max_cat_to_onehot=25	0.6719	N/A
+603aca8	keep	set max_depth=4	0.6789	0.6773
+3daef11	keep	set max_depth=3	0.6797	0.6784
+fa437a6	discard	set max_depth=2	0.6754	N/A
+55221b3	discard	set min_child_weight=5	0.6797	N/A
+0c9a160	discard	set subsample=0.8	0.6784	N/A
+47f143a	discard	add cross-fitted carrier, airport, and route target means	0.6792	N/A
+7af828b	keep	replace DepHour with four six-hour DepPeriod bins	0.6798	0.6783
+9aa4478	keep	use learning_rate=0.05 with 200 trees	0.6805	0.6792
+671d54b	discard	use learning_rate=0.025 with 400 trees	0.6804	N/A
+16a0ad0	keep	add weekday by six-hour period category	0.6810	0.6790
+f6a3101	keep	set max_depth=4 with weekday-period interaction	0.6814	0.6792
+043e838	discard	set max_depth=5 with weekday-period interaction	0.6794	N/A
+7eb8114	discard	add month by six-hour period category	0.6811	N/A
+2e91f92	keep	set max_cat_threshold=32	0.6817	0.6800
+f0b50db	discard	set max_cat_threshold=16	0.6758	N/A
+973b25f	keep	add broad named holiday windows	0.6819	0.6816
+3a643e3	discard	pool holiday windows into a binary category	0.6807	N/A
+e29d16b	discard	set max_depth=3 with holiday windows	0.6795	N/A
+c2febf2	keep	set colsample_bytree=0.8	0.6833	0.6819
+7067b18	discard	set colsample_bytree=0.9	0.6830	N/A

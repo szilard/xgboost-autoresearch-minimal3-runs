@@ -1,0 +1,3 @@
+Setup is ready on branch `oct6`, created from the current `HEAD`. I read `train.py` and `harness.py`, confirmed `data/train.csv` and `data/eval.csv` are present, and initialized `output/results.tsv` with its header.
+
+I haven’t started the clock. `program.md` says to wait for your confirmation before starting it. Reply **go** and I’ll start the clock and run the baseline first.

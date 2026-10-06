@@ -1,0 +1,102 @@
+commit c2febf24664a7351704cf32efe5f473265fc65ff
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:22:26 2026 +0000
+
+    Subsample features per tree
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 973b25f98ef16f3df419bfc1229dd5aa32e05aff
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:16:09 2026 +0000
+
+    Add calendar holiday window category
+
+ train.py | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+commit 2e91f92556e752a2b4cfee4a8f46bd31b47ae274
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:10:04 2026 +0000
+
+    Limit categorical partition candidates
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f6a31010c5f150f28dd452ddfc7af9e61e1cf10f
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:04:27 2026 +0000
+
+    Increase depth with weekday period feature
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 16a0ad08d7d91341fba3ac23e8b7e427361c260e
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 01:02:22 2026 +0000
+
+    Add weekday by departure period category
+
+ train.py | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit 9aa4478f1beae3a218262480cb2a5ef9d18495ef
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:57:56 2026 +0000
+
+    Halve learning rate and double boosting rounds
+
+ train.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7af828b3c35a55b2e66604ea7c3f53ee66b8c70d
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:56:10 2026 +0000
+
+    Coarsen departure hour into four periods
+
+ train.py | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 3daef11eabbc962ca34347138fee16ab963279dd
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:42:07 2026 +0000
+
+    Reduce tree depth to three
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 603aca8d736edf9ef6b501bff2b678a37cd79c4b
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:40:51 2026 +0000
+
+    Reduce tree depth to four
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 97a4c17b15bf434c9c1fd6b9a0c42d3ffb87bfaf
+Author: agent <agent@localhost>
+Date:   Tue Oct 6 00:34:44 2026 +0000
+
+    Add departure hour category
+
+ train.py | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

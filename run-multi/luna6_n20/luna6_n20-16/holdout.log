@@ -1,0 +1,54 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 2d26e48 | discard | add directed Origin_Dest categorical feature ===
+  SKIP: status discard
+=== [4] 0445eb1 | discard | add minutes-since-midnight and cyclic departure-time features ===
+  SKIP: status discard
+=== [5] 97a4c17 | keep | add 24-level departure-hour category ===
+  holdout=0.6735
+=== [6] 1aba3f1 | discard | add carrier-by-hour categorical interaction ===
+  SKIP: status discard
+=== [7] 18b82c0 | discard | set max_cat_to_onehot=25 ===
+  SKIP: status discard
+=== [8] 603aca8 | keep | set max_depth=4 ===
+  holdout=0.6773
+=== [9] 3daef11 | keep | set max_depth=3 ===
+  holdout=0.6784
+=== [10] fa437a6 | discard | set max_depth=2 ===
+  SKIP: status discard
+=== [11] 55221b3 | discard | set min_child_weight=5 ===
+  SKIP: status discard
+=== [12] 0c9a160 | discard | set subsample=0.8 ===
+  SKIP: status discard
+=== [13] 47f143a | discard | add cross-fitted carrier, airport, and route target means ===
+  SKIP: status discard
+=== [14] 7af828b | keep | replace DepHour with four six-hour DepPeriod bins ===
+  holdout=0.6783
+=== [15] 9aa4478 | keep | use learning_rate=0.05 with 200 trees ===
+  holdout=0.6792
+=== [16] 671d54b | discard | use learning_rate=0.025 with 400 trees ===
+  SKIP: status discard
+=== [17] 16a0ad0 | keep | add weekday by six-hour period category ===
+  holdout=0.6790
+=== [18] f6a3101 | keep | set max_depth=4 with weekday-period interaction ===
+  holdout=0.6792
+=== [19] 043e838 | discard | set max_depth=5 with weekday-period interaction ===
+  SKIP: status discard
+=== [20] 7eb8114 | discard | add month by six-hour period category ===
+  SKIP: status discard
+=== [21] 2e91f92 | keep | set max_cat_threshold=32 ===
+  holdout=0.6800
+=== [22] f0b50db | discard | set max_cat_threshold=16 ===
+  SKIP: status discard
+=== [23] 973b25f | keep | add broad named holiday windows ===
+  holdout=0.6816
+=== [24] 3a643e3 | discard | pool holiday windows into a binary category ===
+  SKIP: status discard
+=== [25] e29d16b | discard | set max_depth=3 with holiday windows ===
+  SKIP: status discard
+=== [26] c2febf2 | keep | set colsample_bytree=0.8 ===
+  holdout=0.6819
+=== [27] 7067b18 | discard | set colsample_bytree=0.9 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

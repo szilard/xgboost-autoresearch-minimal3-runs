@@ -1,0 +1,27 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+2d26e48	0.6667	discard	add directed Origin_Dest categorical feature
+0445eb1	0.6734	discard	add minutes-since-midnight and cyclic departure-time features
+97a4c17	0.6747	keep	add 24-level departure-hour category
+1aba3f1	0.6721	discard	add carrier-by-hour categorical interaction
+18b82c0	0.6719	discard	set max_cat_to_onehot=25
+603aca8	0.6789	keep	set max_depth=4
+3daef11	0.6797	keep	set max_depth=3
+fa437a6	0.6754	discard	set max_depth=2
+55221b3	0.6797	discard	set min_child_weight=5
+0c9a160	0.6784	discard	set subsample=0.8
+47f143a	0.6792	discard	add cross-fitted carrier, airport, and route target means
+7af828b	0.6798	keep	replace DepHour with four six-hour DepPeriod bins
+9aa4478	0.6805	keep	use learning_rate=0.05 with 200 trees
+671d54b	0.6804	discard	use learning_rate=0.025 with 400 trees
+16a0ad0	0.6810	keep	add weekday by six-hour period category
+f6a3101	0.6814	keep	set max_depth=4 with weekday-period interaction
+043e838	0.6794	discard	set max_depth=5 with weekday-period interaction
+7eb8114	0.6811	discard	add month by six-hour period category
+2e91f92	0.6817	keep	set max_cat_threshold=32
+f0b50db	0.6758	discard	set max_cat_threshold=16
+973b25f	0.6819	keep	add broad named holiday windows
+3a643e3	0.6807	discard	pool holiday windows into a binary category
+e29d16b	0.6795	discard	set max_depth=3 with holiday windows
+c2febf2	0.6833	keep	set colsample_bytree=0.8
+7067b18	0.6830	discard	set colsample_bytree=0.9

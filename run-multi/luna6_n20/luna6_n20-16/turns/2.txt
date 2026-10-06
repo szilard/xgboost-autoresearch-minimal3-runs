@@ -1,0 +1,8 @@
+The experiment run is complete. I stopped the clock at **58m38s** with the branch on the best kept commit, `c2febf2`.
+
+- **Best Eval AUC:** 0.6833, up from the 0.6743 baseline.
+- **Best model:** depth 4, 200 trees at learning rate 0.05, with four six-hour departure periods, a weekday-period feature, holiday windows, `max_cat_threshold=32`, and `colsample_bytree=0.8`.
+- **Run records:** [results.tsv](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [research-log.md](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md).
+- **Code:** [train.py](/home/ubuntu/xgboost-autoresearch-minimal3/train.py). The branch is clean; the holdout was not accessed.
+
+The research drew on the [XGBoost tuning guide](https://xgboost.readthedocs.io/en/stable/tutorials/param_tuning.html), [categorical parameter reference](https://xgboost.readthedocs.io/en/stable/parameter.html), and [BTS Thanksgiving delay details](https://transtats.bts.gov/HolidayDelay_Detail.asp).
