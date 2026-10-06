@@ -1,0 +1,39 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+ff1f24b	discard	replace HHMM with minutes-of-day and cyclic time features	0.6734	N/A
+314cd3b	discard	add Origin-Dest categorical route	0.6667	N/A
+9e938fa	keep	reduce max_depth from 6 to 4	0.6789	0.6771
+0792e38	discard	increase max_depth from 4 to 5	0.6777	N/A
+5748ed2	keep	reduce max_depth from 4 to 3	0.6798	0.6786
+05564bf	discard	reduce max_depth from 3 to 2	0.6751	N/A
+e969a15	discard	set min_child_weight to 5	0.6798	N/A
+8a8cb66	discard	set subsample to 0.8	0.6780	N/A
+8700cd6	keep	use learning_rate 0.05 with 200 trees at depth 3	0.6807	0.6791
+126bb8f	keep	set colsample_bytree to 0.8	0.6809	0.6795
+4745198	discard	add categorical departure hour alongside raw HHMM	0.6791	N/A
+54818e3	discard	replace raw HHMM with categorical departure hour	0.6799	N/A
+bca87cf	discard	set max_cat_to_onehot to 32	0.6794	N/A
+b5ca68f	discard	set max_cat_to_onehot to 16	0.6808	N/A
+a7de956	discard	use 300 trees at learning rate 0.033	0.6801	N/A
+50e12c0	discard	set max_bin to 512	0.6805	N/A
+41f50b6	discard	set gamma to 1.0	0.6809	N/A
+a628aef	discard	set colsample_bytree to 0.6	0.6799	N/A
+3244428	discard	use DART booster with rate_drop 0.1	0.6709	N/A
+04da107	discard	set max_cat_threshold to 32	0.6777	N/A
+155e256	discard	add carrier by scheduled hour category	0.6784	N/A
+22a16f2	keep	add annual day-of-year sine and cosine features	0.6819	0.6806
+3c07450	keep	test max_depth 4 with annual features	0.6822	0.6807
+7137744	discard	test max_depth 5 with annual features	0.6814	N/A
+a8dd92a	keep	replace annual sine/cosine pair with linear DayOfYear	0.6841	0.6833
+68ee66b	discard	test max_depth 3 with linear DayOfYear	0.6830	N/A
+f3bd7b2	keep	drop separate Month and DayofMonth categories	0.6847	0.6837
+2d587b3	discard	add Month category beside day index	0.6845	N/A
+7476f3f	discard	add DayofMonth category beside day index	0.6840	N/A
+28a9f98	keep	replace DayOfWeek category with weekly sine and cosine	0.6850	0.6844
+667a6a2	discard	add categorical week of year	0.6805	N/A
+577f311	discard	replace DayOfYear with numeric WeekOfYear	0.6840	N/A
+7961f29	discard	test max_depth 3 with weekly cycle features	0.6845	N/A
+4836fac	discard	set colsample_bytree to 0.9	0.6842	N/A
+ef4a789	discard	add carrier by weekday category	0.6832	N/A
+715f602	discard	add month by weekday category	0.6832	N/A
+94cfa61	discard	set reg_lambda to 2	0.6850	N/A

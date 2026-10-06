@@ -1,0 +1,5 @@
+The `oct6` run is complete; the clock stopped at **58m 52s**. The branch is at best commit `28a9f98`, with Eval AUC **0.6850**, up from the **0.6743** baseline after 37 non-baseline experiments.
+
+The best model uses depth 4, 200 trees, learning rate 0.05, `colsample_bytree=0.8`, a linear `DayOfYear` feature, and weekly sine/cosine features.
+
+Run records are in [`results.tsv`](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) and [`research-log.md`](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md). The holdout was not accessed.

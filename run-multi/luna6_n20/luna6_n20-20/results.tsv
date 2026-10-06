@@ -1,0 +1,39 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+ff1f24b	0.6734	discard	replace HHMM with minutes-of-day and cyclic time features
+314cd3b	0.6667	discard	add Origin-Dest categorical route
+9e938fa	0.6789	keep	reduce max_depth from 6 to 4
+0792e38	0.6777	discard	increase max_depth from 4 to 5
+5748ed2	0.6798	keep	reduce max_depth from 4 to 3
+05564bf	0.6751	discard	reduce max_depth from 3 to 2
+e969a15	0.6798	discard	set min_child_weight to 5
+8a8cb66	0.6780	discard	set subsample to 0.8
+8700cd6	0.6807	keep	use learning_rate 0.05 with 200 trees at depth 3
+126bb8f	0.6809	keep	set colsample_bytree to 0.8
+4745198	0.6791	discard	add categorical departure hour alongside raw HHMM
+54818e3	0.6799	discard	replace raw HHMM with categorical departure hour
+bca87cf	0.6794	discard	set max_cat_to_onehot to 32
+b5ca68f	0.6808	discard	set max_cat_to_onehot to 16
+a7de956	0.6801	discard	use 300 trees at learning rate 0.033
+50e12c0	0.6805	discard	set max_bin to 512
+41f50b6	0.6809	discard	set gamma to 1.0
+a628aef	0.6799	discard	set colsample_bytree to 0.6
+3244428	0.6709	discard	use DART booster with rate_drop 0.1
+04da107	0.6777	discard	set max_cat_threshold to 32
+155e256	0.6784	discard	add carrier by scheduled hour category
+22a16f2	0.6819	keep	add annual day-of-year sine and cosine features
+3c07450	0.6822	keep	test max_depth 4 with annual features
+7137744	0.6814	discard	test max_depth 5 with annual features
+a8dd92a	0.6841	keep	replace annual sine/cosine pair with linear DayOfYear
+68ee66b	0.6830	discard	test max_depth 3 with linear DayOfYear
+f3bd7b2	0.6847	keep	drop separate Month and DayofMonth categories
+2d587b3	0.6845	discard	add Month category beside day index
+7476f3f	0.6840	discard	add DayofMonth category beside day index
+28a9f98	0.6850	keep	replace DayOfWeek category with weekly sine and cosine
+667a6a2	0.6805	discard	add categorical week of year
+577f311	0.6840	discard	replace DayOfYear with numeric WeekOfYear
+7961f29	0.6845	discard	test max_depth 3 with weekly cycle features
+4836fac	0.6842	discard	set colsample_bytree to 0.9
+ef4a789	0.6832	discard	add carrier by weekday category
+715f602	0.6832	discard	add month by weekday category
+94cfa61	0.6850	discard	set reg_lambda to 2

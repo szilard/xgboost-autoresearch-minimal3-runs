@@ -1,0 +1,3 @@
+Setup is ready on branch `oct6`. `data/train.csv` and `data/eval.csv` are present, and [`output/results.tsv`](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) contains the required header. I also read [`train.py`](/home/ubuntu/xgboost-autoresearch-minimal3/train.py) and [`harness.py`](/home/ubuntu/xgboost-autoresearch-minimal3/harness.py).
+
+The experiment clock is still stopped, as requested for setup. Reply **“go”** when you’re ready; I’ll start the clock and run the baseline first.
