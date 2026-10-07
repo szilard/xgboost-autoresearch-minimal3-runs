@@ -1,0 +1,20 @@
+== results.tsv
+  49 rows: 21 keep, 28 discard, 0 crash
+  kept ties (allowed only for simpler or faster code; look at the description): b12cec4 (0.6743, after b15ec66), 40b0506 (0.6854, after fb4b04f), efe0916 (0.6854, after 40b0506), cb6c121 (0.6894, after fd9ab43)
+  kept Eval AUC: 0.6743 -> 0.6894, max 0.6894
+
+== clock and harness runs
+  49 harness runs: 49 ok, 0 crash, 0 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3570 s (+30 s remaining)
+  9e1574c is logged as discard but has no completed harness run (a crash or timeout?)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct7: 21 commits, first b15ec66, HEAD cb6c121
+  48 commits by the agent (branch and reflog) checked for files other than train.py
+  FLAG artifact_outside_clock: 9e1574c8c739b43cce36ee14e014e9c3a5420d48.pkl: no harness run of that commit
+  49 artifacts, 163 MB
+  train.py of 48 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: artifact_outside_clock
+PROTOCOL FLAGS: none

@@ -1,0 +1,100 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] de6f683 | discard | 500 trees eta .05 min_child_weight 20 lambda 10 ===
+  SKIP: status discard
+=== [4] b12cec4 | keep | equivalent preparation with cached categorical dtypes ===
+  holdout=0.6725
+=== [5] d9eff0c | keep | drop day-of-month category ===
+  holdout=0.6762
+=== [6] 7adb656 | keep | depth 4 with 300 trees eta .05 min_child_weight 20 lambda 10 ===
+  holdout=0.6790
+=== [7] 4bf0fe8 | discard | add carrier-origin and carrier-destination categories ===
+  SKIP: status discard
+=== [8] 294e6e1 | keep | restrict native categorical partitions to max_cat_threshold 16 ===
+  holdout=0.6796
+=== [9] ae172c7 | discard | use one-hot native categorical splits with threshold 512 ===
+  SKIP: status discard
+=== [10] 133a267 | discard | separate calendar and operational interaction groups ===
+  SKIP: status discard
+=== [11] 9fede9d | keep | replace categorical month with numeric and cyclic coordinates ===
+  holdout=0.6801
+=== [12] 7aae707 | keep | add departure hour and minute-of-hour features ===
+  holdout=0.6802
+=== [13] 34cf7f7 | discard | add two-dimensional airport geometry from training route distances ===
+  SKIP: status discard
+=== [14] d427326 | discard | depth 3 with 500 boosting rounds ===
+  SKIP: status discard
+=== [15] 4f348e5 | keep | three trees per boosting round with 75 percent row subsampling ===
+  holdout=0.6806
+=== [16] c42b375 | keep | add 80 percent per-split feature subsampling ===
+  holdout=0.6810
+=== [17] 310c56c | discard | gamma 5 minimum split gain ===
+  SKIP: status discard
+=== [18] fb4b04f | keep | add clipped distance to four major recurring holidays ===
+  holdout=0.6838
+=== [19] fa02373 | discard | add signed offset to nearest major holiday ===
+  SKIP: status discard
+=== [20] 437d862 | discard | include Memorial Day and Labor Day in holiday proximity ===
+  SKIP: status discard
+=== [21] 1c48f21 | discard | pairwise RankNet loss with sampled delayed-on-time ordering ===
+  SKIP: status discard
+=== [22] 05fc71d | discard | piecewise monotonic departure-time risk with overnight indicator ===
+  SKIP: status discard
+=== [23] 0f72d26 | discard | remove cyclic month coordinates retaining numeric month ===
+  SKIP: status discard
+=== [24] 40b0506 | keep | equivalent direct calendar lookups and explicit missing category codes ===
+  holdout=0.6838
+=== [25] efe0916 | keep | remove minute-of-hour timetable feature ===
+  holdout=0.6837
+=== [26] fabdf66 | keep | add departure minutes relative to training route median ===
+  holdout=0.6842
+=== [27] f9219ca | keep | sample weights with twelve-month recency half-life ===
+  holdout=0.6844
+=== [28] 8592c7d | discard | sample weights with six-month recency half-life ===
+  SKIP: status discard
+=== [29] 9cfc685 | discard | 600 rounds at eta .025 with constant nominal shrinkage ===
+  SKIP: status discard
+=== [30] bcee39f | keep | compact DART model with forest-normalized dropout ===
+  holdout=0.6847
+=== [31] d798ad6 | discard | remove dropout preserving 180 rounds and eta .1 ===
+  SKIP: status discard
+=== [32] 26a8295 | keep | coarsen numeric histograms to 64 bins ===
+  holdout=0.6841
+=== [33] 9e1574c | discard | loss-guided trees with twelve leaves and unrestricted depth ===
+  SKIP: status discard
+=== [34] 93e625a | discard | ten percent label smoothing in weighted logistic objective ===
+  SKIP: status discard
+=== [35] 1e4ebaf | discard | increase dropout tree depth from four to five ===
+  SKIP: status discard
+=== [36] b447255 | keep | average two prespecified dropout seeds 42 and 137 ===
+  holdout=0.6852
+=== [37] 5f04d97 | discard | average three fixed dropout seeds 42 137 and 2026 ===
+  SKIP: status discard
+=== [38] 1518ab9 | keep | increase leaf L2 regularization from 10 to 100 ===
+  holdout=0.6867
+=== [39] 7bd7c40 | keep | increase leaf L2 regularization from 100 to 300 ===
+  holdout=0.6866
+=== [40] 70ca449 | discard | remove dropout after increasing leaf lambda to 300 ===
+  SKIP: status discard
+=== [41] fd9ab43 | keep | add departure offset from training carrier-origin median ===
+  holdout=0.6870
+=== [42] ff35ac4 | discard | remove raw distance after adding schedule context ===
+  SKIP: status discard
+=== [43] fe0c821 | discard | double column sampling weights for departure time hour and holiday distance ===
+  SKIP: status discard
+=== [44] ce40354 | discard | CPU gradient-based sampling with half the rows ===
+  SKIP: status discard
+=== [45] 8aa36ab | discard | increase leaf L2 regularization from 300 to 1000 ===
+  SKIP: status discard
+=== [46] cb6c121 | keep | remove redundant deprecated dart booster alias and one-tree default ===
+  holdout=0.6870
+=== [47] 45e076c | discard | remove recency sample weights after regularization and schedule changes ===
+  SKIP: status discard
+=== [48] a045e46 | discard | raise categorical split threshold to 64 under strong leaf L2 ===
+  SKIP: status discard
+=== [49] 2cb60f1 | discard | add departure offset from training carrier-destination median ===
+  SKIP: status discard
+=== [50] 767e2b6 | discard | raise minimum child Hessian from 20 to 100 ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

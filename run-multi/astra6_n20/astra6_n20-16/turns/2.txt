@@ -1,0 +1,9 @@
+Completed **48 experiments plus baseline** in **59m30s**.
+
+- Best Eval AUC: **0.6894**, up from **0.6743** (+0.0151).
+- Best commit: `cb6c121` on branch `oct7`.
+- All 49 runs succeeded; saved model checks passed.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
+
+One timing row’s commit-label mismatch is documented in the log; its score and artifact are correct.

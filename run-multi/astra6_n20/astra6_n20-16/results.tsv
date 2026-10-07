@@ -1,0 +1,50 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+de6f683	0.6710	discard	500 trees eta .05 min_child_weight 20 lambda 10
+b12cec4	0.6743	keep	equivalent preparation with cached categorical dtypes
+d9eff0c	0.6759	keep	drop day-of-month category
+7adb656	0.6800	keep	depth 4 with 300 trees eta .05 min_child_weight 20 lambda 10
+4bf0fe8	0.6730	discard	add carrier-origin and carrier-destination categories
+294e6e1	0.6815	keep	restrict native categorical partitions to max_cat_threshold 16
+ae172c7	0.6754	discard	use one-hot native categorical splits with threshold 512
+133a267	0.6802	discard	separate calendar and operational interaction groups
+9fede9d	0.6817	keep	replace categorical month with numeric and cyclic coordinates
+7aae707	0.6818	keep	add departure hour and minute-of-hour features
+34cf7f7	0.6818	discard	add two-dimensional airport geometry from training route distances
+d427326	0.6802	discard	depth 3 with 500 boosting rounds
+4f348e5	0.6820	keep	three trees per boosting round with 75 percent row subsampling
+c42b375	0.6824	keep	add 80 percent per-split feature subsampling
+310c56c	0.6823	discard	gamma 5 minimum split gain
+fb4b04f	0.6854	keep	add clipped distance to four major recurring holidays
+fa02373	0.6851	discard	add signed offset to nearest major holiday
+437d862	0.6854	discard	include Memorial Day and Labor Day in holiday proximity
+1c48f21	0.6760	discard	pairwise RankNet loss with sampled delayed-on-time ordering
+05fc71d	0.6840	discard	piecewise monotonic departure-time risk with overnight indicator
+0f72d26	0.6849	discard	remove cyclic month coordinates retaining numeric month
+40b0506	0.6854	keep	equivalent direct calendar lookups and explicit missing category codes
+efe0916	0.6854	keep	remove minute-of-hour timetable feature
+fabdf66	0.6856	keep	add departure minutes relative to training route median
+f9219ca	0.6858	keep	sample weights with twelve-month recency half-life
+8592c7d	0.6851	discard	sample weights with six-month recency half-life
+9cfc685	0.6855	discard	600 rounds at eta .025 with constant nominal shrinkage
+bcee39f	0.6862	keep	compact DART model with forest-normalized dropout
+d798ad6	0.6838	discard	remove dropout preserving 180 rounds and eta .1
+26a8295	0.6863	keep	coarsen numeric histograms to 64 bins
+9e1574c	0.6857	discard	loss-guided trees with twelve leaves and unrestricted depth
+93e625a	0.6853	discard	ten percent label smoothing in weighted logistic objective
+1e4ebaf	0.6853	discard	increase dropout tree depth from four to five
+b447255	0.6868	keep	average two prespecified dropout seeds 42 and 137
+5f04d97	0.6866	discard	average three fixed dropout seeds 42 137 and 2026
+1518ab9	0.6885	keep	increase leaf L2 regularization from 10 to 100
+7bd7c40	0.6888	keep	increase leaf L2 regularization from 100 to 300
+70ca449	0.6871	discard	remove dropout after increasing leaf lambda to 300
+fd9ab43	0.6894	keep	add departure offset from training carrier-origin median
+ff35ac4	0.6878	discard	remove raw distance after adding schedule context
+fe0c821	0.6886	discard	double column sampling weights for departure time hour and holiday distance
+ce40354	0.6892	discard	CPU gradient-based sampling with half the rows
+8aa36ab	0.6885	discard	increase leaf L2 regularization from 300 to 1000
+cb6c121	0.6894	keep	remove redundant deprecated dart booster alias and one-tree default
+45e076c	0.6887	discard	remove recency sample weights after regularization and schedule changes
+a045e46	0.6860	discard	raise categorical split threshold to 64 under strong leaf L2
+2cb60f1	0.6893	discard	add departure offset from training carrier-destination median
+767e2b6	0.6889	discard	raise minimum child Hessian from 20 to 100

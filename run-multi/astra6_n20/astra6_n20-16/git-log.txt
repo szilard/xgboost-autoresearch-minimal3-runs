@@ -1,0 +1,192 @@
+commit cb6c1217faf6559b6981c5a7fa7bcb0f3b627a1b
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:36:11 2026 +0000
+
+    Remove redundant legacy dropout alias and tree count
+
+ train.py | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit fd9ab439041d07e3184b93e4b55329842da4fe92
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:27:02 2026 +0000
+
+    Test carrier-origin departure schedule context
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 7bd7c4041bd094bd12b9e45986a1b17f827bfb12
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:25:01 2026 +0000
+
+    Test further shrinkage of low-support leaf estimates
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1518ab95ce08abdac13a76ca1c484d2e9894f7a9
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:23:56 2026 +0000
+
+    Test stronger L2 shrinkage for sparse leaves
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b447255a71c6f3a818d2e6bf9a1eaa0be6753d70
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:21:28 2026 +0000
+
+    Test averaging two independently randomized dropout models
+
+ train.py | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+commit 26a829506b027883de87061629da68fb7fe8d15d
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:15:57 2026 +0000
+
+    Test coarser histogram resolution for numeric features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bcee39f0b4dd93a32d90486056a52c1df6884653
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:14:02 2026 +0000
+
+    Test tree-dropout regularization with DART
+
+ train.py | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit f9219ca972ece8a80764e67d2655efbc18e3bc59
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:11:10 2026 +0000
+
+    Test modest recency weighting for year-to-year drift
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit fabdf66f14223a3f09f8bfa2173bc3ca0f84887f
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:10:16 2026 +0000
+
+    Test departure time relative to the training route median
+
+ train.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit efe091699fdd52b2604f5a4606da59a26048e405
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:08:54 2026 +0000
+
+    Test removing minute-level timetable detail
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 40b0506bff31e2382810c1b10afba45143727909
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 02:06:41 2026 +0000
+
+    Speed up frozen lookups and encode unseen categories explicitly
+
+ train.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit fb4b04f1480b9662b11111df86e38822f1286576
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:58:46 2026 +0000
+
+    Test recurring holiday proximity from row-local calendar fields
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit c42b375d9a8f8c8219464fff780fd238a8c54571
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:56:37 2026 +0000
+
+    Test split-level feature sampling in boosted forests
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4f348e5dc6479322acc62253de786ed805b7e497
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:55:35 2026 +0000
+
+    Test boosted forests with row subsampling
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 7aae707a2500099a6eee6866ffddbae90f611368
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:52:25 2026 +0000
+
+    Test departure hour and minute components
+
+ train.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 9fede9dae3381fd9dcca0054bf9a02da402f0595
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:51:32 2026 +0000
+
+    Test smooth and cyclical month encoding
+
+ train.py | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 294e6e1e70f50bc42477caf038ac4eb8766044c7
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:48:53 2026 +0000
+
+    Test smaller categorical partition search
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7adb65632be2c3e90ced9059d0f4004671b79d11
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:47:04 2026 +0000
+
+    Test shallow regularized trees for cross-year transfer
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit d9eff0ca17458e6ca5b877163a4468cf870f3aeb
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:46:24 2026 +0000
+
+    Test removing unstable day-of-month categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b12cec4b87a85f05719f2b1bfaa6c60cc9cf43bf
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:45:33 2026 +0000
+
+    Simplify categorical preparation and cache dtypes
+
+ train.py | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
