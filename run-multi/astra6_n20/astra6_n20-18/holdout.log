@@ -1,0 +1,90 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 75144bb | keep | 400 trees with shrinkage and stronger regularization ===
+  holdout=0.6751
+=== [4] 04bd2b0 | discard | route plus carrier-airport categorical interactions ===
+  SKIP: status discard
+=== [5] 1756d97 | keep | remove day-of-month to reduce date-specific overfitting ===
+  holdout=0.6755
+=== [6] 160e851 | keep | reuse categorical dtypes; identical features and faster evaluation ===
+  holdout=0.6755
+=== [7] 65f3d4a | keep | native one-hot splits for all categorical features ===
+  holdout=0.6783
+=== [8] 00117dd | keep | increase one-hot model to 1200 trees ===
+  holdout=0.6790
+=== [9] c4862ef | discard | increase one-hot tree depth from 6 to 8 ===
+  SKIP: status discard
+=== [10] c5ae35d | discard | reduce one-hot tree depth from 6 to 4 ===
+  SKIP: status discard
+=== [11] 91c6ef4 | discard | separate departure hour and minute with explicit category codes ===
+  SKIP: status discard
+=== [12] 5b4f31b | keep | constrain month to an additive seasonal effect ===
+  holdout=0.6826
+=== [13] ebc22d8 | discard | constrain weekday to an additive effect ===
+  SKIP: status discard
+=== [14] 3caaedd | discard | raise minimum child weight from 20 to 100 ===
+  SKIP: status discard
+=== [15] 6f0afce | keep | explicit category codes; equal AUC and faster preprocessing ===
+  holdout=0.6826
+=== [16] abcb5db | keep | four parallel trees per boosting step with column sampling ===
+  holdout=0.6827
+=== [17] 86f0c6c | keep | two-dimensional airport geography learned from training route distances ===
+  holdout=0.6838
+=== [18] 24fff19 | discard | reduce boosted forest from four to two trees per step ===
+  SKIP: status discard
+=== [19] 30b31f1 | discard | signed and absolute distance to major holidays within calendar group ===
+  SKIP: status discard
+=== [20] 3dabc7e | keep | shared additive coarse holiday phase ===
+  holdout=0.6843
+=== [21] d172a33 | discard | departure offsets from route and carrier-airport schedule medians ===
+  SKIP: status discard
+=== [22] 2c87c05 | keep | loss-guided tree growth capped at 16 leaves ===
+  holdout=0.6844
+=== [23] 8b3a5f2 | keep | smooth logistic targets to 0.05 and 0.95 ===
+  holdout=0.6845
+=== [24] d8e9602 | keep | average three independent smoothed classifiers with fixed seeds ===
+  holdout=0.6845
+=== [25] 3c8ecfc | discard | 500-round global pairwise ranking model ===
+  SKIP: status discard
+=== [26] 62e0326 | keep | halve each model's additive month contribution ===
+  holdout=0.6878
+=== [27] bf01862 | discard | remove the entire fitted additive month contribution ===
+  SKIP: status discard
+=== [28] b039e87 | discard | monotone daytime rise and late-night departure-risk decline ===
+  SKIP: status discard
+=== [29] 1f5c0f6 | keep | retain 37.5 percent of the learned additive month effect ===
+  holdout=0.6878
+=== [30] 2b92739 | discard | departure-distance arrival-phase proxy ===
+  SKIP: status discard
+=== [31] f44d9db | discard | omit month during model fitting and remove seasonal correction ===
+  SKIP: status discard
+=== [32] 2983d9f | discard | increase leaf L2 penalty from 10 to 50 ===
+  SKIP: status discard
+=== [33] 7edf182 | discard | Pseudo-Huber loss with delta 0.5 instead of smoothed logistic ===
+  SKIP: status discard
+=== [34] 9fea2a8 | discard | double each ensemble member to 2400 boosting rounds ===
+  SKIP: status discard
+=== [35] beea9aa | discard | add a third airport geometry coordinate ===
+  SKIP: status discard
+=== [36] 85b64a0 | discard | halve ensemble members to 600 boosting rounds ===
+  SKIP: status discard
+=== [37] 88a1855 | discard | disable feature subsampling while retaining row sampling ===
+  SKIP: status discard
+=== [38] 68789c6 | discard | smooth retained month effects with two annual Fourier harmonics ===
+  SKIP: status discard
+=== [39] 0209f9e | discard | 2400 rounds of 8-leaf trees at similar total leaf capacity ===
+  SKIP: status discard
+=== [40] 662ed59 | discard | remove all inferred airport geometry features ===
+  SKIP: status discard
+=== [41] 117e4c6 | discard | remove the coarse additive holiday feature ===
+  SKIP: status discard
+=== [42] 3e28943 | discard | limit native categorical partitions to four candidates ===
+  SKIP: status discard
+=== [43] 062fe44 | discard | single carrier-origin cross with one-hot splits ===
+  SKIP: status discard
+=== [44] 6ad5f15 | discard | average five fixed ensemble members instead of three ===
+  SKIP: status discard
+=== [45] aba3067 | discard | add diagonal axes to the existing airport coordinates ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

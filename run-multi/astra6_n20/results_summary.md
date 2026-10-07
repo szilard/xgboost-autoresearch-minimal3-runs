@@ -21,6 +21,7 @@ Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.16
 | astra6_n20-15 | gpt-6-astra | max | 54 | 0.6875 (`896f434`) | 0.6856 | -0.0019 | 0h59m32s | 66.0% | yes | |
 | astra6_n20-16 | gpt-6-astra | max | 49 | 0.6894 (`cb6c121`) | 0.6870 | -0.0024 | 0h59m30s | 67.5% | yes | |
 | astra6_n20-17 | gpt-6-astra | max | 46 | 0.6898 (`a567151`) | 0.6872 | -0.0026 | 0h58m42s | 61.8% | yes | |
+| astra6_n20-18 | gpt-6-astra | max | 44 | 0.6901 (`1f5c0f6`) | 0.6878 | -0.0023 | 0h59m32s | 66.2% | yes | |
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).
 
@@ -34,3 +35,4 @@ For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdou
 - astra6_n20-12: for the human to judge, like astra6_n20-7 but more deliberate. The agent searched bts.gov for 2006 carrier reporting changes and kept the HP-to-US mapping (+0.0003 eval, +0.0007 holdout). It opened TranStats' holiday-delay page, a table of industry holiday travel seasons by year (calendar dates, no delay figures), and kept holiday windows built from it (+0.0016). Search snippets also showed national on-time percentages by year (2006: 75.4%) and carrier complaint rankings; none of these is used. No flight records reached the agent and eval.csv was never read. Its record helper discarded ties by default; twice it rewrote the row to keep and reset to the tie commit, with a consistent end state.
 - astra6_n20-15: integrity flag `train_py_review` is explained; its one line is `train = pd.read_csv(Path(__file__).parent / "data" / "train.csv")` in a discarded commit, a read of train.csv written differently from the starter. One training timeout (DART), logged as crash and reverted.
 - astra6_n20-16: integrity flag `artifact_outside_clock` is explained. The agent's result helper read run.log before evaluation of `9e1574c` finished, logged a premature crash and reset HEAD mid-evaluation, so the harness labelled that timing row `26a8295`; the agent corrected the row to `9e1574c 0.6857 discard` and documented the mislabel. The artifact is from a harness run inside the clock (34m22s), and the run is a discard.
+- astra6_n20-18: peak container memory 16.5 GiB, against 3.4 to 6.0 GiB in the other runs; no process was killed at the 24 GB cap and no harness run crashed or timed out.

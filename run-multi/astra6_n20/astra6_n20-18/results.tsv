@@ -1,0 +1,45 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+75144bb	0.6758	keep	400 trees with shrinkage and stronger regularization
+04bd2b0	0.6686	discard	route plus carrier-airport categorical interactions
+1756d97	0.6761	keep	remove day-of-month to reduce date-specific overfitting
+160e851	0.6761	keep	reuse categorical dtypes; identical features and faster evaluation
+65f3d4a	0.6807	keep	native one-hot splits for all categorical features
+00117dd	0.6818	keep	increase one-hot model to 1200 trees
+c4862ef	0.6803	discard	increase one-hot tree depth from 6 to 8
+c5ae35d	0.6811	discard	reduce one-hot tree depth from 6 to 4
+91c6ef4	0.6813	discard	separate departure hour and minute with explicit category codes
+5b4f31b	0.6840	keep	constrain month to an additive seasonal effect
+ebc22d8	0.6819	discard	constrain weekday to an additive effect
+3caaedd	0.6836	discard	raise minimum child weight from 20 to 100
+6f0afce	0.6840	keep	explicit category codes; equal AUC and faster preprocessing
+abcb5db	0.6844	keep	four parallel trees per boosting step with column sampling
+86f0c6c	0.6850	keep	two-dimensional airport geography learned from training route distances
+24fff19	0.6847	discard	reduce boosted forest from four to two trees per step
+30b31f1	0.6843	discard	signed and absolute distance to major holidays within calendar group
+3dabc7e	0.6854	keep	shared additive coarse holiday phase
+d172a33	0.6843	discard	departure offsets from route and carrier-airport schedule medians
+2c87c05	0.6855	keep	loss-guided tree growth capped at 16 leaves
+8b3a5f2	0.6857	keep	smooth logistic targets to 0.05 and 0.95
+d8e9602	0.6859	keep	average three independent smoothed classifiers with fixed seeds
+3c8ecfc	0.6819	discard	500-round global pairwise ranking model
+62e0326	0.6900	keep	halve each model's additive month contribution
+bf01862	0.6886	discard	remove the entire fitted additive month contribution
+b039e87	0.6891	discard	monotone daytime rise and late-night departure-risk decline
+1f5c0f6	0.6901	keep	retain 37.5 percent of the learned additive month effect
+2b92739	0.6898	discard	departure-distance arrival-phase proxy
+f44d9db	0.6887	discard	omit month during model fitting and remove seasonal correction
+2983d9f	0.6899	discard	increase leaf L2 penalty from 10 to 50
+7edf182	0.6891	discard	Pseudo-Huber loss with delta 0.5 instead of smoothed logistic
+9fea2a8	0.6889	discard	double each ensemble member to 2400 boosting rounds
+beea9aa	0.6898	discard	add a third airport geometry coordinate
+85b64a0	0.6893	discard	halve ensemble members to 600 boosting rounds
+88a1855	0.6899	discard	disable feature subsampling while retaining row sampling
+68789c6	0.6892	discard	smooth retained month effects with two annual Fourier harmonics
+0209f9e	0.6897	discard	2400 rounds of 8-leaf trees at similar total leaf capacity
+662ed59	0.6893	discard	remove all inferred airport geometry features
+117e4c6	0.6898	discard	remove the coarse additive holiday feature
+3e28943	0.6876	discard	limit native categorical partitions to four candidates
+062fe44	0.6901	discard	single carrier-origin cross with one-hot splits
+6ad5f15	0.6901	discard	average five fixed ensemble members instead of three
+aba3067	0.6901	discard	add diagonal axes to the existing airport coordinates

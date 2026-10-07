@@ -1,0 +1,147 @@
+commit 1f5c0f6fa3f046acd58c68741244c936fb23ed48
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:30:18 2026 +0000
+
+    Refine seasonal shrinkage within the tested bracket
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 62e0326d81b27cfb5011b3550ea3412496e660bf
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:26:50 2026 +0000
+
+    Test shrinking the learned additive month component
+
+ train.py | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+commit d8e96020210c16fb4941d71d60fcaf3f8b15065c
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:22:41 2026 +0000
+
+    Average three independently boosted classifiers
+
+ train.py | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+commit 8b3a5f2d603b14a0ff49f9766de58f75e6c1a5fc
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:21:16 2026 +0000
+
+    Test smoothed logistic targets to regularize uncertain outcomes
+
+ train.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 2c87c0589216c0a4adfc19d026fd08449e255d3e
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:19:19 2026 +0000
+
+    Test loss-guided growth with a fixed leaf budget
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 3dabc7eb2d785aba637fd6851552e2ce4e0bb917
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:16:32 2026 +0000
+
+    Test a shared coarse holiday phase instead of detailed dates
+
+ train.py | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit 86f0c6c65470991a731bee176f93825f5bc0d0ef
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:11:52 2026 +0000
+
+    Infer continuous airport geometry from training route distances
+
+ train.py | 27 ++++++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+
+commit abcb5db950b7e58fa220ca3e11b647c8449c6674
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:10:29 2026 +0000
+
+    Test boosted forests to average stochastic split noise
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 6f0afce60be1ce5af67b6d382ced834a96cbdf12
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:09:39 2026 +0000
+
+    Use fixed category indices for faster unknown-safe preprocessing
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5b4f31b02f3c364189714bc46c9baeff1f3849ac
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:07:08 2026 +0000
+
+    Constrain month to an additive seasonal effect
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 00117dd13c60b4dad7433bbdcce83355acc68bfb
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:03:16 2026 +0000
+
+    Give one hot airport effects more boosting rounds
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 65f3d4a3e626f921aacda791cea3e8611402acf6
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:02:37 2026 +0000
+
+    Test native one hot splits for all categorical features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 160e85177cf39abf7835e5a3fe15120eea308b46
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:01:56 2026 +0000
+
+    Reuse categorical dtypes and build prepared frame once
+
+ train.py | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+
+commit 1756d9749cab762733872d344c53675c5268d374
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 04:00:32 2026 +0000
+
+    Remove day of month to test temporal overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 75144bb82b72a083a8d011606e9f27197efba29f
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 03:57:37 2026 +0000
+
+    Test longer regularized boosting schedule
+
+ train.py | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)
