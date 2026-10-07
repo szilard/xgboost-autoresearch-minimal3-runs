@@ -3,7 +3,6 @@
 **TL;DR:** Runs [xgboost-autoresearch-minimal3](https://github.com/szilard/xgboost-autoresearch-minimal3) (an AI coding agent autonomously tunes an XGBoost model, and its gains are then checked on a holdout set it never sees) with various agents/LLMs, once or repeatedly, fully automated. Repeated runs show how much the result of the same agent/LLM varies from run to run.
 
 This is the orchestrator for [xgboost-autoresearch-minimal3](https://github.com/szilard/xgboost-autoresearch-minimal3), itself a follow-up to [xgboost-autoresearch](https://github.com/szilard/xgboost-autoresearch).
-It succeeds [xgboost-autoresearch-minimal2-runs](https://github.com/szilard/xgboost-autoresearch-minimal2-runs), the orchestrator for [xgboost-autoresearch-minimal2](https://github.com/szilard/xgboost-autoresearch-minimal2). The task changed in between (train on 2005 flights, eval and holdout on 2006; 1 hour instead of 2; a stricter keep rule), so the results of the two are not comparable and must not be pooled.
 Another follow-up project is [identical-runs-different-results](https://github.com/earino/identical-runs-different-results) and the corresponding [arXiv paper](https://arxiv.org/abs/2609.33812).
 
 How a run works (the task, the agent's loop and the guardrails are described in the [xgboost-autoresearch-minimal3 README](https://github.com/szilard/xgboost-autoresearch-minimal3)):
