@@ -50,3 +50,5 @@ They are made by `tools/plot_holdout_auc.py` (beeswarm and paths) and `tools/pai
 Recommended machine: m8i.2xlarge (8 cores, 32 GB RAM). The per-run time limits depend on the hardware, so compare results only across runs on the same machine type. Runs are sequential, since each uses all cores.
 
 Setup and usage: [setup/README.md](setup/README.md).
+
+License: [MIT](LICENSE). Web content quoted in the archived session logs remains the property of its owners.
