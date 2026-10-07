@@ -1,0 +1,82 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] f9c63fc | keep | 600 depth-4 trees with slower learning and stronger regularization ===
+  holdout=0.6769
+=== [4] c633883 | keep | Simplify categorical preparation with cached dtypes and one dataframe construction ===
+  holdout=0.6769
+=== [5] ddf29fc | keep | Represent day of month as ordered numeric rather than categorical ===
+  holdout=0.6812
+=== [6] e79b060 | discard | Remove day of month to reduce year-specific calendar noise ===
+  SKIP: status discard
+=== [7] 1eb29de | discard | Add route and carrier-origin/carrier-destination categorical interactions ===
+  SKIP: status discard
+=== [8] 1485773 | keep | Limit categorical partition searches with max_cat_threshold=8 ===
+  holdout=0.6816
+=== [9] 04ee082 | keep | Replace categorical month with ordered numeric month ===
+  holdout=0.6832
+=== [10] f0b8128 | discard | Add departure hour and minute-of-hour features ===
+  SKIP: status discard
+=== [11] 19698b2 | keep | Increase tree depth from 4 to 6 with existing regularization ===
+  holdout=0.6828
+=== [12] 49f5282 | discard | Make day of month an additive effect using interaction constraints ===
+  SKIP: status discard
+=== [13] 901eec4 | discard | Add continuous day-of-year calendar feature ===
+  SKIP: status discard
+=== [14] 2148e23 | discard | Reduce boosting rounds from 600 to 200 ===
+  SKIP: status discard
+=== [15] 14b2b5a | discard | Add row-local Thanksgiving Christmas and New Year distances ===
+  SKIP: status discard
+=== [16] 268c7a1 | keep | Boost four sampled trees per round with node-wise feature sampling ===
+  holdout=0.6836
+=== [17] 1397e4b | keep | Add airport landmark-distance lookups fitted only on training routes ===
+  holdout=0.6846
+=== [18] bcadd6c | discard | Raise minimum child weight from 30 to 200 ===
+  SKIP: status discard
+=== [19] e05998e | keep | Fill landmark geography using shortest distances through the training route network ===
+  holdout=0.6849
+=== [20] f24ced1 | keep | Use one-hot categorical splits instead of category partitions ===
+  holdout=0.6844
+=== [21] d4aa4a4 | discard | Add departure-time offsets from origin and route schedule medians ===
+  SKIP: status discard
+=== [22] cb959b4 | discard | Require split gain of at least 2 using gamma regularization ===
+  SKIP: status discard
+=== [23] 79edd2f | discard | Use 64 numeric histogram bins instead of 256 ===
+  SKIP: status discard
+=== [24] 0e9621c | keep | Train pairwise RankNet-style XGBoost on one global flight-ranking group ===
+  holdout=0.6845
+=== [25] aa90845 | discard | Add approximate arrival clock time from departure and distance ===
+  SKIP: status discard
+=== [26] 66f3964 | keep | Use cached categorical codes for faster preparation and explicit unknown handling ===
+  holdout=0.6845
+=== [27] 83d7f52 | keep | Train pairwise ranking using 32 randomly mixed comparison groups ===
+  holdout=0.6847
+=== [28] 755d4e3 | discard | Increase mean ranking pair sampling from 1 to 8 pairs per flight ===
+  SKIP: status discard
+=== [29] 7599937 | discard | Replace ordered month with sine and cosine seasonal coordinates ===
+  SKIP: status discard
+=== [30] 9bf2f2b | discard | Average two independent rankers with two trees per boosting round each ===
+  SKIP: status discard
+=== [31] 3696332 | discard | Enable score-difference normalization for pairwise ranking gradients ===
+  SKIP: status discard
+=== [32] 16362e5 | discard | Add disjoint-reference airport/carrier delay-mean lookups ===
+  SKIP: status discard
+=== [33] 4de24be | keep | Use loss-guided tree growth with a 32-leaf budget ===
+  holdout=0.6848
+=== [34] 3d9f2c9 | discard | Trade per-step forests for 1200 single-tree rounds at learning rate 0.025 ===
+  SKIP: status discard
+=== [35] fe68a1c | discard | Increase numeric histogram resolution from 256 to 1024 bins ===
+  SKIP: status discard
+=== [36] 79922bd | discard | Replace landmark distances with three classical-MDS airport coordinates ===
+  SKIP: status discard
+=== [37] 3053092 | discard | Blend equal ranking and logistic-classification margins ===
+  SKIP: status discard
+=== [38] bc9085c | discard | Remove month from the final ranking feature set ===
+  SKIP: status discard
+=== [39] 3feec22 | discard | Halve the loss-guided tree budget from 32 to 16 leaves ===
+  SKIP: status discard
+=== [40] 45a8abb | keep | Add only a one-hot carrier-origin interaction ===
+  holdout=0.6853
+=== [41] fc0e2f7 | keep | Remove inactive categorical-partition threshold under all-one-hot splitting ===
+  holdout=0.6853
+
+=== DONE: results written to output/holdout_scores.tsv ===

@@ -1,0 +1,10 @@
+Finished: **Eval AUC improved from 0.6743 to 0.6876** (+0.0133).
+
+- Completed 39 experiments plus the baseline, with no crashes.
+- Best commit: `fc0e2f7` on `oct7`.
+- Saved-artifact checks passed.
+- Clock stopped after **59m25s**.
+
+The best model combines pairwise XGBoost ranking, geographic features, and a carrier–origin interaction.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)

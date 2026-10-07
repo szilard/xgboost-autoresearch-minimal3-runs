@@ -1,6 +1,6 @@
 # astra6_n20
 
-Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.160.0, upstream xgboost-autoresearch-minimal3 @ `5fb023a70fbee73d0d2ee7a3b5875726981c8c62`, started 2026-10-06, container memory cap 24 GB (no swap).
+Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.160.0, upstream xgboost-autoresearch-minimal3 @ `5fb023a70fbee73d0d2ee7a3b5875726981c8c62`, 2026-10-06 to 2026-10-07, container memory cap 24 GB (no swap).
 
 | run | model | effort | experiments | best Eval AUC (commit) | Holdout AUC | gap | total time | AI share | valid | caveat / excluded |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -23,10 +23,56 @@ Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.16
 | astra6_n20-17 | gpt-6-astra | max | 46 | 0.6898 (`a567151`) | 0.6872 | -0.0026 | 0h58m42s | 61.8% | yes | |
 | astra6_n20-18 | gpt-6-astra | max | 44 | 0.6901 (`1f5c0f6`) | 0.6878 | -0.0023 | 0h59m32s | 66.2% | yes | |
 | astra6_n20-19 | gpt-6-astra | max | 49 | 0.6910 (`cbf5e51`) | 0.6876 | -0.0034 | 0h59m14s | 79.8% | yes | |
+| astra6_n20-20 | gpt-6-astra | max | 40 | 0.6876 (`fc0e2f7`) | 0.6853 | -0.0023 | 0h59m25s | 73.3% | yes | |
 
-For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).
+## Statistics over the valid runs (n = 20: 17 valid, 3 with a caveat)
 
-## Notes (in progress)
+| | n | mean | sd | min | median | max |
+|---|---|---|---|---|---|---|
+| Holdout AUC | 20 | 0.6866 | 0.0022 | 0.6815 | 0.6871 | 0.6906 |
+| Eval AUC | 20 | 0.6893 | 0.0022 | 0.6843 | 0.6898 | 0.6935 |
+| gap (holdout - eval) | 20 | -0.0028 | 0.0005 | -0.0037 | -0.0028 | -0.0019 |
+
+sd is the sample standard deviation (n - 1). Unrounded: Holdout AUC mean 0.68656, median 0.68710; Eval AUC mean 0.68934, median 0.68975; gap mean -0.00279, median -0.00275. Experiments per run (rows of results.tsv): mean 47, from 36 to 62.
+
+For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018). For comparison (same harness, data and driver): luna6_n20 has a Holdout AUC mean of 0.6807 and sol6_n20 0.6842, both with a mean gap of -0.0018.
+
+## Notes
+
+- **Excluded: none.** Every run passes the integrity checks. Three runs carry an explained integrity flag, and two leak checks have one false-positive content hit each:
+  - astra6_n20-4 and -16: `artifact_outside_clock`, explained.
+  - astra6_n20-15: `train_py_review`, explained.
+  - astra6_n20-6 and -8: one content hit each, a false positive.
+
+  Details per run below and in each run.md.
+- **Caveats: 3 runs, all `keep_rule`** (astra6_n20-5, -8, -12). Each kept a tie from a single added or changed parameter, justified as faster by 0.2 to 1.1 s, within the noise: gamma 5, `max_cat_threshold` 16 and `max_bin` 64. Each setting stayed in the best model. The other 56 kept ties of the group were real code speedups or simplifications (smaller models, removed features or parameters); two of them are borderline and allowed (astra6_n20-11 and -13, see run.md).
+- **For the human to judge (astra6_n20-7 and -12): eval-year knowledge from BTS documentation.** Both runs kept a mapping of carrier HP (America West) to US (US Airways). They got it from BTS on-time pages noting that the two report jointly from January 2006.
+  - Run 12 also built holiday windows from TranStats' table of industry holiday travel seasons (calendar dates).
+  - Neither run saw flight records or read eval.csv, so both stay valid.
+  - The HP mapping was worth +0.0001 / +0.0003 on eval and +0.0004 / +0.0007 on holdout when made.
+  - No other run of the group (or of luna6_n20 / sol6_n20) maps carriers.
+- **Turns:** every run needed one "go" and no "keep going", except astra6_n20-4. Its "go" turn failed with a capacity error at 58m38s; the driver waited 32 s, then sent "keep going". That was the only failed turn of the group (`retry_wait_s` 0 elsewhere), and it stayed under the 2-minute `turn_retries` threshold.
+- **Clock:** the agent stopped the clock itself in every run.
+  - 16 runs stopped with 1 to 78 s left.
+  - 4 stopped 16 to 78 s after the budget ran out (runs 2, 4, 5, 13), during wrap-up or after a context compaction. Their last experiments ended inside the budget, except run 4's interrupted one.
+  - In astra6_n20-4 the last experiment was started with 1m53s left, against program.md's 2-minute rule. This is not a flag, and it was a crash with no effect on the result.
+- **Context compactions** in 11 of the 20 runs, mostly in the last 15 minutes. None disturbed the protocol.
+- **Gaps:** -0.0019 to -0.0037, mean -0.0028, all inside the provisional thresholds (-0.006 / +0.003). The mean is 0.0010 lower than in luna6_n20 and sol6_n20 (both -0.0018), so selection on Eval AUC overfits the eval half somewhat more with this model. A run below about -0.004 would now stand out.
+- **What worked:**
+  - Almost every run first gained from shallower, regularized boosting and from dropping the `DayofMonth` (and often `Month`) categories, or turning them into numbers.
+  - **Holiday features are in the best model of 15 of 20 runs** (offsets, windows or flags, computed from each row's month, day and weekday). They were often the largest late gain (+0.002 to +0.003).
+  - Other recurring parts:
+    - airport coordinates or landmark distances computed from the train route-distance graph
+    - departure offsets from train schedule medians
+    - boosted forests (`num_parallel_tree`) and seed averaging
+    - strong L1 / L2 regularization
+    - recency and monthly class-balance weights
+  - Route and carrier-airport categories mostly hurt, except with one-level splits (runs 2, 10, 20).
+- **Best runs:** astra6_n20-13 (Eval 0.6935, Holdout 0.6906, a fortnight-of-year feature and calendar interaction constraints); then -9 and -14 (Holdout 0.6888) and -3 (0.6886).
+- **Memory:** peak 3.4 to 6.0 GiB, except astra6_n20-18 at 16.5 GiB (three 1200-round one-hot models). Nothing was killed at the 24 GB cap.
+- **Driver order:** I started astra6_n20-17 about 2 minutes late (02:48:49 instead of about 02:46:30), because I reviewed run 16 before launching it. No other run is affected.
+
+### Per-run details
 
 - astra6_n20-4: one failed turn (model at capacity at 58m38s, 32 s retry wait, then "keep going"). The integrity flag `artifact_outside_clock` is explained: the artifact of the last experiment `f0eb202`, logged as crash, is from a harness run started inside the clock and cut off during evaluation when codex's turn failed, so no timing row was written (see run.md). That experiment was started with 1m53s left, against program.md's 2-minute rule; this is not a protocol flag and the result is unaffected.
 - astra6_n20-6: leak_check's CONTENT HITS 1 is a false positive. The matched line of make_data.py (`"Origin", "Dest", "Distance", "dep_delayed_15min"]`, the end of its `keep_cols` list) appears only in the agent's own setup check, a one-line list of the nine train.csv columns in header order; no command touched `human/` or `/opt` (see run.md).

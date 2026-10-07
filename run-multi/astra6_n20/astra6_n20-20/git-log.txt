@@ -1,0 +1,156 @@
+commit fc0e2f7da7077d7b2d58e503c9c4c41a91ed89e5
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 07:09:10 2026 +0000
+
+    Remove the inactive categorical partition setting
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 45a8abb57508d66e062a4852b9953da793729115
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 07:06:59 2026 +0000
+
+    Test a single carrier-origin cross with one-hot splits
+
+ train.py | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 4de24be7d0b9871b7697656c94e02366ebbb235c
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:55:01 2026 +0000
+
+    Test loss-guided trees with a fixed leaf budget
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 83d7f52ec8f11a285ba15b396d78b81c423d4b3b
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:45:04 2026 +0000
+
+    Test parallel ranking over randomly mixed comparison groups
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 66f39648595265c2cc1e94238207e1d0ab907b33
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:43:32 2026 +0000
+
+    Speed categorical preparation with explicit unknown codes
+
+ train.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 0e9621c777a6ea847ee5dcdd82decfcf8a7669c8
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:39:52 2026 +0000
+
+    Test pairwise ranking for flight-delay AUC
+
+ train.py | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
+
+commit f24ced16f751fdcd0483d67241e4e1af210b593a
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:33:22 2026 +0000
+
+    Test one-hot categorical splits with geographic features
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e05998e076b68feb2c3c0725b8b829d12f5489e0
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:32:04 2026 +0000
+
+    Test route-network geographic distance lookups
+
+ train.py | 29 ++++++++++++++++++-----------
+ 1 file changed, 18 insertions(+), 11 deletions(-)
+
+commit 1397e4b188411eddb716e8b0ae06e5b2efd161ce
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:29:25 2026 +0000
+
+    Test training-derived airport geography features
+
+ train.py | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 268c7a1baa2f3ac0c735c8d1071d13a7647b297b
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:27:24 2026 +0000
+
+    Test boosted forest averaging
+
+ train.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 19698b253fc238f1bd4f9deeabff49b8436e615b
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:21:58 2026 +0000
+
+    Test deeper trees with constrained categories
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 04ee082e575ee71b86c8a8b372a92dbabc5f77f3
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:19:56 2026 +0000
+
+    Test ordered month representation
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 1485773b731a52f98d35ea1209e917d85f1d7218
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:19:05 2026 +0000
+
+    Constrain categorical partition searches
+
+ train.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ddf29fcabdfc8c44affff6eefc1efb0a971bf724
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:16:18 2026 +0000
+
+    Use ordered day-of-month values for temporal generalization
+
+ train.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c6338838517f42eb9e1fee81f57c3050808a0891
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:15:09 2026 +0000
+
+    Simplify row-wise categorical preparation
+
+ train.py | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit f9c63fc1381cf5fdc1337fd30cb578d37269db53
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 06:13:40 2026 +0000
+
+    Test a shallower regularized boosting ensemble
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

@@ -1,0 +1,41 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+f9c63fc	keep	600 depth-4 trees with slower learning and stronger regularization	0.6786	0.6769
+c633883	keep	Simplify categorical preparation with cached dtypes and one dataframe construction	0.6786	0.6769
+ddf29fc	keep	Represent day of month as ordered numeric rather than categorical	0.6831	0.6812
+e79b060	discard	Remove day of month to reduce year-specific calendar noise	0.6792	N/A
+1eb29de	discard	Add route and carrier-origin/carrier-destination categorical interactions	0.6709	N/A
+1485773	keep	Limit categorical partition searches with max_cat_threshold=8	0.6838	0.6816
+04ee082	keep	Replace categorical month with ordered numeric month	0.6844	0.6832
+f0b8128	discard	Add departure hour and minute-of-hour features	0.6839	N/A
+19698b2	keep	Increase tree depth from 4 to 6 with existing regularization	0.6851	0.6828
+49f5282	discard	Make day of month an additive effect using interaction constraints	0.6805	N/A
+901eec4	discard	Add continuous day-of-year calendar feature	0.6833	N/A
+2148e23	discard	Reduce boosting rounds from 600 to 200	0.6847	N/A
+14b2b5a	discard	Add row-local Thanksgiving Christmas and New Year distances	0.6832	N/A
+268c7a1	keep	Boost four sampled trees per round with node-wise feature sampling	0.6853	0.6836
+1397e4b	keep	Add airport landmark-distance lookups fitted only on training routes	0.6861	0.6846
+bcadd6c	discard	Raise minimum child weight from 30 to 200	0.6852	N/A
+e05998e	keep	Fill landmark geography using shortest distances through the training route network	0.6863	0.6849
+f24ced1	keep	Use one-hot categorical splits instead of category partitions	0.6864	0.6844
+d4aa4a4	discard	Add departure-time offsets from origin and route schedule medians	0.6860	N/A
+cb959b4	discard	Require split gain of at least 2 using gamma regularization	0.6862	N/A
+79edd2f	discard	Use 64 numeric histogram bins instead of 256	0.6860	N/A
+0e9621c	keep	Train pairwise RankNet-style XGBoost on one global flight-ranking group	0.6865	0.6845
+aa90845	discard	Add approximate arrival clock time from departure and distance	0.6864	N/A
+66f3964	keep	Use cached categorical codes for faster preparation and explicit unknown handling	0.6865	0.6845
+83d7f52	keep	Train pairwise ranking using 32 randomly mixed comparison groups	0.6868	0.6847
+755d4e3	discard	Increase mean ranking pair sampling from 1 to 8 pairs per flight	0.6859	N/A
+7599937	discard	Replace ordered month with sine and cosine seasonal coordinates	0.6849	N/A
+9bf2f2b	discard	Average two independent rankers with two trees per boosting round each	0.6868	N/A
+3696332	discard	Enable score-difference normalization for pairwise ranking gradients	0.6835	N/A
+16362e5	discard	Add disjoint-reference airport/carrier delay-mean lookups	0.6864	N/A
+4de24be	keep	Use loss-guided tree growth with a 32-leaf budget	0.6869	0.6848
+3d9f2c9	discard	Trade per-step forests for 1200 single-tree rounds at learning rate 0.025	0.6865	N/A
+fe68a1c	discard	Increase numeric histogram resolution from 256 to 1024 bins	0.6869	N/A
+79922bd	discard	Replace landmark distances with three classical-MDS airport coordinates	0.6868	N/A
+3053092	discard	Blend equal ranking and logistic-classification margins	0.6867	N/A
+bc9085c	discard	Remove month from the final ranking feature set	0.6858	N/A
+3feec22	discard	Halve the loss-guided tree budget from 32 to 16 leaves	0.6858	N/A
+45a8abb	keep	Add only a one-hot carrier-origin interaction	0.6876	0.6853
+fc0e2f7	keep	Remove inactive categorical-partition threshold under all-one-hot splitting	0.6876	0.6853
