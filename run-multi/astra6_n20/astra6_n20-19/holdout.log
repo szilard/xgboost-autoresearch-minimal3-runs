@@ -1,0 +1,100 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 2c36c9d | keep | 600 depth-4 trees with shrinkage and stronger regularization ===
+  holdout=0.6787
+=== [4] 6ba2fb2 | keep | Remove DayofMonth to reduce calendar-date overfitting ===
+  holdout=0.6790
+=== [5] d950e9a | keep | Cache categorical dtypes and construct feature frame once ===
+  holdout=0.6790
+=== [6] 94fd4f8 | keep | Encode unknown categories explicitly as missing without warnings ===
+  holdout=0.6790
+=== [7] 83d88f6 | discard | Use one-hot categorical splits instead of grouped partitions ===
+  SKIP: status discard
+=== [8] 911a18b | discard | Add Route, CarrierOrigin, and CarrierDest categorical features ===
+  SKIP: status discard
+=== [9] ecd40a7 | keep | Remove Month to test sensitivity to year-specific seasonal effects ===
+  holdout=0.6812
+=== [10] f30000b | discard | Reintroduce Month as an additive effect using interaction constraints ===
+  SKIP: status discard
+=== [11] 077c0f5 | keep | Add departure hour, minute, sine, and cosine features ===
+  holdout=0.6809
+=== [12] 463f97a | discard | Increase max_depth from 4 to 6 after dropping calendar dates ===
+  SKIP: status discard
+=== [13] 33bf4ba | keep | Add three-dimensional airport coordinates inferred from route distances ===
+  holdout=0.6813
+=== [14] e6feb97 | keep | Reduce max_depth from 4 to 3 with current engineered features ===
+  holdout=0.6812
+=== [15] 588b04e | keep | Weight later training months more with a six-month half-life ===
+  holdout=0.6816
+=== [16] 476d9a0 | discard | Average four randomized trees per boosting round ===
+  SKIP: status discard
+=== [17] a9db66e | keep | Remove all airport geometry features and graph fitting ===
+  holdout=0.6818
+=== [18] f5ee1ae | keep | Add train-fitted route and carrier-origin departure offsets ===
+  holdout=0.6820
+=== [19] 41c1f04 | keep | Reduce boosting rounds from 600 to 300 ===
+  holdout=0.6820
+=== [20] 9190f5b | discard | Add smoothed target priors from a disjoint 25-percent encoding subset ===
+  SKIP: status discard
+=== [21] 70b62cd | discard | Reduce max_cat_threshold from 32 to 8 ===
+  SKIP: status discard
+=== [22] 48d8fc9 | discard | Shorten recency-weight half-life from six months to three ===
+  SKIP: status discard
+=== [23] a1794e5 | discard | Increase max_cat_threshold from 32 to 128 ===
+  SKIP: status discard
+=== [24] 996d7b8 | keep | Balance positive and negative loss weight within each training month ===
+  holdout=0.6823
+=== [25] 3deb8c3 | discard | Use DART with 3-percent tree dropout and 50-percent dropout skipping ===
+  SKIP: status discard
+=== [26] e0f7fbb | discard | Constrain direct departure-time and schedule-offset effects to increase ===
+  SKIP: status discard
+=== [27] 5f77763 | keep | Average three equally weighted XGBoost models with fixed seeds 42, 43, 44 ===
+  holdout=0.6824
+=== [28] 20f898c | discard | Add wrapped time-distance arrival proxy and its sine/cosine ===
+  SKIP: status discard
+=== [29] c9deb51 | keep | Reintroduce Month under monthly class balancing and shallow ensembling ===
+  holdout=0.6831
+=== [30] 5c272d4 | keep | Add pooled proximity to six fixed and moving calendar holidays ===
+  holdout=0.6847
+=== [31] cca2c6f | discard | Use 600 depth-two trees per member instead of 300 depth-three trees ===
+  SKIP: status discard
+=== [32] 4631964 | keep | Increase min_child_weight from 30 to 100 ===
+  holdout=0.6848
+=== [33] 7be51cc | discard | Add weekday and carrier combinations with three-hour departure bands ===
+  SKIP: status discard
+=== [34] cd86fe8 | keep | Remove standalone departure hour and minute features ===
+  holdout=0.6850
+=== [35] 599a3ee | discard | Reduce max_bin from 256 to 64 ===
+  SKIP: status discard
+=== [36] adf82c7 | keep | Add categorical identity of the nearest holiday within seven days ===
+  holdout=0.6857
+=== [37] 478ea90 | discard | Deterministically mask two percent of carrier/origin/destination categories ===
+  SKIP: status discard
+=== [38] cba049c | discard | Reintroduce distance-derived airport geometry in the seasonal model ===
+  SKIP: status discard
+=== [39] 17da597 | keep | Increase reg_lambda from 10 to 50 ===
+  holdout=0.6864
+=== [40] 6f692c0 | discard | Set gamma=5 to prune low-gain splits ===
+  SKIP: status discard
+=== [41] 33b5ba6 | keep | Increase max_depth to four with larger leaves and stronger L2 ===
+  holdout=0.6871
+=== [42] 575b074 | discard | Narrow holiday proximity and identity windows from seven days to three ===
+  SKIP: status discard
+=== [43] 3ae1caf | discard | Halve learning rate to 0.025 and double boosting rounds to 600 ===
+  SKIP: status discard
+=== [44] 7047069 | discard | Train an XGBoost pairwise ranker within month groups with recency query weights ===
+  SKIP: status discard
+=== [45] 94fb42f | discard | Average depth-three, depth-four, and depth-five classifiers ===
+  SKIP: status discard
+=== [46] df1cd4a | discard | Blend daily and monthly label rates for training class balancing ===
+  SKIP: status discard
+=== [47] f3348c7 | discard | Single full-sampling classifier instead of the three-member ensemble ===
+  SKIP: status discard
+=== [48] cbf5e51 | keep | Increase minimum child weight from 100 to 300 for stronger leaf support ===
+  holdout=0.6876
+=== [49] c8724c9 | discard | Remove route and carrier-origin departure-offset features and fitted lookups ===
+  SKIP: status discard
+=== [50] a47f9f9 | discard | Reduce boosting rounds from 300 to 200 with the final seasonal features ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

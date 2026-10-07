@@ -1,0 +1,9 @@
+Setup complete on branch `oct7`, created from `b15ec66`.
+
+- Verified data files and installed dependencies.
+- Initialized `output/results.tsv` and `output/research-log.md`.
+- Left baseline training code unchanged.
+
+Say **go** to begin the baseline and one-hour experiment.
+
+The clock remains stopped because [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md:9) requires confirmation before starting.

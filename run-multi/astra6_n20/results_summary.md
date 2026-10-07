@@ -22,6 +22,7 @@ Group `astra6_n20`: model `gpt-6-astra`, effort `max`, N_RUNS 20, codex-cli 0.16
 | astra6_n20-16 | gpt-6-astra | max | 49 | 0.6894 (`cb6c121`) | 0.6870 | -0.0024 | 0h59m30s | 67.5% | yes | |
 | astra6_n20-17 | gpt-6-astra | max | 46 | 0.6898 (`a567151`) | 0.6872 | -0.0026 | 0h58m42s | 61.8% | yes | |
 | astra6_n20-18 | gpt-6-astra | max | 44 | 0.6901 (`1f5c0f6`) | 0.6878 | -0.0023 | 0h59m32s | 66.2% | yes | |
+| astra6_n20-19 | gpt-6-astra | max | 49 | 0.6910 (`cbf5e51`) | 0.6876 | -0.0034 | 0h59m14s | 79.8% | yes | |
 
 For reference, the starter `train.py` scores 0.6743 on eval and 0.6725 on holdout (gap -0.0018).
 

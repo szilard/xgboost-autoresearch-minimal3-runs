@@ -1,0 +1,50 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+2c36c9d	0.6800	keep	600 depth-4 trees with shrinkage and stronger regularization
+6ba2fb2	0.6809	keep	Remove DayofMonth to reduce calendar-date overfitting
+d950e9a	0.6809	keep	Cache categorical dtypes and construct feature frame once
+94fd4f8	0.6809	keep	Encode unknown categories explicitly as missing without warnings
+83d88f6	0.6793	discard	Use one-hot categorical splits instead of grouped partitions
+911a18b	0.6731	discard	Add Route, CarrierOrigin, and CarrierDest categorical features
+ecd40a7	0.6832	keep	Remove Month to test sensitivity to year-specific seasonal effects
+f30000b	0.6816	discard	Reintroduce Month as an additive effect using interaction constraints
+077c0f5	0.6833	keep	Add departure hour, minute, sine, and cosine features
+463f97a	0.6792	discard	Increase max_depth from 4 to 6 after dropping calendar dates
+33bf4ba	0.6834	keep	Add three-dimensional airport coordinates inferred from route distances
+e6feb97	0.6841	keep	Reduce max_depth from 4 to 3 with current engineered features
+588b04e	0.6845	keep	Weight later training months more with a six-month half-life
+476d9a0	0.6837	discard	Average four randomized trees per boosting round
+a9db66e	0.6846	keep	Remove all airport geometry features and graph fitting
+f5ee1ae	0.6848	keep	Add train-fitted route and carrier-origin departure offsets
+41c1f04	0.6848	keep	Reduce boosting rounds from 600 to 300
+9190f5b	0.6824	discard	Add smoothed target priors from a disjoint 25-percent encoding subset
+70b62cd	0.6781	discard	Reduce max_cat_threshold from 32 to 8
+48d8fc9	0.6833	discard	Shorten recency-weight half-life from six months to three
+a1794e5	0.6841	discard	Increase max_cat_threshold from 32 to 128
+996d7b8	0.6850	keep	Balance positive and negative loss weight within each training month
+3deb8c3	0.6844	discard	Use DART with 3-percent tree dropout and 50-percent dropout skipping
+e0f7fbb	0.6841	discard	Constrain direct departure-time and schedule-offset effects to increase
+5f77763	0.6851	keep	Average three equally weighted XGBoost models with fixed seeds 42, 43, 44
+20f898c	0.6850	discard	Add wrapped time-distance arrival proxy and its sine/cosine
+c9deb51	0.6862	keep	Reintroduce Month under monthly class balancing and shallow ensembling
+5c272d4	0.6874	keep	Add pooled proximity to six fixed and moving calendar holidays
+cca2c6f	0.6845	discard	Use 600 depth-two trees per member instead of 300 depth-three trees
+4631964	0.6880	keep	Increase min_child_weight from 30 to 100
+7be51cc	0.6861	discard	Add weekday and carrier combinations with three-hour departure bands
+cd86fe8	0.6881	keep	Remove standalone departure hour and minute features
+599a3ee	0.6876	discard	Reduce max_bin from 256 to 64
+adf82c7	0.6891	keep	Add categorical identity of the nearest holiday within seven days
+478ea90	0.6873	discard	Deterministically mask two percent of carrier/origin/destination categories
+cba049c	0.6891	discard	Reintroduce distance-derived airport geometry in the seasonal model
+17da597	0.6898	keep	Increase reg_lambda from 10 to 50
+6f692c0	0.6898	discard	Set gamma=5 to prune low-gain splits
+33b5ba6	0.6906	keep	Increase max_depth to four with larger leaves and stronger L2
+575b074	0.6896	discard	Narrow holiday proximity and identity windows from seven days to three
+3ae1caf	0.6905	discard	Halve learning rate to 0.025 and double boosting rounds to 600
+7047069	0.6888	discard	Train an XGBoost pairwise ranker within month groups with recency query weights
+94fb42f	0.6906	discard	Average depth-three, depth-four, and depth-five classifiers
+df1cd4a	0.6868	discard	Blend daily and monthly label rates for training class balancing
+f3348c7	0.6902	discard	Single full-sampling classifier instead of the three-member ensemble
+cbf5e51	0.6910	keep	Increase minimum child weight from 100 to 300 for stronger leaf support
+c8724c9	0.6905	discard	Remove route and carrier-origin departure-offset features and fitted lookups
+a47f9f9	0.6907	discard	Reduce boosting rounds from 300 to 200 with the final seasonal features

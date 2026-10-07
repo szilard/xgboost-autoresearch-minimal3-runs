@@ -1,0 +1,50 @@
+commit	status	description	eval_auc	holdout_auc
+b15ec66	keep	baseline	0.6743	0.6725
+2c36c9d	keep	600 depth-4 trees with shrinkage and stronger regularization	0.6800	0.6787
+6ba2fb2	keep	Remove DayofMonth to reduce calendar-date overfitting	0.6809	0.6790
+d950e9a	keep	Cache categorical dtypes and construct feature frame once	0.6809	0.6790
+94fd4f8	keep	Encode unknown categories explicitly as missing without warnings	0.6809	0.6790
+83d88f6	discard	Use one-hot categorical splits instead of grouped partitions	0.6793	N/A
+911a18b	discard	Add Route, CarrierOrigin, and CarrierDest categorical features	0.6731	N/A
+ecd40a7	keep	Remove Month to test sensitivity to year-specific seasonal effects	0.6832	0.6812
+f30000b	discard	Reintroduce Month as an additive effect using interaction constraints	0.6816	N/A
+077c0f5	keep	Add departure hour, minute, sine, and cosine features	0.6833	0.6809
+463f97a	discard	Increase max_depth from 4 to 6 after dropping calendar dates	0.6792	N/A
+33bf4ba	keep	Add three-dimensional airport coordinates inferred from route distances	0.6834	0.6813
+e6feb97	keep	Reduce max_depth from 4 to 3 with current engineered features	0.6841	0.6812
+588b04e	keep	Weight later training months more with a six-month half-life	0.6845	0.6816
+476d9a0	discard	Average four randomized trees per boosting round	0.6837	N/A
+a9db66e	keep	Remove all airport geometry features and graph fitting	0.6846	0.6818
+f5ee1ae	keep	Add train-fitted route and carrier-origin departure offsets	0.6848	0.6820
+41c1f04	keep	Reduce boosting rounds from 600 to 300	0.6848	0.6820
+9190f5b	discard	Add smoothed target priors from a disjoint 25-percent encoding subset	0.6824	N/A
+70b62cd	discard	Reduce max_cat_threshold from 32 to 8	0.6781	N/A
+48d8fc9	discard	Shorten recency-weight half-life from six months to three	0.6833	N/A
+a1794e5	discard	Increase max_cat_threshold from 32 to 128	0.6841	N/A
+996d7b8	keep	Balance positive and negative loss weight within each training month	0.6850	0.6823
+3deb8c3	discard	Use DART with 3-percent tree dropout and 50-percent dropout skipping	0.6844	N/A
+e0f7fbb	discard	Constrain direct departure-time and schedule-offset effects to increase	0.6841	N/A
+5f77763	keep	Average three equally weighted XGBoost models with fixed seeds 42, 43, 44	0.6851	0.6824
+20f898c	discard	Add wrapped time-distance arrival proxy and its sine/cosine	0.6850	N/A
+c9deb51	keep	Reintroduce Month under monthly class balancing and shallow ensembling	0.6862	0.6831
+5c272d4	keep	Add pooled proximity to six fixed and moving calendar holidays	0.6874	0.6847
+cca2c6f	discard	Use 600 depth-two trees per member instead of 300 depth-three trees	0.6845	N/A
+4631964	keep	Increase min_child_weight from 30 to 100	0.6880	0.6848
+7be51cc	discard	Add weekday and carrier combinations with three-hour departure bands	0.6861	N/A
+cd86fe8	keep	Remove standalone departure hour and minute features	0.6881	0.6850
+599a3ee	discard	Reduce max_bin from 256 to 64	0.6876	N/A
+adf82c7	keep	Add categorical identity of the nearest holiday within seven days	0.6891	0.6857
+478ea90	discard	Deterministically mask two percent of carrier/origin/destination categories	0.6873	N/A
+cba049c	discard	Reintroduce distance-derived airport geometry in the seasonal model	0.6891	N/A
+17da597	keep	Increase reg_lambda from 10 to 50	0.6898	0.6864
+6f692c0	discard	Set gamma=5 to prune low-gain splits	0.6898	N/A
+33b5ba6	keep	Increase max_depth to four with larger leaves and stronger L2	0.6906	0.6871
+575b074	discard	Narrow holiday proximity and identity windows from seven days to three	0.6896	N/A
+3ae1caf	discard	Halve learning rate to 0.025 and double boosting rounds to 600	0.6905	N/A
+7047069	discard	Train an XGBoost pairwise ranker within month groups with recency query weights	0.6888	N/A
+94fb42f	discard	Average depth-three, depth-four, and depth-five classifiers	0.6906	N/A
+df1cd4a	discard	Blend daily and monthly label rates for training class balancing	0.6868	N/A
+f3348c7	discard	Single full-sampling classifier instead of the three-member ensemble	0.6902	N/A
+cbf5e51	keep	Increase minimum child weight from 100 to 300 for stronger leaf support	0.6910	0.6876
+c8724c9	discard	Remove route and carrier-origin departure-offset features and fitted lookups	0.6905	N/A
+a47f9f9	discard	Reduce boosting rounds from 300 to 200 with the final seasonal features	0.6907	N/A
