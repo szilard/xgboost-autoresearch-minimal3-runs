@@ -1,0 +1,7 @@
+Completed **45 experiments**. Eval AUC improved from **0.6743 to 0.6898** (+0.0155).
+
+Best commit: `a567151` on `oct7`. The saved two-model ensemble passed feature-consistency and prediction checks; training takes 23.6 seconds.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
+
+Clock stopped at **58m42s**.

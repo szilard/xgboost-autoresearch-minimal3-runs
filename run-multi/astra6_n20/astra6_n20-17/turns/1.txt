@@ -1,0 +1,8 @@
+Setup is complete on branch `oct7`, created from `b15ec66`.
+
+- Read the training code and harness.
+- Verified both required data files and dependency imports.
+- Initialized `output/results.tsv` and `output/research-log.md`.
+- Left baseline code unchanged.
+
+The clock has **not started**. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md), say **go** to begin the one-hour experiment with the baseline run.

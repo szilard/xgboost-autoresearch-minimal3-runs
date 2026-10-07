@@ -1,0 +1,47 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+9892545	0.6793	keep	500 shallow regularized trees
+a28127a	0.6825	keep	calendar and departure-time features; faster preparation
+cd75e43	0.6815	discard	individual-category splits for all categorical features
+5a5086b	0.6716	discard	route and carrier-airport categorical interactions
+6691471	0.6794	discard	remove exact calendar date features
+988164c	0.6773	discard	depth 6 with existing regularization
+a252681	0.6825	keep	equivalent fixed categorical codes; evaluation 3x faster
+5bda441	0.6825	discard	one-hot calendar/carrier with partitioned airports
+88339dc	0.6830	keep	limit categorical split groups to 16
+89fba8e	0.6819	discard	1000 depth-3 trees with learning rate 0.03
+3419e9d	0.6825	discard	major holiday proximity features
+7c819fa	0.6827	discard	departure offsets from training-fitted schedule medians
+8e5a2b3	0.6834	keep	boost four randomized trees per round
+5ad77ed	0.6831	discard	require more support per leaf
+8c28abf	0.6841	keep	separate exact-date effects from operating features
+dd5909e	0.6844	keep	airport geometry learned from training route distances
+32fa34e	0.6821	discard	separate all calendar effects from flight operations
+b5a6aa5	0.6838	discard	halve boosting rounds to 250
+42f7564	0.6841	discard	double boosting rounds to 1000
+2519628	0.6843	discard	favor recent training months with six-month half-life
+b50c9f5	0.6817	discard	pairwise ranking loss as an AUC surrogate
+00d9052	0.6807	discard	replace airport categories with continuous geometry
+82d8241	0.0000	crash	DART tree dropout
+09cb563	0.6833	discard	DART within budget: 250 rounds at rate 0.1
+9f12b66	0.6849	keep	prune weak splits with gamma 5
+f9238a2	0.6851	keep	smoothed delay rates from other carriers and airports
+71277e1	0.6842	discard	route and carrier-airport rates excluding the current month
+f3ed57c	0.6867	keep	remove categorical day-of-month but retain ordered dates
+fd2e00b	0.6866	discard	retain day-of-year without recurring day-of-month
+550e6f9	0.6868	keep	average three independently seeded boosted forests
+c0b25d7	0.6867	discard	stronger split pruning with gamma 10
+4db5df7	0.6862	discard	constrain daytime rise and overnight decline
+ceccc1d	0.6868	discard	smaller boosting steps at matched total tree count
+4067348	0.6862	discard	ablate peer-risk lookups from the ensemble
+1947e00	0.6868	discard	use all columns at every split
+7962131	0.6866	discard	add route direction in learned geographic coordinates
+31af94b	0.6873	keep	use ordered month without a categorical duplicate
+8bee287	0.6877	keep	add circular month features
+401d278	0.6875	discard	coarsen numeric split resolution to 64 bins
+bb5259e	0.6895	keep	stronger L2 shrinkage of leaf predictions
+0653cdb	0.6894	discard	loss-guided growth with 16 leaves and depth cap 6
+32a8e6b	0.6898	keep	increase L2 leaf shrinkage from 50 to 200
+2c1bb2e	0.6895	discard	bracket L2 shrinkage with penalty 800
+80c56f4	0.6894	discard	depth 5 with strong L2 regularization
+a567151	0.6898	keep	simplify ensemble from three seeds to two

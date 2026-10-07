@@ -1,0 +1,18 @@
+== results.tsv
+  46 rows: 17 keep, 28 discard, 1 crash
+  kept ties (allowed only for simpler or faster code; look at the description): a252681 (0.6825, after a28127a), a567151 (0.6898, after 32a8e6b)
+  kept Eval AUC: 0.6743 -> 0.6898, max 0.6898
+
+== clock and harness runs
+  46 harness runs: 45 ok, 0 crash, 1 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3522 s (+78 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct7: 17 commits, first b15ec66, HEAD a567151
+  45 commits by the agent (branch and reflog) checked for files other than train.py
+  45 artifacts, 624 MB
+  train.py of 45 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: none
+PROTOCOL FLAGS: none

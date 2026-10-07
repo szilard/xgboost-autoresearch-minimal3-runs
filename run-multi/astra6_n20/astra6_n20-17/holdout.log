@@ -1,0 +1,94 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 9892545 | keep | 500 shallow regularized trees ===
+  holdout=0.6782
+=== [4] a28127a | keep | calendar and departure-time features; faster preparation ===
+  holdout=0.6821
+=== [5] cd75e43 | discard | individual-category splits for all categorical features ===
+  SKIP: status discard
+=== [6] 5a5086b | discard | route and carrier-airport categorical interactions ===
+  SKIP: status discard
+=== [7] 6691471 | discard | remove exact calendar date features ===
+  SKIP: status discard
+=== [8] 988164c | discard | depth 6 with existing regularization ===
+  SKIP: status discard
+=== [9] a252681 | keep | equivalent fixed categorical codes; evaluation 3x faster ===
+  holdout=0.6821
+=== [10] 5bda441 | discard | one-hot calendar/carrier with partitioned airports ===
+  SKIP: status discard
+=== [11] 88339dc | keep | limit categorical split groups to 16 ===
+  holdout=0.6812
+=== [12] 89fba8e | discard | 1000 depth-3 trees with learning rate 0.03 ===
+  SKIP: status discard
+=== [13] 3419e9d | discard | major holiday proximity features ===
+  SKIP: status discard
+=== [14] 7c819fa | discard | departure offsets from training-fitted schedule medians ===
+  SKIP: status discard
+=== [15] 8e5a2b3 | keep | boost four randomized trees per round ===
+  holdout=0.6821
+=== [16] 5ad77ed | discard | require more support per leaf ===
+  SKIP: status discard
+=== [17] 8c28abf | keep | separate exact-date effects from operating features ===
+  holdout=0.6818
+=== [18] dd5909e | keep | airport geometry learned from training route distances ===
+  holdout=0.6822
+=== [19] 32fa34e | discard | separate all calendar effects from flight operations ===
+  SKIP: status discard
+=== [20] b5a6aa5 | discard | halve boosting rounds to 250 ===
+  SKIP: status discard
+=== [21] 42f7564 | discard | double boosting rounds to 1000 ===
+  SKIP: status discard
+=== [22] 2519628 | discard | favor recent training months with six-month half-life ===
+  SKIP: status discard
+=== [23] b50c9f5 | discard | pairwise ranking loss as an AUC surrogate ===
+  SKIP: status discard
+=== [24] 00d9052 | discard | replace airport categories with continuous geometry ===
+  SKIP: status discard
+=== [25] 82d8241 | crash | DART tree dropout ===
+  SKIP: status crash
+=== [26] 09cb563 | discard | DART within budget: 250 rounds at rate 0.1 ===
+  SKIP: status discard
+=== [27] 9f12b66 | keep | prune weak splits with gamma 5 ===
+  holdout=0.6824
+=== [28] f9238a2 | keep | smoothed delay rates from other carriers and airports ===
+  holdout=0.6828
+=== [29] 71277e1 | discard | route and carrier-airport rates excluding the current month ===
+  SKIP: status discard
+=== [30] f3ed57c | keep | remove categorical day-of-month but retain ordered dates ===
+  holdout=0.6843
+=== [31] fd2e00b | discard | retain day-of-year without recurring day-of-month ===
+  SKIP: status discard
+=== [32] 550e6f9 | keep | average three independently seeded boosted forests ===
+  holdout=0.6845
+=== [33] c0b25d7 | discard | stronger split pruning with gamma 10 ===
+  SKIP: status discard
+=== [34] 4db5df7 | discard | constrain daytime rise and overnight decline ===
+  SKIP: status discard
+=== [35] ceccc1d | discard | smaller boosting steps at matched total tree count ===
+  SKIP: status discard
+=== [36] 4067348 | discard | ablate peer-risk lookups from the ensemble ===
+  SKIP: status discard
+=== [37] 1947e00 | discard | use all columns at every split ===
+  SKIP: status discard
+=== [38] 7962131 | discard | add route direction in learned geographic coordinates ===
+  SKIP: status discard
+=== [39] 31af94b | keep | use ordered month without a categorical duplicate ===
+  holdout=0.6856
+=== [40] 8bee287 | keep | add circular month features ===
+  holdout=0.6855
+=== [41] 401d278 | discard | coarsen numeric split resolution to 64 bins ===
+  SKIP: status discard
+=== [42] bb5259e | keep | stronger L2 shrinkage of leaf predictions ===
+  holdout=0.6870
+=== [43] 0653cdb | discard | loss-guided growth with 16 leaves and depth cap 6 ===
+  SKIP: status discard
+=== [44] 32a8e6b | keep | increase L2 leaf shrinkage from 50 to 200 ===
+  holdout=0.6873
+=== [45] 2c1bb2e | discard | bracket L2 shrinkage with penalty 800 ===
+  SKIP: status discard
+=== [46] 80c56f4 | discard | depth 5 with strong L2 regularization ===
+  SKIP: status discard
+=== [47] a567151 | keep | simplify ensemble from three seeds to two ===
+  holdout=0.6872
+
+=== DONE: results written to output/holdout_scores.tsv ===
