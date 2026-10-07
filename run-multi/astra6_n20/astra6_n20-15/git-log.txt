@@ -1,0 +1,111 @@
+commit 896f43480b4a7599487e643d56db3f97ebd8e5c0
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:31:52 2026 +0000
+
+    Test complementary tree depths in the ensemble
+
+ train.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 9da326800b81270f6398d6703e0bd0646f57efd1
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:30:12 2026 +0000
+
+    Ablate standalone minute within hour feature
+
+ train.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 472aa3f494a437aa17294e845c6a5aca88648214
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:26:13 2026 +0000
+
+    Increase per tree sampling for stable category estimates
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51d7d3bfa8f65e9c6668c9cad3560157df89d408
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 01:00:06 2026 +0000
+
+    Average three independently seeded XGBoost models
+
+ train.py | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+commit e9b376a599163a7e50af80b829623bd28a796c4c
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:48:56 2026 +0000
+
+    Test departure times relative to learned schedules
+
+ train.py | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit cd5a55fc28035c7f3dbe214fb5101a4096fff004
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:46:39 2026 +0000
+
+    Separate fine calendar from operational interactions
+
+ train.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 11f7a9082071a650cc580fe7d3a5baaf98ca1d5b
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:44:27 2026 +0000
+
+    Test boosted forests to stabilize category splits
+
+ train.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 851c3a521c01ff03a77f31f67ebcc4327ddcb083
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:41:49 2026 +0000
+
+    Test shorter boosting to reduce temporal overfitting
+
+ train.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cc608a9877df679bd739044d1d77cc819c96fe43
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:39:32 2026 +0000
+
+    Test ordinal calendar and departure-time components
+
+ train.py | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit 3f1269cfd223d3d14022e305175d383306213076
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:38:26 2026 +0000
+
+    Simplify categorical preparation and reuse dtypes
+
+ train.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 916572857144b15625d9500eefaffd7e3a5d637a
+Author: agent <agent@localhost>
+Date:   Wed Oct 7 00:37:24 2026 +0000
+
+    Try shallower regularized boosting
+
+ train.py | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit b15ec66f306812020bf48c0fc4fc83e50cb24ce1
+Author: agent <agent@localhost>
+Date:   Sun Oct 4 21:04:03 2026 +0000
+
+    xgboost-autoresearch-minimal3 @ 5fb023a70fbee73d0d2ee7a3b5875726981c8c62
+
+ .gitignore |  24 ++++++
+ README.md  |  88 ++++++++++++++++++++
+ harness.py | 265 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ program.md | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ train.py   |  47 +++++++++++
+ 5 files changed, 643 insertions(+)

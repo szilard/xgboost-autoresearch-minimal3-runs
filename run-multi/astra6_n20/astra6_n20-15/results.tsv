@@ -1,0 +1,55 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+9165728	0.6769	keep	500 shallow regularized trees
+3f1269c	0.6769	keep	faster equivalent categorical preparation
+cc608a9	0.6831	keep	ordered calendar and departure components
+e03fc4c	0.6713	discard	route and carrier-airport categorical interactions
+e161abf	0.6737	discard	depth 6 on temporal features
+851c3a5	0.6853	keep	200 trees reduce temporal overfitting
+bcff59e	0.6841	discard	holiday-relative calendar features
+65ca1bc	0.6832	discard	restrict categorical partition search
+11f7a90	0.6854	keep	four randomized trees per boosting round
+089f422	0.6810	discard	remove day-of-month and day-of-year
+cd5a55f	0.6857	keep	separate fine-date and operational interactions
+d0145d2	0.6856	discard	airport geometry from train route distances
+e9b376a	0.6863	keep	departure offsets from fitted schedule medians
+9b09cf1	0.6862	discard	minimum leaf weight 200
+50a881e	0.6863	discard	cyclic and shifted departure clocks
+b6a7adf	0.6848	discard	independent target-encoding stage on 20 percent of train
+a46335d	0.6798	discard	one-hot-style splits for all categoricals
+433f2e4	0.6852	discard	weekly resolution fine calendar
+36748d6	0.6834	discard	pairwise ranking loss with sampled pairs
+e843784	0.6863	discard	halve learning rate and double boosting rounds
+238d4bf	0.6856	discard	increasing constraints on departure clocks
+9bd890f	0.6862	discard	L2 leaf penalty 100
+1366d25	0.6856	discard	400 depth-3 boosting rounds
+51d7d3b	0.6865	keep	average three independent boosting trajectories
+8ef8f4d	0.6862	discard	one tree per round in three-model ensemble
+4baa78a	0.6851	discard	downweight fine-calendar feature sampling
+aa1103c	0.6862	discard	blend with four seasonal specialists
+f0d715a	0.6836	discard	month-weekday categorical interaction
+e126238	0.6850	discard	100-round averaged ensemble
+0c82a23	0.6768	discard	additive linear XGBoost with smooth bases
+f7957ac	0.0000	crash	DART with four parallel trees exceeded training timeout
+11fbccc	0.6856	discard	two smaller models with tree dropout
+541ef84	0.6864	discard	add geometry model to anchor average
+45ae31c	0.6865	discard	loss-guided growth with 16 leaves
+3fbeb63	0.6861	discard	targeted Thanksgiving-relative feature
+15cd617	0.6832	discard	soft normalization of daily training label rates
+e7458d2	0.6858	discard	coarser numeric histograms with max_bin64
+246f5bc	0.6861	discard	robust generalized cross entropy q0.3
+f97c2ec	0.6858	discard	remove day of month while retaining day of year
+46f5c3b	0.6863	discard	destination and carrier destination schedule offsets
+c0b70fb	0.6864	discard	prune splits with minimum loss reduction five
+3aa75b4	0.6861	discard	origin only schedule offset simplification
+3ec19e7	0.6858	discard	max cat threshold16 without changing one hot behavior
+472aa3f	0.6872	keep	increase per tree row sampling to0.9
+bbdec09	0.6865	discard	use all rows per tree
+4677596	0.6869	discard	single seeded model at0.9 row sampling
+eaddc82	0.6870	discard	schedule offsets scaled by group interquartile range
+f62dfe3	0.6864	discard	broader airport partitions with max cat threshold256
+9da3268	0.6873	keep	remove standalone departure minute feature
+f44b062	0.6873	discard	expand seed average from three to five models
+896f434	0.6875	keep	average three depth4 models with depth3 and depth5 members
+bd973d8	0.6865	discard	double all boosting rounds in mixed depth ensemble
+a6aa196	0.6874	discard	remove depth5 member from mixed depth ensemble

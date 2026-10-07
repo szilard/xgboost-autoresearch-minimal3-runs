@@ -1,0 +1,110 @@
+=== [2] b15ec66 | keep | baseline ===
+  holdout=0.6725
+=== [3] 9165728 | keep | 500 shallow regularized trees ===
+  holdout=0.6747
+=== [4] 3f1269c | keep | faster equivalent categorical preparation ===
+  holdout=0.6747
+=== [5] cc608a9 | keep | ordered calendar and departure components ===
+  holdout=0.6812
+=== [6] e03fc4c | discard | route and carrier-airport categorical interactions ===
+  SKIP: status discard
+=== [7] e161abf | discard | depth 6 on temporal features ===
+  SKIP: status discard
+=== [8] 851c3a5 | keep | 200 trees reduce temporal overfitting ===
+  holdout=0.6834
+=== [9] bcff59e | discard | holiday-relative calendar features ===
+  SKIP: status discard
+=== [10] 65ca1bc | discard | restrict categorical partition search ===
+  SKIP: status discard
+=== [11] 11f7a90 | keep | four randomized trees per boosting round ===
+  holdout=0.6841
+=== [12] 089f422 | discard | remove day-of-month and day-of-year ===
+  SKIP: status discard
+=== [13] cd5a55f | keep | separate fine-date and operational interactions ===
+  holdout=0.6843
+=== [14] d0145d2 | discard | airport geometry from train route distances ===
+  SKIP: status discard
+=== [15] e9b376a | keep | departure offsets from fitted schedule medians ===
+  holdout=0.6845
+=== [16] 9b09cf1 | discard | minimum leaf weight 200 ===
+  SKIP: status discard
+=== [17] 50a881e | discard | cyclic and shifted departure clocks ===
+  SKIP: status discard
+=== [18] b6a7adf | discard | independent target-encoding stage on 20 percent of train ===
+  SKIP: status discard
+=== [19] a46335d | discard | one-hot-style splits for all categoricals ===
+  SKIP: status discard
+=== [20] 433f2e4 | discard | weekly resolution fine calendar ===
+  SKIP: status discard
+=== [21] 36748d6 | discard | pairwise ranking loss with sampled pairs ===
+  SKIP: status discard
+=== [22] e843784 | discard | halve learning rate and double boosting rounds ===
+  SKIP: status discard
+=== [23] 238d4bf | discard | increasing constraints on departure clocks ===
+  SKIP: status discard
+=== [24] 9bd890f | discard | L2 leaf penalty 100 ===
+  SKIP: status discard
+=== [25] 1366d25 | discard | 400 depth-3 boosting rounds ===
+  SKIP: status discard
+=== [26] 51d7d3b | keep | average three independent boosting trajectories ===
+  holdout=0.6847
+=== [27] 8ef8f4d | discard | one tree per round in three-model ensemble ===
+  SKIP: status discard
+=== [28] 4baa78a | discard | downweight fine-calendar feature sampling ===
+  SKIP: status discard
+=== [29] aa1103c | discard | blend with four seasonal specialists ===
+  SKIP: status discard
+=== [30] f0d715a | discard | month-weekday categorical interaction ===
+  SKIP: status discard
+=== [31] e126238 | discard | 100-round averaged ensemble ===
+  SKIP: status discard
+=== [32] 0c82a23 | discard | additive linear XGBoost with smooth bases ===
+  SKIP: status discard
+=== [33] f7957ac | crash | DART with four parallel trees exceeded training timeout ===
+  SKIP: status crash
+=== [34] 11fbccc | discard | two smaller models with tree dropout ===
+  SKIP: status discard
+=== [35] 541ef84 | discard | add geometry model to anchor average ===
+  SKIP: status discard
+=== [36] 45ae31c | discard | loss-guided growth with 16 leaves ===
+  SKIP: status discard
+=== [37] 3fbeb63 | discard | targeted Thanksgiving-relative feature ===
+  SKIP: status discard
+=== [38] 15cd617 | discard | soft normalization of daily training label rates ===
+  SKIP: status discard
+=== [39] e7458d2 | discard | coarser numeric histograms with max_bin64 ===
+  SKIP: status discard
+=== [40] 246f5bc | discard | robust generalized cross entropy q0.3 ===
+  SKIP: status discard
+=== [41] f97c2ec | discard | remove day of month while retaining day of year ===
+  SKIP: status discard
+=== [42] 46f5c3b | discard | destination and carrier destination schedule offsets ===
+  SKIP: status discard
+=== [43] c0b70fb | discard | prune splits with minimum loss reduction five ===
+  SKIP: status discard
+=== [44] 3aa75b4 | discard | origin only schedule offset simplification ===
+  SKIP: status discard
+=== [45] 3ec19e7 | discard | max cat threshold16 without changing one hot behavior ===
+  SKIP: status discard
+=== [46] 472aa3f | keep | increase per tree row sampling to0.9 ===
+  holdout=0.6854
+=== [47] bbdec09 | discard | use all rows per tree ===
+  SKIP: status discard
+=== [48] 4677596 | discard | single seeded model at0.9 row sampling ===
+  SKIP: status discard
+=== [49] eaddc82 | discard | schedule offsets scaled by group interquartile range ===
+  SKIP: status discard
+=== [50] f62dfe3 | discard | broader airport partitions with max cat threshold256 ===
+  SKIP: status discard
+=== [51] 9da3268 | keep | remove standalone departure minute feature ===
+  holdout=0.6854
+=== [52] f44b062 | discard | expand seed average from three to five models ===
+  SKIP: status discard
+=== [53] 896f434 | keep | average three depth4 models with depth3 and depth5 members ===
+  holdout=0.6856
+=== [54] bd973d8 | discard | double all boosting rounds in mixed depth ensemble ===
+  SKIP: status discard
+=== [55] a6aa196 | discard | remove depth5 member from mixed depth ensemble ===
+  SKIP: status discard
+
+=== DONE: results written to output/holdout_scores.tsv ===

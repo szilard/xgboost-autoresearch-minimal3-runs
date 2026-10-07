@@ -1,0 +1,9 @@
+Setup is complete:
+
+- Created fresh branch `oct7` from the current HEAD.
+- Read `program.md`, `train.py`, and `harness.py`.
+- Verified data files and installed dependencies.
+- Initialized `output/results.tsv` and `output/research-log.md`.
+- Left the baseline unchanged; no experiments have run.
+
+Per `program.md`, the one-hour clock awaits your confirmation. Say **“go”** to start.

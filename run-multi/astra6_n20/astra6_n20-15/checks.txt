@@ -1,0 +1,19 @@
+== results.tsv
+  54 rows: 12 keep, 41 discard, 1 crash
+  kept ties (allowed only for simpler or faster code; look at the description): 3f1269c (0.6769, after 9165728)
+  kept Eval AUC: 0.6743 -> 0.6875, max 0.6875
+
+== clock and harness runs
+  54 harness runs: 53 ok, 0 crash, 1 timeout-training, 0 timeout-eval
+  budget 3600 s, clock stopped after 3572 s (+28 s remaining)
+  harness runs of commits not in results.tsv: none
+
+== git
+  branch oct7: 12 commits, first b15ec66, HEAD 896f434
+  53 commits by the agent (branch and reflog) checked for files other than train.py
+  53 artifacts, 554 MB
+  FLAG train_py_review: 0c82a23: train = pd.read_csv(Path(__file__).parent / "data" / "train.csv")
+  train.py of 53 commits scanned for reads of other files or the network
+
+INTEGRITY FLAGS: train_py_review
+PROTOCOL FLAGS: none
