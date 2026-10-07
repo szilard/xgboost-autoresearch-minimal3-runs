@@ -1,0 +1,63 @@
+commit	Eval_AUC	status	description
+b15ec66	0.6743	keep	baseline
+8f52066	0.6743	keep	fixed categorical codes; same AUC with much faster evaluation
+845b6e4	0.6796	keep	500 shallow regularized trees; eta .05 depth 4 child 30 lambda 10 subsample .85
+651c21f	0.6799	keep	remove categorical day of month
+1d61618	0.6799	discard	add scheduled departure hour and minute
+1c397ba	0.6703	discard	add native categorical origin-destination route
+9027ae9	0.6787	discard	force one-hot splits for all categorical features
+11896eb	0.6756	discard	extend boosting from 500 to 1500 rounds
+fb016af	0.6807	keep	reduce boosting to 200 rounds
+4910fa8	0.6834	keep	replace month categories with cyclic season features
+6c3240d	0.6836	keep	add departure offset from training route median schedule
+37590c8	0.6843	keep	400 depth-3 trees at comparable leaf budget
+6b7c177	0.6839	discard	limit categorical split search to 16 categories
+757bfe2	0.6847	keep	average five independent seeded shallow XGBoost models
+5d2ba5c	0.6847	discard	replace monthly season phase with continuous day-of-year phase
+9575027	0.6839	discard	isolate seasonal features with interaction constraints
+5614f89	0.6852	keep	add 0.8 per-node feature sampling to five-model ensemble
+e0715b6	0.6852	discard	four sampled trees per boosting round within five-model average
+e0a05e6	0.6849	discard	coarsen numeric histogram resolution to 64 bins
+5b11c7a	0.6852	discard	increase minimum child weight from 30 to 200
+f77dfc0	0.6852	discard	add three training-distance MDS coordinates per airport
+35f0e2e	0.0000	crash	three pairwise rankers; exceeded 60-second training limit
+a6d8613	0.6813	discard	single 150-round pairwise ranker with one pair per row
+08a6d97	0.6876	keep	add proximity to Christmas New Year July 4 and Thanksgiving
+fe53f49	0.6874	discard	add proximity to Memorial Day and Labor Day
+b60969f	0.6875	discard	constrain daytime risk upward with a flexible night phase
+445f0b3	0.6880	keep	add flexible night-departure phase without monotonic constraints
+730404b	0.6840	discard	add second annual Fourier harmonic
+51c6e00	0.6863	discard	replace four holiday features with shared nearest-holiday offset
+d293546	0.6881	keep	fit with normalized six-month recency weights
+d8e355c	0.6879	discard	800 rounds at eta .025 with matched total shrinkage
+60c77cc	0.6821	discard	add native categorical carrier-origin station
+303f914	0.6881	discard	blend five ordinary boosters with a 150-round DART member
+3e5e55d	0.6876	discard	blend disjoint-partition carrier and route delay priors
+aa4b0ab	0.6871	discard	increase independent prior-fitting partition to half of train
+18bd4af	0.6886	keep	blend depth 2 4 and 5 models with the depth-3 ensemble
+2f230dd	0.6889	keep	add departure offset from carrier-origin median schedule
+47e03a3	0.6870	discard	replace mixed depths with five depth-2 800-round models
+0503ef6	0.6886	discard	replace mixed depths with five depth-4 200-round models
+7b56660	0.6893	keep	increase leaf-value L2 penalty from 10 to 100
+ce514fd	0.6893	discard	require split gain gamma 5; equal AUC without material simplification
+5410d34	0.6892	discard	replace logistic loss with squared-error conditional-mean models
+620792d	0.6893	discard	equal blend of logistic and squared-error mixed-depth ensembles
+24dc4a4	0.6902	keep	add L1 leaf penalty alpha 10 alongside lambda 100
+f57c2bd	0.6895	discard	remove recency weights and fit all seasons equally
+809d8a3	0.6890	discard	remove Distance from model inputs
+bc2edb6	0.6902	keep	remove redundant route-time lookup; same AUC with simpler faster code
+696e5b4	0.6905	keep	sample half the rows per tree using gradient-based selection
+a1e4ac7	0.6905	keep	uniform half-sampling; same AUC with simpler much faster training
+e4e1ada	0.6904	discard	reduce ensemble from eight members to six with balanced depth groups
+7edd943	0.6906	keep	add distance offset from carrier median route length
+91cd7ee	0.6906	discard	add approximate arrival-clock interaction from departure and distance
+e527f6b	0.6882	discard	one-hot carrier and weekday splits while retaining grouped airports
+f997e5d	0.6887	discard	increase L1 penalty from 10 to 30
+26b8e1d	0.6900	discard	reduce per-node column sampling from .8 to .5
+3c64d9a	0.6908	keep	increase numeric histogram resolution from 256 to 1024 bins
+e68ab9e	0.6900	discard	shorten recency weighting half-life from six months to three
+2c6068e	0.6911	keep	remove overlapping New Year offset while retaining other holidays
+e16bcaf	0.6912	keep	use a consistent Thanksgiving window across the month boundary
+4e870c0	0.6913	keep	average weighted log-odds instead of model probabilities
+6217391	0.6908	discard	reduce uniform row sampling from .5 to .3
+4c0a951	0.6917	keep	extend all depth families by 50 percent under strong regularization

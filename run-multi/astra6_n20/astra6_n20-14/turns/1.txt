@@ -1,0 +1,8 @@
+Setup complete on fresh branch `oct6`, from `b15ec66`.
+
+- Read `program.md`, `train.py`, and `harness.py`.
+- Verified data files and installed dependencies.
+- Initialized `output/results.tsv` and `output/research-log.md`.
+- Left baseline code unchanged.
+
+The clock has not started. Per [program.md](/home/ubuntu/xgboost-autoresearch-minimal3/program.md), your confirmation starts the one-hour run, beginning with the baseline.

@@ -1,0 +1,7 @@
+Completed the baseline plus **61 experiments**; clock stopped at **59m37s**.
+
+- Eval AUC: **0.6743 → 0.6917** (+0.0174).
+- Best model saved at commit `4c0a951` on `oct6`.
+- Final checks passed; holdout untouched.
+
+[Results](/home/ubuntu/xgboost-autoresearch-minimal3/output/results.tsv) · [Research log](/home/ubuntu/xgboost-autoresearch-minimal3/output/research-log.md)
